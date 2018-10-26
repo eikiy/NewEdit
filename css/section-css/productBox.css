@@ -1,0 +1,15 @@
+/* 拆開css ------ productBox */
+.productBox{ width: 100%; padding: 50px 0; /* background-color: #eee;*/ } /*底色需要下在最外層*/
+.productBox .ContentsBox{ max-width: 100%; width: 100%; }
+.productBox .slider { width: 100%; overflow-x: hidden; padding-top: 40px; z-index: 9;}
+.productBox .slider .info{ text-align: center; padding: 20px 0; }
+.productBox .slider .info .goods_name{padding-bottom: 10px;}
+.productBox .slider .info a.order{ color: #655; border-bottom: 1px solid; }
+.productBox .slider .info a.order:hover{ border:none; }
+.productBox .slider .info a.good_photo{display: block;}
+.productBox .slider ul li{ transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;}
+.productBox .slider ul li:hover{ opacity: .9; }
+
+.bg_translucent_k .productBox .slider .info .goods_name p{ color: #fff; }
+.bg_translucent_k .productBox .slider .info a.order{ color: #fff; background-color: #333; padding: 10px; border-radius: 4px;  display: inline-block; min-width: 100px; border:none; }
+/* 拆開css ------ productBox END */

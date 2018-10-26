@@ -9,23 +9,33 @@
 <meta name="HandheldFriendly" content="true">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-
-<!-- 右邊網頁所吃的 -->
 <script type="text/javascript" src="on-server/css/fontawesome-all.css.js"></script>
 <link rel="stylesheet" href="on-server/css/fontawesome-all.css">
-<link rel="stylesheet" href="css/style.css"> <!-- 現有網站預設吃的 -->
+<link rel="stylesheet" href="css/style.css"> <!-- 現有網站最預設吃的檔案 -->
 <link rel="stylesheet" href="css/edit_style.css"> <!-- 新編輯器內的 -->
 
+<!-- 右邊網頁所吃的 -->
+<!-- 拆開的section的style -->
+<link rel="stylesheet" href="css/function-css/flexslider.css" type="text/css" media="screen" />
 
-<link rel="stylesheet" href="css/section-css/style.css">
-<link rel="stylesheet" href="css/section-css/flexslider.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="css/section-css/global.css"><!-- ****global*** 每個section共吃的css -->
+<link rel="stylesheet" href="css/section-css/top_header.css">
+<link rel="stylesheet" href="css/section-css/mainBox.css">
+<link rel="stylesheet" href="css/section-css/productBox.css">
+<link rel="stylesheet" href="css/section-css/textBox.css">
+<link rel="stylesheet" href="css/section-css/socialBox.css">
+<link rel="stylesheet" href="css/section-css/contactBox.css">
+<link rel="stylesheet" href="css/section-css/videoBox.css">
+<link rel="stylesheet" href="css/section-css/map_box.css">
+<link rel="stylesheet" href="css/section-css/formBox.css">
+<link rel="stylesheet" href="css/section-css/s-footerBox.css">
 
-  <!-- jQuery -->
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.min.js">\x3C/script>')</script>
 
-  <!-- FlexSlider -->
-  <script defer src="js/section-js/jquery.flexslider.js"></script>
+<!-- jQuery -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.min.js">\x3C/script>')</script>
+<!-- FlexSlider -->
+<script defer src="js/section-js/jquery.flexslider.js"></script>
 
    <script type="text/javascript">
     $(function(){
@@ -46,9 +56,9 @@
     });
   </script>
 
-
 <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
-<script type="text/javascript" src="js/menu.js"></script>
+<script type="text/javascript" src="js/edit_sideMenu.js"></script><!-- 針對新編輯器的js -->
+<script type="text/javascript" src="js/section-js/menu.js"></script>
 
 <!-- Magnific Popup core CSS file -->
 <link rel="stylesheet" href="magnific-popup/magnific-popup.css">
@@ -493,7 +503,13 @@ $(document).ready(function() {
         </div>
     </section>
 
-    <section class="rightEditBox" id="rightEditBox">
+    <!-- 配色style：
+        template_color_holkee
+        template_color_pink
+        template_color_green
+        template_color_purplen
+     -->
+    <section class="rightEditBox template_color_green" id="rightEditBox">
 
         <!-- section：主視覺KV -->
         <div class="section-wrapper first-section "><!-- bg_translucent_k -->
@@ -592,7 +608,7 @@ $(document).ready(function() {
                     </div>
                 </div>
             </div>
-            <div class="mainBox" style=" background-image: url(images/new_site/basket-book-books-6332.jpg);" id="">
+            <div class="mainBox" style=" background-image: url(images/new_site/basket-book-books-6332.jpg);" id="goThe01">
                 <div class="ContentsBox">
                     <div class="the_editBox show_lightBox">
                         <div class="edit_LightBox">
@@ -629,7 +645,7 @@ $(document).ready(function() {
         </div>
 
         <!-- section：productBox-->
-        <div class="section-wrapper bg_translucent_k" id="goThe02"> <!-- 問題 : 思考商品展示這一塊需要讓他可以薪新增圖片 + 半透明嗎? (因為我覺得可能會有一點花俏?) -->
+        <div class="section-wrapper bg_translucent_k" id="goThe02"> <!-- 問題 : 思考商品展示這一塊背景需要讓他可以新增圖片 + 半透明嗎? (因為我覺得可能會有一點花俏?) 或是素色背景就好-->
             <div class="section-editor-tools">
                 <div class="btn_item clearfix">
                     <a class="section-bg">背景 <i class="more_function fas fa-angle-down"></i></a><!-- 點了展開下面的 bg-editor-Box -->
@@ -774,7 +790,7 @@ $(document).ready(function() {
         </div>
 
         <!-- section：textBox-->
-        <div class="section-wrapper bg_translucent_w" id="goThe03">
+        <div class="section-wrapper" id="goThe03">
             <div class="section-editor-tools">
                 <div class="btn_item clearfix">
                     <a class="section-typesetting">版面設定 <i class="fas fa-undo"></i></a><!-- 點了變換版面排版 -->
@@ -972,8 +988,11 @@ $(document).ready(function() {
                     <div class="edit_LightBox">
                         <a class="popup-link" href="#popup-map360">編輯</a>
                     </div>
-                        <iframe src="https://www.google.com/maps/embed?pb=!4v1530762701821!6m8!1m7!1sCAoSLEFGMVFpcE9CcmExT2tpdGhDQTZrOVN6TFFPRnFSWUtvRGcweWlXVzZvcU5n!2m2!1d25.082055351345!2d121.48006461508!3f110.33!4f0!5f0.5970117501821992"  frameborder="0" style="border:0" allowfullscreen>
-                    </iframe>
+                    <div class="map360">
+                        <p><span>Google 環景，請以網頁預覽為準</span></p>
+                    </div>
+                    <!-- <iframe src="https://www.google.com/maps/embed?pb=!4v1530762701821!6m8!1m7!1sCAoSLEFGMVFpcE9CcmExT2tpdGhDQTZrOVN6TFFPRnFSWUtvRGcweWlXVzZvcU5n!2m2!1d25.082055351345!2d121.48006461508!3f110.33!4f0!5f0.5970117501821992"  frameborder="0" style="border:0" allowfullscreen>
+                    </iframe> -->
                 </div>
             </div>
         </div>
@@ -1046,7 +1065,7 @@ $(document).ready(function() {
                 <div class="ContentsBox clearfix">
                     <div class="rBox">
                         <div class="the_editBox">
-                            <h3 class="main_title  ">Contact Us</h3>
+                            <h3 class="main_title">Contact Us</h3>
                         </div>
                         <div class="the_editBox">
                             <p class="sub_title">Make sure to add links to the icons!</p>
@@ -1139,7 +1158,7 @@ $(document).ready(function() {
                     </div>
                 </div>
             </div>
-            <div class="FormBox" style=" background-image: url(images/new_site/action-carefree-cropland-1146242.jpg);">
+            <div class="formBox" style=" background-image: url(images/new_site/action-carefree-cropland-1146242.jpg);">
                 <div class="ContentsBox clearfix">
                     <div class="the_editBox">
                         <h3 class="main_title">Stories & Updates</h3>
@@ -1680,7 +1699,7 @@ $(document).ready(function() {
     <div id="popup-map360" class="white-popup mfp-hide">
         <form class="setBox">
             <div class="top_title">
-                <h3>Google環景設定</h3>
+                <h3>Google 環景設定</h3>
                 <p>利用店家環景打造互動式導覽服務</p>
             </div>
             <div class="fillinBox">

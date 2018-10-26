@@ -1,0 +1,89 @@
+
+/*===== start ======*/
+/*======================= 所有section共用CSS ================*/
+
+.ContentsBox{ max-width: 1200px; margin: 0 auto; min-width: 320px; z-index: 9;}
+.box-contents{ width: calc(100% - 30px); max-width: 1200px; margin: 0 auto; min-width: 320px; position: relative; z-index: 9;}
+
+/*main_contents*/
+h2.top_title{text-align: center; font-size: 40px;}
+h3.main_title{text-align: center; font-size: 1.750rem; padding: 15px 0;}
+p.sub_title{ text-align: center; margin: 0 auto; max-width: 1000px; padding: 10px 0; }
+p.btn{ text-align: center;}
+p.btn a{  cursor: pointer; color: #fff; display: inline-block; padding: 12px 25px; border:1px solid #fff; min-width: 130px; }
+p.btn a:hover{ background-color: #fff; color: #333; }
+
+
+/*配色方案 上*/
+/*文字遮罩的顏色不被影響，所以CSS STYLE 會在半透明遮罩的上面*/
+
+/*01 - holkee*/
+.template_color_holkee h3.main_title { color: #12ccc4; }
+.template_color_holkee p.sub_title{ color: #464646; }
+
+/*02 - Pink*/
+.template_color_pink h3.main_title { color: #ff5186; }
+.template_color_pink p.sub_title{ color: #464646; }
+
+/*03 - Green*/
+.template_color_green h3.main_title { color: #8fc320; }
+.template_color_green p.sub_title{ color: #464646; }
+
+/*04 - purple*/
+.template_color_purplen h3.main_title { color: #826dc7; }
+.template_color_purplen p.sub_title{ color: #464646; }
+
+
+/*半透明遮罩 有選擇才會蓋上去*/
+.bg_translucent_k{ position: relative; }
+.bg_translucent_k::after{ position: absolute; content: ""; width: 100%; height: 100%; display: block; background-color: rgba(0,0,0,.35); top: 0; left: 0; }
+.bg_translucent_k p.sub_title, .bg_translucent_k p.main_title{ color: #fff; }
+.bg_translucent_k h3.main_title{ color: #fff; }
+
+.bg_translucent_w{ position: relative; }
+.bg_translucent_w::after{ position: absolute; content: ""; width: 100%; height: 100%; display: block; background-color: rgba(256,256,256,.35); top: 0; left: 0; }
+.bg_translucent_w p.sub_title{ color: #333; }
+.bg_translucent_w p.btn a{ background-color: #333; border:none; }
+
+/*新增按鈕*/
+.add_new_btn{ font-size: 0.875rem; min-width: 80px; height: 35px; display: inline-block; line-height: 25px; color: #333; cursor: pointer; text-align: center; padding: 5px 10px; /*background-color: #333;*/ border-radius: 4px; margin: 10px auto; border: 1px dashed #333 !important;}
+.add_new_btn:hover{ background-color: rgba(256,256,256,.5);}
+.bg_translucent_k .add_new_btn{ color: #fff; border: 1px #fff dashed;}
+.bg_translucent_k .add_new_btn:hover{ background-color: rgba(256,256,256,.2); }
+
+
+/*選取到的區塊*/
+.the_editBox{ border:1px dashed transparent; padding:0 20px; position: relative; min-height: 30px; }
+.the_editBox:hover{ border-color: #333;}
+.show_lightBox{ position: relative; z-index: 9;}
+.the_editBox_gray{ /*border:1px dashed #a0a0a0;*/ padding:0 20px; text-align: center; min-height: 30px;}
+.the_editBox_gray:hover{ border-color: #333;}
+
+.edit_LightBox{ display: none; position: absolute; z-index: 1; cursor: pointer; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color:rgba(256,256,256,.5); }
+.edit_LightBox a{ font-size: 0.875rem; z-index: 6; position: absolute; top: 50%; left: 50%; min-width: 80px; height: 35px; line-height: 25px; color: #fff; cursor: pointer; text-align: center; padding: 5px 10px; background-color: #333; border-radius: 4px;  margin: -17px 0 0 -40px; }
+.edit_LightBox a.right_delete { font-size: 0.813rem;  right: 0; top: 0; left: initial; margin: 0; min-width: initial; width: 24px; height: 24px; text-align: center; line-height: 24px; border-radius: 0; padding: 0; }
+.show_lightBox:hover .edit_LightBox { display: block; }
+
+
+/*配色方案 下*/
+.template_color_holkee p.btn a{ background-color: #12ccc4;  border-color: transparent;}
+.template_color_holkee .productBox .slider .info a.order{ color: #12ccc4;}
+.template_color_holkee .bg_translucent_k .productBox .slider .info a.order{ background-color: #12ccc4;}
+
+.template_color_pink p.btn a{ background-color: #ff5186;  border-color: transparent;}
+.template_color_pink .productBox .slider .info a.order{ color: #ff5186;}
+.template_color_pink .bg_translucent_k .productBox .slider .info a.order{ background-color: #ff5186;}
+
+.template_color_green p.btn a{ background-color: #8fc320;  border-color: transparent;}
+.template_color_green .productBox .slider .info a.order{ color: #8fc320;}
+.template_color_green .bg_translucent_k .productBox .slider .info a.order{ background-color: #8fc320;}
+.template_color_green .contactBox ul.info li p{ color: #555; }
+.template_color_green .socialBox ul.follow_us_icon li a{ background-color: #8bad42;}
+.template_color_green .textBox, .template_color_green .contactBox, .template_color_green .socialBox{ background-color: #ececec; }
+
+.template_color_purplen p.btn a{ background-color: #826dc7;  border-color: transparent;}
+.template_color_purplen .productBox .slider .info a.order{ color: #826dc7;}
+.template_color_purplen .bg_translucent_k .productBox .slider .info a.order{ background-color: #826dc7;}
+
+
+/*======================= 所有section共用CSS END ================*/
