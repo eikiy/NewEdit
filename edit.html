@@ -1,0 +1,1948 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<title>holkee 全新編輯器</title>
+<meta name='description' content=""/>
+<meta name='keywords' content=""/>
+<meta name="MobileOptimized" content="width">
+<meta name="HandheldFriendly" content="true">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<!-- 右邊網頁所吃的 -->
+<script type="text/javascript" src="on-server/css/fontawesome-all.css.js"></script>
+<link rel="stylesheet" href="on-server/css/fontawesome-all.css">
+<link rel="stylesheet" href="css/style.css"> <!-- 現有網站預設吃的 -->
+<link rel="stylesheet" href="css/edit_style.css"> <!-- 新編輯器內的 -->
+
+
+<link rel="stylesheet" href="css/section-css/style.css">
+<link rel="stylesheet" href="css/section-css/flexslider.css" type="text/css" media="screen" />
+
+  <!-- jQuery -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.min.js">\x3C/script>')</script>
+
+  <!-- FlexSlider -->
+  <script defer src="js/section-js/jquery.flexslider.js"></script>
+
+   <script type="text/javascript">
+    $(function(){
+      SyntaxHighlighter.all();
+    });
+    $(window).load(function(){
+      $('.flexslider').flexslider({
+        animation: "slide",
+        animationLoop: false,
+        itemWidth: 210,
+        itemMargin: 5,
+        minItems: 2,
+        maxItems: 4,
+        start: function(slider){
+          $('body').removeClass('loading');
+        }
+      });
+    });
+  </script>
+
+
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="js/menu.js"></script>
+
+<!-- Magnific Popup core CSS file -->
+<link rel="stylesheet" href="magnific-popup/magnific-popup.css">
+<!-- Magnific Popup core JS file -->
+<script src="magnific-popup/jquery.magnific-popup.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+    $('.popup-link').magnificPopup({
+      removalDelay: 300,
+      mainClass: 'mfp-fade'
+    });
+});
+</script>
+
+
+<!-- Load Facebook SDK for JavaScript -->
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+
+<!-- Place this tag in your head or just before your close body tag. -->
+<script src="https://apis.google.com/js/platform.js" async defer>
+  {lang: 'zh-TW'}
+</script>
+
+
+</head>
+<body ontouchstart="" onmouseover="">
+<header class="HeaderBox">
+    <nav class="Menu ContentsBox clearfix">
+        <h1 class="logo"><a href="index.html">holkee</a></h1>
+        <p class="storage"><span><i class="far fa-clock"></i> 已於1分鐘前儲存 </span><a class="btn" href="#">儲存</a></p>
+        <p class="btn_public"><a class="popup-link" href="#popup">發佈網站</a></p>
+        <ul class="userBox">
+            <!-- header的「通知」在編輯器下的狀態時不會出現，只有在會員中心裡會有 -->
+            <!-- 通知未讀取狀態:淺黃底 -->
+            <!-- 目前想到的狀態一:通知廣告要到期了 -->
+            <!-- 目前想到的狀態二:開通網站，但未做其它事情的提醒，或是不管有沒有做什麼都通知它XD -->
+            <!-- 目前想到的狀態三:行銷EDM 教學之類的(新增最新消息的通知) -->
+            <!-- 目前想到的狀態四:push GMB，提醒user可以透過GMB曝光 -->
+            <!-- 目前想到的狀態五:完成註冊，提醒user可以填寫其他設定已獲的holkee點數 -->
+            <!-- <li class="noticeBox"><a><p><i class="far fa-bell"></i>
+                <span class="text">通知</span>
+                <span class="bell_nb">9</span></p></a>
+                <div class="notificationBox"=>
+                    <div class="top_all_read">
+                        <p><a href="#">全部標示已讀</a></p>
+                    </div>
+                    <div class="listBox">
+                        <div class="notification-item clearfix status-unread">
+                            <div class="left-box">
+                                <div class="photo"><img src="images/icon-hires.jpg" width="100%" alt="holkee 官方"></div>
+                            </div>
+                            <div class="notification-content">
+                                <p class="title">您在【yaya & chacha baby】網站使用的行銷廣告即將到期</p>
+                                <p class="time">1小時前</p>
+                            </div>
+                        </div>
+                        <div class="notification-item clearfix status-unread">
+                            <div class="left-box">
+                                <div class="photo"><img src="images/icon-hires.jpg" width="100%" alt="holkee 官方"></div>
+                            </div>
+                            <div class="notification-content">
+                                <p class="title">恭喜您已成功開通【購物網站】，請填寫更多設定以便消費者使用，點我了解更多</p>
+                                <p class="time">2小時前</p>
+                            </div>
+                        </div>
+                        <div class="notification-item clearfix">
+                            <div class="left-box">
+                                <div class="photo"><img src="images/icon-hires.jpg" width="100%" alt="holkee 官方"></div>
+                            </div>
+                            <div class="notification-content">
+                                <p class="title">【行銷@網頁】★過年瘋團購！用對工具成為消費者年節伴手禮首選！</p>
+                                <p class="time">3小時前</p>
+                            </div>
+                        </div>
+                        <div class="notification-item clearfix">
+                            <div class="left-box">
+                                <div class="photo"><img src="images/icon-hires.jpg" width="100%" alt="holkee 官方"></div>
+                            </div>
+                            <div class="notification-content">
+                                <p class="title">恭喜您成功發布網站【yaya & chacha baby】，免費申請Google商家，以便透過Google 地圖和Google 搜尋，提高您的商家在當地社群中的知名度。</p>
+                                <p class="time">1天前</p>
+                            </div>
+                        </div>
+                        <div class="notification-item clearfix">
+                            <div class="left-box">
+                                <div class="photo"><img src="images/icon-hires.jpg" width="100%" alt="holkee 官方"></div>
+                            </div>
+                            <div class="notification-content">
+                                <p class="title">恭喜您成功註冊holkee，快來獲取更多holkee點數</p>
+                                <p class="time">1天前</p>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="more"><a href="#">顯示全部</a></p>
+                </div>
+            </li> -->
+            <li class="profile_photo">
+                <a><div class="header_profile_img"><img src="https://graph.facebook.com/1324292190919409/picture?width=40&amp;height=40" width="100%"></div>
+                <p class="userName">Eikiy Chang</p></a>
+                <div class="theUserBox">
+                    <ul>
+                        <li><p><a href="#">會員中心</a></p></li>
+                        <li><p><a href="#">最新消息</a></p></li>
+                        <li><p><a href="#">登出</a></p></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="edit_main_contents clearfix">
+    <!-- 小於650px會出現下選單tool -->
+    <section class="the_bottom_tool">
+        <ul class="clearfix">
+            <li><p><a target="_blank" href="preview.html"><i class="fas fa-eye"></i>預覽</a></p></li>
+            <li><p><a class="popup-link" href="#popup"><i class="fas fa-cog"></i>網站設定</a></p></li>
+            <li class="save"><p><a href="#"><i class="fas fa-save"></i>儲存</a></p></li>
+            <li class="release"><p><a class="popup-link" href="#popup"><i class="fas fa-check"></i>發佈</a></p></li>
+        </ul>
+    </section>
+
+    <!-- 左邊選單工具 -->
+    <section class="sideMenu dLeft menu-left">
+        <div class="menu_container">
+        <a class="btn_sideMenu"><p>CLOSE</p></a> <!-- 請幫我變換文字喔 CLOSE / OPEN -->
+
+        <ul class="other_tool clearfix">
+            <li><p><a target="_blank" href="preview.html"><i class="fas fa-eye"></i>預覽網站</a></p></li>
+            <li><p><a class="web_set popup-link" href="#popup"><i class="fas fa-cog"></i>網站設定</a></p></li>
+        </ul>
+        <div class="top_headline first_top">
+            <p>版塊總覽
+                <a class="note" href="#">
+                    <i class="far fa-question-circle"></i>
+                    <span class="note_info">提醒您，目前最多只能新增12個版塊喔！</span>
+                </a>
+            </p>
+        </div>
+
+        <div class="rollingBox">
+            <ul class="mainMenu">
+                <li>
+                    <div class="the_section clearfix">
+                        <i class="icon_move fas fa-bars"></i>
+                        <div class="section_name clearfix">
+                            <h3>Header</h3>
+                            <i class="more_function fas fa-angle-down"></i>
+                        </div>
+                    </div>
+                    <div class="subBox">
+                        <ul class="clearfix">
+                            <li><p><a href="#"><i class="far fa-eye-slash"></i>隱藏</a></p></li>
+                            <li><p><a href="#"><i class="fas fa-pencil-alt"></i>變更命名</a></p></li>
+                            <li><p><a href="#"><i class="far fa-copy"></i>複製</a></p></li>
+                            <li><p><a href="#"><i class="far fa-trash-alt"></i>刪除</a></p></li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="the_hide">
+                    <div class="the_section clearfix">
+                        <i class="icon_move fas fa-bars"></i>
+                        <div class="section_name clearfix">
+                            <h3>Section name1</h3>
+                            <i class="icon_eye_hide far fa-eye-slash" title="此區塊顯示隱藏"></i>
+                            <i class="more_function fas fa-angle-down"></i>
+                        </div>
+                    </div>
+                    <div class="subBox">
+                        <ul class="clearfix">
+                            <li><p><a href="#"><i class="fas fa-eye"></i>顯示</a></p></li>
+                            <li><p><a href="#"><i class="fas fa-pencil-alt"></i>變更命名</a></p></li>
+                            <li><p><a href="#"><i class="far fa-copy"></i>複製</a></p></li>
+                            <li><p><a href="#"><i class="far fa-trash-alt"></i>刪除</a></p></li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="the_section clearfix">
+                        <i class="icon_move fas fa-bars"></i>
+                        <div class="section_name clearfix">
+                            <h3>Section name2</h3>
+                            <i class="more_function fas fa-angle-down"></i>
+                        </div>
+                    </div>
+                    <div class="subBox">
+                        <ul class="clearfix">
+                            <li><p><a href="#"><i class="far fa-eye-slash"></i>隱藏</a></p></li>
+                            <li><p><a href="#"><i class="fas fa-pencil-alt"></i>變更命名</a></p></li>
+                            <li><p><a href="#"><i class="far fa-copy"></i>複製</a></p></li>
+                            <li><p><a href="#"><i class="far fa-trash-alt"></i>刪除</a></p></li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="the_section clearfix">
+                        <i class="icon_move fas fa-bars"></i>
+                        <div class="section_name clearfix">
+                            <h3>About us</h3>
+                            <i class="more_function fas fa-angle-down"></i>
+                        </div>
+                    </div>
+                    <div class="subBox">
+                        <ul class="clearfix">
+                            <li><p><a href="#"><i class="far fa-eye-slash"></i>隱藏</a></p></li>
+                            <li><p><a href="#"><i class="fas fa-pencil-alt"></i>變更命名</a></p></li>
+                            <li><p><a href="#"><i class="far fa-copy"></i>複製</a></p></li>
+                            <li><p><a href="#"><i class="far fa-trash-alt"></i>刪除</a></p></li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="selected">
+                    <div class="the_section clearfix">
+                        <i class="icon_move fas fa-bars"></i>
+                        <div class="edit_title clearfix">
+                            <input type="text" name="" value="Scenery" placeholder="請輸入名稱">
+                            <i class="fas fa-check"></i>
+                        </div>
+                    </div>
+                    <div class="subBox">
+                        <ul class="clearfix">
+                            <li><p><a href="#"><i class="far fa-eye-slash"></i>隱藏</a></p></li>
+                            <li><p><a href="#"><i class="fas fa-pencil-alt"></i>變更命名</a></p></li>
+                            <li><p><a href="#"><i class="far fa-copy"></i>複製</a></p></li>
+                            <li><p><a href="#"><i class="far fa-trash-alt"></i>刪除</a></p></li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="the_section clearfix">
+                        <i class="icon_move fas fa-bars"></i>
+                        <div class="section_name clearfix">
+                            <h3>Follow us</h3>
+                            <i class="more_function fas fa-angle-down"></i>
+                        </div>
+                    </div>
+                    <div class="subBox">
+                        <ul class="clearfix">
+                            <li><p><a href="#"><i class="far fa-eye-slash"></i>隱藏</a></p></li>
+                            <li><p><a href="#"><i class="fas fa-pencil-alt"></i>變更命名</a></p></li>
+                            <li><p><a href="#"><i class="far fa-copy"></i>複製</a></p></li>
+                            <li><p><a href="#"><i class="far fa-trash-alt"></i>刪除</a></p></li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="the_section clearfix">
+                        <i class="icon_move fas fa-bars"></i>
+                        <div class="section_name clearfix">
+                            <h3>Footer</h3>
+                            <i class="more_function fas fa-angle-down"></i>
+                        </div>
+                    </div>
+                    <div class="subBox">
+                        <ul class="clearfix">
+                            <li><p><a href="#"><i class="far fa-eye-slash"></i>隱藏</a></p></li>
+                            <li><p><a href="#"><i class="fas fa-pencil-alt"></i>變更命名</a></p></li>
+                            <li><p><a href="#"><i class="far fa-copy"></i>複製</a></p></li>
+                            <li><p><a href="#"><i class="far fa-trash-alt"></i>刪除</a></p></li>
+                        </ul>
+                    </div>
+                </li>
+
+            </ul>
+            <p class="add_section"><a href="#"><i class="fas fa-plus"></i>新增板塊</a></p>
+
+            <div class="top_headline"><p>外部連結</p></div>
+
+            <ul class="mainMenu">
+                <li>
+                    <div class="the_section clearfix">
+                        <i class="icon_move fas fa-bars"></i>
+                        <div class="section_name clearfix">
+                            <h3>Header</h3>
+                            <i class="more_function fas fa-angle-down"></i>
+                        </div>
+                    </div>
+                    <div class="subBox">
+                        <ul class="clearfix">
+                            <li><p><a class="go_edit_link" href="#"><i class="fas fa-link"></i>編輯網址</a></p></li>
+                            <li><p><a href="#"><i class="far fa-eye-slash"></i>隱藏</a></p></li>
+                            <li><p><a href="#"><i class="fas fa-pencil-alt"></i>變更命名</a></p></li>
+                            <li><p><a href="#"><i class="far fa-trash-alt"></i>刪除</a></p></li>
+                        </ul>
+                        <div class="edit_link clearfix">
+                            <i class="fas fa-link"></i>
+                            <input type="text" name="" value="facebook.com" placeholder="請輸入連結">
+                            <i class="done fas fa-check"></i>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="the_section clearfix">
+                        <i class="icon_move fas fa-bars"></i>
+                        <div class="section_name clearfix">
+                            <h3>Facebook</h3>
+                            <i class="more_function fas fa-angle-down"></i>
+                        </div>
+                    </div>
+                    <div class="subBox">
+                        <ul class="clearfix">
+                            <li><p><a class="go_edit_link" href="#"><i class="fas fa-link"></i>編輯網址</a></p></li>
+                            <li><p><a href="#"><i class="far fa-eye-slash"></i>隱藏</a></p></li>
+                            <li><p><a href="#"><i class="fas fa-pencil-alt"></i>變更命名</a></p></li>
+                            <li><p><a href="#"><i class="far fa-trash-alt"></i>刪除</a></p></li>
+                        </ul>
+                        <div class="edit_link clearfix">
+                            <i class="fas fa-link"></i>
+                            <input type="text" name="" value="facebook.com" placeholder="請輸入連結">
+                            <i class="done fas fa-check"></i>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="the_section clearfix">
+                        <i class="icon_move fas fa-bars"></i>
+                        <div class="section_name clearfix">
+                            <h3>instagram</h3>
+                            <i class="more_function fas fa-angle-down"></i>
+                        </div>
+                    </div>
+                    <div class="subBox">
+                        <ul class="clearfix">
+                            <li><p><a class="go_edit_link" href="#"><i class="fas fa-link"></i>編輯網址</a></p></li>
+                            <li><p><a href="#"><i class="far fa-eye-slash"></i>隱藏</a></p></li>
+                            <li><p><a href="#"><i class="fas fa-pencil-alt"></i>變更命名</a></p></li>
+                            <li><p><a href="#"><i class="far fa-trash-alt"></i>刪除</a></p></li>
+                        </ul>
+                        <div class="edit_link clearfix">
+                            <i class="fas fa-link"></i>
+                            <input type="text" name="" value="facebook.com" placeholder="請輸入連結">
+                            <i class="done fas fa-check"></i>
+                        </div>
+                    </div>
+                </li>
+                <li class="the_hide">
+                    <div class="the_section clearfix">
+                        <i class="icon_move fas fa-bars"></i>
+                        <div class="section_name clearfix">
+                            <h3>SHOP</h3>
+                            <i class="icon_eye_hide far fa-eye-slash" title="此區塊顯示隱藏"></i>
+                            <i class="more_function fas fa-angle-down"></i>
+                        </div>
+                    </div>
+                    <div class="subBox">
+                        <ul class="clearfix">
+                            <li><p><a class="go_edit_link" href="#"><i class="fas fa-link"></i>編輯網址</a></p></li>
+                            <li><p><a href="#"><i class="fas fa-eye"></i>顯示</a></p></li>
+                            <li><p><a href="#"><i class="fas fa-pencil-alt"></i>變更命名</a></p></li>
+                            <li><p><a href="#"><i class="far fa-trash-alt"></i>刪除</a></p></li>
+                        </ul>
+                        <div class="edit_link clearfix">
+                            <i class="fas fa-link"></i>
+                            <input type="text" name="" value="facebook.com" placeholder="請輸入連結">
+                            <i class="done fas fa-check"></i>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="the_section clearfix">
+                        <i class="icon_move fas fa-bars"></i>
+                        <div class="section_name clearfix">
+                            <h3>Line</h3>
+                            <i class="icon_eye_hide far fa-eye-slash" title="此區塊顯示隱藏"></i>
+                            <i class="more_function fas fa-angle-down"></i>
+                        </div>
+                    </div>
+                    <div class="subBox">
+                        <ul class="clearfix">
+                            <li><p><a class="go_edit_link" href="#"><i class="fas fa-link"></i>編輯網址</a></p></li>
+                            <li><p><a href="#"><i class="far fa-eye-slash"></i>隱藏</a></p></li>
+                            <li><p><a href="#"><i class="fas fa-pencil-alt"></i>變更命名</a></p></li>
+                            <li><p><a href="#"><i class="far fa-trash-alt"></i>刪除</a></p></li>
+                        </ul>
+                        <div class="edit_link clearfix">
+                            <i class="fas fa-link"></i>
+                            <input type="text" name="" value="facebook.com" placeholder="請輸入連結">
+                            <i class="done fas fa-check"></i>
+                        </div>
+                    </div>
+                </li>
+                <li class="selected">
+                    <div class="the_section clearfix">
+                        <i class="icon_move fas fa-bars"></i>
+                        <div class="edit_title clearfix">
+                            <input type="text" name="" value="New section" placeholder="請輸入名稱">
+                            <i class="fas fa-check"></i>
+                        </div>
+                    </div>
+                    <div class="subBox">
+                        <ul class="clearfix">
+                            <li><p><a class="go_edit_link" href="#"><i class="fas fa-link"></i>編輯網址</a></p></li>
+                            <li><p><a href="#"><i class="far fa-eye-slash"></i>隱藏</a></p></li>
+                            <li><p><a href="#"><i class="fas fa-pencil-alt"></i>變更命名</a></p></li>
+                            <li><p><a href="#"><i class="far fa-trash-alt"></i>刪除</a></p></li>
+                        </ul>
+                        <div class="edit_link clearfix">
+                            <i class="fas fa-link"></i>
+                            <input type="text" name="" value="facebook.com" placeholder="請輸入連結">
+                            <i class="done fas fa-check"></i>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <p class="add_section"><a href="#"><i class="fas fa-plus"></i>新增連結</a></p>
+        </div>
+        <div class="other_assistance clearfix">
+            <div class="top_headline">
+                <p>功能輔助開關
+                    <a class="note" href="#">
+                        <i class="far fa-question-circle"></i>
+                        <span class="note_info">快速開關「所有選單」或打開網頁上的分享區塊</span>
+                    </a>
+                </p>
+            </div>
+            <!-- <div class="btn_swtich clearfix">
+                <p class="open">按鈕</p>
+                <div class="swtich_type"><input type="checkbox" id="swtich" checked=""><label class="button" for="swtich"></label></div> 
+            </div> -->
+            <div class="btn_swtich clearfix">
+                <p>選單</p>
+                <div class="swtich_type"><input type="checkbox" id="swtich1"><label class="button" for="swtich1"></label></div>
+            </div>
+            <div class="btn_swtich clearfix">
+                <p>分享</p>
+                <div class="swtich_type"><input type="checkbox" id="swtich2"><label class="button" for="swtich2"></label></div>
+            </div>
+        </div>
+        <p class="copyrights">Copyrights Ⓒ 2018 holkee All Rights Reserved.</p>
+        </div>
+    </section>
+
+    <section class="rightEditBox" id="rightEditBox">
+
+        <!-- section：主視覺KV -->
+        <div class="section-wrapper first-section "><!-- bg_translucent_k -->
+            <div class="top_header">
+                <nav class="Menu ContentsBox clearfix">
+                    <!-- <div class="the_editBox show_lightBox">
+                        <div class="edit_LightBox">
+                            <a class="popup-link" href="#popup-imglogo">編輯</a>
+                            <a class=" right_delete popup-link" href="#popup-delete"><i class="fas fa-times"></i></a>
+                        </div>
+                        <div class="logo"><a><img src="images/logo_w.png" alt="holkee"></a></div>
+                    </div> -->
+
+                    <div class="left_logo the_editBox show_lightBox">
+                        <div class="edit_LightBox">
+                            <a class="popup-link" href="#popup-imglogo">編輯</a>
+                        </div>
+                        <div class="logo">
+                            <img src="images/logo_w.png" alt="holkee">
+                        </div>
+                    </div>
+
+                    <div class="TopBox clearfix">
+                        <ul class="top_menu clearfix">
+                            <li><h3><a class="go01">HOME</a></h3></li>
+                            <li><h3><a class="go02">SHOP</a></h3></li>
+                            <li><h3><a class="go03">ABOUT US</a></h3></li>
+                            <li><h3><a class="go04">VIDEO</a></h3></li>
+                            <li><h3><a class="go05">SCENERY</a></h3></li>
+                            <li><h3><a class="go06">CONTACT US</a></h3></li>
+                            <li><h3><a class="go07">follow us</a></h3></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+
+            <div class="section-editor-tools">
+                <div class="btn_item clearfix">
+                    <a class="section-typesetting">版面設定 <i class="fas fa-undo"></i></a><!-- 點了變換版面排版 -->
+                    <a class="section-bg">背景 <i class="more_function fas fa-angle-down"></i></a><!-- 點了展開下面的 bg-editor-Box -->
+                </div>
+                <div class="bg-editor-Box">
+                    <ul class="top_title clearfix">
+                        <li class="open_images"><p><a class="btn_in"><span>圖片</span></a></p></li>
+                        <li class="open_videos"><p><a><span>影片</span></a></p></li>
+                    </ul>
+                    <!-- 顯示圖片 -->
+                    <div class="select-bg-images">
+                        <ul class="background_image clearfix">
+                            <li class="btn_in" style="background-image: url(images/new_site/bg/a_067.jpg);"></li>
+                            <li style="background-image: url(images/new_site/bg/a_066.jpg);"></li>
+                            <li style="background-image: url(images/new_site/bg/a_085.jpg);"></li>
+                            <li style="background-image: url(images/new_site/bg/a_078.jpg);"></li>
+                            <li style="background-image: url(images/new_site/bg/a_083.jpg);"></li>
+                            <li><p class="more"><a href="#"><i class="fas fa-plus"></i>看更多</a></p></li>
+                        </ul>
+                        <div class="btn clearfix">
+                            <p><a href="#">上傳圖片</a>
+                            <a class="FR" href="#">移除</a></p>
+                        </div>
+                    </div>
+                    <!-- 顯示影片 -->
+                    <div class="select-bg-videos">
+                        <ul class="background_image clearfix">
+                            <li class="btn_in" style="background-image: url(images/new_site/bg/a_067.jpg);"><i class="fas fa-video"></i></li>
+                            <li style="background-image: url(images/new_site/bg/a_085.jpg);"><i class="fas fa-video"></i></li>
+                            <li style="background-image: url(images/new_site/bg/a_067.jpg);"><i class="fas fa-video"></i></li>
+                            <li style="background-image: url(images/new_site/bg/a_078.jpg);"><i class="fas fa-video"></i></li>
+                            <li style="background-image: url(images/new_site/bg/a_083.jpg);"><i class="fas fa-video"></i></li>
+                            <li><p class="more"><a href="#"><i class="fas fa-plus"></i>看更多</a></p></li>
+                        </ul>
+                        <div class="btn clearfix">
+                            <p><a class="add-the-video">嵌入影片</a>
+                            <a class="FR">移除</a></p>
+                            <div class="upload_video">
+                                <p>Youtube影片網址</p>
+                                <div class="link clearfix">
+                                    <input type="text" name="" value="https://youtu.be/NCe1Vp1b_wk" placeholder="請輸入Youtube影片網址"><button>上傳</button>
+                                </div>
+                                <p class="note">注意：影片背景將<span>無法在手機或平板設備上播放</span>，只會看到縮圖喔。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg_translucent">
+                        <p class="sub_title">遮罩效果</p>
+                        <ul class="background_image text_position clearfix">
+                            <li class="btn_in bg-k" style="background-image: url(images/new_site/bg/a_066.jpg); "><p>Tt</p></li>
+                            <li class="bg-w" style="background-image: url(images/new_site/bg/a_066.jpg); "><p>Tt</p></li>
+                            <li style="background-image: url(images/new_site/bg/a_066.jpg); "><p>Tt</p></li>
+                        </ul>
+                    </div>
+                    <div class="btn save_main clearfix">
+                        <p><a href="#">取消</a>
+                        <a class="FR done" href="#"><i class="fas fa-check"></i> 儲存</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="mainBox" style=" background-image: url(images/new_site/basket-book-books-6332.jpg);" id="">
+                <div class="ContentsBox">
+                    <div class="the_editBox show_lightBox">
+                        <div class="edit_LightBox">
+                            <a class="popup-link" href="#popup-imglogo">編輯</a>
+                            <a class=" right_delete popup-link" href="#popup-delete"><i class="fas fa-times"></i></a>
+                        </div>
+                        <div class="mainBox_logo"><img src="images/new_site/logo_menu.png"></div>
+                    </div>
+                    <!-- <h2 class="top_title">SHOP</h2>
+                    <div class="the_editBox">
+                        <p class="main_title">Main Title</p>
+                    </div>
+                    <div class="the_editBox">
+                        <p class="sub_title">We Are Cake prides itself on customer satisfaction.</p>
+                    </div>
+
+                    <!-- 有的版型可能一開始沒有放按鈕出來，所以會出現這顆提醒按鈕，看user要不要新增按鈕 -->
+                    <div class="the_editBox_gray">
+                        <a class="add_new_btn popup-link" href="#popup-btn">新增按鈕</a>
+                    </div>
+
+                    <!-- 按鈕的設計好像需要反過來....>> 自己忘記為什麼寫這句話，總有一天會想起來的- -"" -->
+                    <div class="the_editBox show_lightBox">
+                        <div class="edit_LightBox">
+                            <a class="popup-link" href="#popup-btn">編輯</a>
+                            <a class=" right_delete popup-link" href="#popup-delete"><i class="fas fa-times"></i></a>
+                        </div>
+                        <p class="btn">
+                            <a class="go01">More</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- section：productBox-->
+        <div class="section-wrapper bg_translucent_k" id="goThe02"> <!-- 問題 : 思考商品展示這一塊需要讓他可以薪新增圖片 + 半透明嗎? (因為我覺得可能會有一點花俏?) -->
+            <div class="section-editor-tools">
+                <div class="btn_item clearfix">
+                    <a class="section-bg">背景 <i class="more_function fas fa-angle-down"></i></a><!-- 點了展開下面的 bg-editor-Box -->
+                </div>
+                <div class="bg-editor-Box">
+                    <ul class="top_title clearfix">
+                        <li class="open_images"><p><a class="btn_in"><span>圖片</span></a></p></li>
+                        <li class="open_videos"><p><a><span>影片</span></a></p></li>
+                    </ul>
+                    <!-- 顯示圖片 -->
+                    <div class="select-bg-images">
+                        <ul class="background_image clearfix">
+                            <li class="btn_in" style="background-image: url(images/new_site/bg/a_067.jpg);"></li>
+                            <li style="background-image: url(images/new_site/bg/a_066.jpg);"></li>
+                            <li style="background-image: url(images/new_site/bg/a_085.jpg);"></li>
+                            <li style="background-image: url(images/new_site/bg/a_078.jpg);"></li>
+                            <li style="background-image: url(images/new_site/bg/a_083.jpg);"></li>
+                            <li style="background-image: url(images/new_site/bg/a_083.jpg);"></li>
+                            <li><p class="more"><a href="#"><i class="fas fa-plus"></i>看更多</a></p></li>
+                        </ul>
+                        <div class="btn clearfix">
+                            <p><a href="#">上傳圖片</a>
+                            <a class="FR" href="#">移除</a></p>
+                        </div>
+                    </div>
+                    <!-- 顯示影片 -->
+                    <div class="select-bg-videos">
+                        <!-- <ul class="background_image clearfix">
+                            <li class="btn_in" style="background-image: url(images/new_site/bg/a_067.jpg);"><i class="fas fa-video"></i></li>
+                            <li style="background-image: url(images/new_site/bg/a_085.jpg);"><i class="fas fa-video"></i></li>
+                            <li style="background-image: url(images/new_site/bg/a_067.jpg);"><i class="fas fa-video"></i></li>
+                            <li style="background-image: url(images/new_site/bg/a_078.jpg);"><i class="fas fa-video"></i></li>
+                            <li style="background-image: url(images/new_site/bg/a_083.jpg);"><i class="fas fa-video"></i></li>
+                            <li><p class="more"><a href="#"><i class="fas fa-plus"></i>看更多</a></p></li>
+                        </ul> -->
+                        <div class="btn clearfix">
+                            <p><a class="add-the-video">嵌入影片</a>
+                            <a class="FR">移除</a></p>
+                            <div class="upload_video">
+                                <p>Youtube影片網址</p>
+                                <div class="link clearfix">
+                                    <input type="text" name="" value="https://youtu.be/NCe1Vp1b_wk" placeholder="請輸入Youtube影片網址"><button>上傳</button>
+                                </div>
+                                <p class="note">注意：影片背景將<span>無法在手機或平板設備上播放</span>，只會看到縮圖喔。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg_translucent">
+                        <p class="sub_title">遮罩效果</p>
+                        <ul class="background_image text_position clearfix">
+                            <li class="btn_in bg-k" style="background-image: url(images/new_site/bg/a_066.jpg); "><p>Tt</p></li>
+                            <li class="bg-w" style="background-image: url(images/new_site/bg/a_066.jpg); "><p>Tt</p></li>
+                            <li style="background-image: url(images/new_site/bg/a_066.jpg); "><p>Tt</p></li>
+                        </ul>
+                    </div>
+                    <div class="btn save_main clearfix">
+                        <p><a href="#">取消</a>
+                        <a class="FR done" href="#"><i class="fas fa-check"></i> 儲存</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="productBox" style=" background-image: url(images/new_site/basket-book-books-6332.jpg);">
+                <div class="ContentsBox">
+                    <div class="box-contents">
+                        <div class="the_editBox">
+                            <h3 class="main_title">Shop</h3>
+                        </div>
+                        <div class="the_editBox">
+                            <p class="sub_title">We Are Cake prides itself on customer satisfaction.</p>
+                        </div>
+                    </div>
+                    <div class="the_editBox show_lightBox">
+                        <div class="edit_LightBox">
+                            <a class="popup-link" href="#popup-product">編輯</a>
+                        </div>
+                        <div class="slider">
+                        <div class="flexslider carousel">
+                          <ul class="slides">
+                            <li>
+                                <a href="https://www.holkee.com/shop/Sandyshop" target="_blank" class="good_photo"><img src="images/new_site/tasty_food_005.jpg" /></a>
+                                <div class="info">
+                                    <div class="goods_name"><p>WEOJ Cake  $6.5</p></div>
+                                    <div class="goods_buy"><p><a class="order" href="https://www.holkee.com/shop/Sandyshop" target="_blank">Order</a></p></div>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="https://www.holkee.com/shop/Sandyshop" target="_blank" class="good_photo"><img src="images/new_site/countdown_party_04.jpg" /></a>
+                                <div class="info">
+                                    <div class="goods_name"><p>Wedding Cake $29</p></div>
+                                    <div class="goods_buy"><p><a class="order" href="https://www.holkee.com/shop/Sandyshop" target="_blank">Order</a></p></div>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="https://www.holkee.com/shop/Sandyshop" target="_blank" class="good_photo"><img src="images/new_site/sp_09.jpg" /></a>
+                                <div class="info">
+                                    <div class="goods_name"><p>WEOJ Cake $14.5</p></div>
+                                    <div class="goods_buy"><p><a class="order" href="https://www.holkee.com/shop/Sandyshop" target="_blank">Order</a></p></div>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="https://www.holkee.com/shop/Sandyshop" target="_blank" class="good_photo"><img src="images/new_site/arranged-art-background-1061577.jpg" /></a>
+                                <div class="info">
+                                    <div class="goods_name"><p>WEOJ Cake $10</p></div>
+                                    <div class="goods_buy"><p><a class="order" href="https://www.holkee.com/shop/Sandyshop" target="_blank">Order</a></p></div>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="https://www.holkee.com/shop/Sandyshop" target="_blank" class="good_photo"><img src="images/new_site/tasty_food_006.jpg" /></a>
+                                <div class="info">
+                                    <div class="goods_name"><p>WEOJ Cake  $6.5</p></div>
+                                    <div class="goods_buy"><p><a class="order" href="https://www.holkee.com/shop/Sandyshop" target="_blank">Order</a></p></div>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="https://www.holkee.com/shop/Sandyshop" target="_blank" class="good_photo"><img src="images/new_site/tasty_food_004.jpg" /></a>
+                                <div class="info">
+                                    <div class="goods_name"><p>WEOJ Cake  $6.5</p></div>
+                                    <div class="goods_buy"><p><a class="order" href="https://www.holkee.com/shop/Sandyshop" target="_blank">Order</a></p></div>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="https://www.holkee.com/shop/Sandyshop" target="_blank" class="good_photo"><img src="images/new_site/tasty_food_008.jpg" /></a>
+                                <div class="info">
+                                    <div class="goods_name"><p>Wedding Cake $29</p></div>
+                                    <div class="goods_buy"><p><a class="order" href="https://www.holkee.com/shop/Sandyshop" target="_blank">Order</a></p></div>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="https://www.holkee.com/shop/Sandyshop" target="_blank" class="good_photo"><img src="images/new_site/tasty_food_007.jpg" /></a>
+                                <div class="info">
+                                    <div class="goods_name"><p>WEOJ Cake $22</p></div>
+                                    <div class="goods_buy"><p><a class="order" href="https://www.holkee.com/shop/Sandyshop" target="_blank">Order</a></p></div>
+                                </div>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- section：textBox-->
+        <div class="section-wrapper bg_translucent_w" id="goThe03">
+            <div class="section-editor-tools">
+                <div class="btn_item clearfix">
+                    <a class="section-typesetting">版面設定 <i class="fas fa-undo"></i></a><!-- 點了變換版面排版 -->
+                    <a class="section-bg">背景 <i class="more_function fas fa-angle-down"></i></a><!-- 點了展開下面的 bg-editor-Box -->
+                </div>
+                <div class="bg-editor-Box">
+                    <ul class="top_title clearfix">
+                        <li class="open_images"><p><a class="btn_in"><span>圖片</span></a></p></li>
+                        <li class="open_videos"><p><a><span>影片</span></a></p></li>
+                    </ul>
+                    <!-- 顯示圖片 -->
+                    <div class="select-bg-images">
+                        <ul class="background_image clearfix">
+                            <li class="btn_in" style="background-image: url(images/new_site/bg/a_067.jpg);"></li>
+                            <li style="background-image: url(images/new_site/bg/a_066.jpg);"></li>
+                            <li style="background-image: url(images/new_site/bg/a_085.jpg);"></li>
+                            <li style="background-image: url(images/new_site/bg/a_078.jpg);"></li>
+                            <li style="background-image: url(images/new_site/bg/a_083.jpg);"></li>
+                            <li><p class="more"><a href="#"><i class="fas fa-plus"></i>看更多</a></p></li>
+                        </ul>
+                        <div class="btn clearfix">
+                            <p><a href="#">上傳圖片</a>
+                            <a class="FR" href="#">移除</a></p>
+                        </div>
+                    </div>
+                    <!-- 顯示影片 -->
+                    <div class="select-bg-videos">
+                        <ul class="background_image clearfix">
+                            <li class="btn_in" style="background-image: url(images/new_site/bg/a_067.jpg);"><i class="fas fa-video"></i></li>
+                            <li style="background-image: url(images/new_site/bg/a_085.jpg);"><i class="fas fa-video"></i></li>
+                            <li style="background-image: url(images/new_site/bg/a_067.jpg);"><i class="fas fa-video"></i></li>
+                            <li style="background-image: url(images/new_site/bg/a_078.jpg);"><i class="fas fa-video"></i></li>
+                            <li style="background-image: url(images/new_site/bg/a_083.jpg);"><i class="fas fa-video"></i></li>
+                            <li><p class="more"><a href="#"><i class="fas fa-plus"></i>看更多</a></p></li>
+                        </ul>
+                        <div class="btn clearfix">
+                            <p><a class="add-the-video">嵌入影片</a>
+                            <a class="FR">移除</a></p>
+                            <div class="upload_video">
+                                <p>Youtube影片網址</p>
+                                <div class="link clearfix">
+                                    <input type="text" name="" value="https://youtu.be/NCe1Vp1b_wk" placeholder="請輸入Youtube影片網址"><button>上傳</button>
+                                </div>
+                                <p class="note">注意：影片背景將<span>無法在手機或平板設備上播放</span>，只會看到縮圖喔。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg_translucent">
+                        <p class="sub_title">遮罩效果</p>
+                        <ul class="background_image text_position clearfix">
+                            <li class="btn_in bg-k" style="background-image: url(images/new_site/bg/a_066.jpg); "><p>Tt</p></li>
+                            <li class="bg-w" style="background-image: url(images/new_site/bg/a_066.jpg); "><p>Tt</p></li>
+                            <li style="background-image: url(images/new_site/bg/a_066.jpg); "><p>Tt</p></li>
+                        </ul>
+                    </div>
+                    <div class="btn save_main clearfix">
+                        <p><a href="#">取消</a>
+                        <a class="FR done" href="#"><i class="fas fa-check"></i> 儲存</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="textBox">
+                <div class="ContentsBox clearfix">
+                    <div class="lBox">
+                        <div class="the_editBox show_lightBox">
+                            <div class="edit_LightBox">
+                                <a class="popup-link" href="#popup-img-link">編輯</a>
+                            </div>
+                            <div class="foodBox">
+                                <img src="images/new_site/building-business-clothing-176837.jpg" width="100%">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rBox">
+                        <div>
+                        <div class="the_editBox">
+                            <h3 class="main_title">About Us</h3>
+                        </div>
+                        <div class="the_editBox">
+                            <p class="sub_title">We Are Cake prides itself on customer satisfaction. "Making People happy" isn't just our tag line it is how we want every one of our customer to feel when they choose us for the special events in their lives. Create a special memory with one of our custom cakes.<br>
+                            <br>
+                            We Are Cake was founded as a way to combine creativity, hard work and a passion for baking quality cakes and cupcakes. In the beginning it started with a simple desire to make family and friends events special with hand made delicious cakes creatively decorated to match one-of-a-kind themes. After multiple requests from friends and relatives to do the same for their events lead to the realization that not only did people love the cakes but we loved to do it for them. This has been the perfect recipe for a successful business.</p>
+                        </div>
+
+                        <!-- 刪除按鈕時會出現 -->
+                        <div class="the_editBox_gray">
+                            <a class="add_new_btn popup-link" href="#popup-btn">新增按鈕</a>
+                        </div>
+                        <!-- 如果有按鈕的狀態 -->
+                        <div class="the_editBox show_lightBox">
+                            <div class="edit_LightBox">
+                                <a class="popup-link" href="#popup-btn">編輯</a>
+                                <a class=" right_delete popup-link" href="#popup-delete"><i class="fas fa-times"></i></a>
+                            </div>
+                            <p class="btn">
+                                <a class="go01">More</a>
+                            </p>
+                        </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- section：videoBox-->
+        <div class="section-wrapper bg_translucent_w" id="goThe04">
+            <div class="section-editor-tools">
+                <div class="btn_item clearfix">
+                    <a class="section-typesetting">版面設定 <i class="fas fa-undo"></i></a><!-- 點了變換版面排版 -->
+                    <a class="section-bg">背景 <i class="more_function fas fa-angle-down"></i></a><!-- 點了展開下面的 bg-editor-Box -->
+                </div>
+                <div class="bg-editor-Box">
+                    <ul class="top_title clearfix">
+                        <li class="open_images"><p><a class="btn_in"><span>圖片</span></a></p></li>
+                        <li class="open_videos"><p><a><span>影片</span></a></p></li>
+                    </ul>
+                    <!-- 顯示圖片 -->
+                    <div class="select-bg-images">
+                        <ul class="background_image clearfix">
+                            <li class="btn_in" style="background-image: url(images/new_site/bg/a_067.jpg);"></li>
+                            <li style="background-image: url(images/new_site/bg/a_066.jpg);"></li>
+                            <li style="background-image: url(images/new_site/bg/a_085.jpg);"></li>
+                            <li style="background-image: url(images/new_site/bg/a_078.jpg);"></li>
+                            <li style="background-image: url(images/new_site/bg/a_083.jpg);"></li>
+                            <li><p class="more"><a href="#"><i class="fas fa-plus"></i>看更多</a></p></li>
+                        </ul>
+                        <div class="btn clearfix">
+                            <p><a href="#">上傳圖片</a>
+                            <a class="FR" href="#">移除</a></p>
+                        </div>
+                    </div>
+                    <!-- 顯示影片 -->
+                    <div class="select-bg-videos">
+                        <ul class="background_image clearfix">
+                            <li class="btn_in" style="background-image: url(images/new_site/bg/a_067.jpg);"><i class="fas fa-video"></i></li>
+                            <li style="background-image: url(images/new_site/bg/a_085.jpg);"><i class="fas fa-video"></i></li>
+                            <li style="background-image: url(images/new_site/bg/a_067.jpg);"><i class="fas fa-video"></i></li>
+                            <li style="background-image: url(images/new_site/bg/a_078.jpg);"><i class="fas fa-video"></i></li>
+                            <li style="background-image: url(images/new_site/bg/a_083.jpg);"><i class="fas fa-video"></i></li>
+                            <li><p class="more"><a href="#"><i class="fas fa-plus"></i>看更多</a></p></li>
+                        </ul>
+                        <div class="btn clearfix">
+                            <p><a class="add-the-video">嵌入影片</a>
+                            <a class="FR">移除</a></p>
+                            <div class="upload_video">
+                                <p>Youtube影片網址</p>
+                                <div class="link clearfix">
+                                    <input type="text" name="" value="https://youtu.be/NCe1Vp1b_wk" placeholder="請輸入Youtube影片網址"><button>上傳</button>
+                                </div>
+                                <p class="note">注意：影片背景將<span>無法在手機或平板設備上播放</span>，只會看到縮圖喔。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg_translucent">
+                        <p class="sub_title">遮罩效果</p>
+                        <ul class="background_image text_position clearfix">
+                            <li class="btn_in bg-k" style="background-image: url(images/new_site/bg/a_066.jpg); "><p>Tt</p></li>
+                            <li class="bg-w" style="background-image: url(images/new_site/bg/a_066.jpg); "><p>Tt</p></li>
+                            <li style="background-image: url(images/new_site/bg/a_066.jpg); "><p>Tt</p></li>
+                        </ul>
+                    </div>
+                    <div class="btn save_main clearfix">
+                        <p><a href="#">取消</a>
+                        <a class="FR done" href="#"><i class="fas fa-check"></i> 儲存</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <section class="videoBox" style="background-image: url(images/new_site/blueberries-colors-cup-955451.jpg)">
+                <div class="ContentsBox">
+                    <div class="the_editBox">
+                        <h3 class="main_title">VIDEO</h3>
+                    </div>
+                    <div class="the_editBox">
+                        <p class="sub_title">Make sure to add links to the icons!</p>
+                    </div>
+                    <div class="the_editBox show_lightBox">
+                        <div class="edit_LightBox">
+                            <a class="popup-link" href="#popup-videolink">編輯</a>
+                        </div>
+                        <div class="youtubeBox">
+                            <iframe src="https://www.youtube.com/embed/4WSoP6X7_Z8?rel=0&amp;showinfo=0&amp;start=5" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- google map 和 360度環景地圖 -->
+        <div class="section-wrapper" id="goThe05">
+            <div class="map_box">
+                <div class="the_editBox show_lightBox">
+                    <div class="edit_LightBox">
+                        <a class="popup-link" href="#popup-map360">編輯</a>
+                    </div>
+                        <iframe src="https://www.google.com/maps/embed?pb=!4v1530762701821!6m8!1m7!1sCAoSLEFGMVFpcE9CcmExT2tpdGhDQTZrOVN6TFFPRnFSWUtvRGcweWlXVzZvcU5n!2m2!1d25.082055351345!2d121.48006461508!3f110.33!4f0!5f0.5970117501821992"  frameborder="0" style="border:0" allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </div>
+
+        <!-- section：contactBox -->
+        <div class="section-wrapper" id="goThe06">
+            <div class="section-editor-tools">
+                <div class="btn_item clearfix">
+                    <a class="section-typesetting">版面設定 <i class="fas fa-undo"></i></a><!-- 點了變換版面排版 -->
+                    <a class="section-bg">背景 <i class="more_function fas fa-angle-down"></i></a><!-- 點了展開下面的 bg-editor-Box -->
+                </div>
+                <div class="bg-editor-Box">
+                    <ul class="top_title clearfix">
+                        <li class="open_images"><p><a class="btn_in"><span>圖片</span></a></p></li>
+                        <li class="open_videos"><p><a><span>影片</span></a></p></li>
+                    </ul>
+                    <!-- 顯示圖片 -->
+                    <div class="select-bg-images">
+                        <ul class="background_image clearfix">
+                            <li class="btn_in" style="background-image: url(images/new_site/bg/a_067.jpg);"></li>
+                            <li style="background-image: url(images/new_site/bg/a_066.jpg);"></li>
+                            <li style="background-image: url(images/new_site/bg/a_085.jpg);"></li>
+                            <li style="background-image: url(images/new_site/bg/a_078.jpg);"></li>
+                            <li style="background-image: url(images/new_site/bg/a_083.jpg);"></li>
+                            <li><p class="more"><a href="#"><i class="fas fa-plus"></i>看更多</a></p></li>
+                        </ul>
+                        <div class="btn clearfix">
+                            <p><a href="#">上傳圖片</a>
+                            <a class="FR" href="#">移除</a></p>
+                        </div>
+                    </div>
+                    <!-- 顯示影片 -->
+                    <div class="select-bg-videos">
+                        <ul class="background_image clearfix">
+                            <li class="btn_in" style="background-image: url(images/new_site/bg/a_067.jpg);"><i class="fas fa-video"></i></li>
+                            <li style="background-image: url(images/new_site/bg/a_085.jpg);"><i class="fas fa-video"></i></li>
+                            <li style="background-image: url(images/new_site/bg/a_067.jpg);"><i class="fas fa-video"></i></li>
+                            <li style="background-image: url(images/new_site/bg/a_078.jpg);"><i class="fas fa-video"></i></li>
+                            <li style="background-image: url(images/new_site/bg/a_083.jpg);"><i class="fas fa-video"></i></li>
+                            <li><p class="more"><a href="#"><i class="fas fa-plus"></i>看更多</a></p></li>
+                        </ul>
+                        <div class="btn clearfix">
+                            <p><a class="add-the-video">嵌入影片</a>
+                            <a class="FR">移除</a></p>
+                            <div class="upload_video">
+                                <p>Youtube影片網址</p>
+                                <div class="link clearfix">
+                                    <input type="text" name="" value="https://youtu.be/NCe1Vp1b_wk" placeholder="請輸入Youtube影片網址"><button>上傳</button>
+                                </div>
+                                <p class="note">注意：影片背景將<span>無法在手機或平板設備上播放</span>，只會看到縮圖喔。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg_translucent">
+                        <p class="sub_title">遮罩效果</p>
+                        <ul class="background_image text_position clearfix">
+                            <li class="btn_in bg-k" style="background-image: url(images/new_site/bg/a_066.jpg); "><p>Tt</p></li>
+                            <li class="bg-w" style="background-image: url(images/new_site/bg/a_066.jpg); "><p>Tt</p></li>
+                            <li style="background-image: url(images/new_site/bg/a_066.jpg); "><p>Tt</p></li>
+                        </ul>
+                    </div>
+                    <div class="btn save_main clearfix">
+                        <p><a href="#">取消</a>
+                        <a class="FR done" href="#"><i class="fas fa-check"></i> 儲存</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="contactBox">
+                <div class="ContentsBox clearfix">
+                    <div class="rBox">
+                        <div class="the_editBox">
+                            <h3 class="main_title  ">Contact Us</h3>
+                        </div>
+                        <div class="the_editBox">
+                            <p class="sub_title">Make sure to add links to the icons!</p>
+                        </div>
+                        <div class="the_editBox show_lightBox">
+                            <div class="edit_LightBox">
+                                <a class="popup-link" href="#popup-contact">編輯</a>
+                            </div>
+                            <ul class="info">
+                                <li><p class="add">No.5, Ziqiang 3rd Rd., Lingya Dist., Kaohsiung City 802, Taiwan (R.O.C.)</p></li>
+                                <li><p class="photo">07-566-8818</p></li>
+                                <li><p class="time">10:00 AM - 11:30 PM</p></li>
+                                <li><p class="mail"><a href="#">Babyonepieces@service.com</a></p></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="lBox">
+                        <div class="mapBox">
+                            <div class="map_default">
+                                <p><span>Google Map 請以網頁預覽為準</span></p>
+                            </div>
+                            <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.0031035081465!2d121.5622835145973!3d25.03396874444757!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442abb6da9c9e1f%3A0x1206bcf082fd10a6!2zMTEw5Y-w5YyX5biC5L-h576p5Y2A5L-h576p6Lev5LqU5q61N-iZn-WPsOWMlzEwMeWkp-aokw!5e0!3m2!1szh-TW!2stw!4v1530765183608" frameborder="0" style="border:0" allowfullscreen></iframe> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- section：FormBox 簡易表單 -->
+        <div class="section-wrapper bg_translucent_k">
+            <div class="section-editor-tools">
+                <div class="btn_item clearfix">
+                    <a class="section-typesetting">版面設定 <i class="fas fa-undo"></i></a><!-- 點了變換版面排版 -->
+                    <a class="section-bg">背景 <i class="more_function fas fa-angle-down"></i></a><!-- 點了展開下面的 bg-editor-Box -->
+                </div>
+                <div class="bg-editor-Box">
+                    <ul class="top_title clearfix">
+                        <li class="open_images"><p><a class="btn_in"><span>圖片</span></a></p></li>
+                        <li class="open_videos"><p><a><span>影片</span></a></p></li>
+                    </ul>
+                    <!-- 顯示圖片 -->
+                    <div class="select-bg-images">
+                        <ul class="background_image clearfix">
+                            <li class="btn_in" style="background-image: url(images/new_site/bg/a_067.jpg);"></li>
+                            <li style="background-image: url(images/new_site/bg/a_066.jpg);"></li>
+                            <li style="background-image: url(images/new_site/bg/a_085.jpg);"></li>
+                            <li style="background-image: url(images/new_site/bg/a_078.jpg);"></li>
+                            <li style="background-image: url(images/new_site/bg/a_083.jpg);"></li>
+                            <li><p class="more"><a href="#"><i class="fas fa-plus"></i>看更多</a></p></li>
+                        </ul>
+                        <div class="btn clearfix">
+                            <p><a href="#">上傳圖片</a>
+                            <a class="FR" href="#">移除</a></p>
+                        </div>
+                    </div>
+                    <!-- 顯示影片 -->
+                    <div class="select-bg-videos">
+                        <ul class="background_image clearfix">
+                            <li class="btn_in" style="background-image: url(images/new_site/bg/a_067.jpg);"><i class="fas fa-video"></i></li>
+                            <li style="background-image: url(images/new_site/bg/a_085.jpg);"><i class="fas fa-video"></i></li>
+                            <li style="background-image: url(images/new_site/bg/a_067.jpg);"><i class="fas fa-video"></i></li>
+                            <li style="background-image: url(images/new_site/bg/a_078.jpg);"><i class="fas fa-video"></i></li>
+                            <li style="background-image: url(images/new_site/bg/a_083.jpg);"><i class="fas fa-video"></i></li>
+                            <li><p class="more"><a href="#"><i class="fas fa-plus"></i>看更多</a></p></li>
+                        </ul>
+                        <div class="btn clearfix">
+                            <p><a class="add-the-video">嵌入影片</a>
+                            <a class="FR">移除</a></p>
+                            <div class="upload_video">
+                                <p>Youtube影片網址</p>
+                                <div class="link clearfix">
+                                    <input type="text" name="" value="https://youtu.be/NCe1Vp1b_wk" placeholder="請輸入Youtube影片網址"><button>上傳</button>
+                                </div>
+                                <p class="note">注意：影片背景將<span>無法在手機或平板設備上播放</span>，只會看到縮圖喔。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg_translucent">
+                        <p class="sub_title">遮罩效果</p>
+                        <ul class="background_image text_position clearfix">
+                            <li class="btn_in bg-k" style="background-image: url(images/new_site/bg/a_066.jpg); "><p>Tt</p></li>
+                            <li class="bg-w" style="background-image: url(images/new_site/bg/a_066.jpg); "><p>Tt</p></li>
+                            <li style="background-image: url(images/new_site/bg/a_066.jpg); "><p>Tt</p></li>
+                        </ul>
+                    </div>
+                    <div class="btn save_main clearfix">
+                        <p><a href="#">取消</a>
+                        <a class="FR done" href="#"><i class="fas fa-check"></i> 儲存</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="FormBox" style=" background-image: url(images/new_site/action-carefree-cropland-1146242.jpg);">
+                <div class="ContentsBox clearfix">
+                    <div class="the_editBox">
+                        <h3 class="main_title">Stories & Updates</h3>
+                    </div>
+                    <div class="the_editBox">
+                        <p class="sub_title">Sign up for occasional stories and updates!</p>
+                    </div>
+                    <div class="the_editBox show_lightBox">
+                        <div class="edit_LightBox">
+                            <a class="popup-link" href="#popup-form_simple">編輯</a>
+                        </div>
+                        <form class="form_simple">
+                            <input type="" name="" placeholder="姓名">
+                            <input type="" name="" placeholder="E-Mail">
+                            <textarea placeholder="您想跟我們說些什麼呢?"></textarea>
+                            <p class="btn">
+                                <a class="" href="#">SUBMIT</a>
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- section：followBox -->
+        <div class="section-wrapper" id="goThe07">
+            <div class="section-editor-tools">
+                <div class="btn_item clearfix">
+                    <a class="section-typesetting">版面設定 <i class="fas fa-undo"></i></a><!-- 點了變換版面排版 -->
+                    <a class="section-bg">背景 <i class="more_function fas fa-angle-down"></i></a><!-- 點了展開下面的 bg-editor-Box -->
+                </div>
+                <div class="bg-editor-Box">
+                    <ul class="top_title clearfix">
+                        <li class="open_images"><p><a class="btn_in"><span>圖片</span></a></p></li>
+                        <li class="open_videos"><p><a><span>影片</span></a></p></li>
+                    </ul>
+                    <!-- 顯示圖片 -->
+                    <div class="select-bg-images">
+                        <ul class="background_image clearfix">
+                            <li class="btn_in" style="background-image: url(images/new_site/bg/a_067.jpg);"></li>
+                            <li style="background-image: url(images/new_site/bg/a_066.jpg);"></li>
+                            <li style="background-image: url(images/new_site/bg/a_085.jpg);"></li>
+                            <li style="background-image: url(images/new_site/bg/a_078.jpg);"></li>
+                            <li style="background-image: url(images/new_site/bg/a_083.jpg);"></li>
+                            <li><p class="more"><a href="#"><i class="fas fa-plus"></i>看更多</a></p></li>
+                        </ul>
+                        <div class="btn clearfix">
+                            <p><a href="#">上傳圖片</a>
+                            <a class="FR" href="#">移除</a></p>
+                        </div>
+                    </div>
+                    <!-- 顯示影片 -->
+                    <div class="select-bg-videos">
+                        <ul class="background_image clearfix">
+                            <li class="btn_in" style="background-image: url(images/new_site/bg/a_067.jpg);"><i class="fas fa-video"></i></li>
+                            <li style="background-image: url(images/new_site/bg/a_085.jpg);"><i class="fas fa-video"></i></li>
+                            <li style="background-image: url(images/new_site/bg/a_067.jpg);"><i class="fas fa-video"></i></li>
+                            <li style="background-image: url(images/new_site/bg/a_078.jpg);"><i class="fas fa-video"></i></li>
+                            <li style="background-image: url(images/new_site/bg/a_083.jpg);"><i class="fas fa-video"></i></li>
+                            <li><p class="more"><a href="#"><i class="fas fa-plus"></i>看更多</a></p></li>
+                        </ul>
+                        <div class="btn clearfix">
+                            <p><a class="add-the-video">嵌入影片</a>
+                            <a class="FR">移除</a></p>
+                            <div class="upload_video">
+                                <p>Youtube影片網址</p>
+                                <div class="link clearfix">
+                                    <input type="text" name="" value="https://youtu.be/NCe1Vp1b_wk" placeholder="請輸入Youtube影片網址"><button>上傳</button>
+                                </div>
+                                <p class="note">注意：影片背景將<span>無法在手機或平板設備上播放</span>，只會看到縮圖喔。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg_translucent">
+                        <p class="sub_title">遮罩效果</p>
+                        <ul class="background_image text_position clearfix">
+                            <li class="btn_in bg-k" style="background-image: url(images/new_site/bg/a_066.jpg); "><p>Tt</p></li>
+                            <li class="bg-w" style="background-image: url(images/new_site/bg/a_066.jpg); "><p>Tt</p></li>
+                            <li style="background-image: url(images/new_site/bg/a_066.jpg); "><p>Tt</p></li>
+                        </ul>
+                    </div>
+                    <div class="btn save_main clearfix">
+                        <p><a href="#">取消</a>
+                        <a class="FR done" href="#"><i class="fas fa-check"></i> 儲存</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="socialBox" id="goThe06">
+                <div class="box-contents">
+                    <div class="the_editBox">
+                        <h3 class="main_title">Connect With Us</h3>
+                    </div>
+                    <div class="the_editBox">
+                        <p class="sub_title">Make sure to add links to the icons!</p>
+                    </div>
+                    <div class="the_editBox show_lightBox">
+                        <div class="edit_LightBox">
+                            <a class="popup-link" href="#popup4">編輯</a>
+                        </div>
+                        <ul class="follow_us_icon">
+                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                            <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                            <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+                            <li><a href="#"><i class="fab fa-weixin"></i></a></li>
+                            <li><a href="#"><i class="fab fa-line"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- section：s-footerBox -->
+        <div class="section-wrapper">
+            <div class="s-footerBox">
+                <p class="powered_holkee"><a href="#">Powered by <span class="logo">holkee</span></a></p>
+                <div class="box-contents clearfix">
+                    <div class="the_editBox show_lightBox">
+                        <div class="edit_LightBox">
+                            <a class="popup-link" href="#popup-share">編輯</a>
+                        </div>
+                        <ul class="share-tools">
+                            <li><!-- 參考說明 : https://developers.facebook.com/docs/plugins/share-button -->
+                                <div class="fb-share-button" data-href="https://www.your-domain.com/your-page.html" data-layout="button_count"></div>
+                            </li>
+                            <li><!-- 參考說明 : https://developer.twitter.com/en/docs/twitter-for-websites/tweet-button/overview.html -->
+                               <iframe id="twitter-widget-1" scrolling="no" frameborder="0" allowtransparency="true" class="twitter-share-button twitter-share-button-rendered twitter-tweet-button" style="position: static; visibility: visible; width: 60px; height: 20px;" title="Twitter Tweet Button" src="https://platform.twitter.com/widgets/tweet_button.b510f289fb017e5dfdc7fdb287a0ae4b.en.html#dnt=false&amp;id=twitter-widget-1&amp;lang=en&amp;original_referer=https%3A%2F%2Fdeveloper.twitter.com%2Fen%2Fdocs%2Ftwitter-for-websites%2Ftweet-button%2Foverview.html&amp;size=m&amp;text=Guides%20%E2%80%94%20Twitter%20Developers&amp;time=1536658379407&amp;type=share&amp;url=https%3A%2F%2Fdeveloper.twitter.com%2Fen%2Fdocs%2Ftwitter-for-websites%2Ftweet-button%2Foverview.html"></iframe>
+                            </li>
+                            <li><!-- 參考說明 : https://developers.google.com/+/web/share/ -->
+                                <!-- Place this tag where you want the share button to render. -->
+                                <div class="g-plus" data-action="share"></div>
+                            </li>
+                            <li>
+                                <!-- 參考說明 : https://media.line.me/zh_TW/how_to_install -->
+                                <div class="line-it-button" data-lang="zh_Hant" data-type="share-a" data-url="https://media.line.me/zh_TW/how_to_install" style="display: none;"></div>
+                                <script src="https://d.line-scdn.net/r/web/social-plugin/js/thirdparty/loader.min.js" async="async" defer="defer"></script>
+                            </li>
+                            <li>
+                                <!-- 參考說明 : http://open.weibo.com/sharebutton 、 http://jssdk.sinaapp.com/widget/share.php-->
+                                <html xmlns:wb="http://open.weibo.com/wb">
+                                <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
+                                <wb:share-button addition="simple" type="button"></wb:share-button></script>
+                            </li>
+                            <!-- <li></li>唯信的我還不知道怎麼寫，好像沒有網頁版本的套件按鈕? = =? -->
+                        </ul>
+                    </div>
+                    <div class="the_editBox">
+                        <p>Copyrights © 2018 All Rights Reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 網站設定 -->
+    <div id="popup" class="white-popup mfp-hide">
+        <form class="setBox">
+            <div class="top_title">
+                <h3>網站設定</h3>
+                <p>這些設定在搜尋引擎中佔有非常重要的地位，快讓您的網站更完整吧！</p>
+            </div>
+            <div class="fillinBox">
+                <ul>
+                    <li>
+                        <label for="website_title"><p class="label_title">網站名稱</p></label>
+                        <input id="website_title" name="website_title" type="text">
+                    </li>
+                    <li>
+                        <label for="web_description"><p class="label_title">網站描述</p></label>
+                        <textarea id="web_description"></textarea>
+                        <p class="the_reminder">請用幾句句子介紹一下您的網頁。當網站被分享至臉書時，將會顯示這些簡介喔！(最大長度180個字符)</p>
+                    </li>
+                    <li>
+                        <label for="web_keywords"><p class="label_title">網站標籤</p></label>
+                        <input id="web_keywords" name="web_keywords" type="text">
+                        <p class="the_reminder">請用頓號隔開(範例：holkee, 行動商機, 免費模板... )</p>
+                    </li>
+                    <li>
+                        <label for="site_category"><p class="label_title">類別</p></label>
+                        <div class="styled-select">
+                            <select class="md-input" name="site_category" required="" data-parsley-min="1" data-parsley-min-message="請選擇分類">
+                                <option value="0" selected="selected" class="gray">請選擇分類</option>
+                                <option value="17">零售與百貨(線上購物.批發.買賣相關)</option>
+                                <option value="13">法律與政府(法律及政府相關)</option>
+                                <option value="14">新聞、媒體與出版社</option>
+                                <option value="15">節慶與禮品(婚禮.生日.派對.喪禮相關)</option>
+                                <option value="16">房地產(房屋買賣.搬遷相關)</option>
+                                <option value="1">藝術與娛樂(活動.表演.展覽相關)</option>
+                                <option value="18">體育運動(健身.體育運動用品相關)</option>
+                                <option value="19">旅行與旅遊(住宿.行程安排相關)</option>
+                                <option value="20">交通工具(飛機.船.車輛買賣修繕相關)</option>
+                                <option value="21">個人用途(名片.履歷.節慶賀卡)</option>
+                                <option value="12">工作與教育(工作招聘.教育培訓.留學)</option>
+                                <option value="11">網路及電信(電話.衛星.網路相關)</option>
+                                <option value="2">美容及個人護理(美妝.保養.時尚相關)</option>
+                                <option value="3">商業與工業(農林漁牧.工商服務業)</option>
+                                <option value="4">電腦及消費類電子產品(3C產品.軟硬體設備)</option>
+                                <option value="5">餐飲與夜生活(餐廳.速食店.夜店.酒吧)</option>
+                                <option value="6">家庭與社區(育嬰.宗教信仰.社區服務相關)</option>
+                                <option value="7">財經(金融業相關)</option>
+                                <option value="8">健康(醫療.生技相關)</option>
+                                <option value="9">愛好、休閒與遊戲(興趣嗜好相關)</option>
+                                <option value="10">家居與園藝(家具.家電.園藝相關)</option>
+                                <option value="22">非營利用途(志工招募.公益服務相關)</option>
+                            </select>
+                        </div>
+                    </li>
+                    <li>
+                        <p class="label_title">上傳分享圖</p>
+                        <div class="shareBox clearfix">
+                            <a class="the_img" href="#"><img src="images/share_img_default.jpg" width="100%" alt="holkee 分享示意圖"></a>
+                            <p class="the_reminder">分享圖將會顯示您於FB、Line、Google、Twitter分享連結時出現的圖示。<br>
+                            (圖片大小要在600x600或以上。)  <a href="#">上傳圖片</a></p>
+                        </div>
+                    </li>
+                </ul>
+                <p class="btn_default"><a class="popup-link" href="#popup3">儲存修改</a></p>
+            </div>
+        </form>
+    </div>
+
+    <!-- 發佈置網站 -->
+    <div id="popup3" class="white-popup mfp-hide">
+        <form class="setBox">
+            <div class="top_title">
+                <h3>發佈完成</h3>
+                <p>網站已經成功發佈，查看您的網站並分享給大家吧！</p>
+            </div>
+            <div class="fillinBox">
+                <ul class="published">
+                    <li>
+                        <h3 class="website_title">User設定的品牌官網名稱</h3>
+                    </li>
+                    <li>
+                        <div class="copy_link clearfix">
+                            <input id="" name="" type="text" value="https://www.holkee.com/jdjwi2iqeje">
+                            <a class="copy" href="#">複製連結</a>
+                        </div>
+                        <p class="the_reminder"><a href="#">想要擁有自己的品牌網域嗎?</a></p>
+                    </li>
+                    <li>
+                        <div class="amp_qrcode">
+                            <a href="#"><img src="images/qrcode.png" width="100%"></a>
+                        </div>
+                        <p class="the_reminder">請以手機掃描QR CODE開啟，體驗<span class="blue">AMP</span>極速快感！</p>
+                    </li>
+                    <li>
+                        <div class="shareBox">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-line"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-weixin"></i></a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </form>
+    </div>
+
+    <!-- 社群連結 設定 -->
+    <div id="popup4" class="white-popup mfp-hide">
+        <form class="setBox">
+            <div class="top_title">
+                <h3>社群連結設定</h3>
+                <p>善用社群串連，從裏到外到一起整合到其他社群！</p>
+            </div>
+            <div class="fillinBox">
+                <ul class="socialBox_list clearfix">
+                    <li class="clearfix">
+                        <div class="left_title">
+                            <i class="fab fa-facebook-f"></i>Facebook
+                        </div>
+                        <div class="link_input">
+                            <input type="text" name="" value="#">
+                            <i class="fas fa-times-circle"></i>
+                        </div>
+                    </li>
+                    <li class="clearfix">
+                        <div class="left_title">
+                            <i class="fab fa-twitter"></i>Twitter
+                        </div>
+                        <div class="link_input">
+                            <input type="text" name="" value="#">
+                            <i class="fas fa-times-circle"></i>
+                        </div>
+                    </li>
+                    <li class="clearfix">
+                        <div class="left_title">
+                            <i class="fab fa-instagram"></i>Instagram
+                        </div>
+                        <div class="link_input">
+                            <input type="text" name="" value="#">
+                            <i class="fas fa-times-circle"></i>
+                        </div>
+                    </li>
+                    <li class="clearfix">
+                        <div class="left_title">
+                            <i class="fab fa-youtube"></i>Youtube
+                        </div>
+                        <div class="link_input">
+                            <input type="text" name="" value="#">
+                            <i class="fas fa-times-circle"></i>
+                        </div>
+                    </li>
+                    <li class="clearfix">
+                        <div class="left_title">
+                            <i class="fab fa-google-plus-g"></i>Google
+                        </div>
+                        <div class="link_input">
+                            <input type="text" name="" value="#">
+                            <i class="fas fa-times-circle"></i>
+                        </div>
+                    </li>
+                    <li class="clearfix">
+                        <div class="left_title">
+                            <i class="fab fa-weixin"></i>Weixin
+                        </div>
+                        <div class="link_input">
+                            <input type="text" name="" value="#">
+                            <i class="fas fa-times-circle"></i>
+                        </div>
+                    </li>
+                    <li class="clearfix">
+                        <div class="left_title">
+                            <i class="fab fa-line"></i>Line
+                        </div>
+                        <div class="link_input">
+                            <input type="text" name="" value="#">
+                            <i class="fas fa-times-circle"></i>
+                        </div>
+                    </li>
+                    <li class="clearfix">
+                        <div class="left_title">
+                            <i class="fab fa-pinterest"></i>Pinterest
+                        </div>
+                        <div class="link_input">
+                            <input type="text" name="" value="#">
+                            <i class="fas fa-times-circle"></i>
+                        </div>
+                    </li>
+                    <!-- <li class="clearfix">
+                        <div class="left_title">
+                            <i class="fab fa-yahoo"></i>Yahoo
+                        </div>
+                        <div class="link_input">
+                            <input type="text" name="" value="#">
+                            <i class="fas fa-times-circle"></i>
+                        </div>
+                    </li> -->
+                    <li class="clearfix">
+                        <div class="left_title">
+                            <i class="fab fa-linkedin"></i>Linkedin
+                        </div>
+                        <div class="link_input">
+                            <input type="text" name="" value="#">
+                            <i class="fas fa-times-circle"></i>
+                        </div>
+                    </li>
+                </ul>
+                <div class="fillinBox">
+                    <p class="btn_default">
+                        <a class="color_gray" href="#">關閉</a>
+                        <a class="popup-link " href="#">套用設定</a>
+                    </p>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- Contact 聯絡資訊 設定 -->
+    <div id="popup-contact" class="white-popup mfp-hide">
+        <form class="setBox">
+            <div class="top_title">
+                <h3>聯絡資訊設定</h3>
+                <p>填寫完整資訊，讓訪客更容易與您聯繫</p>
+            </div>
+            <div class="fillinBox">
+                <ul>
+                    <li>
+                        <label for=""><p class="label_title"><i class="fas fa-map-marker-alt"></i>　地址</p></label>
+                        <input id="" name="" type="text" value="No.5, Ziqiang 3rd Rd., Lingya Dist., Kaohsiung City 802, Taiwan (R.O.C.)">
+                        <p class="the_reminder">地址會自動帶入google map地圖資訊，建議填寫完整喔!</p>
+                    </li>
+                    <li>
+                        <label for=""><p class="label_title"><i class="fas fa-phone"></i>　電話</p></label>
+                        <input id="" name="" type="text" value="07-566-8818">
+                    </li>
+                    <li>
+                        <label for=""><p class="label_title"><i class="fas fa-clock"></i>　營業時間</p></label>
+                        <input id="" name="" type="text" value="10:00 AM - 11:30 PM">
+                        <!-- <textarea id="">10:00 AM - 11:30 PM</textarea> -->
+                    </li>
+                    <li>
+                        <label for=""><p class="label_title"><i class="fas fa-envelope"></i>　信箱</p></label>
+                        <input id="" name="" type="text" value="Babyonepieces@service.com">
+                    </li>
+                    <!-- 以下行為AMP做不到 -->
+                    <!-- <li>
+                        <label for=""><p class="label_title">地圖顯示名稱</p></label>
+                        <input id="" name="" type="text" value="holkee">
+                    </li>
+                    <li>
+                        <label for=""><p class="label_title">地圖地點描述</p></label>
+                        <textarea id=""></textarea>
+                        <p class="the_reminder">地點描述為顯示於google map上的描述說明</p>
+                    </li> -->
+                </ul>
+                <div class="fillinBox">
+                    <p class="btn_default">
+                        <a class="color_gray" href="#">關閉</a>
+                        <a class="popup-link " href="#">套用設定</a>
+                    </p>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- 簡易表單 設定 -->
+    <div id="popup-form_simple" class="white-popup mfp-hide">
+        <form class="setBox">
+            <div class="top_title">
+                <h3>表單設定</h3>
+                <!-- <p>填寫完整資訊，讓訪客更容易與您聯繫</p> -->
+            </div>
+            <div class="fillinBox form_simpleBox">
+                <ul>
+                    <li>
+                        <label for=""><p class="label_title">請填寫輸入框的提醒語</p></label>
+                        <input class="l_title" type="text" value="姓名">
+                    </li>
+                    <li>
+                        <input class="l_title" type="text" value="E-Mail">
+                    </li>
+                    <li>
+                        <input class="l_title" type="text" value="您想跟我們說些什麼呢?">
+                    </li>
+                    <li>
+                        <label for=""><p class="label_title">按鈕文字</p></label>
+                        <input class="r_info" type="text" value="SUBMIT">
+                    </li>
+                   <!--  <li>
+                        <div class="both clearfix">
+                            <input class="l_title" type="text" value="姓名">
+                            <input class="r_info" type="text" value="E-Mail">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="both clearfix">
+                            <input class="l_title" type="text" value="E-Mail">
+                            <input class="r_info" class="r_info" type="text" value="">
+                        </div>
+                    </li> -->
+                    <!-- <li>
+                        <input type="text" value="您想說些什麼?">
+                        <textarea></textarea>
+                    </li> -->
+                </ul>
+                <div class="fillinBox">
+                    <p class="btn_default">
+                        <a class="color_gray" href="#">關閉</a>
+                        <a class="popup-link " href="#">套用設定</a>
+                    </p>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- video link 設定 -->
+    <div id="popup-videolink" class="white-popup mfp-hide">
+        <form class="setBox">
+            <div class="top_title">
+                <h3>影片網址設定</h3>
+                <p>透過影片提升行銷宣傳力</p>
+            </div>
+            <div class="fillinBox">
+                <ul>
+                    <li>
+                        <label for=""><p class="label_title">請貼上影片分享連結</p></label>
+                        <input type="text" name="" value="https://youtu.be/4WSoP6X7_Z8">
+                        <p class="the_reminder">請輸入影片URL：Facebook、Youtube、instagram</p>
+                        <!-- <p class="the_reminder">Youtube URL 產生操作步驟：<br>
+                            (1) 進入 Youtube，搜尋想載入的影片。<br>
+                            (2) 複製您影片網址，例如：https://www.youtube.com/watch?v=xxxxxxxxxx<br>
+                            (3) 或複製下方「分享」裡的短網址，例如：https://youtu.be/xxxxxxxxxxxx<br>
+                            Facebook video URL 產生操作步驟：<br>
+                            (1) 進入 Facebook，搜尋想載入的影片。<br>
+                            (2) 在影音處點一下滑鼠「右鍵」會出現「顯示影片網址」，複製您影片網址，例如：https://www.facebook.com/FirstMediaBlossom/videos/xxxxxxxxxxx/<br>
+                            (3) 或以 FB APP 登入後，點「分享」會看到「複製連結」的功能，複製您影片網址。</p> -->
+                    </li>
+                </ul>
+                <!-- <p class="for_pop_note color_red"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> 讀取失敗，請重新填寫</p>
+                <p class="for_pop_note"><i class="fa fa-check-circle" aria-hidden="true"></i> 讀取完成</p> -->
+                <div class="fillinBox">
+                    <p class="btn_default">
+                        <a class="color_gray" href="#">關閉</a>
+                        <a class="popup-link " href="#">套用設定</a>
+                    </p>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- 按鈕設定 -->
+    <div id="popup-btn" class="white-popup mfp-hide">
+        <form class="setBox edit_button">
+            <div class="top_title">
+                <h3>按鈕設定</h3>
+            </div>
+            <div class="fillinBox">
+                <ul class="clearfix">
+                    <li>
+                        <label for=""><p class="label_title">連結網址</p></label>
+                        <input type="text" name="" value="#2">
+                    </li>
+                    <li>
+                        <label for=""><p class="label_title">顯示文字</p></label>
+                        <input type="text" name="" value="More">
+                    </li>
+                </ul>
+                <p class="target_blank"><input type="checkbox">您要在新分頁開啟？</p>
+                <p class="the_reminder">
+                            (1) 連結網址：輸入完整網址 https:www.holkee.com<br>
+                            (2) E-mail設定：輸入 mailto:yourmail@gmail.com 即可連結到您的E-mail信箱<br>
+                            (3) 版塊位置：輸入「#2」即可連結至此網頁的第二板塊位置</p>
+                <div class="fillinBox">
+                    <p class="btn_default">
+                        <a class="color_gray" href="#">關閉</a>
+                        <a class="popup-link" href="#">套用設定</a>
+                    </p>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- map360 設定 -->
+    <div id="popup-map360" class="white-popup mfp-hide">
+        <form class="setBox">
+            <div class="top_title">
+                <h3>Google環景設定</h3>
+                <p>利用店家環景打造互動式導覽服務</p>
+            </div>
+            <div class="fillinBox">
+                <ul>
+                    <li>
+                        <label for=""><p class="label_title">請貼上Google地圖程式碼</p></label>
+                        <textarea id="" name="" type="text"><iframe src="https://www.google.com/maps/embed?pb=!4v1537349476118!6m8!1m7!1sCAoSLEFGMVFpcE9CcmExT2tpdGhDQTZrOVN6TFFPRnFSWUtvRGcweWlXVzZvcU5n!2m2!1d25.082055351345!2d121.48006461508!3f110.33!4f0!5f0.4125900490817119" frameborder="0" style="border:0" allowfullscreen></iframe></textarea>
+                        <p class="the_reminder">請於<a href="https://www.google.com/maps/" target="_blank">googla map</a> 搜尋您的地點，點選「選單」 ，並選擇「分享或嵌入地圖」 ，選擇於 「嵌入地圖」 並 「複製 HTML」於此上方欄位貼上。</p>
+                    </li>
+                </ul>
+                <!-- <p class="for_pop_note color_red"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> 讀取失敗，請重新填寫</p>
+                <p class="for_pop_note"><i class="fa fa-check-circle" aria-hidden="true"></i> 讀取完成</p> -->
+                <div class="fillinBox">
+                    <p class="btn_default">
+                        <a class="color_gray" href="#">關閉</a>
+                        <a class="popup-link " href="#">套用設定</a>
+                    </p>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- 刪除 確定 -->
+    <div id="popup-delete" class="white-popup mfp-hide popup-w-s">
+        <form class="setBox">
+            <div class="top_title">
+                <h3>刪除確認</h3>
+                <p>刪除此區塊，別擔心，在編輯器內區塊還是會保留在，隨時可新增回來喔。</p>
+            </div>
+            <div class="fillinBox">
+                <div class="fillinBox">
+                    <p class="btn_default">
+                        <a class="color_gray" href="#">取消</a>
+                        <a class="popup-link " href="#">確定</a>
+                    </p>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- 分享設定 -->
+    <div id="popup-share" class="white-popup mfp-hide">
+        <form class="setBox">
+            <div class="top_title">
+                <h3>分享設定</h3>
+                <p>讓訪客輕鬆快速分享您的網站</p>
+            </div>
+            <div class="fillinBox">
+                <ul class="shareBox_list clearfix">
+                    <li>
+                        <input type="checkbox" name="" value="Facebook">
+                        <label class="fb" for="Facebook"><i class="fab fa-facebook-square"></i>Share</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="" value="Twitter">
+                        <label class="twitter" for="Twitter"><i class="fab fa-twitter"></i>Share</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="" value="Google">
+                        <label class="google" for="Google"><i class="fab fa-google-plus-g"></i>Share</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="" value="Line">
+                        <label class="line" for="Line"><i class="fab fa-line"></i>用LINE傳送</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="" value="Line">
+                        <label class="weibo" for="Line">分享</label>
+                    </li>
+                </ul>
+                <div class="fillinBox">
+                    <p class="btn_default">
+                        <a class="color_gray" href="#">關閉</a>
+                        <a class="popup-link " href="#">套用設定</a>
+                    </p>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- 上傳圖片 設定 -->
+    <div id="popup-img-link" class="white-popup mfp-hide">
+        <form class="setBox">
+            <div class="top_title">
+                <h3>圖片設定</h3>
+            </div>
+            <div class="fillinBox">
+                <!-- <div class="img_upload">
+                    <a href="#"><p><i class="images far fa-images"></i>上傳圖片</p></a>
+                    <p class="the_reminder">提示：請確保您的圖片解析度，建議圖片規格：1000x1000 / JPG 或 PNG以上。</p>
+                </div> -->
+                <div class="img_upload">
+                    <a href="#">
+                        <div class="the_btn">
+                            <p>
+                                <span href="#"><i class="fas fa-undo-alt"></i>更新</span>
+                            </p>
+                        </div>
+                        <img src="images/new_site/test22.jpg" style="vertical-align: middle;"></a>
+                    <p class="the_reminder">提示：請確保您的圖片解析度，建議圖片規格：1000x1000 / JPG 或 PNG以上。</p>
+                </div>
+                <p class="for_pop_note color_red"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> 尺寸錯誤</p>
+                <p class="for_pop_note color_red"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> 上傳失敗，請重新選取</p>
+                <p class="for_pop_note"><i class="fa fa-check-circle" aria-hidden="true"></i> 上傳完成</p>
+                <div class="fillinBox">
+                    <p class="btn_default">
+                        <a class="color_gray" href="#">關閉</a>
+                        <a class="popup-link" href="#">套用設定</a>
+                    </p>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- 上傳logo圖片 -->
+    <div id="popup-imglogo" class="white-popup mfp-hide">
+        <form class="setBox">
+            <div class="top_title">
+                <h3>圖片設定</h3>
+            </div>
+            <div class="fillinBox">
+                <!-- <div class="img_upload">
+                    <a href="#"><p><i class="images far fa-images"></i>上傳圖片</p></a>
+                    <p class="the_reminder">提示：請確保您的圖片解析度，建議圖片規格：1000x1000 / JPG 或 PNG以上。</p>
+                </div> -->
+                <div class="img_upload">
+                    <a href="#">
+                        <div class="the_btn">
+                            <p>
+                                <span href="#"><i class="fas fa-undo-alt"></i>更新</span>
+                            </p>
+                        </div>
+                        <img src="images/new_site/logo_menu.png" style="vertical-align: middle;"></a>
+                    <p class="the_reminder">提示：請確保您的圖片解析度，建議圖片規格：500x1000 / JPG 或 PNG以上。</p>
+                </div>
+                <p class="for_pop_note color_red"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> 尺寸錯誤</p>
+                <p class="for_pop_note color_red"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> 上傳失敗，請重新選取</p>
+                <p class="for_pop_note"><i class="fa fa-check-circle" aria-hidden="true"></i> 上傳完成</p>
+                <div class="fillinBox">
+                    <p class="btn_default">
+                        <a class="color_gray" href="#">關閉</a>
+                        <a class="popup-link" href="#">套用設定</a>
+                    </p>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- product/幻燈片 設定 -->
+    <div id="popup-product" class="white-popup mfp-hide">
+        <div class="setBox slide_Photo">
+            <div class="top_title">
+                <h3>幻燈片設定</h3>
+            </div>
+            <ul class="Photo_list clearfix">
+                <li>
+                    <span class="list_nb">1</span>
+                    <div class="photo">
+                        <div class="the_btn">
+                            <p>
+                                <a href="#"><i class="fas fa-undo-alt"></i>更新</a>
+                                <a href="#"><i class="fas fa-trash-alt"></i>刪除</a>
+                            </p>
+                        </div>
+                        <img src="images/new_site/kitchen_adventurer_caramel.jpg" style="vertical-align: middle;">
+                    </div>
+                    <div class="product_fillinBox">
+                        <input type="" name="" value="WEOJ Cake  $6.5">
+                        <input type="" name="" value="Order" placeholder="按鈕文字">
+                        <input type="" name="" value="#" placeholder="連結">
+                    </div>
+                </li>
+                <li>
+                    <span class="list_nb">2</span>
+                    <div class="photo">
+                        <div class="the_btn">
+                            <p>
+                                <a href="#"><i class="fas fa-undo-alt"></i>更新</a>
+                                <a href="#"><i class="fas fa-trash-alt"></i>刪除</a>
+                            </p>
+                        </div>
+                        <img src="images/new_site/arranged-art-background-1061577.jpg" style="vertical-align: middle;">
+                    </div>
+                    <div class="product_fillinBox">
+                        <input type="" name="" value="Wedding Cake $29">
+                        <input type="" name="" value="Order" placeholder="按鈕文字">
+                        <input type="" name="" value="#" placeholder="連結">
+                    </div>
+                </li>
+                <li>
+                    <span class="list_nb">3</span>
+                    <div class="photo">
+                        <div class="the_btn">
+                            <p>
+                                <a href="#"><i class="fas fa-undo-alt"></i>更新</a>
+                                <a href="#"><i class="fas fa-trash-alt"></i>刪除</a>
+                            </p>
+                        </div>
+                        <img src="images/new_site/bk_001_01.jpg" style="vertical-align: middle;">
+                    </div>
+                    <div class="product_fillinBox">
+                        <input type="" name="" value="WEOJ Cake  $6.5">
+                        <input type="" name="" value="" placeholder="按鈕文字">
+                        <input type="" name="" value="" placeholder="連結">
+                    </div>
+                </li>
+                <li>
+                    <span class="list_nb">4</span>
+                    <div class="photo">
+                        <div class="the_btn">
+                            <p>
+                                <a href="#"><i class="fas fa-undo-alt"></i>更新</a>
+                                <a href="#"><i class="fas fa-trash-alt"></i>刪除</a>
+                            </p>
+                        </div>
+                        <img src="images/new_site/test22.jpg" style="vertical-align: middle;">
+                    </div>
+                    <div class="product_fillinBox">
+                        <input type="" name="" value="Wedding Cake $29">
+                        <input type="" name="" value="" placeholder="按鈕文字">
+                        <input type="" name="" value="" placeholder="連結">
+                    </div>
+                </li>
+                <li>
+                    <span class="list_nb">5</span>
+                    <div class="photo">
+                        <div class="the_btn">
+                            <p>
+                                <a href="#"><i class="fas fa-undo-alt"></i>更新</a>
+                                <a href="#"><i class="fas fa-trash-alt"></i>刪除</a>
+                            </p>
+                        </div>
+                        <img src="images/new_site/blackberry-blur-cake-1070850.jpg" style="vertical-align: middle;">
+                    </div>
+                    <div class="product_fillinBox">
+                        <input type="" name="" value="WEOJ Cake  $6.5">
+                        <input type="" name="" value="Order" placeholder="按鈕文字">
+                        <input type="" name="" value="https://www.holkee.com/shop/eshop" placeholder="連結">
+                    </div>
+                </li>
+                <li class="none_move">
+                    <div class="photo">
+                        <div class="img_upload">
+                            <a class="img_upload" href="#"><p><i class="images fas fa-upload"></i>新增</p></a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <p class="the_reminder">提示：若按鈕文字與連結欄位未填寫，按鈕則不會顯示喔！<br>並請確保您的圖片解析度，建議圖片規格：1000x1000 / JPG 或 PNG以上。</p>
+            <p class="for_pop_note color_red"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> 上傳失敗，請重新選取</p>
+            <!-- <p class="for_pop_note"><i class="fa fa-check-circle" aria-hidden="true"></i> 上傳完成</p> -->
+            <p class="btn_default">
+                <a class="color_gray" href="#">關閉</a>
+                <a class="popup-link " href="#">套用設定</a>
+            </p>
+        </div>
+    </div>
+
+</main>
+
+</body>
+</html>
+
+
+

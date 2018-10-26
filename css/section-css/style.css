@@ -1,0 +1,226 @@
+
+/*===== start ======*/
+/*======================= 所有section共用CSS ================*/
+
+.ContentsBox{ max-width: 1200px; margin: 0 auto; min-width: 320px; z-index: 9;}
+.box-contents{ width: calc(100% - 30px); max-width: 1200px; margin: 0 auto; min-width: 320px; position: relative; z-index: 9;}
+
+/*main_contents*/
+h2.top_title{text-align: center; font-size: 40px;}
+h3.main_title{text-align: center; font-size: 1.750rem; padding: 15px 0;}
+p.sub_title{ text-align: center; margin: 0 auto; max-width: 1000px; padding: 10px 0; }
+p.btn{ text-align: center;}
+p.btn a{  cursor: pointer; color: #fff; display: inline-block; padding: 12px 25px; border:1px solid #fff; min-width: 130px; }
+p.btn a:hover{ background-color: #fff; color: #333; }
+
+/*半透明遮罩 有選擇才會蓋上去*/
+.bg_translucent_k{ position: relative; }
+.bg_translucent_k::after{ position: absolute; content: ""; width: 100%; height: 100%; display: block; background-color: rgba(0,0,0,.35); top: 0; left: 0; }
+.bg_translucent_k p.sub_title, .bg_translucent_k p.main_title{ color: #fff; }
+.bg_translucent_k h3.main_title{ color: #fff; }
+
+.bg_translucent_w{ position: relative; }
+.bg_translucent_w::after{ position: absolute; content: ""; width: 100%; height: 100%; display: block; background-color: rgba(256,256,256,.35); top: 0; left: 0; }
+.bg_translucent_w p.sub_title{ color: #333; }
+.bg_translucent_w p.btn a{ background-color: #333; border:none; }
+
+/*======================= 所有section共用CSS END ================*/
+
+
+/*新增按鈕*/
+.add_new_btn{ font-size: 0.875rem; min-width: 80px; height: 35px; display: inline-block; line-height: 25px; color: #333; cursor: pointer; text-align: center; padding: 5px 10px; /*background-color: #333;*/ border-radius: 4px; margin: 10px auto; border: 1px dashed #333 !important;}
+.add_new_btn:hover{ background-color: rgba(256,256,256,.5);}
+.bg_translucent_k .add_new_btn{ color: #fff; border: 1px #fff dashed;}
+.bg_translucent_k .add_new_btn:hover{ background-color: rgba(256,256,256,.2); }
+
+
+/*選取到的區塊*/
+.the_editBox{ border:1px dashed transparent; padding:0 20px; position: relative; min-height: 30px; }
+.the_editBox:hover{ border-color: #333;}
+.show_lightBox{ position: relative; z-index: 9;}
+.the_editBox_gray{ /*border:1px dashed #a0a0a0;*/ padding:0 20px; text-align: center; min-height: 30px;}
+.the_editBox_gray:hover{ border-color: #333;}
+
+.edit_LightBox{ display: none; position: absolute; z-index: 1; cursor: pointer; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color:rgba(256,256,256,.5); }
+.edit_LightBox a{ font-size: 0.875rem; z-index: 6; position: absolute; top: 50%; left: 50%; min-width: 80px; height: 35px; line-height: 25px; color: #fff; cursor: pointer; text-align: center; padding: 5px 10px; background-color: #333; border-radius: 4px;  margin: -17px 0 0 -40px; }
+.edit_LightBox a.right_delete { font-size: 0.813rem;  right: 0; top: 0; left: initial; margin: 0; min-width: initial; width: 24px; height: 24px; text-align: center; line-height: 24px; border-radius: 0; padding: 0; }
+.show_lightBox:hover .edit_LightBox { display: block; }
+
+
+/* 拆開css ------ top_header */
+.top_header{ width: 100%; padding: 12px 0; position: absolute; top: 0; left: 0; z-index: 50;
+background: -moz-linear-gradient(top, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.5) 1%, rgba(0,0,0,0.01) 99%, rgba(0,0,0,0) 100%);
+background: -webkit-linear-gradient(top, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0.5) 1%,rgba(0,0,0,0.01) 99%,rgba(0,0,0,0) 100%);
+background: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0.5) 1%,rgba(0,0,0,0.01) 99%,rgba(0,0,0,0) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80000000', endColorstr='#00000000',GradientType=0 ); }
+
+.top_header .left_logo{ max-width: 180px; float: left; position: relative; }
+.top_header .logo{ width:100%; text-decoration: none;}
+.top_header .logo a{ cursor: pointer; color: #666; width: 100%; height: 50px; display: block;}
+.top_header .logo img{ max-width: 100%; max-height: 100%; }
+.top_header .TopBox{ width: 100%; float: right; max-width: calc(100% - 190px);}
+.top_header .TopBox ul.top_menu{ width: 100%; text-align: right;  padding-top: 6px; }
+.top_header .TopBox ul.top_menu li{display: inline-block; margin: 0 4px;}
+.top_header .TopBox ul.top_menu li h3{ font-size: 17px; line-height: 22px; }
+.top_header .TopBox ul.top_menu li h3 a{ color: #fff; padding: 8px 10px; cursor: pointer;display: inline-block;  -moz-border-radius: 30px; -webkit-border-radius: 30px; border-radius: 30px;}
+.top_header .TopBox ul.top_menu li h3 a:hover{ background-color: #fff; color: #333; }
+
+@media (max-width:1220px){
+	.top_header .TopBox ul.top_menu li h3{ font-size: 16px; }
+	.top_header .TopBox ul.top_menu li h3 a{ padding: 8px 12px; }
+}
+@media (max-width:1000px){
+	.top_header .TopBox ul.top_menu li h3{font-size: 15px;}
+}
+/* 拆開css ------ top_header END */
+
+
+
+/* 拆開css ------ mainBox */
+.mainBox{ width: 100%; padding: 50px 0; height: calc(100vh - 62px); min-height: 500px; overflow-y: hidden; background-size: cover; background-repeat: no-repeat; background-position: center center; display: -webkit-flex; display: flex; -webkit-align-items: center; align-items: center; -webkit-justify-content: center; justify-content: center; background-attachment: fixed;}
+.mainBox .ContentsBox{ z-index: 9; }
+.mainBox p{ color: #333; }
+.mainBox_logo{ max-width: 500px; margin: 0 auto;/* margin-bottom: 30px;*/ }
+.mainBox_logo img{ max-width: 100%; min-height: 100%; }
+@media (max-device-width:1200px) {
+	.mainBox{ background-attachment: initial;}
+}
+@media (max-device-width:700px) { /*如果是影片背景，就要控制他的手機板，背景圖片呈現*/
+	.mainBox{ background: url(../images/basket-book-books-6332.jpg) center center no-repeat;}
+}
+/* 拆開css ------ mainBox END */
+
+
+/* 拆開css ------ productBox */
+.productBox{ width: 100%; padding: 50px 0; /* background-color: #eee;*/ } /*底色需要下在最外層*/
+.productBox .ContentsBox{ max-width: 100%; width: 100%; }
+.productBox .slider { width: 100%; overflow-x: hidden; padding-top: 40px; z-index: 9;}
+.productBox .slider .info{ text-align: center; padding: 20px 0; }
+.productBox .slider .info .goods_name{padding-bottom: 10px;}
+.productBox .slider .info a.order{ color: #655; border-bottom: 1px solid; }
+.productBox .slider .info a.order:hover{ border:none; }
+.productBox .slider .info a.good_photo{display: block;}
+.productBox .slider ul li{ transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;}
+.productBox .slider ul li:hover{ opacity: .9; }
+
+.bg_translucent_k .productBox .slider .info .goods_name p{ color: #fff; }
+.bg_translucent_k .productBox .slider .info a.order{ color: #fff; background-color: #333; padding: 10px; border-radius: 4px;  display: inline-block; min-width: 100px; border:none; }
+/* 拆開css ------ productBox END */
+
+
+/* 拆開css ------ textBox */
+.textBox{ width: 100%; padding: 50px 0; min-height: calc(100vh - 100px); display: -webkit-flex; display: flex; -webkit-align-items: center; align-items: center; -webkit-justify-content: center; justify-content: center;}
+.textBox .lBox{ float: left; width: 50%; height: 100%; }
+.textBox .rBox{ float: left; width: 50%; height: 100%; display: -webkit-flex; display: flex; -webkit-align-items: center; align-items: center; -webkit-justify-content: center; justify-content: center;}
+.textBox .foodBox{ width: 100%; height: 400px; border-radius: 5px; overflow: hidden; display: block; padding: 20px 0;}
+.textBox .foodBox{/*width: 90%;*/ height: 100%; }
+.textBox h3.main_title{/* font-size: 22px;*/ padding: 40px 0;}
+.textBox p.sub_title{ /*font-size: 16px;*/ line-height:30px; text-align: justify; }
+@media (max-width:900px){
+	.textBox .lBox, .textBox .rBox{ width: 100%; }
+	.textBox .foodBox{width: 100%; max-width: 500px; margin: 0 auto;}
+}
+/* 拆開css ------ textBox END */
+
+
+
+/* 拆開css ------ socialBox */
+.socialBox{ padding: 50px 0; background-color: #eee; }
+.socialBox ul.follow_us_icon{ width: 100%; text-align: center; padding-top: 20px; }
+.socialBox ul.follow_us_icon li{ display: inline-block; padding: 10px; }
+.socialBox ul.follow_us_icon li a{width: 78px; color: #fff; font-size: 28px; height: 78px; display: block; background-color: #ffc107; border-radius: 50%; display: -webkit-flex; display: flex; -webkit-align-items: center; align-items: center; -webkit-justify-content: center; justify-content: center;}
+.socialBox ul.follow_us_icon li a:hover{ background-color: #ff9800; }
+
+.socialBox ul.web li a{ background-color: #20513a; }
+.socialBox ul.web li a:hover{ background-color: #1f5d40; }
+/* 拆開css ------ socialBox END */
+
+
+/* 拆開css ------ contactBox */
+.contactBox{ width: 100%; padding: 100px 0; }
+.contactBox .lBox{ float: left; width: 50%; }
+.contactBox .rBox{ float: right; width: 50%; }
+.contactBox .mapBox{ width: 100%; height: 400px; border-radius: 5px; overflow: hidden; display: block;}
+.contactBox .mapBox iframe{width: 100%; height: 100%; }
+.contactBox ul.info{ width: 100%; padding: 40px 0; max-width: 450px; margin: 0 auto;}
+.contactBox ul.info li{ width: 100%; padding-bottom: 25px; }
+.contactBox ul.info li p{ padding-left: 40px; position: relative; line-height: 28px;}
+.contactBox ul.info li p::before{ width: 30px; font-size: 17px; line-height: 28px; text-align: center; content: ""; position: absolute; top: 0; left: 0; display: block; font-family: 'Font Awesome\ 5 Free'; font-weight: 900;}
+.contactBox ul.info li p.add::before{ content: "\f3c5";}
+.contactBox ul.info li p.photo::before{ content: "\f095";}
+.contactBox ul.info li p.time::before{ content: "\f017";}
+.contactBox ul.info li p.mail::before{ content: "\f0e0";}
+.contactBox ul.info li p a{ color: #333; text-decoration: none; }
+.contactBox ul.info li p a:hover{ text-decoration: underline; }
+@media (max-width:900px){
+	.contactBox{padding: 50px 0;}
+	.contactBox .lBox, .contactBox .rBox, .contactBox .mapBox iframe{width: 100%;}
+	.contactBox .mapBox{height: 300px;}
+}
+@media (max-width:600px){
+	.contactBox .mapBox{ height: 240px; }
+}
+/* 拆開css ------ contactBox END */
+
+
+
+/* 拆開css ------ FormBox */
+.FormBox{ background-repeat: no-repeat; background-position:  center center ; background-size: cover; padding: 50px 0;}
+.FormBox .ContentsBox{ max-width: 640px; position: relative; z-index: 9; }
+.FormBox .form_simple{ max-width: 600px; margin: 0 auto; padding: 30px 0 20px 0; }
+.FormBox .form_simple input{ width: 100%; height: 45px; padding: 10px; line-height: 45px; margin-bottom: 15px; font-size: 0.918rem; box-shadow: 0 2px 5px rgba(0,0,0,0.1);}
+.FormBox .form_simple textarea{ max-width: 600px; width: 100%; height: 160px; padding:10px; margin-bottom: 15px; font-size: 0.918rem; box-shadow: 0 2px 5px rgba(0,0,0,0.1);}
+/* 拆開css ------ FormBox END*/
+
+
+/* 拆開css ------ videoBox */
+.videoBox{ width: 100%; min-height:calc(100vh - 100px); padding: 50px 0 60px; background-repeat: no-repeat; background-position:  center center ; background-attachment: fixed; background-size: cover; display: -webkit-flex; display: flex; -webkit-align-items: center; align-items: center; -webkit-justify-content: center; justify-content: center;overflow-x: hidden;}
+.videoBox .ContentsBox{ width: initial; }
+.videoBox .youtubeBox{ padding: 20px 0;  text-align: center;}
+.videoBox .youtubeBox iframe{width:560px; height:315px;}
+.videoBox .div{ max-width: 90%; }
+
+@media (max-width:600px){
+	.videoBox .youtubeBox iframe{ width: 460px; height: 259px;}
+}
+@media (max-width:550px){
+	.videoBox .youtubeBox iframe{ width: 380px; height: 200px;}
+}
+@media (max-width:450px){
+	.videoBox .youtubeBox iframe{ width: 100%; height: 170px;}
+}
+@media (max-device-width:1200px) {
+	.videoBox{ min-height: initial; }
+}
+/* 拆開css ------ videoBox END*/
+
+
+
+/*google 360度環景地圖*/
+.map_box{ width: 100%; height: 440px; }
+.map_box iframe{ width: 100%; height: 440px; }
+.map_box .the_editBox{ padding: 0; }
+@media (max-width:900px){
+	.map_box, .map_box iframe{ height: 360px; }
+}
+@media (max-width:600px){
+	.map_box, .map_box iframe{ height: 300px; }
+}
+/*google 360度環景地圖　END*/
+
+
+
+/*FooterBox 只能編輯文字 + 出現預設holkee文字*/
+.s-footerBox{ width: 100%; background-color: #fff; padding: 20px 0 40px 0; position: relative;}
+.s-footerBox p{text-align: center;  font-size: 0.750rem; line-height: 24px; color: #666; letter-spacing: 0.5px;}
+.s-footerBox p.powered_holkee{ position: absolute; bottom: 0; width: 100%; left: 0; text-align: center; }
+.s-footerBox p.powered_holkee a{ background-color: #464646; padding: 5px 18px; border-radius: 12px 12px 0 0; display: inline-block; color: #fff; }
+.s-footerBox p.powered_holkee a span{ width: 52px; display: inline-block; color: transparent; background: url(../../images/logo.png) center center no-repeat; background-size: contain; }
+/*FooterBox 360度環景地圖　END*/
+
+/*share*/
+ul.share-tools{ padding: 15px 0; width: 100%; text-align: center; }
+ul.share-tools li{ display: inline-block; height: 30px; padding: 0 4px; vertical-align: middle;}
+/*share 360度環景地圖　END*/
+
+
