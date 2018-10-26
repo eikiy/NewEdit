@@ -117,3 +117,11 @@ $(function(){
   return false;
 });
 
+
+$(function(){
+    $('.section_list li').click(function () {
+      $(this).parent().find('li').removeClass('btn_in');
+      $(this).addClass('btn_in');
+      return false;
+    });
+});

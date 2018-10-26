@@ -335,7 +335,7 @@ $(document).ready(function() {
                 </li>
 
             </ul>
-            <p class="add_section"><a href="#"><i class="fas fa-plus"></i>新增板塊</a></p>
+            <p class="add_section"><a class="popup-link" href="#popup-addSection"><i class="fas fa-plus"></i>新增板塊</a></p>
 
             <div class="top_headline"><p>外部連結</p></div>
 
@@ -1382,7 +1382,7 @@ $(document).ready(function() {
         </form>
     </div>
 
-    <!-- 發佈置網站 -->
+    <!-- 發佈網站 -->
     <div id="popup3" class="white-popup mfp-hide">
         <form class="setBox">
             <div class="top_title">
@@ -1592,7 +1592,7 @@ $(document).ready(function() {
                         <input class="l_title" type="text" value="姓名">
                     </li>
                     <li>
-                        <input class="l_title" type="text" value="E-Mail">
+                        <input class="l_title" type="text" value="E-mail">
                     </li>
                     <li>
                         <input class="l_title" type="text" value="您想跟我們說些什麼呢?">
@@ -1951,6 +1951,143 @@ $(document).ready(function() {
             <p class="the_reminder">提示：若按鈕文字與連結欄位未填寫，按鈕則不會顯示喔！<br>並請確保您的圖片解析度，建議圖片規格：1000x1000 / JPG 或 PNG以上。</p>
             <p class="for_pop_note color_red"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> 上傳失敗，請重新選取</p>
             <!-- <p class="for_pop_note"><i class="fa fa-check-circle" aria-hidden="true"></i> 上傳完成</p> -->
+            <p class="btn_default">
+                <a class="color_gray" href="#">關閉</a>
+                <a class="popup-link " href="#">套用設定</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- 新增版塊 -->
+    <div id="popup-addSection" class="white-popup mfp-hide">
+        <div class="setBox slide_Photo">
+            <div class="top_title">
+                <h3>新增版塊</h3>
+            </div>
+            <ul class="section_list clearfix">
+                <li>
+                    <div class="s_section_views s_view_mainBox">
+                        <div class="choose_this"><p><i class="fas fa-check"></i>選擇此版塊</p></div>
+                        <div class="infoBox">
+                            <div class="center">
+                                <p class="s_title">Main title</p>
+                                <p class="btn">buttom</p>
+                            </div>
+                        </div>
+                    </div>
+                    <h4>主頁</h4>
+                </li>
+                <li>
+                    <div class="s_section_views s_view_productBox">
+                        <div class="choose_this"><p><i class="fas fa-check"></i>選擇此版塊</p></div>
+                        <div class="infoBox">
+                            <div class="center">
+                                <p class="s_title">Shop</p>
+                                <ul class="goods">
+                                    <li>
+                                        <div class="imgBox img_01"></div>
+                                        <p class="info">cake</p>
+                                    </li>
+                                     <li>
+                                        <div class="imgBox img_02"></div>
+                                        <p class="info">cake</p>
+                                    </li>
+                                     <li>
+                                        <div class="imgBox img_03"></div>
+                                        <p class="info">cake</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <h4>商品展示</h4>
+                </li>
+                <li>
+                    <div class="s_section_views s_view_textBox">
+                        <div class="choose_this"><p><i class="fas fa-check"></i>選擇此版塊</p></div>
+                        <div class="infoBox">
+                            <div class="center">
+                                <p class="s_title">About Us</p>
+                                <p class="info">We Are Cake prides itself on customer satisfaction. "Making People happy" isn't just our tag line it is how we want every one of our customer to...</p>
+                            </div>
+                        </div>
+                    </div>
+                    <h4>關於我們</h4>
+                </li>
+                <li>
+                    <div class="s_section_views s_view_videoBox">
+                        <div class="choose_this"><p><i class="fas fa-check"></i>選擇此版塊</p></div>
+                        <div class="infoBox">
+                            <div class="center">
+                                <p class="s_title">Video</p>
+                                <div class="icon_video">
+                                    <i class="fab fa-youtube"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h4>影片</h4>
+                </li>
+                <li>
+                    <div class="s_section_views s_view_map_box">
+                        <div class="choose_this"><p><i class="fas fa-check"></i>選擇此版塊</p></div>
+                    </div>
+                    <h4>環景</h4>
+                </li>
+                <li>
+                    <div class="s_section_views s_view_contactBox">
+                        <div class="choose_this"><p><i class="fas fa-check"></i>選擇此版塊</p></div>
+                        <div class="infoBox">
+                            <div class="center">
+                                <p class="s_title">Contact</p>
+                                <div class="both clearfix">
+                                    <div class="map"></div>
+                                    <div class="info">
+                                        <p>Teipai City, Taiwan (R.O.C.)<br>
+                                        02-8888-8888<br>
+                                        10:00 AM - 11:30 PM<br>
+                                        holkee@service.com</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h4>聯絡我們</h4>
+                </li>
+                <li>
+                    <div class="s_section_views s_view_formBox">
+                        <div class="choose_this"><p><i class="fas fa-check"></i>選擇此版塊</p></div>
+                        <div class="infoBox">
+                            <div class="center">
+                                <p class="s_title">Form</p>
+                                <p class="f_01">Name</p>
+                                <p class="f_02">E-mail</p>
+                                <p class="f_03">...</p>
+                            </div>
+                        </div>
+                    </div>
+                    <h4>表單</h4>
+                </li>
+                <li>
+                    <div class="s_section_views s_view_socialBox">
+                        <div class="choose_this"><p><i class="fas fa-check"></i>選擇此版塊</p></div>
+                        <div class="infoBox">
+                            <div class="center">
+                                <p class="s_title">Social media</p>
+                                <ul class="follow_us_icon">
+                                    <li><i class="fab fa-facebook-f"></i></li>
+                                    <li><i class="fab fa-twitter"></i></li>
+                                    <li><i class="fab fa-instagram"></i></li>
+                                    <li><i class="fab fa-youtube"></i></li>
+                                    <li><i class="fab fa-weixin"></i></li>
+                                    <li><i class="fab fa-line"></i></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <h4>表單</h4>
+                </li>
+            </ul>
             <p class="btn_default">
                 <a class="color_gray" href="#">關閉</a>
                 <a class="popup-link " href="#">套用設定</a>
