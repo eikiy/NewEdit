@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<title>holkee 全新編輯器  - 預覽</title>
+<meta name='description' content=""/>
+<meta name='keywords' content=""/>
+<meta name="MobileOptimized" content="width">
+<meta name="HandheldFriendly" content="true">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="on-server/css/fontawesome-all.css">
+<script type="text/javascript" src="on-server/css/fontawesome-all.css.js"></script>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/edit_style.css">
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="js/edit_sideMenu.js"></script><!-- 針對新編輯器的js -->
+
+
+
+</head>
+<body>
+<header class="HeaderBox">
+    <nav class="Menu ContentsBox clearfix">
+        <h1 class="logo"><a href="index.html">holkee</a></h1>
+        <p class="web_title">預覽網站</p>
+        <!-- 規則是如果是"螢幕寬度小於 650px"不會出現電腦版和平板的預覽哦 -->
+        <ul class="device_item">
+            <li><a class="btn_in desktop_view"><i class="fas fa-desktop"></i></a></li>
+            <li><a class="tablet_view"><i class="fas fa-tablet-alt"></i></a></li>
+            <li><a class="mobile_view"><i class="fas fa-mobile-alt"></i></a></li>
+        </ul>
+        <p class="web_title out"><a href="javascript:self.close()"><i class="fas fa-times"></i> 關閉</a></p>
+    </nav>
+</header>
+
+<!-- 點選平板新增class"tablet"，手機則為"mobile" -->
+<main class="preview_frame" id="preview_frame">
+    <section class="frame_wrapper">
+        <iframe class="screen" width="100%" height="100%" src="https://www.dailyanan.com/amp/8bac1ea00587b3dad843/"></iframe>
+    </section>
+</main>
+
+</body>
+</html>
+
+
+
