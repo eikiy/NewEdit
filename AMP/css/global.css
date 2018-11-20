@@ -78,7 +78,7 @@ ul.share-tools amp-social-share{ color: #fff; padding-left:25px; background-posi
 
 p.powered_holkee{ position: absolute; bottom: 0; width: 100%; left: 0; text-align: center; }
 p.powered_holkee a{ background-color: #464646; padding: 5px 18px; border-radius: 12px 12px 0 0; display: inline-block; color: #fff;}
-p.powered_holkee a span{ width: 52px; display: inline-block; color: transparent; background: url(../images/logo.png) center center no-repeat; background-size: contain; }
+p.powered_holkee a span{ width: 52px; display: inline-block; color: transparent; background: url(images/logo.png) center center no-repeat; background-size: contain; }
 
 
 /*配色方案 下*/
