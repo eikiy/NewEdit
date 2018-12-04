@@ -81,6 +81,8 @@ width: 100%;
 height: auto;
 max-height: none;
 }
+.video-overlay amp-video video{ width: 110%; height: 100%;  object-fit: cover;}
+
 
 /*productBox*/
 .productBox{ background-color: rgba(0,0,0,.1);/* background-image: url(../images/business-coffee-computer-374006.jpg);*/ padding: 40px 0 60px; position: relative;}
