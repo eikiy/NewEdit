@@ -35,7 +35,7 @@ p.btn{ text-align: center;}
 p.btn a{  cursor: pointer; color: #fff; display: inline-block; padding: 12px 25px; border:1px solid #fff; min-width: 130px; }
 p.btn a:hover{ background-color: #fff; color: #333; }
 
-.main_contents{ width: 100%;}
+.main_contents{ width: 100%; position: relative;}
 .main_contents .ContentsBox{ z-index: 20; }
 
 
