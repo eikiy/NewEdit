@@ -29,7 +29,7 @@ html, body{ height: 100%; }
 
 /*main_contents*/
 h2.top_title{text-align: center; font-size: 2.5rem;} /*未來可能會有的主標題*/
-h3.main_title{text-align: center; font-size: 1.750rem; padding: 15px 0;}
+h3.main_title{text-align: center; font-size: 1.750rem; padding: 15px;}
 p.sub_title{ text-align: center; margin: 0 auto; max-width: 1000px; padding: 10px 0; }
 p.btn{ text-align: center;}
 p.btn a{  cursor: pointer; color: #fff; display: inline-block; padding: 12px 25px; border:1px solid #fff; min-width: 130px; }

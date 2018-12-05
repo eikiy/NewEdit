@@ -47,13 +47,13 @@
 .HeaderBox .TopBox ul.top_menu li h3 a:hover{ background-color: #fff; color: #333; }
 
 /*mainBox*/
-.mainBox{ /*background-image: url(../images/g_010_3.jpg);*/ position: relative; width: 100%; padding: 50px 0; min-height:100vh; overflow-y: hidden; background-size: cover; display: -webkit-flex; display: flex; -webkit-align-items: center; align-items: center; -webkit-justify-content: center; justify-content: center; background-attachment: fixed;}
+.mainBox{ background-image: url(../images/g_010_3.jpg); position: relative; width: 100%; padding: 50px 0; min-height:100vh; overflow-y: hidden; background-size: cover; display: -webkit-flex; display: flex; -webkit-align-items: center; align-items: center; -webkit-justify-content: center; justify-content: center; background-attachment: fixed;}
 .mainBox p{ color: #fff; }
 .mainBox p.p_w{color: #fff; text-shadow: 0 0 5px rgba(0,0,0,.5);}
 .mainBox p.btn{ padding-top: 40px; }
 .mainBox_logo{ padding: 10px 0 20px; max-width: 500px; width: 100%; margin: 0 auto;}
 .mainBox_logo img{ max-width: 100%; min-height: 100%; }
-.mainBox p.sub_title{ font-size: 1.4rem; }
+.mainBox p.sub_title{ font-size: 1.4rem; padding: 10px; }
 .mainBox .ContentsBox{ max-width: 800px; }
 body {
 position: absolute;
@@ -146,7 +146,7 @@ max-height: none;
 
 /*video_box*/
 .video_box{background-image: url(../images/bg_video.jpg); /*background-color: #022136;*/ position: relative;  width: 100%; min-height:calc(100vh - 100px); padding: 40px 0 60px; display: -webkit-flex; display: flex; -webkit-align-items: center; align-items: center; -webkit-justify-content: center; justify-content: center;}
-.video_box .youtubeBox{ width: 100%; padding-top: 40px;  text-align: center; max-width: 800px; margin: 0 auto;}
+.video_box .youtubeBox{ width: 100%; padding-top: 30px;  text-align: center; max-width: 800px; margin: 0 auto;}
 .video_box .div{ width: 100%; max-width: 90%; }
 .video_box h3.main_title ,.video_box p.sub_title{ color: #fff; }
 
