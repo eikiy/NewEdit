@@ -47,7 +47,7 @@
 .HeaderBox .TopBox ul.top_menu li h3 a:hover{ background-color: #fff; color: #333; }
 
 /*mainBox*/
-.mainBox{ background-image: url(../images/g_010_3.jpg); position: relative; width: 100%; padding: 50px 0; min-height:100vh; overflow-y: hidden; background-size: cover; display: -webkit-flex; display: flex; -webkit-align-items: center; align-items: center; -webkit-justify-content: center; justify-content: center; background-attachment: fixed;}
+.mainBox{ position: relative; width: 100%; padding: 50px 0; min-height:100vh; overflow-y: hidden; background-size: cover; display: -webkit-flex; display: flex; -webkit-align-items: center; align-items: center; -webkit-justify-content: center; justify-content: center; background-attachment: fixed;}
 .mainBox p{ color: #fff; }
 .mainBox p.p_w{color: #fff; text-shadow: 0 0 5px rgba(0,0,0,.5);}
 .mainBox p.btn{ padding-top: 40px; }
