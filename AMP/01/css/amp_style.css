@@ -76,11 +76,11 @@ height: auto;
 max-height: auto;
 }
 
-.video-overlay amp-video .i-amphtml-fill-content {
+/*.video-overlay amp-video .i-amphtml-fill-content {
 width: 100%;
 height: auto;
 max-height: none;
-}
+}*/
 .video-overlay amp-video video{ width: 110%; height: 100%;  object-fit: cover;}
 
 
@@ -194,4 +194,4 @@ max-height: none;
 }
 
 
-.i-amphtml-scrollable-carousel-container{padding: 0 15px;}
+/*.i-amphtml-scrollable-carousel-container{padding: 0 15px;}*/
