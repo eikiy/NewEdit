@@ -1,4 +1,4 @@
-/*===== start ======*/
+===== start ======*/
 /*mobile-nav */
 .page { width: 100%; min-height: 100%; overflow: auto; z-index: 100; position: relative;}
 .mobile-nav { display: none;}
@@ -76,6 +76,7 @@ height: auto;
 max-height: auto;
 }
 
+/*這句不能用*/
 /*.video-overlay amp-video .i-amphtml-fill-content {
 width: 100%;
 height: auto;
@@ -194,4 +195,4 @@ max-height: none;
 }
 
 
-/*.i-amphtml-scrollable-carousel-container{padding: 0 15px;}*/
+/*.i-amphtml-scrollable-carousel-container{padding: 0 15px;}
