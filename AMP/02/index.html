@@ -11,8 +11,8 @@
     <meta property="og:image" content="#">
 
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="css/amp_style.css" />
-    <link rel="stylesheet" type="text/css" href="css/global.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="css/amp_style.css" />
+    <link rel="stylesheet" type="text/css" href="css/global.css" /> -->
     <link rel="canonical" href="#">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
@@ -30,9 +30,11 @@
     <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
     <script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
     <script async custom-element="amp-video" src="https://cdn.ampproject.org/v0/amp-video-0.1.js"></script>
-    <!-- <style amp-custom="">
+    <style amp-custom="">
+        /* CSS Document */html, body, div, span, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre,abbr, address, cite, code,del, dfn, em, img, ins, kbd, q, samp,small, strong, sub, sup, var,b, i, dl, dt, dd, ol, ul, li,fieldset, form, label, legend,table, caption, tbody, tfoot, thead, tr, th, td,article, aside, canvas, details, figcaption, figure,footer, header, hgroup, menu, nav, section, summary,time, mark, audio, video{margin:0; padding:0; border:0; outline:0; font-size:100%; vertical-align:baseline;}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;}blockquote, q{quotes:none;}blockquote:before, blockquote:after, q:before, q:after{content:''; content:none;}input, textarea{margin:0; padding:0;}*{-webkit-text-size-adjust:none;}a{text-decoration:none;}fieldset, img{border:0;}ol, ul{list-style:none;}abbr, acronym{border:0;}.clearfix:after{content: "."; display: block; height: 0; clear: both; visibility: hidden;}* html .clearfix{height: 1%;}*:first-child + html .clearfix{min-height: 1%;}body, h1, h2, h3, h4, h5, h6, p{font-family:'Roboto', 'Noto Sans TC',Arial,"微軟正黑體","新細明體", sans-serif; font-weight: normal; color: #333;}p{font-size: 1rem;}a{text-decoration:none; outline: none; transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;}a:hover{text-decoration:none;}select, input, textarea, button{font-family:'Roboto', 'Noto Sans TC',Arial,"微軟正黑體","新細明體", sans-serif;}*:link, *:visited, *:hover, *:active, *:focus , *{border: none;outline: none; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;}html, body{height: 100%;}/*======================= 所有section共用CSS ================*/.ContentsBox{width: 100%; max-width: 1200px; margin: 0 auto; min-width: 320px; z-index: 9;}.box-contents{width: calc(100% - 30px); max-width: 1200px; margin: 0 auto; min-width: 320px; position: relative; z-index: 9;}@media (max-width:1220px){.ContentsBox{max-width: 90%;}}/*main_contents*/h2.top_title{text-align: center; font-size: 2.5rem;} /*未來可能會有的主標題*/h3.main_title{text-align: center; font-size: 1.750rem; padding: 15px;}p.sub_title{text-align: center; margin: 0 auto; max-width: 1000px; padding: 10px 0;}p.btn{text-align: center;}p.btn a{cursor: pointer; color: #fff; display: inline-block; padding: 12px 25px; border:1px solid #fff; min-width: 130px; border-radius: 50px;}p.btn a:hover{background-color: #fff; color: #333;}.main_contents{width: 100%; position: relative;}.main_contents .ContentsBox{z-index: 20;}/*配色方案 上*//*文字遮罩的顏色不被影響，所以CSS STYLE 會在半透明遮罩的上面*//*01 - holkee*/.template_color_holkee h3.main_title{color: #12ccc4;}.template_color_holkee p.sub_title{color: #464646;}/*02 - Pink*/.template_color_pink h3.main_title{color: #ff5186;}.template_color_pink p.sub_title{color: #464646;}/*03 - Green*/.template_color_green h3.main_title{color: #8fc320;}.template_color_green p.sub_title{color: #464646;}/*04 - purple*/.template_color_purplen h3.main_title{color: #826dc7;}.template_color_purplen p.sub_title{color: #464646;}/*半透明遮罩 有選擇才會蓋上去*/.bg_translucent_k{position: relative;}.bg_translucent_k::after{position: absolute; content: ""; width: 100%; height: 100%; display: block; background-color: rgba(0,0,0,0.25); top: 0; left: 0;}.bg_translucent_k p.sub_title, .bg_translucent_k p.main_title{color: #fff;}.bg_translucent_k h3.main_title{color: #fff;}.bg_translucent_w{position: relative;}.bg_translucent_w::after{position: absolute; content: ""; width: 100%; height: 100%; display: block; background-color: rgba(256,256,256,.35); top: 0; left: 0;}.bg_translucent_w p.sub_title{color: #fff;}.bg_translucent_w p.btn a{background-color: #fff; border:none;}/*share*/ul.share-tools{padding: 15px 0; width: 100%; text-align: center;}ul.share-tools li{display: inline-block; height: 34px; padding: 0 4px; vertical-align: middle;}ul.share-tools amp-social-share{color: #fff; padding-left:25px; background-position: 5px center; line-height: 24px; font-size: 0.918rem; border-radius: 4px;}p.powered_holkee{position: absolute; bottom: 0; width: 100%; left: 0; text-align: center;}p.powered_holkee a{background-color: #464646; padding: 5px 18px; border-radius: 12px 12px 0 0; display: inline-block; color: #fff;}p.powered_holkee a span{width: 52px; display: inline-block; color: transparent; background: url(../images/logo.png) center center no-repeat; background-size: contain;}/*配色方案 下*/.template_color_holkee p.btn a{background-color: #12ccc4; border-color: transparent;}.template_color_holkee .productBox .slider .info a.order{color: #12ccc4;}.template_color_holkee .bg_translucent_k .productBox .slider .info a.order{background-color: #12ccc4;}.template_color_pink p.btn a{background-color: #ff5186; border-color: transparent;}.template_color_pink .productBox .slider .info a.order{color: #ff5186;}.template_color_pink .bg_translucent_k .productBox .slider .info a.order{background-color: #ff5186;}.template_color_green p.btn a{background-color: #8fc320; border-color: transparent;}.template_color_green .productBox .slider .info a.order{color: #8fc320;}.template_color_green .bg_translucent_k .productBox .slider .info a.order{background-color: #8fc320;}.template_color_green .contactBox ul.info li p{color: #555;}.template_color_green .socialBox ul.follow_us_icon li a{background-color: #8bad42;}.template_color_green .textBox, .template_color_green .contactBox, .template_color_green .socialBox{background-color: #ececec;}.template_color_purplen p.btn a{background-color: #826dc7; border-color: transparent;}.template_color_purplen .productBox .slider .info a.order{color: #826dc7;}.template_color_purplen .bg_translucent_k .productBox .slider .info a.order{background-color: #826dc7;}/*======================= 所有section共用CSS END ================*/
 
-    </style> -->
+            /*===== start ======*//*mobile-nav */.page{width: 100%; min-height: 100%; overflow: auto; z-index: 100; position: relative;}.mobile-nav{display: none;}.mobile-nav ul{margin: 0 0 25px; padding: 0px;}.mobile-nav ul li{list-style: none}.hamburger{position: fixed; display: none; top: 18px; right: 10px; padding: 10px 15px 9px; cursor: pointer; z-index: 200;}.hamburger .hamburger-inner{position: relative; height: 21px; width: 24px; display: block; margin: 0; padding: 0;}.hamburger .bar{width: 24px; height: 2px; background: #fff; position: absolute; top: 0;}.hamburger .bar.bar2,.hamburger .bar.bar3{top: 9px; transform: matrix(1, 0, 0, 1, 0, 0);}.hamburger .bar.bar4{top: 18px;}.hamburger.open{position: fixed; top: 5px;}.hamburger.open .bar1,.hamburger.open .bar4{display: none;}.hamburger.open .bar2{height: 3px; background-color: #fff; transform: matrix(0.7071, 0.7071, -0.7071, 0.7071, 0, 0);}.hamburger.open .bar3{height: 3px; background-color: #fff; transform: matrix(0.7071, -0.7071, 0.7071, 0.7071, 0, 0);}.mobile-nav{width: 260px; background-color: #ff9800; z-index: 16;}.mobile-nav.mobile-menu{width: 260px; position: fixed; top: 0px; display: block; height: 100%; left: auto; right: 0px; z-index: 2147483647;}.mobile-nav ul.Oneself{width: 100%; padding-top: 50px;}.mobile-nav ul.Oneself li{padding: 10px 20px; border-bottom: 1px solid #ffffff4f;}.mobile-nav ul.Oneself li:last-child{border:none;}.mobile-nav ul.Oneself::after{content: ""; position: absolute; left: 50%; top: 10px; width: 40px; height: 54px; display: block; background-size: contain; margin-left: -20px; z-index: 6;}.mobile-nav ul.Oneself li p{line-height: 45px; font-size: 1.063rem; font-weight: bold;}.mobile-nav ul.Oneself li p a{color: #fafafa; cursor: pointer;}.mobile-menu-inner{width: auto; padding: 20px 20px 60px; padding-bottom: 10px; display: block;}.mobile-nav p.btn a{background-color: #ff517e; color: #fff; padding: 10px 25px; display: inline-block; cursor: pointer; -moz-border-radius: 30px; -webkit-border-radius: 30px; border-radius: 30px;}@media (max-width: 1000px){.hamburger{display:block;}}@media (max-width: 750px){.hamburger{position: fixed; top: 20px;} .mobile-nav p.btn{display: block;}}.BackgroundImage{background-position: center center; background-repeat: no-repeat; background-attachment: fixed; background-size: cover;}/*HeaderBox*/.HeaderBox{width: 100%; padding: 12px 0; position: fixed; top: 0; left: 0; z-index: 50; background: -moz-linear-gradient(top, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.5) 1%, rgba(0,0,0,0.01) 99%, rgba(0,0,0,0) 100%); background: -webkit-linear-gradient(top, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0.5) 1%,rgba(0,0,0,0.01) 99%,rgba(0,0,0,0) 100%); background: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0.5) 1%,rgba(0,0,0,0.01) 99%,rgba(0,0,0,0) 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80000000', endColorstr='#00000000',GradientType=0 );}.HeaderBox h1.logo{width: 140px; float: left; text-decoration: none;}.HeaderBox h1.logo a{cursor: pointer; color: #666; width: 100%; height: 50px; display: block;}.HeaderBox h1.logo img{max-width: 100%; max-height: 100%;}.HeaderBox .TopBox{width: 100%; float: right; max-width: calc(100% - 170px);}.HeaderBox .TopBox ul.top_menu{width: 100%; text-align: right; padding-top: 6px;}.HeaderBox .TopBox ul.top_menu li{display: inline-block; margin: 0 4px;}.HeaderBox .TopBox ul.top_menu li h3{font-size: 1.063rem; line-height: 22px;}.HeaderBox .TopBox ul.top_menu li h3 a{color: #fff; padding: 8px 24px; cursor: pointer;display: block; /* -moz-border-radius: 30px; -webkit-border-radius: 30px; border-radius: 30px;*/}.HeaderBox .TopBox ul.top_menu li h3 a:hover{background-color: #fff; color: #333;}/*mainBox*/.mainBox{position: relative; width: 100%; padding: 50px 0; min-height:100vh; overflow-y: hidden; background-size: cover; display: -webkit-flex; display: flex; -webkit-align-items: center; align-items: center; -webkit-justify-content: center; justify-content: center; background-attachment: fixed;}.mainBox p{color: #fff;}.mainBox p.p_w{color: #fff; text-shadow: 0 0 5px rgba(0,0,0,.5);}.mainBox p.btn{padding-top: 40px;}.mainBox_logo{padding: 10px 0 20px; max-width: 500px; width: 100%; margin: 0 auto;}.mainBox_logo img{max-width: 100%; min-height: 100%;}.mainBox p.sub_title{font-size: 1.4rem; padding: 10px;}.mainBox .ContentsBox{max-width: 800px;}body{position: absolute;overflow-x: hidden;z-index: 1;}.video-overlay{position: absolute;top: 0;left: 0;height: 100vh;width: 100%;z-index: -1;}.video-overlay amp-video{width: 100%;height: auto;max-height: auto;}.video-overlay amp-video video{width: 110%; height: 100%; object-fit: cover;}/*productBox*/.productBox{background-color:#f0f0f0;/* background-image: url(../images/business-coffee-computer-374006.jpg);*/ padding: 40px 0 60px; position: relative;}.productBox .ContentsBox, .productBox .sliderBox{position: relative; z-index: 9;}.productBox p.sub_title{padding-bottom: 35px; color: #ff9800; font-weight: bold;}.productBox .btn_order{width: 100%; text-align: center;}.productBox .popular-card{width: 13.5em; background: #fff; border-radius: .5em; overflow: hidden; margin-bottom: 4px;}.productBox .popular-card .aspect-ratio{display: block;}.productBox .popular-card_infos{padding: .5em; border-radius: 0 0 .5em .5em; border: 1px solid #e0e4e9; border-top: 0 none;}.productBox .goods_name{font-size: .875em; color: #26282a; height: 3.2em; line-height: 1.3; overflow: hidden; white-space: normal; text-align: center; font-weight: bold;}.productBox .card_price{justify-content: space-between; margin: .4em 0; text-align: center;}.productBox .card_price p{color: #ff5722;}.productBox .goods_buy{width: 100%; padding:5px 0 10px 0;}.productBox .goods_buy p{text-align: center; font-size: 0.8rem;}.productBox .goods_buy p a{color: #fff; padding: 3px 10px ; display: inline-block; min-width: 65px; border-radius: 40px; background-color: #ff9800;}.productBox .goods_buy p a:hover{background-color: #ffcc2b;}.aspect-ratio{position: relative; width: 100%;}.aspect-ratio:before{content: ''; width: 100%; padding-top: 100%;display: block;}.aspect-ratio .content{position: absolute; top: 0; left: 0; right: 0; bottom: 0;}/*評價*/.user_evaluation .popular-card{width: 20em;}.user_evaluation .content{width: 120px; height: 120px; display: block; margin: 0 auto; border-radius: 50%; overflow-y: hidden; margin-top: 40px;}.user_evaluation .aspect-ratio:before{padding-top: 165px;}.user_evaluation .evaluation{font-size: .875em; color: #26282a; line-height: 1.3rem; overflow: hidden; white-space: normal; text-align: center; font-weight: bold;display: block; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 5; line-height: 1.3rem; height: 1.3rem * 5; overflow:hidden;}.user_evaluation .user_name{justify-content: space-between; margin: .4em 0 0 0; text-align: center;}.user_evaluation .user_name p{color: #8bc34a; font-weight: bold; padding-bottom: 5px;}.user_evaluation .evaluation p{font-size: .8rem; text-align: justify;}.user_evaluation .popular-card_infos{padding:.5em 1.5em 1.5em 1.5em;}.user_evaluation .use_year{padding-bottom: 10px;} .user_evaluation .use_year p{text-align: center; color: #9e9e9e; font-size: .8em;}/*follow_us*/.follow_us{position: relative; padding: 50px 0; background-color: #faf5e8;}.follow_us ul.follow_us_icon{width: 100%; text-align: center; padding-top: 20px;}.follow_us ul.follow_us_icon li{display: inline-block; padding: 10px;}.follow_us ul.follow_us_icon li a{width: 80px; color: #fff; font-size: 1.750rem; height: 80px; display: block; background-size: cover; background-position: center center; background-repeat: no-repeat; background-color: #ff9800; border-radius: 50%; display: -webkit-flex; display: flex; -webkit-align-items: center; align-items: center; -webkit-justify-content: center; justify-content: center;}.follow_us ul.follow_us_icon li a:hover{background-color: #ffae38;}.follow_us ul.web li a{background-color: #20513a;}.follow_us ul.web li a:hover{background-color: #1f5d40;}/*about_us_box*/.about_us_box{position: relative; width: 100%; padding: 50px 0; height:100vh; min-height: 300px; display: -webkit-flex; display: flex; -webkit-align-items: center; align-items: center; -webkit-justify-content: center; justify-content: center;}.about_us_box .ContentsBox{max-width: 100%;}.about_us_box .lBox{float: left; width: 100%; height: 100%; display: -webkit-flex; display: flex; -webkit-align-items: center; align-items: center; -webkit-justify-content: center; justify-content: center;}.about_us_box .lBox img{width: 100%; height: 100%; object-fit: cover;}.about_us_box .infoBox{/*float: left;*/ position: absolute; width: 80%; left: 10%; bottom: 10%; background-color: rgba(0,0,0,.35); padding: 20px 20px 40px 20px}.about_us_box .foodBox{width: 100%; height: 400px; border-radius: 5px; overflow: hidden; display: block;}.about_us_box .foodBox{width: 90%; height: 100%;}.about_us_box h3.main_title{font-size: 1.375rem; padding: 40px 0;}.about_us_box p.sub_title{font-size: 1rem; line-height:30px; text-align: justify;}/*contact_us*/.contact_us{position: relative; width: 100%; padding: 50px 0;}.contact_us .lBox{float: left; width: 50%;}.contact_us .rBox{float: right; width: 50%;}.contact_us .mapBox{width: 100%; height: 400px; border-radius: 5px; overflow: hidden; display: block;}/*.contact_us .mapBox amp-iframe{width: 90%; height: 100%;}*/.contact_us ul.info{width: 100%; padding: 40px 0; max-width: 450px; margin: 0 auto;}.contact_us ul.info li{width: 100%; padding-bottom: 25px;}.contact_us ul.info li p{padding-left: 40px; position: relative; line-height: 28px;}.contact_us ul.info li p::before{width: 30px; font-size: 1.063rem; line-height: 28px; text-align: center; content: ""; position: absolute; top: 0; left: 0; display: block; font-family: 'Font Awesome\ 5 Free'; font-weight: 900;}.contact_us ul.info li p.add::before{content: "\f3c5";}.contact_us ul.info li p.photo::before{content: "\f095";}.contact_us ul.info li p.time::before{content: "\f017";}.contact_us ul.info li p.mail::before{content: "\f0e0";}.contact_us ul.info li p a{color: #333; text-decoration: none;}.contact_us ul.info li p a:hover{text-decoration: underline;}.contact_us .box2{padding-top: 150px;}/*map_box*/.map_box{width: 100%; height: 440px;}.map_box amp-iframe{width: 100%; height: 440px;}/*video_box*/.video_box{background-image: url(../images/bg_video.jpg); /*background-color: #022136;*/ position: relative; width: 100%; min-height:calc(100vh - 100px); padding: 40px 0 60px; display: -webkit-flex; display: flex; -webkit-align-items: center; align-items: center; -webkit-justify-content: center; justify-content: center;}.video_box .youtubeBox{width: 100%; padding-top: 30px; text-align: center; max-width: 800px; margin: 0 auto;}.video_box .div{width: 100%; max-width: 90%;}.video_box h3.main_title ,.video_box p.sub_title{color: #fff;}/*formBox */.formBox{background-image: url(../images/bg_02.jpg); position: relative; padding: 50px 0;}.formBox .ContentsBox{max-width: 640px; position: relative; z-index: 9;}.formBox .form_simple{width: calc(100% - 40px); max-width: 600px; margin: 0 auto; padding: 30px 0 20px 0;}.formBox .form_simple input{width:100%; height: 45px; padding:0 10px; line-height: 45px; margin-bottom: 15px; font-size: 0.918rem; box-shadow: 0 2px 5px rgba(0,0,0,0.1);}.formBox .form_simple textarea{max-width: 600px; width:100%; height: 160px; padding:10px; margin-bottom: 15px; font-size: 0.918rem; box-shadow: 0 2px 5px rgba(0,0,0,0.1);}.formBox .form_simple .btn input{margin: 0 auto; width: initial; display: inline-block; color: #fff; border-radius: 50px; background-color: transparent; cursor: pointer; padding: 0px 25px; border: 1px solid #fff; min-width: 130px;}.formBox .form_simple .btn input:hover{background-color: #fff; color: #333;}/*FooterBox*/.FooterBox{width: 100%; background-color: #fff; padding: 20px 0 55px 0;}.FooterBox p{text-align: center; font-size: 0.813rem; line-height: 24px; color: #666; letter-spacing: 0.5px;}/*==== RWD ====*/@media (max-width:1220px){.HeaderBox .TopBox ul.top_menu li h3{font-size: 1rem;} .HeaderBox .TopBox ul.top_menu li h3 a{padding: 8px 15px;}}@media (max-width:1000px){.HeaderBox .TopBox{display: none;}}@media (max-width:900px){.about_us_box .lBox, .about_us_box .rBox{width: 100%;}.about_us_box .foodBox{width: 100%; max-width: 500px; margin: 0 auto;}.contact_us{padding: 40px 0;}.contact_us .lBox, .contact_us .rBox, .contact_us .mapBox amp-iframe{width: 100%;}.contact_us .mapBox{height: 300px;}.map_box, .map_box amp-iframe{height: 360px;}}@media (max-width:600px){.contact_us .mapBox{height: 240px;}.map_box, .map_box amp-iframe{height: 300px;}}@media (max-device-width:1200px){.video_box{min-height: initial;}.BackgroundImage{background-attachment: initial;}}@media (max-device-width:700px){/*影片於手機下變換成圖片*//*.mainBox{background-image: url(../images/basket-book-books-6332.jpg);}*/}
+    </style>
 </head>
 
 <body>
@@ -107,7 +109,6 @@
         </div>
 
         <!-- about_us_box -->
-        <a name="go01"></a>
         <section class="about_us_box BackgroundImage bg_translucent_k">
             <div class="ContentsBox clearfix">
                 <div class="lBox">
@@ -125,7 +126,6 @@
         </section>
 
         <!-- productBox -->
-        <a name="go02"></a>
         <section class="productBox BackgroundImage"><!--  bg_translucent_k -->
             <div class="ContentsBox">
                 <h3 class="main_title" style="color: #333; font-weight: bold;">《奶瓶85折》小獅王辛巴全面優惠中</h3>
@@ -238,7 +238,6 @@
             </amp-carousel>
         </section>
         <!-- productBox -->
-        <a name="go02"></a>
         <section class="productBox BackgroundImage" style="margin-top: 5px;"><!--  bg_translucent_k -->
             <div class="ContentsBox">
                 <h3 class="main_title" style="color: #333; font-weight: bold;">《2件55折》奇哥保暖織品</h3>
@@ -391,7 +390,6 @@
         </section>
 
         <!-- video_box -->
-        <a name="go03"></a>
         <section class="video_box BackgroundImage bg_translucent_k">
             <div class="ContentsBox">
                 <h3 class="main_title">沐浴產品廣告</h3>
@@ -402,6 +400,118 @@
             </div>
         </section>
 
+        <!-- productBox -->
+        <section class="productBox user_evaluation BackgroundImage" style="margin-top: 5px;"><!--  bg_translucent_k -->
+            <div class="ContentsBox">
+                <h3 class="main_title" style="color: #333; font-weight: bold;">只給寶貝最好的</h3>
+                <p class="sub_title">超過30萬位媽媽的信賴</p>
+            </div>
+            <amp-carousel layout="fixed-height" type="carousel" width="auto" height="350" class="sliderBox">
+                        <div class="popular-card">
+                            <a href="#" class="aspect-ratio">
+                                <div class="content">
+                                    <amp-img layout="fill" src="images/user_01.jpg"></amp-img>
+                                </div>
+                            </a>
+                            <div class="popular-card_infos">
+                                <div class="user_name"><p>小奈奈的媽媽 </p></div>
+                                <div class="use_year"><p>平台使用經驗 7年</p></div>
+                                <div class="evaluation"><p>現在已產後五個月了，因為是第二胎所以整個算是更有經驗心得，選擇任何相關商品時都會比較好多，這胎前前後後我也用了四個廠牌的吸乳器了吧！要來分享一下我的使用心得，覺得比較棒的是真的用了刺激到奶水比較會共共流，可能因為是「全矽膠乳罩</p></div>
+                            </div>
+                        </div>
+
+                        <div class="popular-card">
+                            <a href="#" class="aspect-ratio">
+                                <div class="content">
+                                    <amp-img layout="fill" src="images/user_02.jpg"></amp-img>
+                                </div>
+                            </a>
+                            <div class="popular-card_infos">
+                                <div class="user_name"><p>滿月新手媽咪</p></div>
+                                 <div class="use_year"><p>平台使用經驗 1年</p></div>
+                                <div class="evaluation"><p>【幫助寶寶多運動的好幫手】聰明的爸比媽咪都知道，其實寶寶也是需要運動的喔！Aiko媽咪都讓寶寶喝奶同時做吸吮運動~因為nac nac吸吮力學奶瓶奶嘴設計就像親餵，需要寶寶花力氣才能喝奶</p></div>
+                            </div>
+                        </div>
+
+                        <div class="popular-card">
+                            <a href="#" class="aspect-ratio">
+                                <div class="content">
+                                    <amp-img layout="fill" src="images/user_03.jpg"></amp-img>
+                                </div>
+                            </a>
+                            <div class="popular-card_infos">
+                                <div class="user_name"><p>綠爸爸有話說</p></div>
+                                 <div class="use_year"><p>平台使用經驗 3年</p></div>
+                                <div class="evaluation"><p>雖然才進入夏季，但台灣的天氣已經又濕又熱，熊跟喵為了要帶著溫溫到處玩又擔心蚊蟲叮咬與日曬傷害，幸好有nac nac嬰幼兒保濕防曬乳與草本精油驅蚊噴液加持，讓溫溫不管在草地上或戶外游泳都超平安，因為身兼媒體與部落客身份，所以熊跟喵從還沒</p></div>
+                            </div>
+                        </div>
+
+                        <div class="popular-card ">
+                            <a href="#" class="aspect-ratio">
+                                <div class="content">
+                                    <amp-img layout="fill" src="images/user_04.jpg"></amp-img>
+                                </div>
+                            </a>
+                            <div class="popular-card_infos">
+                                <div class="user_name"><p>芽茶花之媽咪</p></div>
+                                 <div class="use_year"><p>平台使用經驗 10年</p></div>
+                                <div class="evaluation"><p>現在的媽咪們對於用在寶寶肌膚上的產品越來越講究，市面上其實也有許多不同的寶寶洗護品牌，剛開始懷孕時就有開始做些研究，就有注意到nac nac這個品牌，也可以說是近來許多台灣媽媽會選擇的品牌，因為在地瓜球彌月的時候就有</p></div>
+                            </div>
+                        </div>
+
+                        <div class="popular-card">
+                            <a href="#" class="aspect-ratio">
+                                <div class="content">
+                                    <amp-img layout="fill" src="images/user_05.jpg"></amp-img>
+                                </div>
+                            </a>
+                            <div class="popular-card_infos">
+                                <div class="user_name"><p>宜蕎姑娘</p></div>
+                                 <div class="use_year"><p>平台使用經驗 半年</p></div>
+                                <div class="evaluation"><p>現nac nac新上市的『觸控式消毒烘乾鍋T1』真的是媽咪們心目中最佳的消毒鍋首選，還記得生產前在選購消毒鍋時做了很多功課，比較了蒸氣消毒鍋及紫外線消毒鍋的利弊後，最終選擇了蒸氣消毒鍋。</p></div>
+                            </div>
+                        </div>
+
+                        <div class="popular-card">
+                            <a href="#" class="aspect-ratio">
+                                <div class="content">
+                                    <amp-img layout="fill" src="images/user_06.jpg"></amp-img>
+                                </div>
+                            </a>
+                            <div class="popular-card_infos">
+                                <div class="user_name"><p>溫蒂媽咪</p></div>
+                                 <div class="use_year"><p>平台使用經驗 2年</p></div>
+                                <div class="evaluation"><p>我覺得nac nac T1觸控式消毒烘乾鍋在設計上根本是把所有消毒鍋的缺點都去除了~好用到連我ㄤ這種愛挑剔的人都無話可說XD~~這篇是nac nac T1觸控式消毒烘乾鍋的使用心得分享，如果你還在尋找理想的奶..</p></div>
+                            </div>
+                        </div>
+
+                        <div class="popular-card">
+                            <a href="#" class="aspect-ratio">
+                                <div class="content">
+                                    <amp-img layout="fill" src="images/user_08.jpg"></amp-img>
+                                </div>
+                            </a>
+                            <div class="popular-card_infos">
+                                <div class="user_name"><p>拉拉準新娘</p></div>
+                                 <div class="use_year"><p>平台使用經驗 三個月</p></div>
+                                <div class="evaluation"><p>今年剛好遇上暖冬溫度太難拿捏，西喜幫自己家的萌娃「小軟Q」用上透氣的六層紗，讓寶寶可以睡得透氣又舒服，瞧瞧~小軟Q包上nac nac六層紗防踢被，整個化身維納斯誕生真的是超可愛Der~~趕快一起點文章，看看小軟Q與六層紗</p></div>
+                            </div>
+                        </div>
+
+                        <div class="popular-card">
+                            <a href="#" class="aspect-ratio">
+                                <div class="content">
+                                    <amp-img layout="fill" src="images/user_10.jpg"></amp-img>
+                                </div>
+                            </a>
+                            <div class="popular-card_infos">
+                                <div class="user_name"><p>Pencil Hsiao</p></div>
+                                 <div class="use_year"><p>平台使用經驗 5年</p></div>
+                                <div class="evaluation"><p>市面上很多來自國外的寶寶洗沐產品都主打有機，雖然產品有機，但是不一定都適合亞洲寶寶。此次nac nac的純萃親淨系列，特別由台灣唯一的綠色工廠歐萊德製作，從成分簡化下手，不管是外包裝到使用的成分，都是環保、天然</p></div>
+                            </div>
+                        </div>
+            </amp-carousel>
+        </section>
         <!-- map_box -->
         <!-- <a name="go04"></a>
         <section class="map_box">
@@ -413,7 +523,7 @@
         <!-- contact_us -->
         <a name="go05"></a>
         <section class="contact_us">
-            <div class="ContentsBox clearfix">
+            <!-- <div class="ContentsBox clearfix">
                 <h3 class="main_title">Contact Us</h3>
                 <div class="rBox">
                     <p class="sub_title">臺北信義店</p>
@@ -431,8 +541,8 @@
                         </amp-iframe>
                     </div>
                 </div>
-            </div>
-            <div class="ContentsBox box2 clearfix">
+            </div> -->
+            <div class="ContentsBox clearfix">
                 <div class="lBox">
                     <div class="mapBox">
                         <amp-iframe  width="600" height="400" layout="responsive" sandbox="allow-scripts allow-same-origin"  resizable  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.003246729964!2d121.56228351500631!3d25.03396388397233!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442abb0b0c4fc8d%3A0x60f9b663d6a4deb1!2zQVRUIDQgRlVOIOiHuuWMl-S_oee-qeW6lw!5e0!3m2!1szh-TW!2stw!4v1543907745681" >
@@ -534,7 +644,7 @@
             <p>Copyrights © 2018 All Rights Reserved.</p>
         </div>
         <!-- powered_holkee -->
-        <p class="powered_holkee"><a href="#">Powered by <span class="logo">holkee</span></a></p>
+        <p class="powered_holkee"><a target="_blank" href="http://www.holkee.com/">Powered by <span class="logo">holkee</span></a></p>
     </footer>
 
 </body>
