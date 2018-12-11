@@ -43,7 +43,7 @@
 .HeaderBox .TopBox ul.top_menu{ width: 100%; text-align: right;  padding-top: 6px; }
 .HeaderBox .TopBox ul.top_menu li{display: inline-block; margin: 0 4px;}
 .HeaderBox .TopBox ul.top_menu li h3{ font-size: 1.063rem; line-height: 22px; }
-.HeaderBox .TopBox ul.top_menu li h3 a{ color: #fff; padding: 8px 24px; cursor: pointer;display: block; /* -moz-border-radius: 30px; -webkit-border-radius: 30px; border-radius: 30px;*/}
+.HeaderBox .TopBox ul.top_menu li h3 a{ color: #fff; padding: 8px 24px; cursor: pointer;display: block;  -moz-border-radius: 30px; -webkit-border-radius: 30px; border-radius: 30px;}
 .HeaderBox .TopBox ul.top_menu li h3 a:hover{ background-color: #fff; color: #333; }
 
 /*mainBox*/
