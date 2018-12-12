@@ -1,0 +1,103 @@
+/* CSS Document */
+html, body, div, span, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre,abbr, address, cite, code,del, dfn, em, img, ins, kbd, q, samp,small, strong, sub, sup, var,b, i, dl, dt, dd, ol, ul, li,fieldset, form, label, legend,table, caption, tbody, tfoot, thead, tr, th, td,article, aside, canvas, details, figcaption, figure,footer, header, hgroup, menu, nav, section, summary,time, mark, audio, video { margin:0; padding:0; border:0; outline:0; font-size:100%; vertical-align:baseline;}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section { display:block;}
+blockquote, q { quotes:none;}
+blockquote:before, blockquote:after, q:before, q:after { content:''; content:none;}
+input, textarea { margin:0; padding:0;}
+* {-webkit-text-size-adjust:none;}
+a{text-decoration:none;}
+fieldset, img { border:0;}
+ol, ul { list-style:none;}
+abbr, acronym { border:0;}
+
+.clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden;}
+* html .clearfix {height: 1%;}
+*:first-child + html .clearfix { min-height: 1%;}
+
+body, h1, h2, h3, h4, h5, h6, p {font-family:'Roboto', 'Noto Sans TC',Arial,"微軟正黑體","新細明體", sans-serif; font-weight: normal; color: #333;}
+p{ font-size: 1rem;}
+a{ text-decoration:none; outline: none; transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;}
+a:hover{ text-decoration:none;}
+select, input, textarea, button {  font-family:'Roboto', 'Noto Sans TC',Arial,"微軟正黑體","新細明體", sans-serif;}
+*:link, *:visited, *:hover, *:active, *:focus , * {border: none;outline: none;  -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;}
+html, body{ height: 100%; }
+
+/*======================= 所有section共用CSS ================*/
+.ContentsBox{ width: 100%; max-width: 1200px; margin: 0 auto; min-width: 320px; z-index: 9;}
+.box-contents{ width: calc(100% - 30px); max-width: 1200px; margin: 0 auto; min-width: 320px; position: relative; z-index: 9;}
+@media (max-width:1220px){ .ContentsBox{ max-width: 90%;}}
+
+/*main_contents*/
+h2.top_title{text-align: center; font-size: 2.5rem;} /*未來可能會有的主標題*/
+h3.main_title{text-align: center; font-size: 1.750rem; padding: 15px;}
+p.sub_title{ text-align: center; margin: 0 auto; max-width: 1000px; padding: 10px 0; }
+p.btn{ text-align: center;}
+p.btn a{  cursor: pointer; color: #fff; display: inline-block; padding: 12px 25px; border:1px solid #fff; min-width: 130px; /*border-radius: 50px; */}
+p.btn a:hover{ background-color: #fff; color: #333; }
+
+.main_contents{ width: 100%; position: relative;}
+.main_contents .ContentsBox{ z-index: 20; }
+
+
+/*配色方案 上*/
+/*文字遮罩的顏色不被影響，所以CSS STYLE 會在半透明遮罩的上面*/
+
+/*01 - holkee*/
+.template_color_holkee h3.main_title { color: #12ccc4; }
+.template_color_holkee p.sub_title{ color: #464646; }
+
+/*02 - Pink*/
+.template_color_pink h3.main_title { color: #ff5186; }
+.template_color_pink p.sub_title{ color: #464646; }
+
+/*03 - Green*/
+.template_color_green h3.main_title { color: #8fc320; }
+.template_color_green p.sub_title{ color: #464646; }
+
+/*04 - purple*/
+.template_color_purplen h3.main_title { color: #826dc7; }
+.template_color_purplen p.sub_title{ color: #464646; }
+
+
+/*半透明遮罩 有選擇才會蓋上去*/
+.bg_translucent_k{ position: relative; }
+.bg_translucent_k::after{ position: absolute; content: ""; width: 100%; height: 100%; display: block; background-color: rgba(0,0,0,0.25); top: 0; left: 0; }
+.bg_translucent_k p.sub_title, .bg_translucent_k p.main_title{ color: #fff; }
+.bg_translucent_k h3.main_title{ color: #fff; }
+
+.bg_translucent_w{ position: relative; }
+.bg_translucent_w::after{ position: absolute; content: ""; width: 100%; height: 100%; display: block; background-color: rgba(256,256,256,.35); top: 0; left: 0; }
+.bg_translucent_w p.sub_title{ color: #fff; }
+.bg_translucent_w p.btn a{ background-color: #fff; border:none; }
+
+
+/*share*/
+ul.share-tools{ padding: 15px 0; width: 100%; text-align: center; }
+ul.share-tools li{ display: inline-block; height: 34px; padding: 0 4px; vertical-align: middle;}
+ul.share-tools amp-social-share{ color: #fff; padding-left:25px; background-position: 5px center; line-height: 24px; font-size: 0.918rem;  border-radius: 4px; }
+
+p.powered_holkee{ position: absolute; bottom: 0; width: 100%; left: 0; text-align: center; }
+p.powered_holkee a{ background-color: #464646; padding: 5px 18px; border-radius: 12px 12px 0 0; display: inline-block; color: #fff;}
+p.powered_holkee a span{ width: 52px; display: inline-block; color: transparent; background: url(../images/logo.png) center center no-repeat; background-size: contain; }
+
+
+/*配色方案 下*/
+.template_color_holkee p.btn a{ background-color: #12ccc4;  border-color: transparent;}
+.template_color_holkee .productBox .slider .info a.order{ color: #12ccc4;}
+.template_color_holkee .bg_translucent_k .productBox .slider .info a.order{ background-color: #12ccc4;}
+
+.template_color_pink p.btn a{ background-color: #ff5186;  border-color: transparent;}
+.template_color_pink .productBox .slider .info a.order{ color: #ff5186;}
+.template_color_pink .bg_translucent_k .productBox .slider .info a.order{ background-color: #ff5186;}
+
+.template_color_green p.btn a{ background-color: #8fc320;  border-color: transparent;}
+.template_color_green .productBox .slider .info a.order{ color: #8fc320;}
+.template_color_green .bg_translucent_k .productBox .slider .info a.order{ background-color: #8fc320;}
+.template_color_green .contactBox ul.info li p{ color: #555; }
+.template_color_green .socialBox ul.follow_us_icon li a{ background-color: #8bad42;}
+.template_color_green .textBox, .template_color_green .contactBox, .template_color_green .socialBox{ background-color: #ececec; }
+
+.template_color_purplen p.btn a{ background-color: #826dc7;  border-color: transparent;}
+.template_color_purplen .productBox .slider .info a.order{ color: #826dc7;}
+.template_color_purplen .bg_translucent_k .productBox .slider .info a.order{ background-color: #826dc7;}
+/*======================= 所有section共用CSS END ================*/
