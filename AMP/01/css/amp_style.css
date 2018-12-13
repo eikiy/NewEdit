@@ -123,6 +123,7 @@ max-height: none;
 .about_us_box .foodBox{width: 90%; height: 100%; }
 .about_us_box h3.main_title{ font-size: 1.375rem; padding: 40px 0;}
 .about_us_box p.sub_title{ font-size: 1rem; line-height:30px; text-align: justify; }
+.about_us_box p.btn a{ color: #333; border-color: #333; }
 
 /*contact_us*/
 .contact_us{ position: relative; width: 100%; padding: 100px 0; }
