@@ -55,28 +55,26 @@
 .mainBox_logo img{ max-width: 100%; min-height: 100%; }
 .mainBox p.sub_title{ font-size: 1.4rem; padding: 10px; }
 .mainBox .ContentsBox{ max-width: 800px; }
-body {
-position: absolute;
-overflow-x: hidden;
-z-index: 1;
-}
 
-.video-overlay {
-position: absolute;
-top: 0;
-left: 0;
-height: 100vh;
-width: 100%;
-z-index: -1;
-}
 
-.video-overlay amp-video {
-width: 100%;
-height: auto;
-max-height: auto;
-}
-
+/*背景影片*/
+/*body {position: absolute; overflow-x: hidden; z-index: 1; }*/
+.video-overlay { position: absolute; top: 0; left: 0; height: 100vh; width: 100%; z-index: -1;}
+.video-overlay amp-video { width: 100%; height: auto; max-height: auto; }
 .video-overlay amp-video video{ width: 110%; height: 100%;  object-fit: cover;}
+
+/*測試 youtube*/
+.youtube-bg {  position: absolute; top: 0; left: 0; height: 100vh; width: 100%; z-index: -1; overflow:hidden; }
+.youtube-k{ position: absolute; top: 0; left: 0; background-color: rgba(0,0,0,.5); z-index: 0; }
+.youtube-bg amp-youtube { width: 100%; min-width: 1920px; height: auto; max-height: auto; }
+.youtube-bg amp-youtube iframe{ width: 110%; height: 100%;  object-fit: cover;}
+.layer {width: 100%; height: 100%; top: 0; left: 0; position: absolute; opacity: 0.4; background-color:transparent; }
+@media (max-width:1700px){ .youtube-bg amp-youtube { min-width:1750px;}}
+@media (max-width:1600px){ .youtube-bg amp-youtube { min-width:1650px;}}
+@media (max-width:1500px){ .youtube-bg amp-youtube { min-width:1550px;}}
+@media (max-width:1440px){ .youtube-bg amp-youtube { min-width:1500px;}}
+@media (max-width:1280px){ .youtube-bg amp-youtube { min-width:1330px;}}
+@media (max-width:970px){ .youtube-bg{ display: none; } .mainBox{ background-image:  url(images/g_010_3.jpg);}}
 
 
 /*productBox*/
