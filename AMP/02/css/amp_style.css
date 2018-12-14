@@ -74,7 +74,7 @@
 @media (max-width:1500px){ .youtube-bg amp-youtube { min-width:1550px;}}
 @media (max-width:1440px){ .youtube-bg amp-youtube { min-width:1500px;}}
 @media (max-width:1280px){ .youtube-bg amp-youtube { min-width:1330px;}}
-@media (max-width:970px){ .youtube-bg{ display: none; } .mainBox{ background-image:  url(images/g_010_3.jpg);}}
+@media (max-width:970px){ .youtube-bg{ display: none; } .mainBox{ background-image:  url(images/bg_01.jpg);}}
 
 
 /*productBox*/
