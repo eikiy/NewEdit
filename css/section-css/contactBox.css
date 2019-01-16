@@ -14,6 +14,7 @@
 .contactBox ul.info li p.mail::before{ content: "\f0e0";}
 .contactBox ul.info li p a{ color: #333; text-decoration: none; }
 .contactBox ul.info li p a:hover{ text-decoration: underline; }
+
 @media (max-width:900px){
 	.contactBox{padding: 50px 0;}
 	.contactBox .lBox, .contactBox .rBox, .contactBox .mapBox iframe{width: 100%;}
