@@ -6,10 +6,9 @@ blockquote, q { quotes:none;}
 blockquote:before, blockquote:after, q:before, q:after { content:''; content:none;}
 input, textarea { margin:0; padding:0;}
 * {-webkit-text-size-adjust:none;}
-a{text-decoration:none;}
-fieldset, img { border:0;}
 ol, ul { list-style:none;}
 abbr, acronym { border:0;}
+img { vertical-align: middle; }
 
 .clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden;}
 * html .clearfix {height: 1%;}
@@ -17,12 +16,12 @@ abbr, acronym { border:0;}
 
 body, h1, h2, h3, h4, h5, h6, p {font-family:'Noto Sans TC',Arial,"微軟正黑體","新細明體", sans-serif; font-weight: normal; color: #000;}
 p{font-size: 0.938em;}
-a{  text-decoration:none; outline: none; transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;}
+a{ cursor: pointer; text-decoration:none; outline: none; transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms; }
 a:hover{ text-decoration:none;}
 select, input, textarea, button {  font-family:'Noto Sans TC',Arial,"微軟正黑體","新細明體", sans-serif;}
 *:link, *:visited, *:hover, *:active, *:focus , * {border: none;outline: none; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;}
-html, body{ height: 100%; }
-body{font-size: 100%;}
+html { height: 100%; overflow: hidden; margin-right: 0 !important; }
+body { height: 100%; overflow: auto; font-size: 100%; }
 
 /*===== start ======*/
 .HeaderBox p.storage{ float: left; color: #333;  font-size: 0.813rem;}
@@ -74,7 +73,7 @@ body{font-size: 100%;}
 .edit_main_contents .sideMenu ul.mainMenu li .the_section{width: 100%;  margin-bottom: 6px; /*position: relative;*/ padding: 5px; border:1px solid #d4d4d4; border-radius: 40px; background-color: #ffffff;}
 .edit_main_contents .sideMenu ul.mainMenu li .section_name{ float: left;  width: calc(100% - 30px); position: relative;}
 
-.edit_main_contents .sideMenu ul.mainMenu li h3{ float: left; padding: 0 5px; cursor: pointer; width: calc(100% - 40px); line-height: 32px; font-size: 0.938rem;}
+.edit_main_contents .sideMenu ul.mainMenu li h3{ float: left; padding: 0 5px; cursor: pointer; width: calc(100% - 40px); line-height: 32px; font-size: 0.938rem; display: block; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 1; height: 32px * 1; overflow:hidden;}
 .edit_main_contents .sideMenu ul.mainMenu li i{ cursor: pointer;  float: left; width: 30px; height: 32px; text-align: center; line-height: 32px; color: #d4d4d4; }
 .edit_main_contents .sideMenu ul.mainMenu li i.icon_move{ cursor: move; }
 .edit_main_contents .sideMenu ul.mainMenu li i.more_function{ position: absolute; top: 0px; right: 5px; color: #8a8a8a; z-index: 5;}
@@ -275,52 +274,17 @@ p.powered_holkee a span{ width: 52px; display: inline-block; color: transparent;
 /*popup - 新增版塊*/
 .slide_Photo ul.section_list{ width: 100%; padding-bottom: 30px; text-align: left; }
 .slide_Photo ul.section_list li{ padding:10px; float: left; width: 50%;}
-.slide_Photo ul.section_list li h4{ text-align: center; padding:8px 0 15px 0; }
-.slide_Photo ul.section_list li .s_section_views{ cursor: pointer; width: 100%; height: 190px; overflow: hidden; position: relative; border-radius:15px; border:2px solid #e0e0e0;  display: block; overflow: hidden; background-color: #ececec; padding: 20px;  background-position: center center; background-repeat: no-repeat; background-size: cover; }
-.slide_Photo ul.section_list li .s_section_views p.s_title{ text-align: center; padding-bottom:15px; font-size: 1.2em;}
-.slide_Photo ul.section_list li .s_section_views p.info{ font-size: 0.75em; line-height: 1.5em; color: #444; }
+.slide_Photo ul.section_list li h4{ text-align: center; padding:8px 0; min-height: 60px; }
+.slide_Photo ul.section_list li .s_section_views{ cursor: pointer; width: 100%; overflow: hidden; position: relative; border-radius:15px; border:2px solid #e0e0e0;  display: block; overflow: hidden; }
 .slide_Photo ul.section_list li .s_section_views:hover{ border-color: #27d0ca; }
-.slide_Photo ul.section_list li .s_section_views .infoBox{ position: absolute; z-index: 15; text-align: center; left: 0; top: 0; width: 100%; height: 100%; padding: 20px; display: -webkit-flex; display: flex; -webkit-align-items: center; align-items: center; -webkit-justify-content: center; justify-content: center;}
-.slide_Photo ul.section_list li .s_section_views .center{ width: 100%; }
+.slide_Photo ul.section_list li .s_section_views .infoBox{ width: 100%; display: grid;}
+.slide_Photo ul.section_list li .s_section_views .infoBox img{ width: 100%; }
 .slide_Photo ul.section_list li .s_section_views .choose_this{ opacity: 0; width: 100%; height: 100%; position: absolute; top: 0; left: 0; background-color: rgba(0,0,0,.5); z-index: 50; display: -webkit-flex; display: flex; -webkit-align-items: center; align-items: center; -webkit-justify-content: center; justify-content: center;}
 .slide_Photo ul.section_list li .s_section_views .choose_this p{color: #fff; text-align: center; text-shadow: 0 2px 3px rgba(0,0,0,.3);}
 .slide_Photo ul.section_list li .s_section_views .choose_this i{ font-size: 2em; display: block; color: #28d0ca; padding-bottom: 10px;}
-.slide_Photo ul.section_list li.btn_in .s_section_views .choose_this{ opacity: 1; }
-
-.slide_Photo ul.section_list li .s_view_mainBox{ background-image: url(../images/new_site/basket-book-books-6332.jpg); }
-.slide_Photo ul.section_list li .s_view_mainBox:before{ content: ""; width: 100%; height: 100%; z-index: 10; display: block; position: absolute; background-color: rgba(0,0,0,.3); top: 0; left: 0; }
-
-.slide_Photo ul.section_list li .s_view_mainBox p.s_title{ color: #fff; }
-.slide_Photo ul.section_list li .s_view_mainBox .btn{ padding: 5px 25px; display: inline-block; border:1px solid #fff; color: #fff; margin: 0 auto; border-radius: 40px;}
-
-.slide_Photo ul.section_list li .s_view_productBox ul.goods{ text-align: center; width:100%; margin: 0 auto; }
-.slide_Photo ul.section_list li .s_view_productBox ul.goods li{ display: inline-block; width: initial; padding:3px; float: none; }
-.slide_Photo ul.section_list li .s_view_productBox ul.goods li .imgBox{ width: 60px; display: block; height: 60px; background-position: center center; background-repeat: no-repeat; background-size: cover; }
-
-.slide_Photo ul.section_list li .s_view_productBox ul.goods li .img_01{ background-image: url(../images/new_site/countdown_party_04.jpg);}
-.slide_Photo ul.section_list li .s_view_productBox ul.goods li .img_02{ background-image: url(../images/new_site/kitchen_adventurer_caramel.jpg);}
-.slide_Photo ul.section_list li .s_view_productBox ul.goods li .img_03{ background-image: url(../images/new_site/arranged-art-background-1061577.jpg);}
-
-.slide_Photo ul.section_list li .s_view_textBox{ /*background-image: url(../images/new_site/);*/  }
-.slide_Photo ul.section_list li .s_view_textBox p.info{ text-align: left; }
-
-.slide_Photo ul.section_list li .s_view_videoBox .icon_video{ width: 50%; margin: 0 auto; padding: 20px; background-color: #c9e0a9; border-radius:5px;}
-.slide_Photo ul.section_list li .s_view_videoBox .icon_video i{ color: #fff; font-size: 2em; }
-
-.slide_Photo ul.section_list li .s_view_contactBox .both{ width: 100%; max-width: 200px; margin: 0 auto; }
-.slide_Photo ul.section_list li .s_view_contactBox .both .map{ float: left; width: 60px; height: 60px; display: block;border:2px solid #fff; background: url(../images/img_googlemap_default.jpg) center center no-repeat; background-size: cover;  }
-.slide_Photo ul.section_list li .s_view_contactBox .both .info{ float: left; width:calc( 100% - 60px); padding:0 5px 0 10px;}
-.slide_Photo ul.section_list li .s_view_contactBox .both .info p{float: none; font-size: 0.5em; text-align: left; line-height: 1.5em; color: #555;}
-
-.slide_Photo ul.section_list li .s_view_formBox p.f_01, .slide_Photo ul.section_list li .s_view_formBox p.f_02, .slide_Photo ul.section_list li .s_view_formBox p.f_03{ color: #999; min-height: 20px; background-color: #fff; border:1px solid #818181; min-width: 60%; text-align: left; display: inline-block; padding: 3px 5px; font-size: 0.5em; margin-bottom: 3px; }
-.slide_Photo ul.section_list li .s_view_formBox p.f_03{min-height: 30px;}
-
-.slide_Photo ul.section_list li .s_view_map_box{ background-image: url(../images/bg_map360.png); }
-
-.slide_Photo ul.section_list li .s_view_socialBox ul.follow_us_icon{ text-align: center; }
-.slide_Photo ul.section_list li .s_view_socialBox ul.follow_us_icon li{ padding: 0; color: #333; margin-bottom: 5px; float: none; text-align: center; display: inline-block; width: initial; font-size: 1em; width: 35px; line-height: 35px; height: 35px; border-radius: 50%; background-color: #f7db05; }
 
 .slide_Photo ul.section_list li.btn_in .s_section_views{ border-color: #27d0ca; }
+.slide_Photo ul.section_list li.btn_in .s_section_views .choose_this{ opacity: 1; }
 
 .edit_button ul li{ float: left; width: 50%; }
 .edit_button p.the_reminder{ padding-bottom: 40px; }
@@ -332,6 +296,32 @@ p.powered_holkee a span{ width: 52px; display: inline-block; color: transparent;
 .setBox .form_simpleBox ul li .both .l_title{ float: left; width: 0%; }
 .setBox .form_simpleBox ul li .both .r_info{ float: left; width: 70%; }
 
+.setBox .text-editbox .preview-text{ border: 1px solid #e0e0e0; width: 100%; padding: 15px; color: #333; min-height: 120px; max-height: 120px; overflow-x: auto;}
+
+/*text-edit-toolbar*/
+.setBox .text-editbox ul.text-edit-toolbar{ width: 100%; text-align: center; padding:15px 0 30px 0; }
+.setBox .text-editbox ul.text-edit-toolbar li{ margin:5px; display: inline-block; padding: 0; vertical-align: top; position: relative;}
+.setBox .text-editbox ul.text-edit-toolbar li a.circleline{ position: relative; color: #333; cursor: pointer; display: block; border:1px solid #e4e4e4; border-radius: 50%; text-align: center; line-height: 45px; height: 45px; width: 45px; }
+.setBox .text-editbox ul.text-edit-toolbar li a:hover, .setBox .text-editbox ul.text-edit-toolbar li a.btn_in{ background-color: #e4e4e4; }
+.setBox .text-editbox ul.text-edit-toolbar li .big{ position: absolute; top: 15px; left: 10px; }
+.setBox .text-editbox ul.text-edit-toolbar li .small{ position: absolute; font-size:0.5rem; top: 9px; right: 12px; }
+
+/*.choose-fontsize*/
+.setBox .text-editbox ul.text-edit-toolbar li ul.choose-fontsize{ position: absolute; top: 42px; left: 0; overflow: hidden; min-width: max-content; border:1px solid #e4e4e4; background-color:#fff; border-radius: 4px; box-shadow: 0 3px 10px rgba(0,0,0,.2); z-index: 100;}
+.setBox .text-editbox ul.text-edit-toolbar li ul.choose-fontsize li { border-bottom:1px solid #e4e4e4; margin: 0; display: block; vertical-align: initial; position: initial;}
+.setBox .text-editbox ul.text-edit-toolbar li ul.choose-fontsize li:last-child{ border:none; }
+.setBox .text-editbox ul.text-edit-toolbar li ul.choose-fontsize li a{ text-align: left; cursor: pointer; display: block; font-size: 0.8rem; border-radius: 0; padding: 0 10px ; line-height:35px; min-width: 60px; height: 35px; }
+
+/*.choose-fontcolor*/
+.setBox .text-editbox ul.text-edit-toolbar li .choose-fontcolor{ width: 204px; position: absolute; top: 42px; left:-81px; display: inline-grid; overflow: hidden; border:1px solid #e4e4e4; background-color:#fff; border-radius: 4px; box-shadow: 0 3px 10px rgba(0,0,0,.2); z-index: 100;}
+.setBox .text-editbox ul.text-edit-toolbar li .choose-fontcolor a.default{ cursor: pointer; padding: 10px; width: 100%; display: block; font-size: 0.8rem; border-bottom:1px solid #e4e4e4; }
+.setBox .text-editbox ul.text-edit-toolbar li .choose-fontcolor ul.the-colors{ width:100%; padding:5px 10px; }
+.setBox .text-editbox ul.text-edit-toolbar li .choose-fontcolor ul.the-colors li { float: left; border-radius:50%;  margin:3px; }
+.setBox .text-editbox ul.text-edit-toolbar li .choose-fontcolor ul.the-colors li a{ cursor: pointer; border-radius: 50%; padding: 0 5px ; display: block; width: 20px; height: 20px; }
+
+.setBox .text-editbox ul.text-edit-toolbar li .choose-fontcolor .user-customize{ width: 100%; border-top:1px solid #e4e4e4; padding-bottom: 10px;}
+.setBox .text-editbox ul.text-edit-toolbar li .choose-fontcolor .user-customize p{ font-size: 0.8rem; padding: 5px; line-height: 25px; }
+.setBox .text-editbox ul.text-edit-toolbar li .choose-fontcolor input.color-code{ margin: 0 10px; width: calc(100% - 20px); padding: 5px 10px; line-height:20px; text-align: center; }
 
 /*------------- 右 邊 : 編 輯 器 工 具 ---------------*/
 
@@ -417,15 +407,15 @@ p.powered_holkee a span{ width: 52px; display: inline-block; color: transparent;
 @media (max-width:750px){
 	.setBox ul.socialBox_list li, .edit_button ul li{ width: 100%; float: none;  padding: 0 0 10px 0; }
 }
-@media (max-width:710px){
-.slide_Photo ul.section_list li{ width: 100%; max-width: 380px; float: none; margin: 0 auto; }
-}
 @media (max-width:600px){
 	.setBox .fillinBox .copy_link a.copy{ font-size: 0.813rem; }
 	.setBox ul.shareBox_list li{ width: 42%; max-width: 140px; text-align: left; margin: 0; }
 	.slide_Photo ul.Photo_list li .photo{ width: 130px; height: 130px; }
 	.slide_Photo ul.Photo_list li .product_fillinBox{ width: 130px; }
 	.edit_main_contents .section-wrapper .map_box .map360{ height: 300px; }
+}
+@media (max-width:500px){
+.slide_Photo ul.section_list li{ width: 100%; max-width: 380px; float: none; margin: 0 auto; }
 }
 @media (max-width:400px){
 	.slide_Photo ul.section_list li .s_view_productBox ul.goods li:nth-child(3),

@@ -6,7 +6,7 @@
 .HeaderBox{ width: 100%; padding: 10px 0; min-height: 30px; background-color: #fff; border-bottom:2px solid #27d0ca; position: fixed; top: 0; left: 0; z-index: 100;}
 .HeaderBox:hover{ border-bottom: 2px solid #27d0ca;}
 
-.HeaderBox .ContentsBox{ width: 100%; max-width: 1600px;}
+.HeaderBox .ContentsBox{ width: 100%; max-width: 100%;}
 .HeaderBox h1.logo{ float: left;  font-size: 22px; margin: 0 25px 0 15px; text-indent: -9999px;}
 .HeaderBox h1.logo a{ width: 120px; height: 40px; display: block; background: url(../images/logo.png) center center no-repeat; background-size: contain;}
 .HeaderBox ul.menu{ float: left; text-align: left;}

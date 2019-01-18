@@ -1,5 +1,5 @@
 /* 拆開css ------ formBox */
-.formBox{ background-repeat: no-repeat; background-position:  center center ; background-size: cover; padding: 50px 0;}
+.formBox{ background-position: center center; background-repeat: no-repeat; background-size: cover; background-attachment: fixed; padding: 50px 0;}
 .formBox .ContentsBox{ max-width: 640px; position: relative; z-index: 9; }
 .formBox .form_simple{ max-width: 600px; margin: 0 auto; padding: 30px 0 20px 0; }
 .formBox .form_simple input{ width: 100%; height: 45px; padding: 10px; line-height: 45px; margin-bottom: 15px; font-size: 0.918rem; box-shadow: 0 2px 5px rgba(0,0,0,0.1);}

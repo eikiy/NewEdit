@@ -229,7 +229,7 @@ $(document).ready(function() {
                     <div class="the_section clearfix">
                         <i class="icon_move fas fa-bars"></i>
                         <div class="section_name clearfix">
-                            <h3>Section name1</h3>
+                            <h3>Section name1 Section Section</h3>
                             <i class="icon_eye_hide far fa-eye-slash" title="此區塊顯示隱藏"></i>
                             <i class="more_function fas fa-angle-down"></i>
                         </div>
@@ -266,7 +266,7 @@ $(document).ready(function() {
                     <div class="the_section clearfix">
                         <i class="icon_move fas fa-bars"></i>
                         <div class="section_name clearfix">
-                            <h3>ABOUT US</h3>
+                            <h3>ABOUT US 字如果很長怎麼辦</h3>
                             <i class="more_function fas fa-angle-down"></i>
                         </div>
                     </div>
@@ -509,7 +509,7 @@ $(document).ready(function() {
         template_color_green
         template_color_purplen
      -->
-    <section class="rightEditBox template_color_green" id="rightEditBox"><!-- template_color_green -->
+    <section class="rightEditBox" id="rightEditBox"><!-- template_color_green -->
         <div class="top_header">
             <nav class="Menu ContentsBox clearfix">
                 <!-- <div class="the_editBox show_lightBox">
@@ -621,10 +621,13 @@ $(document).ready(function() {
                     <div class="the_editBox">
                         <p class="main_title">Main Title</p>
                     </div>-->
-                    <div class="the_editBox">
+                    <div class="the_editBox show_lightBox">
+                        <div class="edit_LightBox">
+                            <a class="popup-link" href="#popup-edit-text">編輯</a>
+                            <a class=" right_delete popup-link" href="#popup-delete"><i class="fas fa-times"></i></a>
+                        </div>
                         <p class="sub_title">We Are Cake prides itself on customer satisfaction.</p>
                     </div>
-                
                     <!-- 有的版型可能一開始沒有放按鈕出來，所以會出現這顆提醒按鈕，看user要不要新增按鈕 -->
                     <div class="the_editBox_gray">
                         <a class="add_new_btn popup-link" href="#popup-btn">新增按鈕</a>
@@ -645,7 +648,7 @@ $(document).ready(function() {
         </div>
 
         <!-- section：productBox-->
-        <div class="section-wrapper bg_translucent_k" id="goThe02"> <!-- 問題 : 思考商品展示這一塊背景需要讓他可以新增圖片 + 半透明嗎? (因為我覺得可能會有一點花俏?) 或是素色背景就好-->
+        <div class="section-wrapper" id="goThe02"> <!-- 問題 : 思考商品展示這一塊背景需要讓他可以新增圖片 + 半透明嗎? (因為我覺得可能會有一點花俏?) 或是素色背景就好-->
             <div class="section-editor-tools">
                 <div class="btn_item clearfix">
                     <a class="section-bg">背景 <i class="more_function fas fa-angle-down"></i></a><!-- 點了展開下面的 bg-editor-Box -->
@@ -708,7 +711,20 @@ $(document).ready(function() {
                     </div>
                 </div>
             </div>
-            <div class="productBox " style=" background-image: url(images/new_site/basket-book-books-6332.jpg);">
+            <!--商品數量針對螢幕解析度判斷：
+                --
+                超過2560 以上最多以16組商品為上限
+                --
+                以下+2是針對像Sandy類型會去縮小螢幕百分比的...
+                30吋螢幕 - 以2560寬度以內去算 > 最多呈現12+2個商品
+                24-27吋螢幕 - 以1920寬度以內去算 > 最多顯示9+2個商品
+                21-23吋螢幕 - 以1680寬度以內去算 > 最多顯示8+2個商品
+                17-19吋螢幕 - 以1440寬度以內去算 > 最多顯示7+2個商品
+                15吋螢幕 - 以1280寬度以內去算 > 最多顯示5+2個商品
+                --
+                螢幕小於600 > 最多顯示3個商品
+            -->
+            <div class="productBox">
                 <div class="ContentsBox">
                     <div class="box-contents">
                         <div class="the_editBox">
@@ -913,7 +929,7 @@ $(document).ready(function() {
                     </div>
                 </div>
             </div>
-            <div class="textBox">
+            <div class="textBox" style=" background-image: url(images/new_site/basket-book-books-6332.jpg);">
                 <div class="ContentsBox clearfix">
                     <div class="lBox">
                         <div class="the_editBox show_lightBox">
@@ -958,7 +974,7 @@ $(document).ready(function() {
         </div>
 
         <!-- section：videoBox-->
-        <div class="section-wrapper bg_translucent_k" id="goThe04">
+        <div class="section-wrapper" id="goThe04">
             <div class="section-editor-tools">
                 <div class="btn_item clearfix">
                     <a class="section-typesetting">版面設定 <i class="fas fa-undo"></i></a><!-- 點了變換版面排版 -->
@@ -1058,7 +1074,7 @@ $(document).ready(function() {
         </div>
 
         <!-- section：contactBox -->
-        <div class="section-wrapper bg_translucent_k" id="goThe06">
+        <div class="section-wrapper" id="goThe06">
             <div class="section-editor-tools">
                 <div class="btn_item clearfix">
                     <a class="section-typesetting">版面設定 <i class="fas fa-undo"></i></a><!-- 點了變換版面排版 -->
@@ -1244,7 +1260,7 @@ $(document).ready(function() {
         </div>
 
         <!-- section：followBox -->
-        <div class="section-wrapper bg_translucent_k" id="goThe07">
+        <div class="section-wrapper" id="goThe07">
             <div class="section-editor-tools">
                 <div class="btn_item clearfix">
                     <a class="section-typesetting">版面設定 <i class="fas fa-undo"></i></a><!-- 點了變換版面排版 -->
@@ -2029,10 +2045,7 @@ $(document).ready(function() {
                     <div class="s_section_views s_view_mainBox">
                         <div class="choose_this"><p><i class="fas fa-check"></i>選擇此版塊</p></div>
                         <div class="infoBox">
-                            <div class="center">
-                                <p class="s_title">Main title</p>
-                                <p class="btn">buttom</p>
-                            </div>
+                            <img src="images/edit_section_list_thumbnail_main.jpg" alt="主頁">
                         </div>
                     </div>
                     <h4>主頁</h4>
@@ -2041,23 +2054,7 @@ $(document).ready(function() {
                     <div class="s_section_views s_view_productBox">
                         <div class="choose_this"><p><i class="fas fa-check"></i>選擇此版塊</p></div>
                         <div class="infoBox">
-                            <div class="center">
-                                <p class="s_title">Shop</p>
-                                <ul class="goods">
-                                    <li>
-                                        <div class="imgBox img_01"></div>
-                                        <p class="info">cake</p>
-                                    </li>
-                                     <li>
-                                        <div class="imgBox img_02"></div>
-                                        <p class="info">cake</p>
-                                    </li>
-                                     <li>
-                                        <div class="imgBox img_03"></div>
-                                        <p class="info">cake</p>
-                                    </li>
-                                </ul>
-                            </div>
+                            <img src="images/edit_section_list_thumbnail_slider.jpg" alt="主頁">
                         </div>
                     </div>
                     <h4>商品展示</h4>
@@ -2066,10 +2063,7 @@ $(document).ready(function() {
                     <div class="s_section_views s_view_textBox">
                         <div class="choose_this"><p><i class="fas fa-check"></i>選擇此版塊</p></div>
                         <div class="infoBox">
-                            <div class="center">
-                                <p class="s_title">About Us</p>
-                                <p class="info">We Are Cake prides itself on customer satisfaction. "Making People happy" isn't just our tag line it is how we want every one of our customer to...</p>
-                            </div>
+                            <img src="images/edit_section_list_thumbnail_text.jpg" alt="主頁">
                         </div>
                     </div>
                     <h4>關於我們</h4>
@@ -2078,12 +2072,7 @@ $(document).ready(function() {
                     <div class="s_section_views s_view_videoBox">
                         <div class="choose_this"><p><i class="fas fa-check"></i>選擇此版塊</p></div>
                         <div class="infoBox">
-                            <div class="center">
-                                <p class="s_title">Video</p>
-                                <div class="icon_video">
-                                    <i class="fab fa-youtube"></i>
-                                </div>
-                            </div>
+                            <img src="images/edit_section_list_thumbnail_video.jpg" alt="主頁">
                         </div>
                     </div>
                     <h4>影片</h4>
@@ -2091,6 +2080,9 @@ $(document).ready(function() {
                 <li>
                     <div class="s_section_views s_view_map_box">
                         <div class="choose_this"><p><i class="fas fa-check"></i>選擇此版塊</p></div>
+                        <div class="infoBox">
+                            <img src="images/edit_section_list_thumbnail_map360.jpg" alt="主頁">
+                        </div>
                     </div>
                     <h4>環景</h4>
                 </li>
@@ -2098,18 +2090,7 @@ $(document).ready(function() {
                     <div class="s_section_views s_view_contactBox">
                         <div class="choose_this"><p><i class="fas fa-check"></i>選擇此版塊</p></div>
                         <div class="infoBox">
-                            <div class="center">
-                                <p class="s_title">Contact</p>
-                                <div class="both clearfix">
-                                    <div class="map"></div>
-                                    <div class="info">
-                                        <p>Teipai City, Taiwan (R.O.C.)<br>
-                                        02-8888-8888<br>
-                                        10:00 AM - 11:30 PM<br>
-                                        holkee@service.com</p>
-                                    </div>
-                                </div>
-                            </div>
+                            <img src="images/edit_section_list_thumbnail_contact.jpg" alt="主頁">
                         </div>
                     </div>
                     <h4>聯絡我們</h4>
@@ -2118,12 +2099,7 @@ $(document).ready(function() {
                     <div class="s_section_views s_view_formBox">
                         <div class="choose_this"><p><i class="fas fa-check"></i>選擇此版塊</p></div>
                         <div class="infoBox">
-                            <div class="center">
-                                <p class="s_title">Form</p>
-                                <p class="f_01">Name</p>
-                                <p class="f_02">E-mail</p>
-                                <p class="f_03">...</p>
-                            </div>
+                            <img src="images/edit_section_list_thumbnail_formsimple.jpg" alt="主頁">
                         </div>
                     </div>
                     <h4>表單</h4>
@@ -2132,17 +2108,7 @@ $(document).ready(function() {
                     <div class="s_section_views s_view_socialBox">
                         <div class="choose_this"><p><i class="fas fa-check"></i>選擇此版塊</p></div>
                         <div class="infoBox">
-                            <div class="center">
-                                <p class="s_title">Social media</p>
-                                <ul class="follow_us_icon">
-                                    <li><i class="fab fa-facebook-f"></i></li>
-                                    <li><i class="fab fa-twitter"></i></li>
-                                    <li><i class="fab fa-instagram"></i></li>
-                                    <li><i class="fab fa-youtube"></i></li>
-                                    <li><i class="fab fa-weixin"></i></li>
-                                    <li><i class="fab fa-line"></i></li>
-                                </ul>
-                            </div>
+                            <img src="images/edit_section_list_thumbnail_social.jpg" alt="主頁">
                         </div>
                     </div>
                     <h4>表單</h4>
@@ -2153,6 +2119,76 @@ $(document).ready(function() {
                 <a class="popup-link " href="#">套用設定</a>
             </p>
         </div>
+    </div>
+
+    <!-- 內文編輯 設定 -->
+    <div id="popup-edit-text" class="white-popup mfp-hide">
+        <form class="setBox text-editbox">
+            <div class="top_title">
+                <h3>內文編輯</h3>
+            </div>
+            <div class="fillinBox text-editbox">
+                <div class="preview-text">
+                    <div style="text-decoration: underline; font-weight: bold; text-align: center; color: #9c27b0;">We Are Cake prides itself on customer satisfaction. "Making People happy" isn't just our tag line it is how we want every one of our customer to feel when they choose us for the special events in their lives. Create a special memory with one of our custom cakes.
+
+We Are Cake was founded as a way to combine creativity, hard work and a passion for baking quality cakes and cupcakes. In the beginning it started with a simple desire to make family and friends events special with hand made delicious cakes creatively decorated to match one-of-a-kind themes. After multiple requests from friends and relatives to do the same for their events lead to the realization that not only did people love the cakes but we loved to do it for them. This has been the perfect recipe for a successful business.</div>
+                </div>
+                <ul class="text-edit-toolbar">
+                    <li><a class="circleline btn_in"><i class="fas fa-bold"></i></a></li>
+                    <li><a class="circleline"><i class="fas fa-italic"></i></a></li>
+                    <li><a class="circleline btn_in"><i class="fas fa-underline"></i></a></li>
+                    <li><a class="circleline"><i class="fas fa-align-left"></i></a></li>
+                    <li><a class="circleline btn_in"><i class="fas fa-align-center"></i></a></li>
+                    <li><a class="circleline"><i class="fas fa-align-right"></i></a></li>
+                    <li><a class="circleline"><i class="fas fa-align-justify"></i></a></li>
+                    <li>
+                        <a class="circleline btn_in">
+                            <i class="big fas fa-font"></i>
+                            <i class="small fas fa-font"></i>
+                        </a>
+                        <ul class="choose-fontsize clearfix">
+                            <li><a>最小</a></li>
+                            <li><a>小</a></li>
+                            <li><a class="btn_in">普通</a></li>
+                            <li><a>大</a></li>
+                            <li><a>最大</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="circleline btn_in" style=" color: #9c27b0;"><i class="fas fa-circle"></i></a>
+                        <div class="choose-fontcolor">
+                            <a class="default"><i class="fas fa-ban"></i> USE DEFAULT</a>
+                            <ul class="the-colors clearfix">
+                                <li><a style="background-color: #f44336;"></a></li>
+                                <li><a style="background-color: #e91e63;"></a></li>
+                                <li><a style="background-color: #9c27b0;"></a></li>
+                                <li><a style="background-color: #014d88;"></a></li>
+                                <li><a style="background-color: #2196f3;"></a></li>
+                                <li><a style="background-color: #01bcd4;"></a></li>
+                                <li><a style="background-color: #8bc34a;"></a></li>
+                                <li><a style="background-color: #cddc39;"></a></li>
+                                <li><a style="background-color: #ffc107;"></a></li>
+                                <li><a style="background-color: #ffeb3b;"></a></li>
+                                <li><a style="background-color: #ffffff; border:1px solid #aaaaaa;"></a></li>
+                                <li><a style="background-color: #aaaaaa;"></a></li>
+                                <li><a style="background-color: #0d0d0d;"></a></li>
+                                <li><a style="background-color: #714343;"></a></li>
+                            </ul>
+                            <div class="user-customize">
+                                <p>自定義顏色</p>
+                                <input class="color-code" type="text" name="" value="#9c27b0">
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="fillinBox">
+                    <p class="btn_default">
+                        <a class="color_gray" href="#">關閉</a>
+                        <a class="popup-link " href="#">套用設定</a>
+                    </p>
+                </div>
+            </div>
+        </form>
     </div>
 
 </main>
