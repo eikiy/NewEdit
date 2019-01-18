@@ -1,13 +1,23 @@
 /*FooterBox 只能編輯文字 + 出現預設holkee文字*/
 .s-footerBox{ width: 100%; background-color: #fff; padding: 20px 0 40px 0; position: relative;}
 .s-footerBox p{text-align: center;  font-size: 0.750rem; line-height: 24px; color: #666; letter-spacing: 0.5px;}
-/*.s-footerBox p.powered_holkee{ position: absolute; bottom: 0; width: 100%; left: 0; text-align: center; }
-.s-footerBox p.powered_holkee a{ background-color: #464646; padding: 5px 18px; border-radius: 12px 12px 0 0; display: inline-block; color: #fff; }
-.s-footerBox p.powered_holkee a span{ width: 52px; display: inline-block; color: transparent; background: url(../../images/logo.png) center center no-repeat; background-size: contain; }
-*/
+
+.s-footerBox p.powered-website, .s-footerBox p.copyrights { text-align: center;  font-size: 0.750rem; line-height: 24px; color: #666; letter-spacing: 0.5px; }
+.s-footerBox p.powered-website { position: absolute; bottom: 0; width: 100%; left: 0; }
+.s-footerBox p.powered-website a { background-color: #464646; padding: 5px 18px; border-radius: 12px 12px 0 0; display: inline-block; color: #fff; }
+.s-footerBox p.powered-website a span { width: 52px; display: inline-block; color: transparent; background: url(//img.holkee.com/main/logo.png) center center no-repeat; background-size: contain; }
+
 /*share*/
-ul.share-tools{ padding: 15px 0; width: 100%; text-align: center; }
-ul.share-tools li{ display: inline-block; height: 30px; padding: 0 4px; vertical-align: middle;}
-
-
-/*FooterBox 只能編輯文字 + 出現預設holkee文字 END*/
+ul.share-tools { padding: 15px 0; width: 100%; text-align: center; }
+ul.share-tools li { display: inline-block; min-height: 30px; padding:4px; vertical-align: middle; color: #fff; }
+ul.share-tools li label{ padding: 3px 8px; display: inline-block; border-radius: 5px; font-size: 0.918rem;}
+ul.share-tools li label i{ padding-right: 10px; }
+ul.share-tools li label.facebook{ background-color: #3b5998; }
+ul.share-tools li label.gplus{ background-color: #dc4e41; }
+ul.share-tools li label.line{ background-color: #52b448; }
+ul.share-tools li label.linkedin{ background-color: #0077b5; }
+ul.share-tools li label.pinterest{ background-color: #bd081c; }
+ul.share-tools li label.tumblr{ background-color: #3c5a77; }
+ul.share-tools li label.twitter{ background-color: #1da1f2; }
+ul.share-tools li label.whatsapp{ background-color: #25d366; }
+/*FooterBox 只能編輯文字 + 出現預設 website 文字 END*/

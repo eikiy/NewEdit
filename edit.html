@@ -1357,29 +1357,28 @@ $(document).ready(function() {
                         <div class="edit_LightBox">
                             <a class="popup-link" href="#popup-share">編輯</a>
                         </div>
-                        <ul class="share-tools">
-                            <li><!-- 參考說明 : https://developers.facebook.com/docs/plugins/share-button -->
-                                <div class="fb-share-button" data-href="https://www.your-domain.com/your-page.html" data-layout="button_count"></div>
-                            </li>
-                            <li><!-- 參考說明 : https://developer.twitter.com/en/docs/twitter-for-websites/tweet-button/overview.html -->
-                               <iframe id="twitter-widget-1" scrolling="no" frameborder="0" allowtransparency="true" class="twitter-share-button twitter-share-button-rendered twitter-tweet-button" style="position: static; visibility: visible; width: 60px; height: 20px;" title="Twitter Tweet Button" src="https://platform.twitter.com/widgets/tweet_button.b510f289fb017e5dfdc7fdb287a0ae4b.en.html#dnt=false&amp;id=twitter-widget-1&amp;lang=en&amp;original_referer=https%3A%2F%2Fdeveloper.twitter.com%2Fen%2Fdocs%2Ftwitter-for-websites%2Ftweet-button%2Foverview.html&amp;size=m&amp;text=Guides%20%E2%80%94%20Twitter%20Developers&amp;time=1536658379407&amp;type=share&amp;url=https%3A%2F%2Fdeveloper.twitter.com%2Fen%2Fdocs%2Ftwitter-for-websites%2Ftweet-button%2Foverview.html"></iframe>
-                            </li>
-                            <li><!-- 參考說明 : https://developers.google.com/+/web/share/ -->
-                                <!-- Place this tag where you want the share button to render. -->
-                                <div class="g-plus" data-action="share"></div>
+                        <ul class=" share-tools">
+                            <li>
+                                <label class="facebook"><i class="fab fa-facebook-square"></i><span>Facebook</span></label>
                             </li>
                             <li>
-                                <!-- 參考說明 : https://media.line.me/zh_TW/how_to_install -->
-                                <div class="line-it-button" data-lang="zh_Hant" data-type="share-a" data-url="https://media.line.me/zh_TW/how_to_install" style="display: none;"></div>
-                                <script src="https://d.line-scdn.net/r/web/social-plugin/js/thirdparty/loader.min.js" async="async" defer="defer"></script>
+                                <label class="line"><i class="fab fa-line"></i><span>LINE</span></label>
                             </li>
                             <li>
-                                <!-- 參考說明 : http://open.weibo.com/sharebutton 、 http://jssdk.sinaapp.com/widget/share.php-->
-                                <html xmlns:wb="http://open.weibo.com/wb">
-                                <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
-                                <wb:share-button addition="simple" type="button"></wb:share-button></script>
+                                <label class="linkedin"><i class="fab fa-linkedin"></i><span>LinkedIn</span></label>
                             </li>
-                            <!-- <li></li>唯信的我還不知道怎麼寫，好像沒有網頁版本的套件按鈕? = =? -->
+                            <li>
+                                <label class="pinterest"><i class="fab fa-pinterest"></i><span>Pinterest</span></label>
+                            </li>
+                            <li>
+                                <label class="tumblr"><i class="fab fa-tumblr-square"></i><span>Tumblr</span></label>
+                            </li>
+                            <li>
+                                <label class="twitter"><i class="fab fa-twitter"></i><span>Twitter</span></label>
+                            </li>
+                            <li>
+                                <label class="whatsapp"><i class="fab fa-whatsapp"></i><span>WhatsApp</span></label>
+                            </li>
                         </ul>
                     </div>
                     <div class="the_editBox">
@@ -1826,26 +1825,39 @@ $(document).ready(function() {
             <div class="fillinBox">
                 <ul class="shareBox_list clearfix">
                     <li>
-                        <input type="checkbox" name="" value="Facebook">
-                        <label class="fb" for="Facebook"><i class="fab fa-facebook-square"></i>Share</label>
+                        <input type="checkbox" name="" value="Share">
+                        <label class="facebook"><i class="fab fa-facebook-square"></i><span>Facebook</span></label>
                     </li>
                     <li>
-                        <input type="checkbox" name="" value="Twitter">
-                        <label class="twitter" for="Twitter"><i class="fab fa-twitter"></i>Share</label>
+                        <input type="checkbox" name="" value="Share">
+                        <label class="gplus"><i class="fab fa-gplus"></i><span>LINE</span></label>
                     </li>
                     <li>
-                        <input type="checkbox" name="" value="Google">
-                        <label class="google" for="Google"><i class="fab fa-google-plus-g"></i>Share</label>
+                        <input type="checkbox" name="" value="Share">
+                        <label class="line"><i class="fab fa-line"></i><span>LINE</span></label>
                     </li>
                     <li>
-                        <input type="checkbox" name="" value="Line">
-                        <label class="line" for="Line"><i class="fab fa-line"></i>用LINE傳送</label>
+                        <input type="checkbox" name="" value="Share">
+                        <label class="linkedin"><i class="fab fa-linkedin"></i><span>LinkedIn</span></label>
                     </li>
                     <li>
-                        <input type="checkbox" name="" value="Line">
-                        <label class="weibo" for="Line">分享</label>
+                        <input type="checkbox" name="" value="Share">
+                        <label class="pinterest"><i class="fab fa-pinterest"></i><span>Pinterest</span></label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="" value="Share">
+                        <label class="tumblr"><i class="fab fa-tumblr-square"></i><span>Tumblr</span></label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="" value="Share">
+                        <label class="twitter"><i class="fab fa-twitter"></i><span>Twitter</span></label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="" value="Share">
+                        <label class="whatsapp"><i class="fab fa-whatsapp"></i><span>WhatsApp</span></label>
                     </li>
                 </ul>
+
                 <div class="fillinBox">
                     <p class="btn_default">
                         <a class="color_gray" href="#">關閉</a>

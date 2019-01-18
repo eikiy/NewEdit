@@ -227,14 +227,16 @@ p.powered_holkee a span{ width: 52px; display: inline-block; color: transparent;
 .setBox ul.shareBox_list{ width: 100%; padding: 10px 0 20px; color: #666; text-align: center; }
 .setBox ul.shareBox_list li{ display: inline-block; margin: 0 10px; padding-bottom: 15px; vertical-align: middle; }
 .setBox ul.shareBox_list li input{ width: initial; }
-.setBox ul.shareBox_list li label{padding:3px 8px; display: inline-block; font-size: 0.813rem; border-radius: 4px;background-color: #333; color: #fff; }
+.setBox ul.shareBox_list li label{ margin-left: 5px; padding:3px 8px; display: inline-block; font-size: 0.813rem; border-radius: 4px;background-color: #333; color: #fff; }
 .setBox ul.shareBox_list li label i{ padding-right: 7px; }
-.setBox ul.shareBox_list li label.fb{ background-color: #365899; }
-.setBox ul.shareBox_list li label.twitter{ background-color: #1b95e0; }
-.setBox ul.shareBox_list li label.google{ background-color: #fff;  color: #333; border: 1px solid #d5d5d5;}
-.setBox ul.shareBox_list li label.google i{ color: #db4437;}
-.setBox ul.shareBox_list li label.line{ background-color: #00b833; }
-.setBox ul.shareBox_list li label.weibo{ padding-left: 30px; height: 22px; line-height: 15px; background: url(../images/icons8-weibo-48.png) left center no-repeat #ed162c; background-size: cover; border: 1px solid #d5d5d5;}
+.setBox ul.shareBox_list li label.facebook{ background-color: #3b5998; }
+.setBox ul.shareBox_list li label.gplus{ background-color: #dc4e41; }
+.setBox ul.shareBox_list li label.line{ background-color: #52b448; }
+.setBox ul.shareBox_list li label.linkedin{ background-color: #0077b5; }
+.setBox ul.shareBox_list li label.pinterest{ background-color: #bd081c; }
+.setBox ul.shareBox_list li label.tumblr{ background-color: #3c5a77; }
+.setBox ul.shareBox_list li label.twitter{ background-color: #1da1f2; }
+.setBox ul.shareBox_list li label.whatsapp{ background-color: #25d366; }
 
 .setBox .img_upload{ width: 100%; height: 260px; margin: 0 auto; text-align: center; }
 .setBox .img_upload a{ width: 100%; height: 100%; position: relative; cursor: pointer; color: #b1b1b1; display: block;  margin: 0 auto; text-align: center; max-width: 200px; max-height: 200px; border: 1px dashed #d4d4d4; border-radius: 4px; display: -webkit-flex; display: flex; -webkit-align-items: center; align-items: center; -webkit-justify-content: center; justify-content: center;}
