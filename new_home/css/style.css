@@ -218,6 +218,7 @@ body{font-size: 100%;}
 	.footer-box p.copyright{ text-align: center; padding: 15px 0; }
 }
 @media (max-width:600px){
+	.home-content .main-banner p.sub-title{ padding: 15px 0; }
 	.home-content .main-banner p.sub-title, .features-box .f-box p, .ecshop-info p.sub-title, .website-info p.sub-title{ font-size: 0.938rem; line-height: 28px;}
 	.home-content .main-banner{ min-height: 400px; }
 	.home-content .main-banner h2.main-title{ font-size: 2rem;}
