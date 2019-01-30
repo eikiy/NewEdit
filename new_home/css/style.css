@@ -26,6 +26,10 @@ select, input, textarea, button {  font-family:'Noto Sans TC',Arial,"微軟正�
 body{font-size: 100%;}
 
 /*===== start ======*/
+p.go-top{  position:absolute; right:3%; bottom:-60px; cursor:pointer; z-index:5; text-align: center; font-size:0.750rem;}
+p.go-top a{ width:45px; height:45px; color: #fff; padding-top: 20px; border-radius: 50px; cursor: pointer; display:block; background: url(../images/img_top.png) center center no-repeat #333; background-size: contain; }
+p.go-top a:hover{ opacity:0.9;}
+
 .contents-box{ width: calc(100% - 40px); max-width: 1400px; margin: 0 auto; min-width: 320px;}
 
 .top-header{ width: 100%; padding: 10px 0; min-height: 20px;  position: fixed; z-index: 12;}
@@ -84,7 +88,7 @@ body{font-size: 100%;}
 .home-content{ width: 100%;}
 .home-content .main-banner{ height: 100vh; min-height: 600px; overflow: hidden; background: url(../images/bg_home_banner.jpg) center bottom no-repeat; background-size: cover; /*background-attachment: fixed;*/ text-align: center; display: -webkit-flex; display: flex; -webkit-align-items: center; align-items: center; -webkit-justify-content: center; justify-content: center;}
 .home-content .main-banner .info-box{ padding-bottom: 15%; }
-.home-content .main-banner h2.main-title {font-size: 2.813rem; font-family: 'Noto Serif Georgian';}
+.home-content .main-banner h2.main-title {font-size: 2.813rem; font-family: 'Noto Serif Georgian', "微軟正黑體", sans-serif;}
 .home-content .main-banner h2.main-title span{ display: inline-block; position: relative; padding: 0 115px; }
 .home-content .main-banner h2.main-title span.free{ position: absolute;  padding: 20px; width: 104px; height: 104px; background: url(../images/img_bg_dialog.png) center center no-repeat; background-size: contain; text-align: center; top: -20px; right: 0px; font-size: 1.875rem; line-height: 34px; color: #ff4f68; height: 105px; display: inline-block; background: url(../images/img_bg_dialog.png) center center no-repeat; background-size: cover; display: -webkit-flex; display: flex; -webkit-align-items: center; align-items: center; -webkit-justify-content: center; justify-content: center;}
 
@@ -102,7 +106,7 @@ body{font-size: 100%;}
 .features-box .f-box .info-box{ float: left; width: 50%; height:100%; display: -webkit-flex; display: flex; -webkit-align-items: center; align-items: center; -webkit-justify-content: center; justify-content: center;}
 .features-box .f-box .imgbox{ float: left; width: 50%; height: 100%; display: block; background-repeat: no-repeat; background-position: center center; background-size: contain; transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;}
 .features-box .f-box .imgbox:hover{ background-size: 98%; }
-.features-box .f-box h3{ font-size: 1.313rem; padding-bottom: 30px; font-weight: bold; font-family: 'Noto Serif Georgian';}
+.features-box .f-box h3{ font-size: 1.313rem; padding-bottom: 30px; font-weight: bold; font-family: 'Noto Serif Georgian', "微軟正黑體", sans-serif;;}
 .features-box .f-box h3.icon-amp{ padding-top: 80px; position: relative;}
 .features-box .f-box h3.icon-amp::after{ position: absolute; content: ""; width: 62px; height: 62px; top: 0; left:calc(50% - 31px); display: block; background: url(../images/icon_amp.png) center center no-repeat; background-size: cover; }
 .features-box .f-box p{ font-size: 1.063rem; color: #333; max-width: 520px; line-height: 28px; margin: 0 auto;}
@@ -118,7 +122,7 @@ body{font-size: 100%;}
 .ecshop-info .topbanner { width: 100%; height: 352px;  background-color: #d7c1e8;}
 .ecshop-info .topbanner .imgbox{ width: 100%; height: 352px; background: url(../images/img_bg_ecshop.png) center right no-repeat; background-size: contain; position: relative;}
 .ecshop-info .topbanner .imgbox::after{ content: ""; position: absolute; bottom: 0; left: 0; width:100%; height: 450px; display: block; background:url(../images/imgbox_05.png) center left no-repeat; background-size: contain; }
-.ecshop-info h3, .website-info h3{ font-size: 1.313rem; padding:50px 0 30px 0; font-weight: bold; font-family: 'Noto Serif Georgian'; position: relative;}
+.ecshop-info h3, .website-info h3{ font-size: 1.313rem; padding:50px 0 30px 0; font-weight: bold; font-family: 'Noto Serif Georgian', "微軟正黑體", sans-serif;; position: relative;}
 .ecshop-info h3::after, .website-info h3::after{ content: ""; position: absolute; bottom: 0; left: calc(50% - 75px); width: 150px; height: 3px; display: block; background-color: #27d0ca; }
 
 .ecshop-info p.sub-title, .website-info p.sub-title{ color: #333; font-size:1.063rem; line-height: 32px; max-width:700px; margin: 0 auto;  padding: 30px 0;}
