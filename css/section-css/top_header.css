@@ -16,12 +16,15 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80000000', e
 .top_header .TopBox ul.top_menu li h3{ font-size: 17px; line-height: 22px; }
 .top_header .TopBox ul.top_menu li h3 a{ color: #fff; padding: 8px 10px; cursor: pointer;display: inline-block;  -moz-border-radius: 30px; -webkit-border-radius: 30px; border-radius: 30px;}
 .top_header .TopBox ul.top_menu li h3 a:hover{ background-color: #fff; color: #333; }
+.menu_hamburger{ position: fixed; color: #fff; display: none; font-size: 1.375em; top: 75px; right: 20px; padding: 10px 20px; cursor: pointer; z-index: 200;}
 
 @media (max-width:1220px){
 	.top_header .TopBox ul.top_menu li h3{ font-size: 16px; }
 	.top_header .TopBox ul.top_menu li h3 a{ padding: 8px 12px; }
 }
 @media (max-width:1000px){
+	.top_header .TopBox{ display: none; }
 	.top_header .TopBox ul.top_menu li h3{font-size: 15px;}
+	.menu_hamburger{ display: block; }
 }
 /* 拆開css ------ top_header END */
