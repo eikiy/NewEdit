@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="zh-TW">
 <head>
 <meta charset="UTF-8">
-<title>holkee 全新編輯器</title>
+<title>holkee 全新編輯器 - 2019/07/02 最後調整日期 / 新增表單功能 </title>
 <meta name='description' content=""/>
 <meta name='keywords' content=""/>
 <meta name="MobileOptimized" content="width">
@@ -11,8 +11,10 @@
 
 <script type="text/javascript" src="on-server/css/fontawesome-all.css.js"></script>
 <link rel="stylesheet" href="on-server/css/fontawesome-all.css">
-<link rel="stylesheet" href="css/style.css"> <!-- 現有網站最預設吃的檔案 -->
-<link rel="stylesheet" href="css/edit_style.css"> <!-- 新編輯器內的 -->
+<!-- <link rel="stylesheet" href="css/style.css"> -->
+<link rel="stylesheet" href="css/editor.css"><!-- 抓 beta 的 css 來改，前身我取名是 edit_style XD -->
+ <link rel="stylesheet" href="css/main.conflict.css"><!-- 前身我取名是 style.css XD -->
+<link rel="stylesheet" href="css/section.css"><!-- 抓 beta 的 css 來改 -->
 
 <!-- 右邊網頁所吃的 -->
 <!-- 拆開的section的style -->
@@ -20,17 +22,18 @@
 
 <link rel="stylesheet" href="css/function-css/sidemenu.css"><!-- ****選單以後會有樣式的不同 -->
 
-<link rel="stylesheet" href="css/section-css/global.css"><!-- ****global*** 每個section共吃的css -->
-<link rel="stylesheet" href="css/section-css/top_header.css">
-<link rel="stylesheet" href="css/section-css/mainBox.css">
-<link rel="stylesheet" href="css/section-css/productBox.css">
-<link rel="stylesheet" href="css/section-css/textBox.css">
-<link rel="stylesheet" href="css/section-css/socialBox.css">
-<link rel="stylesheet" href="css/section-css/contactBox.css">
-<link rel="stylesheet" href="css/section-css/videoBox.css">
-<link rel="stylesheet" href="css/section-css/map_box.css">
-<link rel="stylesheet" href="css/section-css/formBox.css">
-<link rel="stylesheet" href="css/section-css/s-footerBox.css">
+<!-- ****global*** 每個section共吃的css -->
+<link rel="stylesheet" href="css/section/contact.css">
+<link rel="stylesheet" href="css/section/footer.css">
+<link rel="stylesheet" href="css/section/formsimple.css"><!-- 抓 beta 的 css 來改 -->
+<link rel="stylesheet" href="css/section/header.css">
+<link rel="stylesheet" href="css/section/main.css">
+<link rel="stylesheet" href="css/section/map360.css">
+<link rel="stylesheet" href="css/section/sidemenu.css">
+<link rel="stylesheet" href="css/section/slides.css">
+<link rel="stylesheet" href="css/section/social.css">
+<link rel="stylesheet" href="css/section/text.css">
+<link rel="stylesheet" href="css/section/video.css">
 
 <script src="js/section-js/jquery.mobile-1.4.5.min.js"></script>
 <script type="text/javascript">
@@ -78,7 +81,6 @@ $(document).ready(function() {
 });
 </script>
 
-
 <!-- Load Facebook SDK for JavaScript -->
   <div id="fb-root"></div>
   <script>(function(d, s, id) {
@@ -94,6 +96,15 @@ $(document).ready(function() {
   {lang: 'zh-TW'}
 </script>
 
+<script type="text/javascript">
+    function autoTextAreaHeight(o) {
+        o.style.height = o.scrollTop + o.scrollHeight + "px";
+    }
+    $(function () {
+        var ele = document.getElementById("symptomTxt");
+        autoTextAreaHeight(ele);
+    })
+</script>
 
 </head>
 <body ontouchstart="" onmouseover="">
@@ -185,9 +196,9 @@ $(document).ready(function() {
     <!-- 小於650px會出現下選單tool -->
     <section class="the_bottom_tool">
         <ul class="clearfix">
-            <li><p><a target="_blank" href="preview.html"><i class="fas fa-eye"></i>預覽</a></p></li>
+            <!-- <li><p><a target="_blank" href="preview.html"><i class="fas fa-eye"></i>預覽</a></p></li>
             <li><p><a class="popup-link" href="#popup"><i class="fas fa-cog"></i>網站設定</a></p></li>
-            <li class="save"><p><a href="#"><i class="fas fa-save"></i>儲存</a></p></li>
+            <li class="save"><p><a href="#"><i class="fas fa-save"></i>儲存</a></p></li> -->
             <li class="release"><p><a class="popup-link" href="#popup"><i class="fas fa-check"></i>發佈</a></p></li>
         </ul>
     </section>
@@ -195,316 +206,308 @@ $(document).ready(function() {
     <!-- 左邊選單工具 -->
     <section class="sideMenu dLeft menu-left">
         <div class="menu_container">
-        <a class="btn_sideMenu"><p>CLOSE</p></a> <!-- 請幫我變換文字喔 CLOSE / OPEN -->
+            <a class="btn_sideMenu"><p>CLOSE</p></a> <!-- 請幫我變換文字喔 CLOSE / OPEN -->
 
-        <ul class="other_tool clearfix">
-            <li><p><a target="_blank" href="preview.html"><i class="fas fa-eye"></i>預覽網站</a></p></li>
-            <li><p><a class="web_set popup-link" href="#popup"><i class="fas fa-cog"></i>網站設定</a></p></li>
-        </ul>
-        <div class="top_headline first_top">
-            <p>版塊總覽
-                <a class="note" href="#">
-                    <i class="far fa-question-circle"></i>
-                    <span class="note_info">提醒您，目前最多只能新增12個版塊喔！</span>
-                </a>
-            </p>
-        </div>
-
-        <div class="rollingBox">
-            <ul class="mainMenu">
-                <li>
-                    <div class="the_section clearfix">
-                        <i class="icon_move fas fa-bars"></i>
-                        <div class="section_name clearfix">
-                            <h3>HOME</h3>
-                            <i class="more_function fas fa-angle-down"></i>
-                        </div>
-                    </div>
-                    <div class="subBox">
-                        <ul class="clearfix">
-                            <li><p><a href="#"><i class="far fa-eye-slash"></i>隱藏</a></p></li>
-                            <li><p><a href="#"><i class="fas fa-pencil-alt"></i>變更命名</a></p></li>
-                            <li><p><a href="#"><i class="far fa-copy"></i>複製</a></p></li>
-                            <li><p><a href="#"><i class="far fa-trash-alt"></i>刪除</a></p></li>
-                        </ul>
-                    </div>
-                </li>
-
-                <li class="the_hide">
-                    <div class="the_section clearfix">
-                        <i class="icon_move fas fa-bars"></i>
-                        <div class="section_name clearfix">
-                            <h3>Section name1 Section Section</h3>
-                            <i class="icon_eye_hide far fa-eye-slash" title="此區塊顯示隱藏"></i>
-                            <i class="more_function fas fa-angle-down"></i>
-                        </div>
-                    </div>
-                    <div class="subBox">
-                        <ul class="clearfix">
-                            <li><p><a href="#"><i class="fas fa-eye"></i>顯示</a></p></li>
-                            <li><p><a href="#"><i class="fas fa-pencil-alt"></i>變更命名</a></p></li>
-                            <li><p><a href="#"><i class="far fa-copy"></i>複製</a></p></li>
-                            <li><p><a href="#"><i class="far fa-trash-alt"></i>刪除</a></p></li>
-                        </ul>
-                    </div>
-                </li>
-
-                <li>
-                    <div class="the_section clearfix">
-                        <i class="icon_move fas fa-bars"></i>
-                        <div class="section_name clearfix">
-                            <h3>SHOP</h3>
-                            <i class="more_function fas fa-angle-down"></i>
-                        </div>
-                    </div>
-                    <div class="subBox">
-                        <ul class="clearfix">
-                            <li><p><a href="#"><i class="far fa-eye-slash"></i>隱藏</a></p></li>
-                            <li><p><a href="#"><i class="fas fa-pencil-alt"></i>變更命名</a></p></li>
-                            <li><p><a href="#"><i class="far fa-copy"></i>複製</a></p></li>
-                            <li><p><a href="#"><i class="far fa-trash-alt"></i>刪除</a></p></li>
-                        </ul>
-                    </div>
-                </li>
-
-                <li>
-                    <div class="the_section clearfix">
-                        <i class="icon_move fas fa-bars"></i>
-                        <div class="section_name clearfix">
-                            <h3>ABOUT US 字如果很長怎麼辦</h3>
-                            <i class="more_function fas fa-angle-down"></i>
-                        </div>
-                    </div>
-                    <div class="subBox">
-                        <ul class="clearfix">
-                            <li><p><a href="#"><i class="far fa-eye-slash"></i>隱藏</a></p></li>
-                            <li><p><a href="#"><i class="fas fa-pencil-alt"></i>變更命名</a></p></li>
-                            <li><p><a href="#"><i class="far fa-copy"></i>複製</a></p></li>
-                            <li><p><a href="#"><i class="far fa-trash-alt"></i>刪除</a></p></li>
-                        </ul>
-                    </div>
-                </li>
-
-                <li class="selected">
-                    <div class="the_section clearfix">
-                        <i class="icon_move fas fa-bars"></i>
-                        <div class="edit_title clearfix">
-                            <input type="text" name="" value="SCENERY" placeholder="請輸入名稱">
-                            <i class="fas fa-check"></i>
-                        </div>
-                    </div>
-                    <div class="subBox">
-                        <ul class="clearfix">
-                            <li><p><a href="#"><i class="far fa-eye-slash"></i>隱藏</a></p></li>
-                            <li><p><a href="#"><i class="fas fa-pencil-alt"></i>變更命名</a></p></li>
-                            <li><p><a href="#"><i class="far fa-copy"></i>複製</a></p></li>
-                            <li><p><a href="#"><i class="far fa-trash-alt"></i>刪除</a></p></li>
-                        </ul>
-                    </div>
-                </li>
-
-                <li>
-                    <div class="the_section clearfix">
-                        <i class="icon_move fas fa-bars"></i>
-                        <div class="section_name clearfix">
-                            <h3>Follow us</h3>
-                            <i class="more_function fas fa-angle-down"></i>
-                        </div>
-                    </div>
-                    <div class="subBox">
-                        <ul class="clearfix">
-                            <li><p><a href="#"><i class="far fa-eye-slash"></i>隱藏</a></p></li>
-                            <li><p><a href="#"><i class="fas fa-pencil-alt"></i>變更命名</a></p></li>
-                            <li><p><a href="#"><i class="far fa-copy"></i>複製</a></p></li>
-                            <li><p><a href="#"><i class="far fa-trash-alt"></i>刪除</a></p></li>
-                        </ul>
-                    </div>
-                </li>
-
-                <li>
-                    <div class="the_section clearfix">
-                        <i class="icon_move fas fa-bars"></i>
-                        <div class="section_name clearfix">
-                            <h3>Footer</h3>
-                            <i class="more_function fas fa-angle-down"></i>
-                        </div>
-                    </div>
-                    <div class="subBox">
-                        <ul class="clearfix">
-                            <li><p><a href="#"><i class="far fa-eye-slash"></i>隱藏</a></p></li>
-                            <li><p><a href="#"><i class="fas fa-pencil-alt"></i>變更命名</a></p></li>
-                            <li><p><a href="#"><i class="far fa-copy"></i>複製</a></p></li>
-                            <li><p><a href="#"><i class="far fa-trash-alt"></i>刪除</a></p></li>
-                        </ul>
-                    </div>
-                </li>
-
+            <ul class="other_tool clearfix">
+                <li><p><a target="_blank" href="preview.html"><i class="fas fa-eye"></i>預覽網站</a></p></li>
+                <li><p><a class="web_set popup-link" href="#popup"><i class="fas fa-cog"></i>網站設定</a></p></li>
             </ul>
-            <p class="add_section"><a class="popup-link" href="#popup-addSection"><i class="fas fa-plus"></i>新增板塊</a></p>
-
-            <div class="top_headline"><p>外部連結</p></div>
-
-            <ul class="mainMenu">
-                <li>
-                    <div class="the_section clearfix">
-                        <i class="icon_move fas fa-bars"></i>
-                        <div class="section_name clearfix">
-                            <h3>Header</h3>
-                            <i class="more_function fas fa-angle-down"></i>
-                        </div>
-                    </div>
-                    <div class="subBox">
-                        <ul class="clearfix">
-                            <li><p><a class="go_edit_link" href="#"><i class="fas fa-link"></i>編輯網址</a></p></li>
-                            <li><p><a href="#"><i class="far fa-eye-slash"></i>隱藏</a></p></li>
-                            <li><p><a href="#"><i class="fas fa-pencil-alt"></i>變更命名</a></p></li>
-                            <li><p><a href="#"><i class="far fa-trash-alt"></i>刪除</a></p></li>
-                        </ul>
-                        <div class="edit_link clearfix">
-                            <i class="fas fa-link"></i>
-                            <input type="text" name="" value="facebook.com" placeholder="請輸入連結">
-                            <i class="done fas fa-check"></i>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="the_section clearfix">
-                        <i class="icon_move fas fa-bars"></i>
-                        <div class="section_name clearfix">
-                            <h3>Facebook</h3>
-                            <i class="more_function fas fa-angle-down"></i>
-                        </div>
-                    </div>
-                    <div class="subBox">
-                        <ul class="clearfix">
-                            <li><p><a class="go_edit_link" href="#"><i class="fas fa-link"></i>編輯網址</a></p></li>
-                            <li><p><a href="#"><i class="far fa-eye-slash"></i>隱藏</a></p></li>
-                            <li><p><a href="#"><i class="fas fa-pencil-alt"></i>變更命名</a></p></li>
-                            <li><p><a href="#"><i class="far fa-trash-alt"></i>刪除</a></p></li>
-                        </ul>
-                        <div class="edit_link clearfix">
-                            <i class="fas fa-link"></i>
-                            <input type="text" name="" value="facebook.com" placeholder="請輸入連結">
-                            <i class="done fas fa-check"></i>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="the_section clearfix">
-                        <i class="icon_move fas fa-bars"></i>
-                        <div class="section_name clearfix">
-                            <h3>instagram</h3>
-                            <i class="more_function fas fa-angle-down"></i>
-                        </div>
-                    </div>
-                    <div class="subBox">
-                        <ul class="clearfix">
-                            <li><p><a class="go_edit_link" href="#"><i class="fas fa-link"></i>編輯網址</a></p></li>
-                            <li><p><a href="#"><i class="far fa-eye-slash"></i>隱藏</a></p></li>
-                            <li><p><a href="#"><i class="fas fa-pencil-alt"></i>變更命名</a></p></li>
-                            <li><p><a href="#"><i class="far fa-trash-alt"></i>刪除</a></p></li>
-                        </ul>
-                        <div class="edit_link clearfix">
-                            <i class="fas fa-link"></i>
-                            <input type="text" name="" value="facebook.com" placeholder="請輸入連結">
-                            <i class="done fas fa-check"></i>
-                        </div>
-                    </div>
-                </li>
-                <li class="the_hide">
-                    <div class="the_section clearfix">
-                        <i class="icon_move fas fa-bars"></i>
-                        <div class="section_name clearfix">
-                            <h3>SHOP</h3>
-                            <i class="icon_eye_hide far fa-eye-slash" title="此區塊顯示隱藏"></i>
-                            <i class="more_function fas fa-angle-down"></i>
-                        </div>
-                    </div>
-                    <div class="subBox">
-                        <ul class="clearfix">
-                            <li><p><a class="go_edit_link" href="#"><i class="fas fa-link"></i>編輯網址</a></p></li>
-                            <li><p><a href="#"><i class="fas fa-eye"></i>顯示</a></p></li>
-                            <li><p><a href="#"><i class="fas fa-pencil-alt"></i>變更命名</a></p></li>
-                            <li><p><a href="#"><i class="far fa-trash-alt"></i>刪除</a></p></li>
-                        </ul>
-                        <div class="edit_link clearfix">
-                            <i class="fas fa-link"></i>
-                            <input type="text" name="" value="facebook.com" placeholder="請輸入連結">
-                            <i class="done fas fa-check"></i>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="the_section clearfix">
-                        <i class="icon_move fas fa-bars"></i>
-                        <div class="section_name clearfix">
-                            <h3>Line</h3>
-                            <i class="icon_eye_hide far fa-eye-slash" title="此區塊顯示隱藏"></i>
-                            <i class="more_function fas fa-angle-down"></i>
-                        </div>
-                    </div>
-                    <div class="subBox">
-                        <ul class="clearfix">
-                            <li><p><a class="go_edit_link" href="#"><i class="fas fa-link"></i>編輯網址</a></p></li>
-                            <li><p><a href="#"><i class="far fa-eye-slash"></i>隱藏</a></p></li>
-                            <li><p><a href="#"><i class="fas fa-pencil-alt"></i>變更命名</a></p></li>
-                            <li><p><a href="#"><i class="far fa-trash-alt"></i>刪除</a></p></li>
-                        </ul>
-                        <div class="edit_link clearfix">
-                            <i class="fas fa-link"></i>
-                            <input type="text" name="" value="facebook.com" placeholder="請輸入連結">
-                            <i class="done fas fa-check"></i>
-                        </div>
-                    </div>
-                </li>
-                <li class="selected">
-                    <div class="the_section clearfix">
-                        <i class="icon_move fas fa-bars"></i>
-                        <div class="edit_title clearfix">
-                            <input type="text" name="" value="New section" placeholder="請輸入名稱">
-                            <i class="fas fa-check"></i>
-                        </div>
-                    </div>
-                    <div class="subBox">
-                        <ul class="clearfix">
-                            <li><p><a class="go_edit_link" href="#"><i class="fas fa-link"></i>編輯網址</a></p></li>
-                            <li><p><a href="#"><i class="far fa-eye-slash"></i>隱藏</a></p></li>
-                            <li><p><a href="#"><i class="fas fa-pencil-alt"></i>變更命名</a></p></li>
-                            <li><p><a href="#"><i class="far fa-trash-alt"></i>刪除</a></p></li>
-                        </ul>
-                        <div class="edit_link clearfix">
-                            <i class="fas fa-link"></i>
-                            <input type="text" name="" value="facebook.com" placeholder="請輸入連結">
-                            <i class="done fas fa-check"></i>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-            <p class="add_section"><a href="#"><i class="fas fa-plus"></i>新增連結</a></p>
-        </div>
-        <div class="other_assistance clearfix">
-            <div class="top_headline">
-                <p>功能輔助開關
+            <div class="top_headline first_top">
+                <p>版塊總覽
                     <a class="note" href="#">
                         <i class="far fa-question-circle"></i>
-                        <span class="note_info">快速開關「所有選單」或打開網頁上的分享區塊</span>
+                        <span class="note_info">提醒您，目前最多只能新增12個版塊喔！</span>
                     </a>
                 </p>
             </div>
-            <!-- <div class="btn_swtich clearfix">
-                <p class="open">按鈕</p>
-                <div class="swtich_type"><input type="checkbox" id="swtich" checked=""><label class="button" for="swtich"></label></div> 
-            </div> -->
-            <div class="btn_swtich clearfix">
-                <p>選單</p>
-                <div class="swtich_type"><input type="checkbox" id="swtich1"><label class="button" for="swtich1"></label></div>
+
+            <div class="rollingBox">
+                <ul class="mainMenu">
+                    <li>
+                        <div class="the_section clearfix">
+                            <i class="icon_move fas fa-bars"></i>
+                            <div class="section_name clearfix">
+                                <h3>HOME</h3>
+                                <i class="more_function fas fa-angle-down"></i>
+                            </div>
+                        </div>
+                        <div class="subBox">
+                            <ul class="clearfix">
+                                <li><p><a href="#"><i class="far fa-eye-slash"></i>隱藏</a></p></li>
+                                <li><p><a href="#"><i class="fas fa-pencil-alt"></i>變更命名</a></p></li>
+                                <li><p><a href="#"><i class="far fa-copy"></i>複製</a></p></li>
+                                <li><p><a href="#"><i class="far fa-trash-alt"></i>刪除</a></p></li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="the_hide">
+                        <div class="the_section clearfix">
+                            <i class="icon_move fas fa-bars"></i>
+                            <div class="section_name clearfix">
+                                <h3>Section name1 Section Section</h3>
+                                <i class="icon_eye_hide far fa-eye-slash" title="此區塊顯示隱藏"></i>
+                                <i class="more_function fas fa-angle-down"></i>
+                            </div>
+                        </div>
+                        <div class="subBox">
+                            <ul class="clearfix">
+                                <li><p><a href="#"><i class="fas fa-eye"></i>顯示</a></p></li>
+                                <li><p><a href="#"><i class="fas fa-pencil-alt"></i>變更命名</a></p></li>
+                                <li><p><a href="#"><i class="far fa-copy"></i>複製</a></p></li>
+                                <li><p><a href="#"><i class="far fa-trash-alt"></i>刪除</a></p></li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="the_section clearfix">
+                            <i class="icon_move fas fa-bars"></i>
+                            <div class="section_name clearfix">
+                                <h3>SHOP</h3>
+                                <i class="more_function fas fa-angle-down"></i>
+                            </div>
+                        </div>
+                        <div class="subBox">
+                            <ul class="clearfix">
+                                <li><p><a href="#"><i class="far fa-eye-slash"></i>隱藏</a></p></li>
+                                <li><p><a href="#"><i class="fas fa-pencil-alt"></i>變更命名</a></p></li>
+                                <li><p><a href="#"><i class="far fa-copy"></i>複製</a></p></li>
+                                <li><p><a href="#"><i class="far fa-trash-alt"></i>刪除</a></p></li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="the_section clearfix">
+                            <i class="icon_move fas fa-bars"></i>
+                            <div class="section_name clearfix">
+                                <h3>ABOUT US 字如果很長怎麼辦</h3>
+                                <i class="more_function fas fa-angle-down"></i>
+                            </div>
+                        </div>
+                        <div class="subBox">
+                            <ul class="clearfix">
+                                <li><p><a href="#"><i class="far fa-eye-slash"></i>隱藏</a></p></li>
+                                <li><p><a href="#"><i class="fas fa-pencil-alt"></i>變更命名</a></p></li>
+                                <li><p><a href="#"><i class="far fa-copy"></i>複製</a></p></li>
+                                <li><p><a href="#"><i class="far fa-trash-alt"></i>刪除</a></p></li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="selected">
+                        <div class="the_section clearfix">
+                            <i class="icon_move fas fa-bars"></i>
+                            <div class="edit_title clearfix">
+                                <input type="text" name="" value="SCENERY" placeholder="請輸入名稱">
+                                <i class="fas fa-check"></i>
+                            </div>
+                        </div>
+                        <div class="subBox">
+                            <ul class="clearfix">
+                                <li><p><a href="#"><i class="far fa-eye-slash"></i>隱藏</a></p></li>
+                                <li><p><a href="#"><i class="fas fa-pencil-alt"></i>變更命名</a></p></li>
+                                <li><p><a href="#"><i class="far fa-copy"></i>複製</a></p></li>
+                                <li><p><a href="#"><i class="far fa-trash-alt"></i>刪除</a></p></li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="the_section clearfix">
+                            <i class="icon_move fas fa-bars"></i>
+                            <div class="section_name clearfix">
+                                <h3>Follow us</h3>
+                                <i class="more_function fas fa-angle-down"></i>
+                            </div>
+                        </div>
+                        <div class="subBox">
+                            <ul class="clearfix">
+                                <li><p><a href="#"><i class="far fa-eye-slash"></i>隱藏</a></p></li>
+                                <li><p><a href="#"><i class="fas fa-pencil-alt"></i>變更命名</a></p></li>
+                                <li><p><a href="#"><i class="far fa-copy"></i>複製</a></p></li>
+                                <li><p><a href="#"><i class="far fa-trash-alt"></i>刪除</a></p></li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="the_section clearfix">
+                            <i class="icon_move fas fa-bars"></i>
+                            <div class="section_name clearfix">
+                                <h3>Footer</h3>
+                                <i class="more_function fas fa-angle-down"></i>
+                            </div>
+                        </div>
+                        <div class="subBox">
+                            <ul class="clearfix">
+                                <li><p><a href="#"><i class="far fa-eye-slash"></i>隱藏</a></p></li>
+                                <li><p><a href="#"><i class="fas fa-pencil-alt"></i>變更命名</a></p></li>
+                                <li><p><a href="#"><i class="far fa-copy"></i>複製</a></p></li>
+                                <li><p><a href="#"><i class="far fa-trash-alt"></i>刪除</a></p></li>
+                            </ul>
+                        </div>
+                    </li>
+
+                </ul>
+                <p class="add_section"><a class="popup-link" href="#popup-addSection"><i class="fas fa-plus"></i>新增板塊</a></p>
+
+                <div class="top_headline"><p>外部連結</p></div>
+
+                <ul class="mainMenu">
+                    <li>
+                        <div class="the_section clearfix">
+                            <i class="icon_move fas fa-bars"></i>
+                            <div class="section_name clearfix">
+                                <h3>Header</h3>
+                                <i class="more_function fas fa-angle-down"></i>
+                            </div>
+                        </div>
+                        <div class="subBox">
+                            <ul class="clearfix">
+                                <li><p><a class="go_edit_link" href="#"><i class="fas fa-link"></i>編輯網址</a></p></li>
+                                <li><p><a href="#"><i class="far fa-eye-slash"></i>隱藏</a></p></li>
+                                <li><p><a href="#"><i class="fas fa-pencil-alt"></i>變更命名</a></p></li>
+                                <li><p><a href="#"><i class="far fa-trash-alt"></i>刪除</a></p></li>
+                            </ul>
+                            <div class="edit_link clearfix">
+                                <i class="fas fa-link"></i>
+                                <input type="text" name="" value="facebook.com" placeholder="請輸入連結">
+                                <i class="done fas fa-check"></i>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="the_section clearfix">
+                            <i class="icon_move fas fa-bars"></i>
+                            <div class="section_name clearfix">
+                                <h3>Facebook</h3>
+                                <i class="more_function fas fa-angle-down"></i>
+                            </div>
+                        </div>
+                        <div class="subBox">
+                            <ul class="clearfix">
+                                <li><p><a class="go_edit_link" href="#"><i class="fas fa-link"></i>編輯網址</a></p></li>
+                                <li><p><a href="#"><i class="far fa-eye-slash"></i>隱藏</a></p></li>
+                                <li><p><a href="#"><i class="fas fa-pencil-alt"></i>變更命名</a></p></li>
+                                <li><p><a href="#"><i class="far fa-trash-alt"></i>刪除</a></p></li>
+                            </ul>
+                            <div class="edit_link clearfix">
+                                <i class="fas fa-link"></i>
+                                <input type="text" name="" value="facebook.com" placeholder="請輸入連結">
+                                <i class="done fas fa-check"></i>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="the_section clearfix">
+                            <i class="icon_move fas fa-bars"></i>
+                            <div class="section_name clearfix">
+                                <h3>instagram</h3>
+                                <i class="more_function fas fa-angle-down"></i>
+                            </div>
+                        </div>
+                        <div class="subBox">
+                            <ul class="clearfix">
+                                <li><p><a class="go_edit_link" href="#"><i class="fas fa-link"></i>編輯網址</a></p></li>
+                                <li><p><a href="#"><i class="far fa-eye-slash"></i>隱藏</a></p></li>
+                                <li><p><a href="#"><i class="fas fa-pencil-alt"></i>變更命名</a></p></li>
+                                <li><p><a href="#"><i class="far fa-trash-alt"></i>刪除</a></p></li>
+                            </ul>
+                            <div class="edit_link clearfix">
+                                <i class="fas fa-link"></i>
+                                <input type="text" name="" value="facebook.com" placeholder="請輸入連結">
+                                <i class="done fas fa-check"></i>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="the_hide">
+                        <div class="the_section clearfix">
+                            <i class="icon_move fas fa-bars"></i>
+                            <div class="section_name clearfix">
+                                <h3>SHOP</h3>
+                                <i class="icon_eye_hide far fa-eye-slash" title="此區塊顯示隱藏"></i>
+                                <i class="more_function fas fa-angle-down"></i>
+                            </div>
+                        </div>
+                        <div class="subBox">
+                            <ul class="clearfix">
+                                <li><p><a class="go_edit_link" href="#"><i class="fas fa-link"></i>編輯網址</a></p></li>
+                                <li><p><a href="#"><i class="fas fa-eye"></i>顯示</a></p></li>
+                                <li><p><a href="#"><i class="fas fa-pencil-alt"></i>變更命名</a></p></li>
+                                <li><p><a href="#"><i class="far fa-trash-alt"></i>刪除</a></p></li>
+                            </ul>
+                            <div class="edit_link clearfix">
+                                <i class="fas fa-link"></i>
+                                <input type="text" name="" value="facebook.com" placeholder="請輸入連結">
+                                <i class="done fas fa-check"></i>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="the_section clearfix">
+                            <i class="icon_move fas fa-bars"></i>
+                            <div class="section_name clearfix">
+                                <h3>Line</h3>
+                                <i class="icon_eye_hide far fa-eye-slash" title="此區塊顯示隱藏"></i>
+                                <i class="more_function fas fa-angle-down"></i>
+                            </div>
+                        </div>
+                        <div class="subBox">
+                            <ul class="clearfix">
+                                <li><p><a class="go_edit_link" href="#"><i class="fas fa-link"></i>編輯網址</a></p></li>
+                                <li><p><a href="#"><i class="far fa-eye-slash"></i>隱藏</a></p></li>
+                                <li><p><a href="#"><i class="fas fa-pencil-alt"></i>變更命名</a></p></li>
+                                <li><p><a href="#"><i class="far fa-trash-alt"></i>刪除</a></p></li>
+                            </ul>
+                            <div class="edit_link clearfix">
+                                <i class="fas fa-link"></i>
+                                <input type="text" name="" value="facebook.com" placeholder="請輸入連結">
+                                <i class="done fas fa-check"></i>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="selected">
+                        <div class="the_section clearfix">
+                            <i class="icon_move fas fa-bars"></i>
+                            <div class="edit_title clearfix">
+                                <input type="text" name="" value="New section" placeholder="請輸入名稱">
+                                <i class="fas fa-check"></i>
+                            </div>
+                        </div>
+                        <div class="subBox">
+                            <ul class="clearfix">
+                                <li><p><a class="go_edit_link" href="#"><i class="fas fa-link"></i>編輯網址</a></p></li>
+                                <li><p><a href="#"><i class="far fa-eye-slash"></i>隱藏</a></p></li>
+                                <li><p><a href="#"><i class="fas fa-pencil-alt"></i>變更命名</a></p></li>
+                                <li><p><a href="#"><i class="far fa-trash-alt"></i>刪除</a></p></li>
+                            </ul>
+                            <div class="edit_link clearfix">
+                                <i class="fas fa-link"></i>
+                                <input type="text" name="" value="facebook.com" placeholder="請輸入連結">
+                                <i class="done fas fa-check"></i>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <p class="add_section"><a href="#"><i class="fas fa-plus"></i>新增連結</a></p>
             </div>
-            <div class="btn_swtich clearfix">
-                <p>分享</p>
-                <div class="swtich_type"><input type="checkbox" id="swtich2"><label class="button" for="swtich2"></label></div>
+
+            <div class="other_assistance clearfix">
+                <div class="top_headline">
+                    <p>輔助功能開關 <a class="f-tip"><i class="far fa-question-circle"></i><span>快速顯示或隱藏「選單」或「分享」區塊</span></a></p>
+                </div>
+                <div class="btn_switch clearfix">
+                    <p>選單</p>
+                    <div class="switch_type"><input id="switch-menu" type="checkbox"><label class="button" for="switch-menu"></label></div>
+                </div>
+                <div class="btn_switch clearfix">
+                    <p>分享</p>
+                    <div class="switch_type"><input id="switch-share" type="checkbox"><label class="button" for="switch-share"></label></div>
+                </div>
             </div>
-        </div>
-        <p class="copyrights">Copyrights Ⓒ 2018 All Rights Reserved.</p>
+            <p class="copyrights">Copyrights Ⓒ 2018 All Rights Reserved.</p>
         </div>
     </section>
 
@@ -542,44 +545,42 @@ $(document).ready(function() {
 
 
     <section class="rightEditBox" id="rightEditBox"><!-- template_color_green -->
-        <div class="top_header">
-            <nav class="Menu ContentsBox clearfix">
-                <!-- <div class="the_editBox show_lightBox">
-                    <div class="edit_LightBox">
-                        <a class="popup-link" href="#popup-imglogo">編輯</a>
-                        <a class=" right_delete popup-link" href="#popup-delete"><i class="fas fa-times"></i></a>
-                    </div>
-                    <div class="logo"><a><img src="images/logo_w.png" alt="holkee"></a></div>
-                </div> -->
-
-                <div class="left_logo the_editBox show_lightBox">
-                    <div class="edit_LightBox">
-                        <a class="popup-link" href="#popup-imglogo">編輯</a>
-                    </div>
-                    <div class="logo">
-                        <img src="images/logo_w.png" alt="holkee">
-                    </div>
-                </div>
-
-                <p class="menu_hamburger" onclick="openNav()"><span class="title"><i class="fas fa-bars"></i></span><span class="icon_hamburger"></span></p>
-
-                <div class="TopBox clearfix">
-                    <ul class="top_menu clearfix">
-                        <li><h3><a class="go01">HOME</a></h3></li>
-                        <li><h3><a class="go02">SHOP</a></h3></li>
-                        <li><h3><a class="go03">ABOUT US</a></h3></li>
-                        <li><h3><a class="go04">VIDEO</a></h3></li>
-                        <li><h3><a class="go05">SCENERY</a></h3></li>
-                        <li><h3><a class="go06">CONTACT US</a></h3></li>
-                        <li><h3><a class="go07">follow us</a></h3></li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
-
         <!-- section：主視覺KV -->
         <!-- 第一塊 section 需要幫我加上 "first-section" 讓他往下一點才不會跟選單蓋到 -->
-        <div class="section-wrapper bg_translucent_k first-section "><!-- bg_translucent_k -->
+        <div class="section-wrapper first-section "><!-- bg_translucent_k -->
+            <div class="top_header">
+                <nav class="Menu ContentsBox clearfix">
+                    <!-- <div class="the_editBox show_lightBox">
+                        <div class="edit_LightBox">
+                            <a class="popup-link" href="#popup-imglogo">編輯</a>
+                            <a class=" right_delete popup-link" href="#popup-delete"><i class="fas fa-times"></i></a>
+                        </div>
+                        <div class="logo"><a><img src="images/logo_w.png" alt="holkee"></a></div>
+                    </div> -->
+                    <div class="left_logo the_editBox show_lightBox">
+                        <div class="edit_LightBox">
+                            <a class="popup-link" href="#popup-imglogo">編輯</a>
+                        </div>
+                        <div class="logo">
+                            <img src="images/logo_w.png" alt="holkee">
+                        </div>
+                    </div>
+
+                    <p class="menu_hamburger" onclick="openNav()"><span class="title"><i class="fas fa-bars"></i></span><span class="icon_hamburger"></span></p>
+
+                    <div class="TopBox clearfix">
+                        <ul class="top_menu clearfix">
+                            <li><h3><a class="go01">HOME</a></h3></li>
+                            <li><h3><a class="go02">SHOP</a></h3></li>
+                            <li><h3><a class="go03">ABOUT US</a></h3></li>
+                            <li><h3><a class="go04">VIDEO</a></h3></li>
+                            <li><h3><a class="go05">SCENERY</a></h3></li>
+                            <li><h3><a class="go06">CONTACT US</a></h3></li>
+                            <li><h3><a class="go07">follow us</a></h3></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
             <div class="section-editor-tools">
                 <div class="btn_item clearfix">
                     <a class="section-typesetting">版面設定 <i class="fas fa-undo"></i></a><!-- 點了變換版面排版 -->
@@ -598,7 +599,7 @@ $(document).ready(function() {
                             <li style="background-image: url(images/new_site/bg/a_085.jpg);"></li>
                             <li style="background-image: url(images/new_site/bg/a_078.jpg);"></li>
                             <li style="background-image: url(images/new_site/bg/a_083.jpg);"></li>
-                            <li><p class="more"><a href="#"><i class="fas fa-plus"></i>看更多</a></p></li>
+                            <li><p class="more"><a class="popup-link" href="#popup-gallery"><i class="fas fa-plus"></i>看更多</a></p></li>
                         </ul>
                         <div class="btn clearfix">
                             <p><a href="#">上傳圖片</a>
@@ -635,11 +636,19 @@ $(document).ready(function() {
                             <li style="background-image: url(images/new_site/bg/a_066.jpg); "><p>Tt</p></li>
                         </ul>
                     </div>
-                    <div class="btn save_main clearfix">
+                    <div class="bg_translucent">
+                        <p class="sub_title">顯示方式</p>
+                        <ul class="background_image background_style text_position clearfix">
+                            <li class="btn_in" style="background-image: url(images/new_site/bg/a_066.jpg); "><p>Cover</p></li>
+                            <li class="" style="background-image: url(images/new_site/bg/a_066.jpg); background-size: contain; background-color: #b2b2b2;"><p>Contain</p></li>
+                            <li class="" style="background-image: url(images/new_site/bg/a_066.jpg); background-size: 25%; background-repeat: repeat;"><p>繰り返す</p></li>
+                        </ul>
+                    </div>
+                    <!-- <div class="btn save_main clearfix">
                         <p><a href="#">取消</a>
                         <a class="FR done" href="#"><i class="fas fa-check"></i> 儲存</a>
                         </p>
-                    </div>
+                    </div> -->
                 </div>
             </div>
             <div class="mainBox" style=" background-image: url(images/new_site/basket-book-books-6332.jpg);" id="goThe01">
@@ -1204,8 +1213,8 @@ $(document).ready(function() {
             </div>
         </div>
 
-        <!-- section：FormBox 簡易表單 -->
-        <div class="section-wrapper bg_translucent_k">
+        <!-- section：FormBox 表單進化惹 -->
+        <div class="section-wrapper bg_translucent_k"><!-- bg_translucent_k -->
             <div class="section-editor-tools">
                 <div class="btn_item clearfix">
                     <a class="section-typesetting">版面設定 <i class="fas fa-undo"></i></a><!-- 點了變換版面排版 -->
@@ -1281,9 +1290,72 @@ $(document).ready(function() {
                             <a class="popup-link" href="#popup-form_simple">編輯</a>
                         </div>
                         <form class="form_simple">
+                            <p class="content_title">您的名字<span class="required">*</span></p>
+                            <p class="content_sub_title">說明與描述說明與描述說明與描述說明與描述說明與描述</p>
                             <input type="" name="" placeholder="姓名">
-                            <input type="" name="" placeholder="E-Mail">
-                            <textarea placeholder="您想跟我們說些什麼呢?"></textarea>
+                            <p class="content_title">您的E-Mail</p>
+                            <input type="" name="" placeholder="請填寫E-Mail">
+                            <p class="content_title">您想跟我們說些什麼呢？</p>
+                            <textarea placeholder="請輸入內容"></textarea>
+                            <p class="content_title">請挑選您喜愛的蛋糕</p>
+                            <!-- 下拉 -->
+                            <div class="styled-select">
+                                <select class="md-input" name="fields.type" data-parsley-min="1" data-parsley-min-message="請選擇">
+                                    <option value="00" selected="">請選擇</option>
+                                    <option value="01">Wedding Cake $29</option>
+                                    <option value="02">WEOJ Cake  $6.5</option>
+                                    <option value="03">Birthday Cake  29</option>
+                                </select>
+                            </div>
+                            <p class="content_title">蛋糕要幾吋呢？</p>
+                            <!-- radio -->
+                            <!-- 水平顯示 會 + x-inline -->
+                            <div class="the-option x-inline clearfix">
+                                <div class="required-radio clearfix">
+                                    <input id="cake-size" type="radio" name="cake-size" value="" checked="">
+                                    <label class="checkbox_style" for="cake-size"></label>
+                                    <span>8吋</span>
+                                </div>
+                                <div class="required-radio clearfix">
+                                    <input id="cake-size" type="radio" name="cake-size" value="">
+                                    <label class="checkbox_style" for="cake-size"></label>
+                                    <span>12吋</span>
+                                </div>
+                            </div>
+                            <p class="content_title">還需要其他的配飾嘛?</p>
+                            <!-- 垂直顯示 就都不用+ -->
+                            <div class="the-option clearfix">
+                                <div class="required-checkbox clearfix">
+                                    <input id="cake-others" type="checkbox" name="cake-others" value="">
+                                    <label class="checkbox_style" for="cake-others"></label>
+                                    <span>壽星帽</span>
+                                </div>
+                                <div class="required-checkbox clearfix">
+                                    <input id="cake-others" type="checkbox" name="cake-others" value="">
+                                    <label class="checkbox_style" for="cake-others"></label>
+                                    <span>Happy birthday立牌</span>
+                                </div>
+                                <div class="required-checkbox clearfix">
+                                    <input id="cake-others" type="checkbox" name="cake-others" value="">
+                                    <label class="checkbox_style" for="cake-others"></label>
+                                    <span>蛋糕盤*5（加價 $10）</span>
+                                </div>
+                                <div class="required-checkbox clearfix">
+                                    <input id="cake-others" type="checkbox" name="cake-others" value="">
+                                    <label class="checkbox_style" for="cake-others"></label>
+                                    <span>生日蠟燭（加價 $10）</span>
+                                </div>
+                                <div class="required-checkbox clearfix">
+                                    <input id="cake-others" type="checkbox" name="cake-others" value="">
+                                    <label class="checkbox_style" for="cake-others"></label>
+                                    <span>生日佈景（加價 $300）</span>
+                                </div>
+                                <div class="required-checkbox clearfix">
+                                    <input id="cake-others" type="checkbox" name="cake-others" value="">
+                                    <label class="checkbox_style" for="cake-others"></label>
+                                    <span>拍照道具（加價 $50）</span>
+                                </div>
+                            </div>
                             <p class="btn">
                                 <a class="" href="#">SUBMIT</a>
                             </p>
@@ -1313,7 +1385,7 @@ $(document).ready(function() {
                             <li style="background-image: url(images/new_site/bg/a_085.jpg);"></li>
                             <li style="background-image: url(images/new_site/bg/a_078.jpg);"></li>
                             <li style="background-image: url(images/new_site/bg/a_083.jpg);"></li>
-                            <li><p class="more"><a href="#"><i class="fas fa-plus"></i>看更多</a></p></li>
+                            <li><p class="more"><a class="popup-link" href="#popup-gallery"><i class="fas fa-plus"></i>看更多</a></p></li>
                         </ul>
                         <div class="btn clearfix">
                             <p><a href="#">上傳圖片</a>
@@ -1508,7 +1580,7 @@ $(document).ready(function() {
                             <input id="" name="" type="text" value="https://www.holkee.com/jdjwi2iqeje">
                             <a class="copy" href="#">複製連結</a>
                         </div>
-                        <p class="the_reminder"><a href="#">想要擁有自己的品牌網域嗎?</a></p>
+                        <p class="the_reminder">想要擁有自己的專屬網址嗎？<a href="#">前往專屬網址設定</a></p>
                     </li>
                     <li>
                         <div class="amp_qrcode">
@@ -1687,56 +1759,237 @@ $(document).ready(function() {
         </form>
     </div>
 
-    <!-- 簡易表單 設定 -->
+    <!-- 簡易表單 設定 : 欄位設定 2019/06/11 最後調整日期 -->
     <div id="popup-form_simple" class="white-popup mfp-hide">
         <form class="setBox">
             <div class="top_title">
                 <h3>表單設定</h3>
-                <!-- <p>填寫完整資訊，讓訪客更容易與您聯繫</p> -->
+                <p>設定表單內容，讓訪客更容易與您聯繫</p>
             </div>
-            <div class="fillinBox form_simpleBox">
-                <ul>
-                    <li>
-                        <label for=""><p class="label_title">請填寫輸入框的提醒語</p></label>
-                        <input class="l_title" type="text" value="姓名">
-                    </li>
-                    <li>
-                        <input class="l_title" type="text" value="E-mail">
-                    </li>
-                    <li>
-                        <input class="l_title" type="text" value="您想跟我們說些什麼呢?">
-                    </li>
-                    <li>
-                        <label for=""><p class="label_title">按鈕文字</p></label>
-                        <input class="r_info" type="text" value="SUBMIT">
-                    </li>
-                   <!--  <li>
-                        <div class="both clearfix">
-                            <input class="l_title" type="text" value="姓名">
-                            <input class="r_info" type="text" value="E-Mail">
-                        </div>
-                    </li>
-                    <li>
-                        <div class="both clearfix">
-                            <input class="l_title" type="text" value="E-Mail">
-                            <input class="r_info" class="r_info" type="text" value="">
-                        </div>
-                    </li> -->
-                    <!-- <li>
-                        <input type="text" value="您想說些什麼?">
-                        <textarea></textarea>
-                    </li> -->
+            <div class="fillinBox form-edit-box">
+                <ul class="top-tap">
+                    <li><p><a class="btn_in popup-link" href="#popup-form_simple">欄位設定</a></p></li>
+                    <li><p><a class="popup-link" href="#popup-form_simple-2">訊息設定</a></p></li>
                 </ul>
+                <ul class="from-data">
+                    <!-- 單行文字 -->
+                    <!-- 因為語系的關係會影響到"必填"寬度，故手機預覽時「欄位類型」會掉第二排為正常現象。 -->
+                    <!-- google docs 翻譯文字路徑 ：http://bit.ly/2ZgDiGP -->
+                    <li class="move">
+                        <div class="form-type clearfix">
+                            <div class="required-checkbox clearfix">
+                                <input id="iknow" type="checkbox" name="" value="" checked="">
+                                <label class="checkbox_style" for="iknow"></label>
+                                <span>入力が必須です</span>
+                            </div>
+                            <div class="styled-select">
+                                <select class="md-input" name="fields.type" data-parsley-min="1" data-parsley-min-message="請選擇欄位類型">
+                                    <option value="text" selected="">単一行のテキスト</option>
+                                    <option value="textarea">多行文字</option>
+                                    <option value="email">Email</option>
+                                    <option value="date">日期</option>
+                                    <option value="time">時間</option>
+                                    <option value="select">下拉選單</option>
+                                    <option value="radio">單選</option>
+                                    <option value="checkbox">多選</option>
+                                </select>
+                            </div>
+                            <a class="delete"><i class="fas fa-trash-alt"></i></a>
+                        </div>
+                        <div class="both clearfix">
+                            <input class="" type="text" placeholder="欄位名稱">
+                            <!-- <textarea type="text" rows="1" v-model="cureInfo.Symptom" id="symptomTxt" oninput="autoTextAreaHeight(this)" placeholder="說明或描述"></textarea> -->
+                            <p class="the_reminder"><a href="#addproductsubspec" style="display: inline;">顯示說明</a></p>
+                        </div>
+                    </li>
+
+                    <!-- 多行文字 -->
+                    <li class="move">
+                        <div class="form-type clearfix">
+                            <div class="required-checkbox clearfix">
+                                <input id="iknow1" type="checkbox" name="" value="">
+                                <label class="checkbox_style" for="iknow1"></label>
+                                <span>Required</span>
+                            </div>
+                            <div class="styled-select">
+                                <select class="md-input" name="fields.type" data-parsley-min="1" data-parsley-min-message="請選擇欄位類型">
+                                    <option value="text">Short Response</option>
+                                    <option value="textarea" selected="">多行文字</option>
+                                    <option value="email">Email</option>
+                                    <option value="date">日期</option>
+                                    <option value="time">時間</option>
+                                    <option value="select">下拉選單</option>
+                                    <option value="radio">單選</option>
+                                    <option value="checkbox">多選</option>
+                                </select>
+                            </div>
+                            <a class="delete"><i class="fas fa-trash-alt"></i></a>
+                        </div>
+                        <div class="both clearfix">
+                            <input class="" type="text" placeholder="欄位名稱">
+                            <textarea type="text" rows="1" v-model="cureInfo.Symptom" id="symptomTxt" oninput="autoTextAreaHeight(this)" placeholder="說明或描述"></textarea>
+                            <p class="the_reminder"><a href="#addproductsubspec" style="display: inline;">隱藏說明</a></p>
+                        </div>
+                    </li>
+
+                    <!-- Email -->
+                    <li class="move">
+                        <div class="form-type clearfix">
+                            <div class="required-checkbox clearfix">
+                                <input id="iknow1" type="checkbox" name="" value="">
+                                <label class="checkbox_style" for="iknow1"></label>
+                                <span>必填</span>
+                            </div>
+                            <div class="styled-select">
+                                <select class="md-input" name="fields.type" data-parsley-min="1" data-parsley-min-message="請選擇欄位類型">
+                                    <option value="text">單行文字</option>
+                                    <option value="textarea">多行文字</option>
+                                    <option value="email" selected="">Email</option>
+                                    <option value="date">日期</option>
+                                    <option value="time">時間</option>
+                                    <option value="select">下拉選單</option>
+                                    <option value="radio">單選</option>
+                                    <option value="checkbox">多選</option>
+                                </select>
+                            </div>
+                            <a class="delete"><i class="fas fa-trash-alt"></i></a>
+                        </div>
+                        <div class="both clearfix">
+                            <input class="" type="text" placeholder="欄位名稱">
+                            <textarea type="text" rows="1" v-model="cureInfo.Symptom" id="symptomTxt" oninput="autoTextAreaHeight(this)" placeholder="說明或描述"></textarea>
+                            <p class="the_reminder"><a href="#addproductsubspec" style="display: inline;">隱藏說明</a></p>
+                        </div>
+                    </li>
+
+                    <!-- 下拉選項 -->
+                    <li class="move">
+                        <div class="form-type clearfix">
+                            <div class="required-checkbox clearfix">
+                                <input id="iknow1" type="checkbox" name="" value="">
+                                <label class="checkbox_style" for="iknow1"></label>
+                                <span>必填</span>
+                            </div>
+                            <div class="styled-select">
+                                <select class="md-input" name="fields.type" data-parsley-min="1" data-parsley-min-message="請選擇欄位類型">
+                                    <option value="text">單行文字</option>
+                                    <option value="textarea">多行文字</option>
+                                    <option value="email">Email</option>
+                                    <option value="date">日期</option>
+                                    <option value="time">時間</option>
+                                    <option value="select" selected="">下拉選單</option>
+                                    <option value="radio">單選</option>
+                                    <option value="checkbox">多選</option>
+                                </select>
+                            </div>
+                            <a class="delete"><i class="fas fa-trash-alt"></i></a>
+                        </div>
+                        <div class="both clearfix">
+                            <input class="" type="text" placeholder="欄位名稱">
+                            <textarea type="text" rows="1" v-model="cureInfo.Symptom" id="symptomTxt" oninput="autoTextAreaHeight(this)" placeholder="說明或描述"></textarea>
+                            <p class="the_reminder"><a href="#addproductsubspec" style="display: inline;">隱藏說明</a></p>
+                            <div class="edit-select-contents">
+                                <!-- 只有多選和單選才要顯示下面這個垂直顯示水平顯示 -->
+                                <div class="top-checkbox-style clearfix">
+                                    <p>讓選項</p>
+                                    <div class="required-radio clearfix">
+                                        <input id="show-xy" type="radio" name="show-xy" value="" checked="">
+                                        <label class="checkbox_style" for="show-xy"></label>
+                                        <span>水平顯示</span>
+                                    </div>
+                                    <div class="required-radio clearfix">
+                                        <input id="show-xy" type="radio" name="show-xy" value="">
+                                        <label class="checkbox_style" for="show-xy"></label>
+                                        <span>垂直顯示</span>
+                                    </div>
+                                </div>
+                                <ul class="sub-item">
+                                    <!-- 下拉 -->
+                                    <li class="clearfix">
+                                        <div class="left-icon left-nb"><p>1</p></div>
+                                        <input class="" type="text" placeholder="" value="選項 1">
+                                        <a class="btn-more-move" href="#"><i class="fas fa-ellipsis-v"></i></a>
+                                        <a class="btn-delete" href="#"><i class="fas fa-times"></i></a>
+                                        <div class="tool-choose">
+                                            <a class="default"><i class="fas fa-arrow-up"></i> 上移</a>
+                                            <a class="default"><i class="fas fa-arrow-down"></i> 下移</a>
+                                        </div>
+                                    </li>
+                                    <!-- 多選 -->
+                                    <li class="clearfix">
+                                        <div class="left-icon left-checkbox"><p></p></div>
+                                        <input class="" type="text" placeholder="" value="選項 1">
+                                        <a class="btn-more-move" href="#"><i class="fas fa-ellipsis-v"></i></a>
+                                        <a class="btn-delete" href="#"><i class="fas fa-times"></i></a>
+                                    </li>
+                                    <!-- 單選 -->
+                                    <li class="clearfix">
+                                        <div class="left-icon left-radio"><p></p></div>
+                                        <input class="" type="text" placeholder="" value="選項 1">
+                                        <a class="btn-more-move" href="#"><i class="fas fa-ellipsis-v"></i></a>
+                                        <a class="btn-delete" href="#"><i class="fas fa-times"></i></a>
+                                    </li>
+                                </ul>
+                                <p class="add-item"><a href="#"><i class="fas fa-plus"></i>新增選項</a></p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <a class="add-form-field"><i class="fas fa-plus"></i>新增欄位</a>
+                <p class="the_reminder">提醒您，<span class="red">修改欄位將影響回收資料的準確性！</span>建議您先前往【會員中心】→【查看報表】→【表單】下載檔案。</p>
                 <div class="fillinBox">
                     <p class="btn_default">
-                        <a class="color_gray" href="#">關閉</a>
-                        <a class="popup-link " href="#">套用設定</a>
+                        <!-- <a class="color_gray" href="#">關閉</a> -->
+                        <a class="" href="#">套用設定</a>
                     </p>
                 </div>
             </div>
         </form>
     </div>
-
+    <!-- 簡易表單 設定 : 訊息設定 2019/06/11 最後調整日期 -->
+    <div id="popup-form_simple-2" class="white-popup mfp-hide">
+        <form class="setBox">
+            <div class="top_title">
+                <h3>表單設定</h3>
+                <p>設定表單內容，讓訪客更容易與您聯繫</p>
+            </div>
+            <div class="fillinBox form-edit-box">
+                <ul class="top-tap">
+                    <li><p><a class="popup-link" href="#popup-form_simple">欄位設定</a></p></li>
+                    <li><p><a class="btn_in popup-link" href="#popup-form_simple-2">訊息設定</a></p></li>
+                </ul>
+                <ul class="from-data-message">
+                    <!-- 單行文字 -->
+                    <li>
+                        <div class="btn_switch clearfix">
+                            <p>表單開放狀態</p>
+                            <div class="switch_type"><input id="switch-share" type="checkbox"><label class="button" for="switch-share"></label></div>
+                        </div>
+                    </li>
+                    <li>
+                        <label for=""><p class="label_title">送出成功時的文字</p></label>
+                        <textarea type="text" rows="1" v-model="cureInfo.Symptom" id="symptomTxt" oninput="autoTextAreaHeight(this)" value="Success" placeholder="請輸入內容"></textarea>
+                    </li>
+                    <li>
+                        <label for=""><p class="label_title">送出失敗時的文字</p></label>
+                        <textarea type="text" rows="1" v-model="cureInfo.Symptom" id="symptomTxt" oninput="autoTextAreaHeight(this)" value="Failure" placeholder="請輸入內容"></textarea>
+                    </li>
+                    <li>
+                        <label for=""><p class="label_title">尚未開放時的文字</p></label>
+                        <textarea type="text" rows="1" v-model="cureInfo.Symptom" id="symptomTxt" oninput="autoTextAreaHeight(this)" value="Not open" placeholder="請輸入內容"></textarea>
+                    </li>
+                    <li>
+                        <label for=""><p class="label_title">按鈕文字</p></label>
+                        <input class="r_info" type="text" value="SUBMIT" placeholder="請輸入按鈕文字">
+                    </li>
+                </ul>
+                <div class="fillinBox">
+                    <p class="btn_default">
+                        <a class="" href="#">套用設定</a>
+                    </p>
+                </div>
+            </div>
+        </form>
+    </div>
     <!-- video link 設定 -->
     <div id="popup-videolink" class="white-popup mfp-hide">
         <form class="setBox">
@@ -1976,6 +2229,9 @@ $(document).ready(function() {
             <div class="top_title">
                 <h3>幻燈片設定</h3>
             </div>
+            <p class="the_reminder">提示：若按鈕文字與連結欄位未填寫，按鈕則不會顯示喔！<br>並請確保您的圖片解析度，建議圖片規格：1000x1000 / JPG 或 PNG以上。</p>
+            <p class="for_pop_note color_red"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> 上傳失敗，請重新選取</p>
+            <!-- <p class="for_pop_note"><i class="fa fa-check-circle" aria-hidden="true"></i> 上傳完成</p> -->
             <ul class="Photo_list clearfix">
                 <li>
                     <span class="list_nb">1</span>
@@ -2070,9 +2326,6 @@ $(document).ready(function() {
                     </div>
                 </li>
             </ul>
-            <p class="the_reminder">提示：若按鈕文字與連結欄位未填寫，按鈕則不會顯示喔！<br>並請確保您的圖片解析度，建議圖片規格：1000x1000 / JPG 或 PNG以上。</p>
-            <p class="for_pop_note color_red"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> 上傳失敗，請重新選取</p>
-            <!-- <p class="for_pop_note"><i class="fa fa-check-circle" aria-hidden="true"></i> 上傳完成</p> -->
             <p class="btn_default">
                 <a class="color_gray" href="#">關閉</a>
                 <a class="popup-link " href="#">套用設定</a>
@@ -2237,6 +2490,151 @@ We Are Cake was founded as a way to combine creativity, hard work and a passion 
         </form>
     </div>
 
+    <!-- 圖庫 -->
+    <div id="popup-gallery" class="white-popup mfp-hide">
+        <div class="setBox">
+            <div class="top_title">
+                <h3>背景設定</h3>
+            </div>
+            <ul class="top_title clearfix">
+                <li class="open_images"><p><a class="btn_in"><span>上傳新圖片</span></a></p></li>
+                <li class="open_videos"><p><a><span>精選圖庫</span></a></p></li>
+            </ul>
+            <div class="fillinBox">
+                <!-- <div class="img_upload">
+                    <a href="#"><p><i class="images far fa-images"></i>上傳圖片</p></a>
+                    <p class="the_reminder">提示：請確保您的圖片解析度，建議圖片規格：1000x1000 / JPG 或 PNG以上。</p>
+                </div> -->
+                <div class="img_upload">
+                    <a href="#">
+                        <div class="the_btn">
+                            <p>
+                                <span href="#"><i class="fas fa-undo-alt"></i>更新</span>
+                            </p>
+                        </div>
+                        <img src="images/new_site/logo_menu.png" style="vertical-align: middle;"></a>
+                    <p class="the_reminder">提示：請確保您的圖片解析度，建議圖片規格：500x1000 / JPG 或 PNG以上。</p>
+                </div>
+                <p class="for_pop_note color_red"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> 尺寸錯誤</p>
+                <p class="for_pop_note color_red"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> 上傳失敗，請重新選取</p>
+                <p class="for_pop_note"><i class="fa fa-check-circle" aria-hidden="true"></i> 上傳完成</p>
+                <div class="fillinBox">
+                    <p class="btn_default">
+                        <a class="popup-link" href="#">套用</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="setBox slide_Photo">
+            <div class="top_title">
+                <h3>背景設定</h3>
+            </div>
+            <!-- <p class="the_reminder">提示：若按鈕文字與連結欄位未填寫，按鈕則不會顯示喔！<br>並請確保您的圖片解析度，建議圖片規格：1000x1000 / JPG 或 PNG以上。</p>
+            <p class="for_pop_note color_red"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> 上傳失敗，請重新選取</p> -->
+            <ul class="top_title clearfix">
+                <li class="open_images"><p><a class="btn_in"><span>上傳新圖片</span></a></p></li>
+                <li class="open_videos"><p><a><span>精選圖庫</span></a></p></li>
+            </ul>
+            <ul class="Photo_list clearfix">
+                <li>
+                    <span class="list_nb">1</span>
+                    <div class="photo">
+                        <div class="the_btn">
+                            <p>
+                                <a href="#"><i class="fas fa-undo-alt"></i>更新</a>
+                                <a href="#"><i class="fas fa-trash-alt"></i>刪除</a>
+                            </p>
+                        </div>
+                        <img src="images/new_site/kitchen_adventurer_caramel.jpg" style="vertical-align: middle;">
+                    </div>
+                    <div class="product_fillinBox">
+                        <input type="" name="" value="WEOJ Cake  $6.5">
+                        <input type="" name="" value="Order" placeholder="按鈕文字">
+                        <input type="" name="" value="#" placeholder="連結">
+                    </div>
+                </li>
+                <li>
+                    <span class="list_nb">2</span>
+                    <div class="photo">
+                        <div class="the_btn">
+                            <p>
+                                <a href="#"><i class="fas fa-undo-alt"></i>更新</a>
+                                <a href="#"><i class="fas fa-trash-alt"></i>刪除</a>
+                            </p>
+                        </div>
+                        <img src="images/new_site/arranged-art-background-1061577.jpg" style="vertical-align: middle;">
+                    </div>
+                    <div class="product_fillinBox">
+                        <input type="" name="" value="Wedding Cake $29">
+                        <input type="" name="" value="Order" placeholder="按鈕文字">
+                        <input type="" name="" value="#" placeholder="連結">
+                    </div>
+                </li>
+                <li>
+                    <span class="list_nb">3</span>
+                    <div class="photo">
+                        <div class="the_btn">
+                            <p>
+                                <a href="#"><i class="fas fa-undo-alt"></i>更新</a>
+                                <a href="#"><i class="fas fa-trash-alt"></i>刪除</a>
+                            </p>
+                        </div>
+                        <img src="images/new_site/bk_001_01.jpg" style="vertical-align: middle;">
+                    </div>
+                    <div class="product_fillinBox">
+                        <input type="" name="" value="WEOJ Cake  $6.5">
+                        <input type="" name="" value="" placeholder="按鈕文字">
+                        <input type="" name="" value="" placeholder="連結">
+                    </div>
+                </li>
+                <li>
+                    <span class="list_nb">4</span>
+                    <div class="photo">
+                        <div class="the_btn">
+                            <p>
+                                <a href="#"><i class="fas fa-undo-alt"></i>更新</a>
+                                <a href="#"><i class="fas fa-trash-alt"></i>刪除</a>
+                            </p>
+                        </div>
+                        <img src="images/new_site/test22.jpg" style="vertical-align: middle;">
+                    </div>
+                    <div class="product_fillinBox">
+                        <input type="" name="" value="Wedding Cake $29">
+                        <input type="" name="" value="" placeholder="按鈕文字">
+                        <input type="" name="" value="" placeholder="連結">
+                    </div>
+                </li>
+                <li>
+                    <span class="list_nb">5</span>
+                    <div class="photo">
+                        <div class="the_btn">
+                            <p>
+                                <a href="#"><i class="fas fa-undo-alt"></i>更新</a>
+                                <a href="#"><i class="fas fa-trash-alt"></i>刪除</a>
+                            </p>
+                        </div>
+                        <img src="images/new_site/blackberry-blur-cake-1070850.jpg" style="vertical-align: middle;">
+                    </div>
+                    <div class="product_fillinBox">
+                        <input type="" name="" value="WEOJ Cake  $6.5">
+                        <input type="" name="" value="Order" placeholder="按鈕文字">
+                        <input type="" name="" value="https://www.holkee.com/shop/eshop" placeholder="連結">
+                    </div>
+                </li>
+                <li class="none_move">
+                    <div class="photo">
+                        <div class="img_upload">
+                            <a class="img_upload" href="#"><p><i class="images fas fa-upload"></i>新增</p></a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <p class="btn_default">
+                <a class="color_gray" href="#">關閉</a>
+                <a class="popup-link " href="#">套用設定</a>
+            </p>
+        </div>
+    </div>
 </main>
 
 </body>

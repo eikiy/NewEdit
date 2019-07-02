@@ -1,7 +1,5 @@
-/*FooterBox 只能編輯文字 + 出現預設holkee文字*/
-.s-footerBox{ width: 100%; background-color: #fff; padding: 20px 0 40px 0; position: relative;}
-.s-footerBox p{text-align: center;  font-size: 0.750rem; line-height: 24px; color: #666; letter-spacing: 0.5px;}
-
+/*FooterBox 只能編輯文字 + 出現預設 website 文字*/
+.s-footerBox { width: 100%; background-color: #fff; padding: 20px 0 40px 0; position: relative; }
 .s-footerBox p.powered-website, .s-footerBox p.copyrights { text-align: center;  font-size: 0.750rem; line-height: 24px; color: #666; letter-spacing: 0.5px; }
 .s-footerBox p.powered-website { position: absolute; bottom: 0; width: 100%; left: 0; }
 .s-footerBox p.powered-website a { background-color: #464646; padding: 5px 18px; border-radius: 12px 12px 0 0; display: inline-block; color: #fff; }

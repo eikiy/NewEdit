@@ -2,17 +2,18 @@
 .videoBox{ width: 100%; min-height:calc(100vh - 100px); padding: 50px 0 60px; background-repeat: no-repeat; background-position:  center center ; background-attachment: fixed; background-size: cover; display: -webkit-flex; display: flex; -webkit-align-items: center; align-items: center; -webkit-justify-content: center; justify-content: center;overflow-x: hidden;}
 .videoBox .ContentsBox{ width: initial; }
 .videoBox .youtubeBox{ padding: 20px 0;  text-align: center;}
-.videoBox .youtubeBox iframe{width:560px; height:315px;}
+.videoBox .youtubeBox iframe, .videoBox .previewBox { width: 560px; height: 315px; }
+.videoBox .previewBox { background-color: #000; background-position: center center; background-repeat: no-repeat; background-size: contain; }
 .videoBox .div{ max-width: 90%; }
 
 @media (max-width:600px){
-	.videoBox .youtubeBox iframe{ width: 460px; height: 259px;}
+	.videoBox .youtubeBox iframe, .videoBox .previewBox { width: 460px; height: 259px; }
 }
 @media (max-width:550px){
-	.videoBox .youtubeBox iframe{ width: 380px; height: 200px;}
+	.videoBox .youtubeBox iframe, .videoBox .previewBox { width: 380px; height: 200px; }
 }
 @media (max-width:450px){
-	.videoBox .youtubeBox iframe{ width: 100%; height: 170px;}
+	.videoBox .youtubeBox iframe, .videoBox .previewBox { width: 100%; height: 170px; }
 }
 @media (max-device-width:1200px) {
 	.videoBox{ min-height: initial; }

@@ -9,17 +9,19 @@
 h2.top_title{text-align: center; font-size: 40px;}
 h3.main_title{text-align: center; font-size: 1.750rem; padding: 15px 0;}
 p.sub_title{ text-align: center; margin: 0 auto; max-width: 1000px; padding: 10px 0; }
-p.btn{ text-align: center;}
-p.btn a{  cursor: pointer; color: #fff; display: inline-block; padding: 12px 25px; border:1px solid #fff; min-width: 130px; }
-p.btn a:hover{ background-color: #fff; color: #333; }
+p.content_title{ color: #333; font-size: 1.063rem; padding: 10px 0;}
+p.content_title span.required{ color: #ff2121; padding-left: 3px; }
+p.content_sub_title{ color: #333; font-size: 0.875rem; padding-bottom: 10px; letter-spacing: 1px;}
+p.btn{ text-align: center; padding: 12px 0;}
+p.btn a{ cursor: pointer; color: #fff; display: inline-block; padding: 12px 25px; background-color: #333; min-width: 130px; }
+p.btn a:hover{ opacity: .9}
 
 
 /*配色方案 上*/
 /*文字遮罩的顏色不被影響，所以CSS STYLE 會在半透明遮罩的上面*/
-
-/*01 - holkee*/
-.template_color_holkee h3.main_title { color: #12ccc4; }
-.template_color_holkee p.sub_title{ color: #464646; }
+/*01 - website*/
+.template_color_website h3.main_title { color: #12ccc4; }
+.template_color_website p.sub_title{ color: #464646; }
 
 /*02 - Pink*/
 .template_color_pink h3.main_title { color: #ff5186; }
@@ -39,12 +41,16 @@ p.btn a:hover{ background-color: #fff; color: #333; }
 .bg_translucent_k::after{ position: absolute; content: ""; width: 100%; height: 100%; display: block; background-color: rgba(0,0,0,.35); top: 0; left: 0; }
 .bg_translucent_k p.sub_title, .bg_translucent_k p.main_title{ color: #fff; }
 .bg_translucent_k h3.main_title{ color: #fff; }
-.bg_translucent_k ul.info li p, .bg_translucent_k ul.info li p a{ color: #fff; }
+.bg_translucent_k ul.info li p, .bg_translucent_k ul.info li p a { color: #fff; }
+.bg_translucent_k p.content_title, .bg_translucent_k p.content_sub_title{ color: #fff;}
+.bg_translucent_k p.btn a{  cursor: pointer; color: #333; background-color: #fff; display: inline-block; padding: 12px 25px; min-width: 130px; }
+.bg_translucent_k span{ color: #fff; }
 
 .bg_translucent_w{ position: relative; }
-.bg_translucent_w::after{ position: absolute; content: ""; width: 100%; height: 100%; display: block; background-color: rgba(256,256,256,.35); top: 0; left: 0; }
+.bg_translucent_w::after{ position: absolute; content: ""; width: 100%; height: 100%; display: block; background-color: rgba(256,256,256,.5); top: 0; left: 0; }
 .bg_translucent_w p.sub_title{ color: #333; }
-.bg_translucent_w p.btn a{ background-color: #333; border:none; }
+.bg_translucent_w p.btn a{ background-color: #333; color: #fff; border:none; }
+.bg_translucent_w p.btn a:hover{opacity: .9; }
 
 /*新增按鈕*/
 .add_new_btn{ font-size: 0.875rem; min-width: 80px; height: 35px; display: inline-block; line-height: 25px; color: #333; cursor: pointer; text-align: center; padding: 5px 10px; /*background-color: #333;*/ border-radius: 4px; margin: 10px auto; border: 1px dashed #333 !important;}
@@ -52,23 +58,23 @@ p.btn a:hover{ background-color: #fff; color: #333; }
 .bg_translucent_k .add_new_btn{ color: #fff; border: 1px #fff dashed;}
 .bg_translucent_k .add_new_btn:hover{ background-color: rgba(256,256,256,.2); }
 
+
 /*選取到的區塊*/
-.the_editBox{ border:1px dashed transparent; padding:0 20px; position: relative; min-height: 30px; }
+.the_editBox{ border:1px dashed transparent; padding:0 20px; position: relative; min-width: 150px; min-height: 30px; }
 .the_editBox:hover{ border-color: #333;}
 .show_lightBox{ position: relative; z-index: 9;}
 .the_editBox_gray{ /*border:1px dashed #a0a0a0;*/ padding:0 20px; text-align: center; min-height: 30px;}
 .the_editBox_gray:hover{ border-color: #333;}
 
 .edit_LightBox{ display: none; position: absolute; z-index: 1; cursor: pointer; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color:rgba(256,256,256,.5); }
-.edit_LightBox a{ font-size: 0.875rem; z-index: 6; position: absolute; top: 50%; left: 50%; min-width: 80px; height: 35px; line-height: 25px; color: #fff; cursor: pointer; text-align: center; padding: 5px 10px; background-color: #333; border-radius: 4px;  margin: -17px 0 0 -40px; }
+.edit_LightBox a{ font-size: 0.875rem; z-index: 6; position: absolute; top: 50%; left: 50%; min-width: 80px; height: 35px; line-height: 25px; color: #fff; cursor: pointer; text-align: center; padding: 5px 10px; background-color: #333; border-radius: 4px;  margin: -18px 0 0 -40px; }
 .edit_LightBox a.right_delete { font-size: 0.813rem;  right: 0; top: 0; left: initial; margin: 0; min-width: initial; width: 24px; height: 24px; text-align: center; line-height: 24px; border-radius: 0; padding: 0; }
 .show_lightBox:hover .edit_LightBox { display: block; }
 
-
 /*配色方案 下*/
-.template_color_holkee p.btn a{ background-color: #12ccc4;  border-color: transparent;}
-.template_color_holkee .productBox .slider .info a.order{ color: #12ccc4;}
-.template_color_holkee .bg_translucent_k .productBox .slider .info a.order{ background-color: #12ccc4;}
+.template_color_website p.btn a{ background-color: #12ccc4;  border-color: transparent;}
+.template_color_website .productBox .slider .info a.order{ color: #12ccc4;}
+.template_color_website .bg_translucent_k .productBox .slider .info a.order{ background-color: #12ccc4;}
 
 .template_color_pink p.btn a{ background-color: #ff5186;  border-color: transparent;}
 .template_color_pink .productBox .slider .info a.order{ color: #ff5186;}
@@ -83,6 +89,8 @@ p.btn a:hover{ background-color: #fff; color: #333; }
 .template_color_purplen p.btn a{ background-color: #826dc7;  border-color: transparent;}
 .template_color_purplen .productBox .slider .info a.order{ color: #826dc7;}
 .template_color_purplen .bg_translucent_k .productBox .slider .info a.order{ background-color: #826dc7;}
+
+
 
 
 /*======================= 所有section共用CSS END ================*/
