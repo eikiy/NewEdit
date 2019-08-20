@@ -12,8 +12,8 @@
 <script type="text/javascript" src="on-server/css/fontawesome-all.css.js"></script>
 <link rel="stylesheet" href="on-server/css/fontawesome-all.css">
 <!-- <link rel="stylesheet" href="css/style.css"> -->
-<link rel="stylesheet" href="css/editor.css"><!-- 抓 beta 的 css 來改，前身我取名是 edit_style XD -->
- <link rel="stylesheet" href="css/main.conflict.css"><!-- 前身我取名是 style.css XD -->
+<link rel="stylesheet" href="css/main.conflict.css"><!-- 前身我取名是 style.css XD -->
+<link rel="stylesheet" href="css/editor.css"><!-- 抓 beta 的 css 來改，前身我取名是 edit_style XD --> 
 <link rel="stylesheet" href="css/section.css"><!-- 抓 beta 的 css 來改 -->
 
 <!-- 右邊網頁所吃的 -->
@@ -114,7 +114,8 @@ $(document).ready(function() {
         <p class="storage"><span><i class="far fa-clock"></i> 已於1分鐘前儲存 </span><a class="btn" href="#">儲存</a></p>
         <p class="btn_public"><a class="popup-link" href="#popup">發佈網站</a></p>
         <ul class="userBox">
-            <!-- header的「通知」在編輯器下的狀態時不會出現，只有在會員中心裡會有 -->
+            <!-- header的「通知」在編
+                輯器下的狀態時不會出現，只有在會員中心裡會有 -->
             <!-- 通知未讀取狀態:淺黃底 -->
             <!-- 目前想到的狀態一:通知廣告要到期了 -->
             <!-- 目前想到的狀態二:開通網站，但未做其它事情的提醒，或是不管有沒有做什麼都通知它XD -->
@@ -602,7 +603,7 @@ $(document).ready(function() {
                             <li><p class="more"><a class="popup-link" href="#popup-gallery"><i class="fas fa-plus"></i>看更多</a></p></li>
                         </ul>
                         <div class="btn clearfix">
-                            <p><a href="#">上傳圖片</a>
+                            <p><a class="popup-link" href="#popup-upload-image">上傳圖片</a>
                             <a class="FR" href="#">移除</a></p>
                         </div>
                     </div>
@@ -2490,149 +2491,163 @@ We Are Cake was founded as a way to combine creativity, hard work and a passion 
         </form>
     </div>
 
-    <!-- 圖庫 -->
-    <div id="popup-gallery" class="white-popup mfp-hide">
+    <!-- 精選圖庫 -->
+    <div id="popup-gallery" class="white-popup mfp-hide width-M">
         <div class="setBox">
             <div class="top_title">
                 <h3>背景設定</h3>
             </div>
-            <ul class="top_title clearfix">
-                <li class="open_images"><p><a class="btn_in"><span>上傳新圖片</span></a></p></li>
-                <li class="open_videos"><p><a><span>精選圖庫</span></a></p></li>
-            </ul>
-            <div class="fillinBox">
-                <!-- <div class="img_upload">
-                    <a href="#"><p><i class="images far fa-images"></i>上傳圖片</p></a>
-                    <p class="the_reminder">提示：請確保您的圖片解析度，建議圖片規格：1000x1000 / JPG 或 PNG以上。</p>
-                </div> -->
-                <div class="img_upload">
-                    <a href="#">
-                        <div class="the_btn">
-                            <p>
-                                <span href="#"><i class="fas fa-undo-alt"></i>更新</span>
-                            </p>
-                        </div>
-                        <img src="images/new_site/logo_menu.png" style="vertical-align: middle;"></a>
-                    <p class="the_reminder">提示：請確保您的圖片解析度，建議圖片規格：500x1000 / JPG 或 PNG以上。</p>
-                </div>
-                <p class="for_pop_note color_red"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> 尺寸錯誤</p>
-                <p class="for_pop_note color_red"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> 上傳失敗，請重新選取</p>
-                <p class="for_pop_note"><i class="fa fa-check-circle" aria-hidden="true"></i> 上傳完成</p>
+            <div class="upload-image-container">
+                <!-- 點"上傳"是到"上傳圖片"
+                    點"看更"多"是到"精選圖庫" -->
+                <ul class="top-tap">
+                    <li><p><a class="popup-link" href="#popup-upload-image">上傳圖片</a></p></li>
+                    <li><p><a class="btn_in popup-link" href="#popup-gallery">精選圖庫</a></p></li>
+                </ul>
                 <div class="fillinBox">
-                    <p class="btn_default">
-                        <a class="popup-link" href="#">套用</a>
-                    </p>
+                    <ul class="gallery-tag"><!-- 如果未來有tag的話，初期會是長這樣(因為template量不多) -->
+                        <li><p><a class="selected" href="#">ALL</a></p></li>
+                        <li><p><a href="#">Patterns</a></p></li>
+                        <li><p><a href="#">Cityscape</a></p></li>
+                        <li><p><a href="#">Things</a></p></li>
+                        <li><p><a href="#">Food-drinks</a></p></li>
+                        <li><p><a href="#">Blurred</a></p></li>
+                        <li><p><a href="#">Rature</a></p></li>
+                        <li><p><a href="#">Abstract</a></p></li>
+                        <li><p><a href="#">Business</a></p></li>
+                        <li><p><a href="#">Pastel-solids</a></p></li>
+                        <li><p><a href="#">Restaurant</a></p></li>
+                        <li><p><a href="#">Design / fashion</a></p></li>
+                        <li><p><a href="#">Parent-child</a></p></li>
+                    </ul>
+                    <ul class="gallery-img-list clearfix">
+                        <li class="img-url btn_in" class="img-url" style="background-image:url(images/gallery-cover/21.jpg);">
+                            <p class="img-source"><a href="#" target="_blank">Pixabay</a><i class="fas fa-exclamation-circle"></i></p>
+                            <span><i class="fas fa-check"></i></span>
+                        </li>
+                        <li class="img-url" style="background-image:url(images/gallery-cover/22.jpg);">
+                            <p class="img-source"><a href="#" target="_blank">Pixabay</a><i class="fas fa-exclamation-circle"></i></p>
+                            <span><i class="fas fa-check"></i></span>
+                        </li>
+                        <li class="img-url" style="background-image:url(images/gallery-cover/23.jpg);">
+                            <span><i class="fas fa-check"></i></span>
+                        </li>
+                        <li class="img-url" style="background-image:url(images/gallery-cover/24.jpg);">
+                            <p class="img-source"><a href="#" target="_blank">Pixabay</a><i class="fas fa-exclamation-circle"></i></p>
+                            <span><i class="fas fa-check"></i></span>
+                        </li>
+                        <li class="img-url" style="background-image:url(images/gallery-cover/25.jpg);">
+                            <span><i class="fas fa-check"></i></span>
+                        </li>
+                        <li class="img-url" style="background-image:url(images/gallery-cover/26.jpg);">
+                            <p class="img-source"><a href="#" target="_blank">Pexels</a><i class="fas fa-exclamation-circle"></i></p>
+                            <span><i class="fas fa-check"></i></span>
+                        </li>
+                        <li class="img-url" style="background-image:url(images/gallery-cover/27.jpg);">
+                            <p class="img-source"><a href="#" target="_blank">Pexels</a><i class="fas fa-exclamation-circle"></i></p>
+                            <span><i class="fas fa-check"></i></span>
+                        </li>
+                        <li class="img-url" style="background-image:url(images/gallery-cover/28.jpg);">
+                            <p class="img-source"><a href="#" target="_blank">Pixabay</a><i class="fas fa-exclamation-circle"></i></p>
+                            <span><i class="fas fa-check"></i></span>
+                        </li>
+                        <li class="img-url" style="background-image:url(images/gallery-cover/29.jpg);">
+                            <p class="img-source"><a href="#" target="_blank">Pixabay</a><i class="fas fa-exclamation-circle"></i></p>
+                            <span><i class="fas fa-check"></i></span>
+                        </li>
+                        <li class="img-url" style="background-image:url(images/gallery-cover/30.jpg);">
+                            <p class="img-source"><a href="#" target="_blank">Pixabay</a><i class="fas fa-exclamation-circle"></i></p>
+                            <span><i class="fas fa-check"></i></span>
+                        </li>
+                        <li class="img-url" style="background-image:url(images/gallery-cover/31.jpg);">
+                            <p class="img-source"><a href="#" target="_blank">Pixabay</a><i class="fas fa-exclamation-circle"></i></p>
+                            <span><i class="fas fa-check"></i></span>
+                        </li>
+                        <li class="img-url" style="background-image:url(images/gallery-cover/32.jpg);">
+                            <p class="img-source"><a href="#" target="_blank">Pixabay</a><i class="fas fa-exclamation-circle"></i></p>
+                            <span><i class="fas fa-check"></i></span>
+                        </li>
+                        <li class="img-url" style="background-image:url(images/gallery-cover/33.jpg);">
+                            <p class="img-source"><a href="#" target="_blank">Pixabay</a><i class="fas fa-exclamation-circle"></i></p>
+                            <span><i class="fas fa-check"></i></span>
+                        </li>
+                        <li class="img-url" style="background-image:url(images/gallery-cover/34.jpg);">
+                            <p class="img-source"><a href="#" target="_blank">pixabay</a><i class="fas fa-exclamation-circle"></i></p>
+                            <span><i class="fas fa-check"></i></span>
+                        </li>
+                        <li class="img-url" style="background-image:url(images/gallery-cover/35.jpg);">
+                            <p class="img-source"><a href="#" target="_blank">Pixabay</a><i class="fas fa-exclamation-circle"></i></p>
+                            <span><i class="fas fa-check"></i></span>
+                        </li>
+                        <li class="img-url" style="background-image:url(images/gallery-cover/36.jpg);">
+                            <p class="img-source"><a href="#" target="_blank">Pixabay</a><i class="fas fa-exclamation-circle"></i></p>
+                            <span><i class="fas fa-check"></i></span>
+                        </li>
+                        <li class="img-url" style="background-image:url(images/gallery-cover/37.jpg);">
+                            <p class="img-source"><a href="#" target="_blank">pexels</a><i class="fas fa-exclamation-circle"></i></p>
+                            <span><i class="fas fa-check"></i></span>
+                        </li>
+                        <li class="img-url" style="background-image:url(images/gallery-cover/38.jpg);">
+                            <p class="img-source"><a href="#" target="_blank">Pixabay</a><i class="fas fa-exclamation-circle"></i></p>
+                            <span><i class="fas fa-check"></i></span>
+                        </li>
+                        <li class="img-url" style="background-image:url(images/gallery-cover/39.jpg);">
+                            <p class="img-source"><a href="#" target="_blank">Pixabay</a><i class="fas fa-exclamation-circle"></i></p>
+                            <span><i class="fas fa-check"></i></span>
+                        </li>
+                        <li class="img-url" style="background-image:url(images/gallery-cover/40.jpg);">
+                            <p class="img-source"><a href="#" target="_blank">Pixabay</a><i class="fas fa-exclamation-circle"></i></p>
+                            <span><i class="fas fa-check"></i></span>
+                        </li>
+                    </ul>
+                    <ul class="pageBox">
+                        <li><p><a href="#" class="border">Prev</a></p></li>
+                        <li><p><a href="#">1</a></p></li>
+                        <li><p><a class="btn_in" href="#">2</a></p></li>
+                        <li><p><a href="#">3</a></p></li>
+                        <li><p><a href="#">4</a></p></li>
+                        <li><p>...</p></li>
+                        <li><p><a href="#">15</a></p></li>
+                        <li><p><a href="#">16</a></p></li>
+                        <li><p><a href="#">17</a></p></li>
+                        <li><p><a href="#" class="border">Next</a></p></li>
+                    </ul>
+                    <div class="fillinBox">
+                        <p class="btn_default">
+                            <a class="popup-link" href="#">套用</a>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="setBox slide_Photo">
+    </div>
+
+     <!-- 上傳圖片 -->
+    <div id="popup-upload-image" class="white-popup mfp-hide width-M">
+        <div class="setBox">
             <div class="top_title">
                 <h3>背景設定</h3>
             </div>
-            <!-- <p class="the_reminder">提示：若按鈕文字與連結欄位未填寫，按鈕則不會顯示喔！<br>並請確保您的圖片解析度，建議圖片規格：1000x1000 / JPG 或 PNG以上。</p>
-            <p class="for_pop_note color_red"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> 上傳失敗，請重新選取</p> -->
-            <ul class="top_title clearfix">
-                <li class="open_images"><p><a class="btn_in"><span>上傳新圖片</span></a></p></li>
-                <li class="open_videos"><p><a><span>精選圖庫</span></a></p></li>
-            </ul>
-            <ul class="Photo_list clearfix">
-                <li>
-                    <span class="list_nb">1</span>
-                    <div class="photo">
-                        <div class="the_btn">
-                            <p>
-                                <a href="#"><i class="fas fa-undo-alt"></i>更新</a>
-                                <a href="#"><i class="fas fa-trash-alt"></i>刪除</a>
-                            </p>
-                        </div>
-                        <img src="images/new_site/kitchen_adventurer_caramel.jpg" style="vertical-align: middle;">
+            <div class="upload-image-container">
+                <!-- 點"上傳"是到"上傳圖片"
+                    點"看更"多"是到"精選圖庫" -->
+                <ul class="top-tap">
+                    <li><p><a class="btn_in popup-link" href="#popup-upload-image">上傳圖片</a></p></li>
+                    <li><p><a class="popup-link" href="#popup-gallery">精選圖庫</a></p></li>
+                </ul>
+                <div class="fillinBox">
+                    <div class="img_upload">
+                        <a href="#"><p><i class="images far fa-images"></i>將圖片拖曳到這裡<br>- 或 - <br><span class="btn">選擇圖片</span></p></a>
+                        <p class="the_reminder">提示：請確保您的圖片解析度，建議圖片規格：1000x1000 / JPG 或 PNG以上。</p>
                     </div>
-                    <div class="product_fillinBox">
-                        <input type="" name="" value="WEOJ Cake  $6.5">
-                        <input type="" name="" value="Order" placeholder="按鈕文字">
-                        <input type="" name="" value="#" placeholder="連結">
+
+                    <div class="fillinBox">
+                        <p class="btn_default">
+                            <a class="popup-link" href="#">套用</a>
+                        </p>
                     </div>
-                </li>
-                <li>
-                    <span class="list_nb">2</span>
-                    <div class="photo">
-                        <div class="the_btn">
-                            <p>
-                                <a href="#"><i class="fas fa-undo-alt"></i>更新</a>
-                                <a href="#"><i class="fas fa-trash-alt"></i>刪除</a>
-                            </p>
-                        </div>
-                        <img src="images/new_site/arranged-art-background-1061577.jpg" style="vertical-align: middle;">
-                    </div>
-                    <div class="product_fillinBox">
-                        <input type="" name="" value="Wedding Cake $29">
-                        <input type="" name="" value="Order" placeholder="按鈕文字">
-                        <input type="" name="" value="#" placeholder="連結">
-                    </div>
-                </li>
-                <li>
-                    <span class="list_nb">3</span>
-                    <div class="photo">
-                        <div class="the_btn">
-                            <p>
-                                <a href="#"><i class="fas fa-undo-alt"></i>更新</a>
-                                <a href="#"><i class="fas fa-trash-alt"></i>刪除</a>
-                            </p>
-                        </div>
-                        <img src="images/new_site/bk_001_01.jpg" style="vertical-align: middle;">
-                    </div>
-                    <div class="product_fillinBox">
-                        <input type="" name="" value="WEOJ Cake  $6.5">
-                        <input type="" name="" value="" placeholder="按鈕文字">
-                        <input type="" name="" value="" placeholder="連結">
-                    </div>
-                </li>
-                <li>
-                    <span class="list_nb">4</span>
-                    <div class="photo">
-                        <div class="the_btn">
-                            <p>
-                                <a href="#"><i class="fas fa-undo-alt"></i>更新</a>
-                                <a href="#"><i class="fas fa-trash-alt"></i>刪除</a>
-                            </p>
-                        </div>
-                        <img src="images/new_site/test22.jpg" style="vertical-align: middle;">
-                    </div>
-                    <div class="product_fillinBox">
-                        <input type="" name="" value="Wedding Cake $29">
-                        <input type="" name="" value="" placeholder="按鈕文字">
-                        <input type="" name="" value="" placeholder="連結">
-                    </div>
-                </li>
-                <li>
-                    <span class="list_nb">5</span>
-                    <div class="photo">
-                        <div class="the_btn">
-                            <p>
-                                <a href="#"><i class="fas fa-undo-alt"></i>更新</a>
-                                <a href="#"><i class="fas fa-trash-alt"></i>刪除</a>
-                            </p>
-                        </div>
-                        <img src="images/new_site/blackberry-blur-cake-1070850.jpg" style="vertical-align: middle;">
-                    </div>
-                    <div class="product_fillinBox">
-                        <input type="" name="" value="WEOJ Cake  $6.5">
-                        <input type="" name="" value="Order" placeholder="按鈕文字">
-                        <input type="" name="" value="https://www.holkee.com/shop/eshop" placeholder="連結">
-                    </div>
-                </li>
-                <li class="none_move">
-                    <div class="photo">
-                        <div class="img_upload">
-                            <a class="img_upload" href="#"><p><i class="images fas fa-upload"></i>新增</p></a>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-            <p class="btn_default">
-                <a class="color_gray" href="#">關閉</a>
-                <a class="popup-link " href="#">套用設定</a>
-            </p>
+                </div>
+            </div>
         </div>
     </div>
 </main>
