@@ -81,6 +81,7 @@
 .payment-instructions .fillinBox{ padding-top: 25px; }
 .payment-instructions h4.top-title{ font-size: 1rem; line-height: 1.375rem; font-weight: bold; color: #333; text-align: justify; padding-bottom: 25px;}
 .payment-instructions h4.top-title span{ color: #FF2929; }
+
 .payment-instructions p.p-info{ color: #333; font-size: 0.875rem; line-height: 22px;}
 .payment-instructions p.p-info span{ font-weight: bold; }
 
@@ -92,6 +93,8 @@
 .fixed-order-contents .order-list p.order-btn a.none-function{ background-color: #D2D2D2; cursor: not-allowed;}
 .fixed-order-contents .order-list p.order-btn span.note-info{ display: block; color: #fff; z-index: 10; position: absolute; bottom: 10px; right: 90px; min-width: 150px; border-radius: 4px; padding: 10px; background-color: rgba(0,0,0,.8); }
 .fixed-order-contents .order-list p.order-btn span.note-info::before{ content: ""; position: absolute; display:block; border-width:8px 8px 8px 8px; border-style:solid; border-color: transparent transparent transparent  rgba(0,0,0,.8) ; right:-16px; bottom:25px;}
+
+.popup-w-s .payment-instructions .top_title::after{ display: block!important;}
 
 
 /*payment page*/
@@ -148,8 +151,8 @@
 	.payer-information .fill-in-box .invoice-info .note-fixed-none p.for-note{ position: inherit; } 
 	.payer-information .fill-in-box input.fill-in-text, .payer-information .fill-in-box select{line-height: 40px;}
 }
-
-
+.payment-instructions p.card-payment-info{ padding-top:15px; text-align: center; font-size: 1rem; line-height: 1.938rem; }
+.payment-instructions p.card-payment-info span{ color: #27D0CA; font-weight: bold;}
 
 /*==== RWD ====*/
 @media (max-width:750px) {
@@ -197,6 +200,7 @@
 	.fixed-order-contents .order-list p.order-btn{ font-size: 0.875rem;}
 	.payment-instructions h4.top-title{ font-size: 0.875rem; }
 	.payment-instructions p.p-info{ font-size: 0.813rem; }
+	.payment-instructions p.card-payment-info{ font-size: 0.875rem; padding-top: 5px; }
 }
 
 @media (max-device-width:1200px) {
