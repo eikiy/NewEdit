@@ -198,3 +198,8 @@
 	.payment-instructions h4.top-title{ font-size: 0.875rem; }
 	.payment-instructions p.p-info{ font-size: 0.813rem; }
 }
+
+@media (max-device-width:1200px) {
+	.plans-wrapper .plans-contents{ background-attachment: inherit; background-position: left center; }
+	.plans-wrapper .support-add{ background-position: center center; }
+}
