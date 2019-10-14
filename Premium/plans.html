@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>holkee Premium方案</title>
+    <meta name='description' content=""/>
+    <meta name='keywords' content=""/>
+    <meta name="MobileOptimized" content="width">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:image" content="images/share_pic.png"/>
+    <meta property="og:title" content="holkee Premium方案"/>
+    <meta property="og:url" content="#"/>
+    <meta property="og:description" content=""/>
+    <meta property="og:type" content="website"/>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+    <link rel="stylesheet" href="https://www.holkee.com/css/index.min.css">
+    <link rel="stylesheet" href="https://www.holkee.com/css/member/member.css" type="text/css">
+    <link rel="stylesheet" href="css/plans.css">
+
+    <style type="text/css">
+        .top-header-bg-w{ background-color: #fff; border-bottom: 2px solid #27d0ca;}
+        .top-header-bg-w  h1.logo a{ background-image: url(https://img.holkee.com/main/logo.png); }
+    </style>
+
+    <!-- Magnific Popup -->
+    <link rel="stylesheet" href="https://www.holkee.com/scripts/libs/magnific-popup/magnific-popup.min.css">
+    <link rel="stylesheet" href="https://www.holkee.com/css/main.conflict.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+    <script src="https://www.holkee.com/scripts/libs/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+    <!-- scrollTop -->
+    <script type="text/javascript">
+        $(function(){
+            $('.go01').click(function(){ $('html,body').animate({scrollTop:$('#goThe01').offset().top-60}, 800); });
+            $('.go02').click(function(){ $('html,body').animate({scrollTop:$('#goThe02').offset().top-60}, 800); });
+          return false;
+        });
+    </script>
+
+    <!-- choose -->
+    <script type="text/javascript">
+        $(function(){
+            $('.color-green .plans-info p.btn').click(function(){ 
+                $(this).parent().parent().parent().find('.color-purple').removeClass('choose-purple');
+                $(this).parent().parent().toggleClass( 'choose-green');
+            });
+            $('.color-purple .plans-info p.btn').click(function(){ 
+                $(this).parent().parent().parent().find('.color-green').removeClass('choose-green');
+                $(this).parent().parent().toggleClass( 'choose-purple');
+            });
+            $('.banner-premium p.btn').click(function() {
+                $(this).parent().toggleClass( 'choose');
+            });
+            return false;
+        });
+    </script>
+
+    <!-- popup-link -->
+    <script type="text/javascript">
+        $(function(){
+            $('.popup-link').magnificPopup({
+              removalDelay: 300,
+              mainClass: 'mfp-fade'
+            });
+        });
+    </script>
+
+</head>
+<body>
+
+    <!-- header -->
+    <header class="top-header top-header-bg-w">
+        <nav class="Menu contents-box clearfix">
+            <h1 class="logo"><a href="index.html">holkee</a></h1>
+            <ul class="userBox">
+                <li class="noticeBox"><a><p><i class="far fa-bell"></i>
+                    <span class="text">通知</span>
+                    <span class="bell_nb">9</span></p></a>
+                </li>
+                <li class="profile_photo">
+                    <a><div class="header_profile_img"><img src="https://graph.facebook.com/1324292190919409/picture?width=40&amp;height=40" width="100%"></div>
+                    <p class="userName">Eikiy Chang</p></a>
+                    <div class="theUserBox">
+                        <ul>
+                            <li><p><a href="#">會員中心</a></p></li>
+                            <li><p><a href="#">精選主題</a></p></li>
+                            <li><p><a href="#">登出</a></p></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <!-- Premium 方案 -->
+    <main class="plans-wrapper">
+        <section class="fixed-order-contents">
+            <div class="order-list">
+                <p class="order-btn">
+                    <!-- 尚未選方案會是灰色按鈕 a + none-function 會出現提醒 span note-info 字樣-->
+                    <a class="none-function" href="payment.html">立即<br>付費</a>
+                    <span class="note-info">請搭配付費方案，<br>才能進行付款喔！</span>
+                </p>
+            </div>
+        </section>
+        <section class="plans-contents membership-levels">
+             <div class="ContentsBox">
+                <h2 class="top-title">會員方案</h2>
+                <p class="sub-title">holkee 為您提供多款精選主題、無限頁面、移除 holkee 商標、客服優先服務和免費頂級虛擬主機。<br>趕緊升級 Premium 會員取得更多功能。</p>
+                <ul class="info-card wow fadeIn" data-wow-duration="2s">
+                    <li class="banner-general">
+                        <div class="top-banner">
+                            <h3>一般會員</h3>
+                        </div>
+                        <div class="level-info">
+                            <p><strong>有限</strong>頻寬、<strong>有限</strong>流量<br>
+                                <strong>12</strong> 個網站建置數量<br>
+                                <strong>12</strong> 個網站版塊數量
+                            </p>
+                            <p class="btn"><a target="_blank" href="https://www.holkee.com/themes">立即免費使用</a></p>
+                        </div>
+                    </li>
+                    <li class="banner-premium">
+                        <div class="top-banner">
+                            <h3>Premium 會員</h3>
+                        </div>
+                        <div class="level-info">
+                            <p><strong>無限</strong>頻寬、<strong>無限</strong>流量<br>
+                                <strong>無限</strong>網站建置數量<br>
+                                <strong>無限</strong>網站版塊數量<br>
+                                移除 <strong>holkee 商標</strong><br>
+                                holkee <strong>自定義</strong>網址<br>
+                                <strong>免費</strong> SSL 憑證<br>
+                                <strong>客戶優先服務</strong>（Line 專屬官方帳號）<br>
+                                <strong>專屬自訂網域</strong>（最多 5 組，不含購買網域）<br>
+                                <strong>立即</strong>讓網頁被 Google 搜尋引擎收錄<br>
+                                holkee <strong>獨家</strong>電子報
+                            </p>
+                            <p class="btn"><a class="go01">查看付費方案</a></p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="plans-contents plans-price" id="goThe01">
+             <div class="ContentsBox">
+                <h2 class="top-title">請選擇付費方案</h2>
+                <ul class="info-card">
+                    <!-- 選中才要 + choose-green + 換按鈕文字 已選擇-->
+                    <li class="banner-premium color-green">
+                        <div class="top-banner">
+                            <h3>Premium 月繳</h3>
+                        </div>
+                        <div class="amount">
+                            <p>NT.99 <span>/ 30 日</span></p>
+                        </div>
+                        <div class="plans-info">
+                            <p class="btn"><a>選擇此方案</a></p>
+                            <p class="p-info">每月自動扣繳<br><a class="popup-link" href="#popup-payment-instructions-1">收費說明</a></p>
+                        </div>
+                    </li>
+                    <!-- 選中才要 + choose-purple  + 換按鈕文字 已選擇 -->
+                    <li class="banner-premium color-purple">
+                        <div class="top-banner">
+                            <h3>Premium 年繳</h3>
+                        </div>
+                        <div class="amount">
+                            <p>NT.1188 <span>/ 365 日</span><br>
+                                <span class="c-red">額外加贈 60 日，節省 NT $198</span></p>
+                        </div>
+                        <div class="plans-info">
+                            <p class="btn"><a>已選擇</a></p>
+                            <p class="p-info">每年自動扣繳<br><a class="popup-link" href="#popup-payment-instructions-2">收費說明</a></p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="plans-contents support-add">
+             <div class="ContentsBox">
+                <h2 class="top-title">請選擇加購項目</h2>
+                <p class="sub-title">加購項目前，請先詳閱<a class="popup-link" href="#popup-payment-instructions-3">收費說明</a></p>
+                <ul class="info-card">
+                    <!-- 選擇要購買 li + choose -->
+                    <li class="banner-premium choose">
+                        <div class="services-item">
+                            <h4 class="item-title">Google、Facebook、Yahoo <br>追蹤碼安裝</h4>
+                            <p class="amount">NT.30 <span>/ 月</span> </p>
+                        </div>
+                        <p class="btn"><a>已選擇加購</a></p>
+                    </li>
+                    <li class="banner-premium">
+                        <div class="services-item">
+                            <h4 class="item-title">Google Analytics（分析）<br>
+                                <span>每周定期報表寄送</span></h4>
+                            <p class="amount">NT.30 <span>/ 月</span> </p>
+                        </div>
+                        <p class="btn"><a>加購</a></p>
+                    </li>
+                    <!-- 【綠底白勾勾】已經購買的，無法再點選，按鈕顯示 已購買 -->
+                    <li class="banner-premium order">
+                        <div class="services-item">
+                            <h4 class="item-title">一對一專屬指導<br>
+                                <span>專人協助解決架站困擾、金物流串接問題、協助建置上線</span></h4>
+                            <p class="amount">NT.99 <span>/ 月</span> </p>
+                        </div>
+                        <p class="btn"><a>此項目已選購</a></p>
+                    </li>
+                    <!-- nothing ↓ 純粹撐到齊左用，勿刪 -->
+                    <li class="nothing"></li>
+                </ul>
+            </div>
+        </section>
+        <section class="plans-contents membership-faq">
+             <div class="ContentsBox">
+                <h2 class="top-title">常見問題</h2>
+                <ul class="faq-list">
+                    <li>
+                        <h4>Q：我需要一個伺服器來寄存我的網站嗎？</h4>
+                        <p>A：不用的。您無需擔心有關網頁寄存事宜，所有 holkee 的網站均享有由我們管理的高速雲端網頁寄存服務。</p>
+                    </li>
+                    <li>
+                        <h4>Q：我的 holkee 網站可以使用自訂網域嗎？</h4>
+                        <p>A：可以，自訂網域是付費方案的功能，最多設定 5 組，holkee 有詳細的<a href="https://www.holkee.com/qa" target="_blank">教學說明</a>如何自訂網域。還沒有網域? 建議可以到以下網域商先行購買喔， <a href="https://tw.godaddy.com/" target="_blank">Godaddy</a>（推薦）、<a href="https://www.namecheap.com/" target="_blank">Namecheap</a>（英文介面）。如果你有任何問題，歡迎隨時和我們聯繫。</p>
+                    </li>
+                    <li>
+                        <h4>Q：我可以只購買加購項目的功能嗎 ?</h4>
+                        <p>A：不可以，加購項目必須搭配 Premium 會員方案才可使用，請先選擇您的付費方案，才能購買加購項目。</p>
+                    </li>
+                    <li>
+                        <h4>Q：如何終止 Premium方案？</h4>
+                        <p>A：若您正在使用付費方案，您可隨時提出終止自動扣繳，回到一般會員，當目前的計費週期完結時，就不會再進行任何付費了（月繳方案會在下一個月生效，年繳方案則在下個年度生效）。請注意，取消方案可能會導致部分加購項目無法正常使用，如您沒有購買加購項目則無須理會此訊息。</p>
+                    </li>
+                    <li>
+                        <h4>Q：如何終止加購項目？</h4>
+                        <p>A：若您正在使用加購項目，您可隨時提出終止自動扣繳，當目前的計費週期完結時，就不會再進行任何付費了（月繳方案會在下一個月生效，年繳方案則在下個年度生效）。</p>
+                    </li>
+                    <li>
+                        <h4>Q：我可以更改付費方案嗎？</h4>
+                        <p>A：當然可以！當您想月繳轉為年繳，或年繳轉為月繳，請直接選擇您想更改的付費方案並完成付款，我們會停止您之前付費方案的自動扣繳，<strong>您變更的方案，將於之前方案款項到期日生效。</strong></p>
+                    </li>
+                    <li>
+                        <h4>Q：還有疑問？想了解更多關於 Premium 會員方案的功能嗎？</h4>
+                        <p>A：歡迎聯系我們！您可以使用 <a href="https://m.me/779323952241840" target="_blank">Facebook Messenger </a>或<a href="https://line.me/R/ti/p/%40bca1493j" target="_blank">holkee LINE 官方網站</a>，利用訊息功能與我們聯繫，我們的客服時間為周一至周五，09:00 ~ 18:00。</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+    <footer class="footer-box">
+        <div class="contents-box clearfix">
+            <div class="otherbox">
+                <p class="other-link">
+                    <a href="https://www.holkee.com/terms" target="_blank">會員條款</a>
+                    <a href="https://www.holkee.com/privacy" target="_blank">隱私權條款</a>
+                    <a href="https://www.holkee.com/qa" target="_blank">教學&QA</a>
+                </p>
+                <ul class="follow-us">
+                    <li><a href="https://line.me/R/ti/p/@bca1493j" target="_blank"><i class="fab fa-line"></i></a></li>
+                    <li><a href="https://www.facebook.com/holkeego/" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="https://www.holkee.com/wechat_qrcode.html" target="_blank"><i class="fab fa-weixin" aria-hidden="true"></i></a></li>
+                </ul>
+                <p>客服信箱：<a href="mailto:service@holkee.com" target="_blank">service@holkee.com</a><br>
+                <span>（客服時間為周一至周五 9:00-18:00）</span></p>
+            </div>
+            <div class="l-Box">
+                <p class="logo">Weblisher Group</p>
+                <p class="copyright">Copyrights Ⓒ 2019 All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 收費說明 - 月繳型-->
+    <div id="popup-payment-instructions-1" class="white-popup mfp-hide width-M">
+        <form class="setBox payment-instructions">
+            <div class="top_title">
+                <h3>收費說明 - 月繳型</h3>
+            </div>
+            <div class="fillinBox">
+                <h4 class="top-title">holkee 將透過您消費的信用卡帳單每月向您收取，刷卡付費完成後即可開通使用。若無法自您的信用卡帳戶扣款，將會暫時取消您的 Premium 會員資格。啟用後將每月持續收費，未申請終止自動扣繳前，視為同意繼續使用。會員一經付費後，<span>不得以任何理由要求退費或按比例折讓。</span></h4>
+                <p class="p-info">
+                    <span>計費週期</span><br>
+                    以 holkee 繳費日為計費基準。申請終止自動扣款，不滿一個月以一個月計算。<br>
+                    <br>
+                    <span>計費範例</span><br>
+                    2019年1月1日付費啟用Premium會員方案，2019年2月20日申請終止自動扣款<br>
+                    1. 2019/01/01~2019/01/30 → NT.9<br>
+                    2. 2019/01/31~2019/02/20 → NT.99（2/20申請退租，不滿一個月以一個月計算。但仍可使用至2019/3/1）<br>
+                    <br>
+                    若對於產品使用或會員權益有任何問題與建議時，歡迎與我們聯絡，我們將會盡速解答。
+                </p>
+            </div>
+            <div class="fillinBox">
+                <p class="btn_default">
+                    <a>確認</a>
+                </p>
+            </div>
+        </form>
+    </div>
+    <!-- 收費說明 - 年繳型-->
+    <div id="popup-payment-instructions-2" class="white-popup mfp-hide width-M">
+        <form class="setBox payment-instructions">
+            <div class="top_title">
+                <h3>收費說明 - 年繳型</h3>
+            </div>
+            <div class="fillinBox">
+                <h4 class="top-title">holkee 將透過您消費的信用卡帳單每年向您收取，刷卡付費完成後即可開通使用。若無法自您的信用卡帳戶扣款，將會暫時取消您的 Premium 會員資格。啟用後將每年持續收費，未申請終止自動扣繳前，視為同意繼續使用。會員一經付費後，<span>不得以任何理由要求退費或按比例折讓。</span></h4>
+                <p class="p-info">
+                    若對於產品使用或會員權益有任何問題與建議時，歡迎與我們聯絡，我們將會盡速解答。
+                </p>
+            </div>
+            <div class="fillinBox">
+                <p class="btn_default">
+                    <a>確認</a>
+                </p>
+            </div>
+        </form>
+    </div>
+    <!-- 收費說明 - 加購項目-->
+    <div id="popup-payment-instructions-3" class="white-popup mfp-hide width-M">
+        <form class="setBox payment-instructions">
+            <div class="top_title">
+                <h3>收費說明 - 加購項目</h3>
+            </div>
+            <div class="fillinBox">
+                <h4 class="top-title">holkee 將透過您消費的信用卡帳單每月或每年向您收取，刷卡付費完成後即可開通使用。若無法自您的信用卡帳戶扣款，將會暫時取消您的加購項目功能。啟用後將每月或每年持續收費，未申請終止自動扣繳前，視為同意繼續使用。<span>不得以任何理由要求退費或按比例折讓。</span></h4>
+                <p class="p-info">
+                    此加購項目必須搭配 Premium 方案才可使用，如您 Premium 方案到期未繼續付款或無法扣款，可能會導致部分加購項目無法正常使用。<br>
+                    <br>
+                    若對於產品使用或會員權益有任何問題與建議時，歡迎與我們聯絡，我們將會盡速解答。
+                </p>
+            </div>
+            <div class="fillinBox">
+                <p class="btn_default">
+                    <a>確認</a>
+                </p>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>
+
+
+
