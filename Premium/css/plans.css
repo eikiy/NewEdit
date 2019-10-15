@@ -119,7 +119,7 @@
 .payer-information .top-box p.sub-note{ font-size: 0.75rem; color: #7E7E7E; }
 
 .payer-information .fill-in-box{ width: 100%; }
-.payer-information .fill-in-box input.fill-in-text, .payer-information .fill-in-box select{ font-size: 0.875rem; background-color: transparent; border: none; border-bottom: 1px solid #DCDCDC; width: 100%; padding: 5px 0px; height: 50px; line-height: 50px; -webkit-appearance: none; -moz-appearance: none; appearance: none;}
+.payer-information .fill-in-box input.fill-in-text, .payer-information .fill-in-box select{ font-size: 0.875rem; background-color: transparent; border: none; border-bottom: 1px solid #DCDCDC; width: 100%; padding: 5px 0px; height: 50px; line-height: 50px; border-radius: 0; -webkit-appearance: none; -moz-appearance: none; appearance: none;-webkit-appearance: textfield;}
 .payer-information .fill-in-box input.fill-in-text::placeholder,
 .payer-information .fill-in-box input.fill-in-text::-webkit-input-placeholder,
 .payer-information .fill-in-box input.fill-in-text::-moz-placeholder,
@@ -184,6 +184,7 @@
 	.payer-information .fill-in-box .invoice-info{ width: 100%; }
 }
 @media (max-width:599px) {
+	.payer-information .fill-in-box p.for-note{ bottom: 19px;}
 	.payer-information .fill-in-box .information-info fieldset{ padding-top: 0; }
 	.payer-information .fill-in-box .invoice-info input.fill-in-text, .payer-information .fill-in-box .invoice-info select{ margin-top: 0; }
 	.payer-information .fill-in-box .both .row{ width: 100%; }
@@ -196,7 +197,7 @@
 	.plans-wrapper .plans-contents ul.info-card li .top-banner h3{ font-size: 1.375rem;}
 	.plans-wrapper .plans-price ul.info-card li .plans-info p.p-info{ font-size: 0.813em;}
 	.plans-wrapper .plans-contents ul.info-card li .top-banner, .plans-wrapper .plans-contents ul.info-card li .top-banner::after{ height: 80px; }
-	
+	.plans-wrapper .payment-contents p.sub-title span{ display: block; }
 	.fixed-order-contents .order-list p.order-btn{ font-size: 0.875rem;}
 	.payment-instructions h4.top-title{ font-size: 0.875rem; }
 	.payment-instructions p.p-info{ font-size: 0.813rem; }
