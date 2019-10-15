@@ -119,7 +119,7 @@
 .payer-information .top-box p.sub-note{ font-size: 0.75rem; color: #7E7E7E; }
 
 .payer-information .fill-in-box{ width: 100%; }
-.payer-information .fill-in-box input.fill-in-text, .payer-information .fill-in-box select{ font-size: 0.875rem; background-color: transparent; border: none; border-bottom: 1px solid #DCDCDC; width: 100%; padding: 5px 0px; height: 50px; line-height: 50px; }
+.payer-information .fill-in-box input.fill-in-text, .payer-information .fill-in-box select{ font-size: 0.875rem; background-color: transparent; border: none; border-bottom: 1px solid #DCDCDC; width: 100%; padding: 5px 0px; height: 50px; line-height: 50px; -webkit-appearance: none; -moz-appearance: none; appearance: none;}
 .payer-information .fill-in-box input.fill-in-text::placeholder,
 .payer-information .fill-in-box input.fill-in-text::-webkit-input-placeholder,
 .payer-information .fill-in-box input.fill-in-text::-moz-placeholder,
