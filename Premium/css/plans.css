@@ -85,7 +85,7 @@
 .plans-wrapper .premium-feature ul.info-card li .img-feature::after{ content: ""; position: absolute; width: 100%; height: 230px; display: block; top: -120px; left: 0; background-repeat: no-repeat; background-position: bottom center; background-size: contain;}
 .plans-wrapper .premium-feature ul.info-card li p.info-card{ font-size: 2.125rem; font-weight: bold; line-height: 1.375rem; }
 .plans-wrapper .premium-feature ul.info-card li p.item-title { line-height: 2rem; padding: 20px 10px; font-size: 1rem; font-weight: bold;}
-.plans-wrapper .premium-feature ul.info-card li p.item-title span{ color: #27d0ca; font-size: 0.875rem; }
+.plans-wrapper .premium-feature ul.info-card li p.item-title span{ color: #27d0ca;}
 .plans-wrapper .premium-feature ul.info-card li.feature-three, .plans-wrapper .premium-feature ul.info-card li.feature-four{ margin-top: 100px; }
 .plans-wrapper .premium-feature ul.info-card li.feature-one .img-feature::after{ background-image: url(../images/img_premium_main_01.png); }
 .plans-wrapper .premium-feature ul.info-card li.feature-two .img-feature::after{ background-image: url(../images/img_premium_main_02.png); }
@@ -203,6 +203,7 @@
 	.plans-wrapper .premium-feature ul.info-card li.feature-three, .plans-wrapper .premium-feature ul.info-card li.feature-four{ margin-top: 80px; }
 	.plans-wrapper .premium-feature ul.info-card li .img-feature::after{ height: 200px; top: -90px; }
 	.plans-wrapper .premium-feature ul.info-card li.feature-three .img-feature::after, .plans-wrapper .premium-feature ul.info-card li.feature-four .img-feature::after{ height: 190px; top: -80px;}
+	.plans-wrapper .premium-feature ul.info-card li p.item-title{ line-height: 1.5rem;}
 	.payer-information .fill-in-box p.for-note{ bottom: 19px;}
 	.payer-information .fill-in-box .information-info fieldset{ padding-top: 0; }
 	.payer-information .fill-in-box .invoice-info input.fill-in-text, .payer-information .fill-in-box .invoice-info select{ margin-top: 0; }
