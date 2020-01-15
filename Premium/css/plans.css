@@ -2,7 +2,7 @@
 .plans-wrapper h2, .plans-wrapper h4, .plans-wrapper p{color: #333;}
 .plans-wrapper { width: 100%; }
 .plans-wrapper .ContentsBox { margin: 0 auto; }
-.plans-wrapper .plans-contents{ padding: 70px 0 50px 0; background-repeat: no-repeat; background-size: cover; background-position: center center; background-attachment: fixed; }
+.plans-wrapper .plans-contents{ padding: 50px 0; background-repeat: no-repeat; background-size: cover; background-position: center center; background-attachment: fixed; }
 .plans-wrapper .plans-contents h2.top-title { text-align: center; font-size: 1.313rem; padding:35px 0; font-weight: bold;}
 .plans-wrapper .plans-contents p.sub-title{ text-align: center; font-size: 1.063rem; line-height: 2rem; padding: 0 20px;}
 .plans-wrapper .plans-contents p.btn{ padding: 20px 0; }
@@ -77,6 +77,20 @@
 
 .plans-wrapper .plans-contents ul.info-card li .plans-info p.p-info a, .plans-wrapper .plans-contents p.sub-title a, .plans-wrapper .membership-faq ul.faq-list li p a{ color: #27d0ca; text-decoration: underline; margin: 0 5px; }
 .plans-wrapper .plans-contents ul.info-card li .plans-info p.p-info a:hover, .plans-wrapper .plans-contents p.sub-title a:hover, .plans-wrapper .membership-faq ul.faq-list li p a:hover{ text-decoration: none; }
+
+.plans-wrapper .premium-feature{padding-top: 70px; background-image: url(../images/bg_feature.jpg); background-position: center bottom;}
+.plans-wrapper .premium-feature ul.info-card{ padding: 40px 0; }
+.plans-wrapper .premium-feature ul.info-card li{ overflow: inherit; margin-top: 120px; }
+.plans-wrapper .premium-feature ul.info-card li .img-feature{ background-color: #F7F8F9; position: relative; height: 110px;}
+.plans-wrapper .premium-feature ul.info-card li .img-feature::after{ content: ""; position: absolute; width: 100%; height: 230px; display: block; top: -120px; left: 0; background-repeat: no-repeat; background-position: bottom center; background-size: contain;}
+.plans-wrapper .premium-feature ul.info-card li p.info-card{ font-size: 2.125rem; font-weight: bold; line-height: 1.375rem; }
+.plans-wrapper .premium-feature ul.info-card li p.item-title { line-height: 2rem; padding: 20px 10px; font-size: 1rem; font-weight: bold;}
+.plans-wrapper .premium-feature ul.info-card li p.item-title span{ color: #27d0ca; font-size: 0.875rem; }
+.plans-wrapper .premium-feature ul.info-card li.feature-three, .plans-wrapper .premium-feature ul.info-card li.feature-four{ margin-top: 100px; }
+.plans-wrapper .premium-feature ul.info-card li.feature-one .img-feature::after{ background-image: url(../images/img_premium_main_01.png); }
+.plans-wrapper .premium-feature ul.info-card li.feature-two .img-feature::after{ background-image: url(../images/img_premium_main_02.png); }
+.plans-wrapper .premium-feature ul.info-card li.feature-three .img-feature::after{ height: 207px; top: -97px; background-image: url(../images/img_premium_main_03.png); }
+.plans-wrapper .premium-feature ul.info-card li.feature-four .img-feature::after{ height:198px; top: -88px; background-image: url(../images/img_premium_main_04.png); }
 
 .payment-instructions .fillinBox{ padding-top: 25px; }
 .payment-instructions h4.top-title{ font-size: 1rem; line-height: 1.375rem; font-weight: bold; color: #333; text-align: justify; padding-bottom: 25px;}
@@ -184,12 +198,18 @@
 	.payer-information .fill-in-box .invoice-info{ width: 100%; }
 }
 @media (max-width:599px) {
+	.plans-wrapper .plans-contents p.sub-title{ font-size: .9375rem;}
+	.plans-wrapper .premium-feature ul.info-card li{ margin-top: 100px; }
+	.plans-wrapper .premium-feature ul.info-card li.feature-three, .plans-wrapper .premium-feature ul.info-card li.feature-four{ margin-top: 80px; }
+	.plans-wrapper .premium-feature ul.info-card li .img-feature::after{ height: 200px; top: -90px; }
+	.plans-wrapper .premium-feature ul.info-card li.feature-three .img-feature::after, .plans-wrapper .premium-feature ul.info-card li.feature-four .img-feature::after{ height: 190px; top: -80px;}
 	.payer-information .fill-in-box p.for-note{ bottom: 19px;}
 	.payer-information .fill-in-box .information-info fieldset{ padding-top: 0; }
 	.payer-information .fill-in-box .invoice-info input.fill-in-text, .payer-information .fill-in-box .invoice-info select{ margin-top: 0; }
 	.payer-information .fill-in-box .both .row{ width: 100%; }
 	.payment-contents .order-details p span.l-title{ width: 100%; padding-right: 0; text-align: center; }
 	.payment-contents .order-details p span.r-item{ width: 100%; text-align: center; }
+
 }
 @media (max-width:400px) {
 	.plans-wrapper .membership-levels p.sub-title{ font-size: 0.938rem;}
