@@ -23,6 +23,7 @@
 <link rel="stylesheet" href="css/function-css/sidemenu.css"><!-- ****選單以後會有樣式的不同 -->
 
 <!-- ****global*** 每個section共吃的css -->
+<link rel="stylesheet" href="css/section/carousel.css">
 <link rel="stylesheet" href="css/section/contact.css">
 <link rel="stylesheet" href="css/section/footer.css">
 <link rel="stylesheet" href="css/section/formsimple.css"><!-- 抓 beta 的 css 來改 -->
@@ -546,6 +547,57 @@ $(document).ready(function() {
 
 
     <section class="rightEditBox" id="rightEditBox"><!-- template_color_green -->
+        <!-- section：carousel -->
+        <!-- 最上面的第一個版塊需 + first-section --> 
+                <div class="section-wrapper first-section" id="">
+                    <div class="section-editor-tools">
+                        <div class="btn_item clearfix">
+                            <a class="j-n-set-layout hide">佈局 <i class="fas fa-undo"></i></a>
+                            <a class="j-n-set-background">背景 <i class="more_function fas fa-angle-down"></i></a>
+                        </div>
+                        <div class="bg-editor-Box">
+                            <ul class="top_title clearfix">
+                                <li class="open_images"><p><a class="j-n-set-image btn_in"><span>圖片</span></a></p></li>
+                                <li class="open_videos"><p><a class="j-n-set-video"><span>影片</span></a></p></li>
+                            </ul>
+                            <div class="j-n-tab-image select-bg-images">
+                                <div class="btn clearfix">
+                                    <p><a class="j-pop-background" href="#popup-backgroundsetting" data-action="image">上傳</a>
+                                    <a class="j-n-remove-image FR">移除</a></p>
+                                </div>
+                            </div>
+                            <div class="j-n-tab-video select-bg-videos">
+                                <div class="btn clearfix">
+                                    <p><a class="j-pop-background" href="#popup-backgroundsetting" data-action="video">嵌入影片</a>
+                                    <a class="j-n-remove-video FR f-none-function">移除</a></p>
+                                </div>
+                            </div>
+                            <div class="j-n-tab-translucent bg_translucent">
+                                <p class="sub_title">遮罩效果</p>
+                                <ul class="background_image text_position clearfix">
+                                    <li class="j-n-set-translucent bg-k"><input type="hidden" value="black"><p>Tt</p></li>
+                                    <li class="j-n-set-translucent btn_in"><input type="hidden" value=""><p>Tt</p></li>
+                                    <li class="j-n-set-translucent bg-w"><input type="hidden" value="white"><p>Tt</p></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="j-elm-background carouselBox">
+                        <div class="ContentsBox">
+                            <div class="the_editBox f-edit-box show_lightBox">
+                                <div class="edit_LightBox">
+                                    <a class="j-pop-image popup-link" href="#popup-carousel">編輯</a>
+                                    <a class="j-pop-delete right_delete" href="#popup-confirm" data-element="image" data-title="刪除確認" data-content="確定要刪除此項目嗎？"><i class="fas fa-times"></i></a>
+                                </div>
+                                <div class="j-elm-image imgBox">
+                                    <img src="images/new_site/action-carefree-cropland-1146242.jpg">
+                                </div>
+                                <a class="j-pop-image add_new_btn hide" href="#popup-imagesetting">新增圖片</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
         <!-- section：主視覺KV -->
         <!-- 第一塊 section 需要幫我加上 "first-section" 讓他往下一點才不會跟選單蓋到 -->
         <div class="section-wrapper first-section "><!-- bg_translucent_k -->
@@ -2341,6 +2393,16 @@ $(document).ready(function() {
                 <h3>新增版塊</h3>
             </div>
             <ul class="section_list clearfix">
+                 <li>
+                    <div class="s_section_views">
+                        <div class="choose_this"><p><i class="fas fa-check"></i>選擇此版塊</p></div>
+                        <div class="infoBox">
+                            <img src="images/edit_section_list_thumbnail_carousel.jpg" alt="輪播">
+                        </div>
+                    </div>
+                    <!-- 文字待S確認 -->
+                     <h4>輪播</h4>
+                </li>
                 <li>
                     <div class="s_section_views s_view_mainBox">
                         <div class="choose_this"><p><i class="fas fa-check"></i>選擇此版塊</p></div>

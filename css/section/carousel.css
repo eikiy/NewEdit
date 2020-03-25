@@ -1,0 +1,6 @@
+/* 拆開css ------ carouselBox */
+.carouselBox {width: 100%;}
+.carouselBox .ContentsBox{ width: 100%; max-width: 100%;}
+.carouselBox .imgBox { width: 100%; margin: 0 auto; display: table; }
+.carouselBox .imgBox img { width: 100%; }
+/* 拆開css ------ carouselBox END */
