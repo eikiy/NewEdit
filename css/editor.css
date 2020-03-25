@@ -509,6 +509,17 @@ select, input, textarea, button {  font-family:'Noto Sans TC',Arial,"微軟正�
 .edit_main_contents .first-section .section-editor-tools { top: 74px; }
 .edit_main_contents .no-section { padding-top: 100vh; }
 
+/*premium*/
+.edit_main_contents .section-wrapper .premium-section{ position: absolute; top: 15px; left: 15px; padding-bottom: 10px; width: 150px; z-index: 10; border-radius: 5px; box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2), 0px 5px 18px rgba(0, 0, 0, 0.22); background: rgb(187,116,241); background: -moz-linear-gradient(45deg, rgba(187,116,241,1) 0%, rgba(118,234,226,1) 100%); background: -webkit-linear-gradient(45deg, rgba(187,116,241,1) 0%,rgba(118,234,226,1) 100%); background: linear-gradient(45deg, rgba(187,116,241,1) 0%,rgba(118,234,226,1) 100%); filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#bb74f1', endColorstr='#76eae2',GradientType=1 );}
+.edit_main_contents .section-wrapper .premium-section h3{ color: #fff; text-align: center; font-weight: normal; font-size: 0.918rem; padding: 8px 15px; padding-bottom: 5px; border-bottom: 1px solid #fff; }
+.edit_main_contents .section-wrapper .premium-section h3 i{ padding-right: 7px; }
+.edit_main_contents .section-wrapper .premium-section p{ color: #fff; font-weight: bold; text-align: center; font-size: 0.813rem; padding: 8px 15px 8px 15px; }
+.edit_main_contents .section-wrapper .premium-section p.btn{ padding: 0; }
+.edit_main_contents .section-wrapper .premium-section p.btn span{ min-width: 95px; background-color: #ffc107; display: inline-block; border-radius: 20px; padding: 5px 15px; }
+.edit_main_contents .section-wrapper .premium-section:hover p.btn span{ background-color: #ffba07; }
+
+.edit_main_contents .first-section .premium-section{top: 75px;}
+
 @media (max-width:1000px){
 	.setBox .upload-image-container ul.gallery-img-list li.img-url{ width: calc(25% - 20px);}	
 }
@@ -541,6 +552,12 @@ select, input, textarea, button {  font-family:'Noto Sans TC',Arial,"微軟正�
 	.setBox .upload-image-container ul.gallery-img-list li.img-url{ width: calc(50% - 20px); margin: 5px 10px;}	
 	.setBox ul.pageBox li p{ font-size:0.813rem; }
 	.setBox ul.pageBox li p a{ padding: 4px 6px;}
+}
+@media (max-width: 500px) {
+    .setBox .fillinBox .multi-col { display: block; }
+    .setBox .fillinBox .multi-col .less140 { min-width: inherit; }
+    .edit_main_contents .section-wrapper .premium-section h3{ font-size: 0.813rem;}
+    .edit_main_contents .section-wrapper .premium-section p{ font-size: 0.750rem; }
 }
 @media (max-width:400px){
 	.slide_Photo ul.section_list li .s_view_productBox ul.goods li:nth-child(3),
