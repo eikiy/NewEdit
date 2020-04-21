@@ -1,11 +1,33 @@
 /* 拆開css ------ socialBox */
-.socialBox{ padding: 50px 0; background-color: #eee; background-repeat: no-repeat; background-position: center center; background-size: cover; background-attachment: fixed;}
-.socialBox ul.follow_us_icon{ width: 100%; text-align: center; padding-top: 20px; }
-.socialBox ul.follow_us_icon li{ display: inline-block; padding: 10px; }
-.socialBox ul.follow_us_icon li a{width: 78px; color: #fff; font-size: 28px; height: 78px; display: block; background-color: #ffc107; border-radius: 50%; display: -webkit-flex; display: flex; -webkit-align-items: center; align-items: center; -webkit-justify-content: center; justify-content: center;}
-.socialBox ul.follow_us_icon li a:hover{ background-color: #ff9800; }
+.socialBox {}
+.socialBox ul.follow_us_icon { width: 100%; text-align: center; padding: 20px 0 0 0; }
+.socialBox ul.follow_us_icon li { display: inline-block; padding: 10px; }
+.socialBox ul.follow_us_icon li a { width: 80px; color: #fff; font-size: 1.750rem; height: 80px; display: block; background-color: #ffc107; border-radius: 50%; display: -webkit-flex; display: flex; -webkit-align-items: center; align-items: center; -webkit-justify-content: center; justify-content: center; }
+.socialBox ul.follow_us_icon li a:hover { background-color: #ff9800; }
 
-.socialBox ul.web li a{ background-color: #20513a; }
-.socialBox ul.web li a:hover{ background-color: #1f5d40; }
+.socialBox ul.web li a { background-color: #20513a; }
+.socialBox ul.web li a:hover { background-color: #1f5d40; }
+
+.socialBox .style-one ul.follow_us_icon li{ padding: 3px; }
+.socialBox .style-one ul.follow_us_icon li a{ width: 55px; height: 55px; font-size: 1.5rem; border-radius: 10px;}
+
+.socialBox .style-two ul.follow_us_icon{ padding: 20px 0; }
+.socialBox .style-two ul.follow_us_icon li a{ width: initial; height: initial; background-color: inherit; border-radius: inherit;}
+.socialBox .style-two ul.follow_us_icon li a.facebook{ color: #3b5998; }
+.socialBox .style-two ul.follow_us_icon li a.instagram{ color: #322f30; background: -webkit-linear-gradient(top,#fd0b58 0,#a32b68 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.socialBox .style-two ul.follow_us_icon li a.line{ color: #52b448; }
+.socialBox .style-two ul.follow_us_icon li a.linkedin{ color: #0077b5; }
+.socialBox .style-two ul.follow_us_icon li a.pinterest{ color: #bd081c; }
+.socialBox .style-two ul.follow_us_icon li a.tumblr{ color: #3c5a77; }
+.socialBox .style-two ul.follow_us_icon li a.twitter{ color: #1da1f2; }
+.socialBox .style-two ul.follow_us_icon li a.weibo{ color: #d12827; }
+.socialBox .style-two ul.follow_us_icon li a.weixin{ color: #51c332; }
+.socialBox .style-two ul.follow_us_icon li a.whatsapp{ color: #25d366; }
+.socialBox .style-two ul.follow_us_icon li a.youtube{ color: #f00; }
+
+.socialBox .style-three ul.follow_us_icon{ padding: 20px 0; }
+.socialBox .style-three ul.follow_us_icon li a{ width: initial; height: initial; background-color: inherit; color: #333; }
+
+
 /* 拆開css ------ socialBox END */
 

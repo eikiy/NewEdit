@@ -1,6 +1,9 @@
 /* 拆開css ------ carouselBox */
 .carouselBox {width: 100%;}
 .carouselBox .ContentsBox{ width: 100%; max-width: 100%;}
-.carouselBox .imgBox { width: 100%; margin: 0 auto; display: table; }
+.carouselBox .imgBox { width: 100%; margin: 0 auto; display: table; position: relative;}
+.carouselBox .imgBox::before, .carouselBox .imgBox::after{ color: #fff; text-align: center; line-height: 34px; font-size: 14px; position: absolute; top: calc(50% - 17px); font-family: 'Font Awesome 5 Free'; z-index: 10; font-weight: 900; border-radius: 2px; width: 34px; height: 34px; background-color: rgb(0,0,0,.5);}
+.carouselBox .imgBox::before{ content: "\f060"; left: 20px; }
+.carouselBox .imgBox::after{ content: "\f061"; right: 20px;}
 .carouselBox .imgBox img { width: 100%; }
 /* 拆開css ------ carouselBox END */

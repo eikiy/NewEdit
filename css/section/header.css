@@ -1,31 +1,23 @@
-
 /* 拆開css ------ top_header */
-.top_header { width: 100%; padding: 12px 0; position: absolute; top: 0; left: 0; z-index: 70;
-background: -moz-linear-gradient(top, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.5) 1%, rgba(0,0,0,0.01) 99%, rgba(0,0,0,0) 100%);
-background: -webkit-linear-gradient(top, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0.5) 1%,rgba(0,0,0,0.01) 99%,rgba(0,0,0,0) 100%);
-background: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0.5) 1%,rgba(0,0,0,0.01) 99%,rgba(0,0,0,0) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80000000', endColorstr='#00000000',GradientType=0 ); }
+.top_header { width: 100%; padding: 12px 0; position: absolute; top: 0; left: 0; z-index: 70; background: -moz-linear-gradient(top, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.5) 1%, rgba(0,0,0,0.01) 99%, rgba(0,0,0,0) 100%); background: -webkit-linear-gradient(top, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.5) 1%, rgba(0,0,0,0.01) 99%, rgba(0,0,0,0) 100%); background: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.5) 1%, rgba(0,0,0,0.01) 99%, rgba(0,0,0,0) 100%); filter: progid: DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr='#80000000', endColorstr='#00000000'); }
+.top_header .left_logo { float: left; }
+.top_header .logo { /*width: 150px;*/ height: 50px; display: -webkit-flex; display: flex; -webkit-align-items: center; align-items: center; /*-webkit-justify-content: center; justify-content: center;*/ }
+.top_header .logo img { max-width: 100%; max-height: 100%; }
+.top_header .TopBox {}
+.top_header .TopBox ul.top_menu { width: 100%; text-align: right; padding: 6px 0; }
+.top_header .TopBox ul.top_menu li { display: inline-block; margin: 0 4px; }
+.top_header .TopBox ul.top_menu li h3 { font-size: 1.063rem; line-height: 22px; }
+.top_header .TopBox ul.top_menu li h3 a { color: #fff; padding: 8px 10px; cursor: pointer; display: inline-block; -moz-border-radius: 30px; -webkit-border-radius: 30px; border-radius: 30px; }
+.top_header .TopBox ul.top_menu li h3 a:hover { background-color: #fff; color: #333; }
 
-.top_header .left_logo{ max-width: 180px; float: left; position: relative; }
-.top_header .logo{ width:100%; text-decoration: none;}
-.top_header .logo a{ cursor: pointer; color: #666; width: 100%; height: 50px; display: block;}
-.top_header .logo img{ max-width: 100%; max-height: 50px; }
-.top_header .TopBox{ width: 100%; float: right; max-width: calc(100% - 190px);}
-.top_header .TopBox ul.top_menu{ width: 100%; text-align: right;  padding-top: 6px; }
-.top_header .TopBox ul.top_menu li{display: inline-block; margin: 0 4px;}
-.top_header .TopBox ul.top_menu li h3{ font-size: 17px; line-height: 22px; }
-.top_header .TopBox ul.top_menu li h3 a{ color: #fff; padding: 8px 10px; cursor: pointer;display: inline-block;  -moz-border-radius: 30px; -webkit-border-radius: 30px; border-radius: 30px;}
-.top_header .TopBox ul.top_menu li h3 a:hover{ background-color: #fff; color: #333; }
-
-.menu_hamburger { color: #fff; display: none; font-size: 1.375em; float: right; padding: 10px 20px; cursor: pointer; z-index: 50; }
+.menu_hamburger { position: absolute; display: none; top: 0; right: 0; padding: 15px; z-index: 200; color: #fff; font-size: 1.375em; }
 
 @media (max-width:1220px) {
-    .top_header .TopBox ul.top_menu li h3 { font-size: 16px; }
-    .top_header .TopBox ul.top_menu li h3 a { padding: 8px 12px; }
+    .top_header .TopBox ul.top_menu li h3 { font-size: 1rem; }
+    .top_header .TopBox ul.top_menu li h3 a { padding: 8px 15px; }
 }
 @media (max-width:1000px) {
     .top_header .TopBox { display: none; }
-    .top_header .TopBox ul.top_menu li h3 { font-size: 15px; }
     .menu_hamburger { display: block; }
 }
 /* 拆開css ------ top_header END */

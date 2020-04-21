@@ -1,13 +1,17 @@
 /* 拆開css ------ mainBox */
-.mainBox{ width: 100%; padding: 50px 0; min-height: 500px; overflow-y: hidden; background-size: cover; background-repeat: no-repeat; background-position: center center; display: -webkit-flex; display: flex; -webkit-align-items: center; align-items: center; -webkit-justify-content: center; justify-content: center; background-attachment: fixed;}
-.mainBox .ContentsBox{ z-index: 9; }
-.mainBox p{ color: #333; }
-.mainBox_logo{ max-width: 500px; margin: 0 auto;/* margin-bottom: 30px;*/ }
-.mainBox_logo img{ max-width: 100%; min-height: 100%; }
-@media (max-device-width:1200px) {
-	.mainBox{ background-attachment: initial;}
-}
-@media (max-device-width:700px) { /*如果是影片背景，就要控制他的手機板，背景圖片呈現*/
-	.mainBox{ /*background: url() center center no-repeat;*/ }
+.mainBox { min-height: 100vh; display: -webkit-flex; display: flex; -webkit-align-items: center; align-items: center; -webkit-justify-content: center; justify-content: center; }
+.mainBox .imgBox { max-width: 500px; margin: 0 auto; display: table; }
+.mainBox .imgBox img { max-width: 100%; min-height: 100%; }
+
+.mainBox .style-one .imgBox, .mainBox .style-two .imgBox { max-width: 1000px; }
+.mainBox .style-one .aBox, .mainBox .style-one .aBox .f-btn-add{ text-align: center; }
+.mainBox .style-one .aBox .the_editBox, .mainBox .style-one .aBox .f-btn-add{ margin: inherit; display: inline-block; } 
+
+.mainBox .style-two .aBox, .mainBox .style-two .aBox .f-btn-add{ text-align: center; }
+.mainBox .style-two .aBox .the_editBox, .mainBox .style-two .aBox .f-btn-add{ margin: inherit; display: inline-block; } 
+
+@media (max-width: 500px) {
+	.mainBox .style-two .aBox .f-btn-add{ display: block; }
+	.mainBox .style-two .aBox p.btn a{ min-width: 85vw; }
 }
 /* 拆開css ------ mainBox END */
