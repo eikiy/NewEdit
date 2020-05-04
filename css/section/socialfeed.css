@@ -1,0 +1,12 @@
+/* 拆開css ------ socialfeedBox */
+.socialfeedBox ul.posts { width: 100%; padding: 40px 0; overflow: hidden; text-align: center; }
+.socialfeedBox ul.posts li{ width:calc(33% - 30px); display: inline-block; vertical-align: top; margin: 15px; }
+.socialfeedBox ul.posts li img{ width: 100%; }
+@media (max-width: 900px) {
+    .socialfeedBox ul.posts li{width: 100%; max-width: 500px;}
+}
+@media (max-width: 600px) {
+    .socialfeedBox ul.posts{ padding: 0; }
+    .socialfeedBox ul.posts li{ width: 80%;}
+}
+/* 拆開css ------ socialfeedBox END */
