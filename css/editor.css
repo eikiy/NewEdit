@@ -238,6 +238,7 @@ a:hover { text-decoration: none; }
 .setBox ul.shareBox_list li p.tumblr{ background-color: #3c5a77; }
 .setBox ul.shareBox_list li p.twitter{ background-color: #1da1f2; }
 .setBox ul.shareBox_list li p.whatsapp{ background-color: #25d366; }
+.setBox ul.shareBox_list li p.telegram{ background-color: #32a4d8; }
 
 
 .setBox .img_upload{ width: 100%; height: 260px; margin: 0 auto; text-align: center; }
