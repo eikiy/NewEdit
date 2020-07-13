@@ -431,8 +431,30 @@ a:hover { text-decoration: none; }
 .setBox .form-edit-box .form-type .styled-select{ float: left; border-radius: 4px; max-width: 200px;}
 .setBox .form-edit-box .form-type .styled-select select{ padding: 6px 10px; font-size: .813rem;}
 
+/*branches-edit-box*/
+.setBox .branches-contents a.add-form-field {text-align: center; color: #777; margin:15px 0; background-color: #e8e8e8; display:block; font-size: .813rem; text-align: center; padding:15px 0; }
+.setBox .branches-contents a.add-form-field i{ padding-right: 5px;}
+.setBox .branches-contents a.add-form-field:hover{ opacity: .8; }
+.setBox .branches-contents .move{ cursor: move; }
+.setBox .branches-contents .color-edit-toolbar{ padding: 0; }
+
+.setBox .edit-branches-box{ width: 100%; padding: 10px 0; border-bottom: 1px dashed #d4d4d4;}
+.setBox .edit-branches-box ul{ background-color: #f9f9f9; padding:10px 20px; display: none;}
+.setBox .edit-branches-box .img_upload{ height: 160px; }
+.setBox .edit-branches-box .img_upload a{ float: left; max-width: 150px; max-height: 150px;}
+.setBox .edit-branches-box .img_upload p.the_reminder{ float: left; width: calc(100% - 150px); padding:40px 0 0 20px; text-align: left; color: #888888; max-width: 300px;}
+
+.setBox .edit-branches-box .store-name{ position: relative; min-height: 40px; cursor: pointer;}
+.setBox .edit-branches-box .store-name p{ line-height: 40px; padding-right: 80px; }
+.setBox .edit-branches-box .store-name p span{ font-weight: bold; }
+.setBox .edit-branches-box .store-name a.delete{ position: absolute; top: 0; right: 36px; line-height: 40px; width: 40px; z-index: 20; text-align: center; color: #555;}
+.setBox .edit-branches-box .store-name::before{ position: absolute; top: calc(50% - 9px); right: 14px; color: #555; display: inline-block; font-family:  Font Awesome\ 5 Free; font-size: inherit; text-rendering: auto; font-weight: 900; -webkit-font-smoothing: antialiased;  -moz-osx-font-smoothing: grayscale;}
+.setBox .edit-branches-box .arr_up::before{  content: "\f106";}
+.setBox .edit-branches-box .arr_down::before{ content: "\f107"; }
+
 .setBox .text-editbox .preview-text{ border: 1px solid #e0e0e0; width: 100%; padding: 10px; color: #333; min-height: 120px; max-height: 120px; overflow-x: auto; cursor: text; }
 .setBox .text-editbox .preview-text p { min-height: 98px; }
+
 
 /*text-edit-toolbar*/
 .setBox .text-editbox ul.text-edit-toolbar{ width: 100%; text-align: center; padding:15px 0 30px 0; }
@@ -465,26 +487,26 @@ a:hover { text-decoration: none; }
 .setBox .text-editbox ul.text-edit-toolbar li .choose-fontcolor input.color-code{ margin: 0 10px; width: calc(100% - 20px); padding: 5px 10px; line-height:20px; text-align: center; }
 
 /*.choose-iconcolor*/
-.setBox .social-edit-toolbar{ width: 100%; position: relative; padding: 0 15px 10px 15px; }
-.setBox .social-edit-toolbar a.icon-bgcolor{ display: inline-block; padding: 0 10px; font-size: 0.9375em; line-height: 35px; border:1px solid #e4e4e4; border-radius: 20px;}
-.setBox .social-edit-toolbar a.icon-bgcolor:hover{ background-color: #e4e4e4; }
-.setBox .social-edit-toolbar a.icon-bgcolor span{ padding-left: 5px; vertical-align: middle; }
-.setBox .social-edit-toolbar a.icon-bgcolor span.circleline{ padding-left: 0; color: #333; cursor: pointer; display: inline-block; border:1px solid #e4e4e4; border-radius: 50%; text-align: center; height: 20px; width: 20px; }
-.setBox .social-edit-toolbar a.btn_in{ background-color: #cccccc; }
+.setBox .color-edit-toolbar{ width: 100%; position: relative; padding: 0 15px 10px 15px; }
+.setBox .color-edit-toolbar a.icon-bgcolor{ display: inline-block; padding: 0 10px; font-size: 0.9375em; line-height: 35px; border:1px solid #e4e4e4; border-radius: 20px;}
+.setBox .color-edit-toolbar a.icon-bgcolor:hover{ background-color: #e4e4e4; }
+.setBox .color-edit-toolbar a.icon-bgcolor span{ padding-left: 5px; vertical-align: middle; }
+.setBox .color-edit-toolbar a.icon-bgcolor span.circleline{ padding-left: 0; color: #333; cursor: pointer; display: inline-block; border:1px solid #e4e4e4; border-radius: 50%; text-align: center; height: 20px; width: 20px; }
+.setBox .color-edit-toolbar a.btn_in{ background-color: #cccccc; }
 
-.setBox .social-edit-toolbar .choose-iconcolor{ width: 204px; position: absolute; top: 36px; left:15px; display: inline-grid; overflow: hidden; border:1px solid #e4e4e4; background-color:#fff; border-radius: 4px; box-shadow: 0 3px 10px rgba(0,0,0,.2); z-index: 100;}
-.setBox .social-edit-toolbar .choose-iconcolor a.default{ text-align: center; cursor: pointer; padding: 10px; width: 100%; display: block; font-size: 0.8rem; border-bottom:1px solid #e4e4e4; }
-.setBox .social-edit-toolbar .choose-iconcolor a.default:hover{ background-color: #e4e4e4; }
-.setBox .social-edit-toolbar .choose-iconcolor ul.the-colors{ width:100%; padding:5px 10px; }
-.setBox .social-edit-toolbar .choose-iconcolor ul.the-colors li { float: left; border-radius:50%;  margin:3px; padding-bottom: 0; }
-.setBox .social-edit-toolbar .choose-iconcolor ul.the-colors li a { cursor: pointer; border-radius: 50%; display: block; width: 20px; height: 20px; }
-.setBox .social-edit-toolbar .choose-iconcolor ul.the-colors li a i { padding: 2px; }
-.setBox .social-edit-toolbar .choose-iconcolor ul.the-colors li a i.black { color: #000000; }
-.setBox .social-edit-toolbar .choose-iconcolor ul.the-colors li a i.white { color: #FFFFFF; }
+.setBox .color-edit-toolbar .choose-iconcolor{ width: 204px; position: absolute; top: 36px; left:15px; display: inline-grid; overflow: hidden; border:1px solid #e4e4e4; background-color:#fff; border-radius: 4px; box-shadow: 0 3px 10px rgba(0,0,0,.2); z-index: 100;}
+.setBox .color-edit-toolbar .choose-iconcolor a.default{ text-align: center; cursor: pointer; padding: 10px; width: 100%; display: block; font-size: 0.8rem; border-bottom:1px solid #e4e4e4; }
+.setBox .color-edit-toolbar .choose-iconcolor a.default:hover{ background-color: #e4e4e4; }
+.setBox .color-edit-toolbar .choose-iconcolor ul.the-colors{ width:100%; padding:5px 10px; }
+.setBox .color-edit-toolbar .choose-iconcolor ul.the-colors li { float: left; border-radius:50%;  margin:3px; padding-bottom: 0; }
+.setBox .color-edit-toolbar .choose-iconcolor ul.the-colors li a { cursor: pointer; border-radius: 50%; display: block; width: 20px; height: 20px; }
+.setBox .color-edit-toolbar .choose-iconcolor ul.the-colors li a i { padding: 2px; }
+.setBox .color-edit-toolbar .choose-iconcolor ul.the-colors li a i.black { color: #000000; }
+.setBox .color-edit-toolbar .choose-iconcolor ul.the-colors li a i.white { color: #FFFFFF; }
 
-.setBox .social-edit-toolbar .choose-iconcolor .user-customize{ width: 100%; border-top:1px solid #e4e4e4; padding: 10px 0; }
-.setBox .social-edit-toolbar .choose-iconcolor .user-customize p{ font-size: 0.8rem; text-align: center; padding: 5px; line-height: 25px; }
-.setBox .social-edit-toolbar .choose-iconcolor input.color-code{ margin: 0 10px; width: calc(100% - 20px); padding: 5px 10px; line-height:20px; text-align: center; }
+.setBox .color-edit-toolbar .choose-iconcolor .user-customize{ width: 100%; border-top:1px solid #e4e4e4; padding: 10px 0; }
+.setBox .color-edit-toolbar .choose-iconcolor .user-customize p{ font-size: 0.8rem; text-align: center; padding: 5px; line-height: 25px; }
+.setBox .color-edit-toolbar .choose-iconcolor input.color-code{ margin: 0 10px; width: calc(100% - 20px); padding: 5px 10px; line-height:20px; text-align: center; }
 
 
 /*------------- 右 邊 : 編 輯 器 工 具 ---------------*/
@@ -629,6 +651,10 @@ a:hover { text-decoration: none; }
     .setBox .fillinBox .multi-col .less140 { min-width: inherit; }
     .edit_main_contents .section-wrapper .premium-section h3{ font-size: 0.813rem;}
     .edit_main_contents .section-wrapper .premium-section p{ font-size: 0.750rem; }
+
+    .setBox .edit-branches-box .img_upload{ height: 190px; }
+    .setBox .edit-branches-box .img_upload a{ float: none; }
+    .setBox .edit-branches-box .img_upload p.the_reminder{ float: none; width: 100%; text-align: center; max-width: initial; padding:5px 0; }
 }
 @media (max-width: 400px) {
     .slide_Photo ul.section_list li .s_view_slidesBox ul.goods li:nth-child(3), .slide_Photo ul.section_list li .s_view_socialBox ul.follow_us_icon li:nth-child(6) { display: none; }

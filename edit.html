@@ -22,6 +22,7 @@
         <link rel="stylesheet" href="css/function-css/sidemenu.css"><!-- ****選單以後會有樣式的不同 -->
 
         <!-- ****global*** 每個section共吃的css -->
+        <link rel="stylesheet" href="css/section/branches.css">
         <link rel="stylesheet" href="css/section/socialfeed.css">
         <link rel="stylesheet" href="css/section/carousel.css">
         <link rel="stylesheet" href="css/section/contact.css">
@@ -36,7 +37,7 @@
         <link rel="stylesheet" href="css/section/text.css">
         <link rel="stylesheet" href="css/section/video.css">
         <link rel="stylesheet" href="css/section/product.css">
-        <script src="js/section-js/jquery.mobile-1.4.5.min.js"></script>
+        <!-- <script src="js/section-js/jquery.mobile-1.4.5.min.js"></script> -->
         <script type="text/javascript">
             $( "#mypanel" ).trigger( "updatelayout" );
         </script>
@@ -107,10 +108,19 @@
             })
         </script>
 
+        <script type="text/javascript">
+            $(function(){
+              $(".setBox .edit-branches-box .store-name").click(function(){
+                $(this).next("ul").stop(true, true).slideToggle();
+                $(this).toggleClass("arr_up arr_down")
+                return false;
+              });
+        </script>
     </head>
     <body ontouchstart="" onmouseover="">
         <div id="fb-root"></div>
         <script async defer src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2"></script>
+        <!-- HeaderBox -->
         <header class="HeaderBox">
             <nav class="Menu ContentsBox clearfix">
                 <h1 class="logo"><a href="index.html">holkee</a></h1>
@@ -518,7 +528,7 @@
                 template_color_purplen
              -->
 
-
+            <!-- mobile-nav -->
             <div class="mobile-nav" id="theSidenav">
               <div class="side_Contents">
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fas fa-times"></i></a>
@@ -543,7 +553,7 @@
                 }
             </script>
 
-
+            <!-- right Edit Box -->
             <section class="rightEditBox" id="rightEditBox">
                 <section class="j-n-menu-bottom the_bottom_tool">
                     <ul class="clearfix">
@@ -551,6 +561,7 @@
                         <li class="release"><p><a class="popup-link" href="#popup"><i class="fas fa-check"></i>發佈</a></p></li>
                     </ul>
                 </section>
+
                 <!-- section：header -->
                 <div class="section-wrapper" id="section-header">
                     <div class="top_header">
@@ -590,6 +601,8 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- carousel 輪播圖版塊 -->
                 <!-- section：carousel -->
                 <!-- 最上面的第一個版塊需 + first-section --> 
                 <div class="section-wrapper first-section" id="">
@@ -646,6 +659,383 @@
                     </div>
                 </div>
 
+                <!-- branches 分店資訊 -->
+                <!-- section：branchesBox - 預設-->
+                <div class="section-wrapper" id="goThe06">
+                    <div class="section-editor-tools">
+                        <div class="btn_item clearfix">
+                            <a class="section-typesetting">佈局 <i class="fas fa-undo"></i></a><!-- 點了變換版面排版 -->
+                            <a class="section-bg">背景 <i class="more_function fas fa-angle-down"></i></a><!-- 點了展開下面的 bg-editor-Box -->
+                        </div>
+                        <div class="bg-editor-Box">
+                            <ul class="top_title clearfix">
+                                <li class="open_images"><p><a class="btn_in"><span>圖片</span></a></p></li>
+                                <li class="open_videos"><p><a><span>影片</span></a></p></li>
+                            </ul>
+                            <!-- 顯示圖片 -->
+                            <div class="select-bg-images">
+                                <ul class="background_image clearfix">
+                                    <li class="btn_in" style="background-image: url(images/new_site/bg/a_067.jpg);"></li>
+                                    <li style="background-image: url(images/new_site/bg/a_066.jpg);"></li>
+                                    <li style="background-image: url(images/new_site/bg/a_085.jpg);"></li>
+                                    <li style="background-image: url(images/new_site/bg/a_078.jpg);"></li>
+                                    <li style="background-image: url(images/new_site/bg/a_083.jpg);"></li>
+                                    <li><p class="more"><a href="#"><i class="fas fa-plus"></i>看更多</a></p></li>
+                                </ul>
+                                <div class="btn clearfix">
+                                    <p><a href="#">上傳圖片</a>
+                                    <a class="FR" href="#">移除</a></p>
+                                </div>
+                            </div>
+                            <!-- 顯示影片 -->
+                            <div class="select-bg-videos">
+                                <ul class="background_image clearfix">
+                                    <li class="btn_in" style="background-image: url(images/new_site/bg/a_067.jpg);"><i class="fas fa-video"></i></li>
+                                    <li style="background-image: url(images/new_site/bg/a_085.jpg);"><i class="fas fa-video"></i></li>
+                                    <li style="background-image: url(images/new_site/bg/a_067.jpg);"><i class="fas fa-video"></i></li>
+                                    <li style="background-image: url(images/new_site/bg/a_078.jpg);"><i class="fas fa-video"></i></li>
+                                    <li style="background-image: url(images/new_site/bg/a_083.jpg);"><i class="fas fa-video"></i></li>
+                                    <li><p class="more"><a href="#"><i class="fas fa-plus"></i>看更多</a></p></li>
+                                </ul>
+                                <div class="btn clearfix">
+                                    <p><a class="add-the-video">嵌入影片</a>
+                                    <a class="FR">移除</a></p>
+                                    <div class="upload_video">
+                                        <p>Youtube影片網址</p>
+                                        <div class="link clearfix">
+                                            <input type="text" name="" value="https://youtu.be/NCe1Vp1b_wk" placeholder="請輸入Youtube影片網址"><button>上傳</button>
+                                        </div>
+                                        <p class="note">注意：影片背景將<span>無法在手機或平板設備上播放</span>，只會看到縮圖喔。</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg_translucent">
+                                <p class="sub_title">遮罩效果</p>
+                                <ul class="background_image text_position clearfix">
+                                    <li class="btn_in bg-k" style="background-image: url(images/new_site/bg/a_066.jpg); "><p>Tt</p></li>
+                                    <li class="bg-w" style="background-image: url(images/new_site/bg/a_066.jpg); "><p>Tt</p></li>
+                                    <li style="background-image: url(images/new_site/bg/a_066.jpg); "><p>Tt</p></li>
+                                </ul>
+                            </div>
+                            <div class="btn save_main clearfix">
+                                <p><a href="#">取消</a>
+                                <a class="FR done" href="#"><i class="fas fa-check"></i> 儲存</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section-base branchesBox background-setting bg_translucent_k" style="background-image: url(https://img.holkee.com/site/upload/5c9c697a-7083ap0ab-b380-50e9498f/e8a2c1134795a7a78310d75132a69c5b_normal.png);">
+                        <div class="ContentsBox clearfix">
+                            <div class="aBox">
+                                <div class="the_editBox show_lightBox">
+                                    <div class="edit_LightBox">
+                                        <a class="popup-link" href="#popup-textsetting">編輯</a>
+                                    </div>
+                                    <h3 class="j-elm-title main_title f-edit-text" placeholder="按一下以新增文字" style="text-align: center; font-size: 1.75rem;">分店資訊</h3>
+                                </div>
+                                <div class="the_editBox show_lightBox">
+                                    <div class="edit_LightBox">
+                                        <a class="popup-link" href="#popup-textsetting">編輯</a>
+                                    </div>
+                                    <p class="j-elm-content sub_title f-edit-text" placeholder="按一下以新增文字" style="text-align: center; font-size: 0.9375rem;">Our branches</p>
+                                </div>
+                            </div>
+                            <div class="aBox">
+                                <div class="the_editBox show_lightBox">
+                                    <div class="edit_LightBox">
+                                        <a class="j-pop-info popup-link" href="#popup-branchessetting">編輯</a>
+                                    </div>
+                                    <div class="store_list clearfix">
+                                        <div class="grid_container">
+                                            <div class="photo">
+                                                <img src="https://img.holkee.com/main/default_branches.jpg">
+                                            </div>
+                                            <div class="info">
+                                                <h4 style="color: #ffeb3b;">台北市中正區 - 站前店</h4>
+                                                <ul>
+                                                    <li><p class="address">台北市信義路五段7號</p></li>
+                                                    <li><p class="phone">0800-123-456</p></li>
+                                                    <li><p class="time">10:00 AM - 22:00 PM</p></li>
+                                                    <li><p class="email">service@example.com</p></li>
+                                                    <li><p class="globe">https://www.holkee.com</p></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="grid_container">
+                                            <div class="photo">
+                                                <img src="https://img.holkee.com/main/default_branches.jpg">
+                                            </div>
+                                            <div class="info">
+                                                <h4 style="color: #ffeb3b;">微風南京Breeze - 微風廣場</h4>
+                                                <ul>
+                                                    <li><p class="address">台北市松山區南京東路三段337號B2-4F</p></li>
+                                                    <li><p class="phone">0800-123-456</p></li>
+                                                    <li><p class="time">二～日 11:00~15:00 / 17:00~21:30（周一公休）</p>
+                                                    </li>
+                                                    <li><p class="email">service@example.com</p></li>
+                                                    <li><p class="globe">https://www.holkee.com</p></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="grid_container">
+                                            <div class="photo">
+                                                <img src="https://img.holkee.com/main/default_branches.jpg">
+                                            </div>
+                                            <div class="info">
+                                                <h4 style="color: #ffeb3b;">台北市內湖區 - 南京復興路</h4>
+                                                <ul>
+                                                    <li><p class="address">台灣省台中市北屯區大鵬路陳平里12之3巷5之1弄3之2鄰58號6樓之3</p></li>
+                                                    <li><p class="phone">0800-123-456</p></li>
+                                                    <li><p class="time">10:00 AM - 22:00 PM</p></li>
+                                                    <li><p class="email">service@example.com</p></li>
+                                                    <li><p class="globe">https://www.holkee.com</p></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="grid_container">
+                                            <div class="photo">
+                                                <img src="https://img.holkee.com/main/default_branches.jpg">
+                                            </div>
+                                            <div class="info">
+                                                <h4 style="color: #ffeb3b;">台北市中正區 - 站前店</h4>
+                                                <ul>
+                                                    <li><p class="address">台北市信義路五段7號</p></li>
+                                                    <li><p class="phone">0800-123-456</p></li>
+                                                    <li><p class="time">10:00 AM - 22:00 PM</p></li>
+                                                    <li><p class="email">service@example.com</p></li>
+                                                    <li><p class="globe">https://www.holkee.com</p></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="grid_container">
+                                            <div class="photo">
+                                                <img src="https://img.holkee.com/main/default_branches.jpg">
+                                            </div>
+                                            <div class="info">
+                                                <h4 style="color: #ffeb3b;">台北市中正區 - 站前店</h4>
+                                                <ul>
+                                                    <li><p class="address">台北市中正區漢口街一段3號2樓 </p></li>
+                                                    <li><p class="phone">0800-123-456</p></li>
+                                                    <li><p class="time">10:00 AM - 22:00 PM</p></li>
+                                                    <li><p class="email">service@example.com</p></li>
+                                                    <li><p class="globe">https://www.holkee.com</p></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="grid_container">
+                                            <div class="photo">
+                                                <img src="https://img.holkee.com/main/default_branches.jpg">
+                                            </div>
+                                            <div class="info">
+                                                <h4 style="color: #ffeb3b;">台北市中正區 - 站前店</h4>
+                                                <ul>
+                                                    <li><p class="address">台北市信義路五段7號</p></li>
+                                                    <li><p class="phone">0800-123-456</p></li>
+                                                    <li><p class="time">10:00 AM - 22:00 PM</p></li>
+                                                    <li><p class="email">service@example.com</p></li>
+                                                    <li><p class="globe">https://www.holkee.com</p></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p class="f-text-not-set"><span>尚未設定</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- section：branchesBox - style-one-->
+                <div class="section-wrapper" id="goThe06">
+                    <div class="section-editor-tools">
+                        <div class="btn_item clearfix">
+                            <a class="section-typesetting">佈局 <i class="fas fa-undo"></i></a><!-- 點了變換版面排版 -->
+                            <a class="section-bg">背景 <i class="more_function fas fa-angle-down"></i></a><!-- 點了展開下面的 bg-editor-Box -->
+                        </div>
+                        <div class="bg-editor-Box">
+                            <ul class="top_title clearfix">
+                                <li class="open_images"><p><a class="btn_in"><span>圖片</span></a></p></li>
+                                <li class="open_videos"><p><a><span>影片</span></a></p></li>
+                            </ul>
+                            <!-- 顯示圖片 -->
+                            <div class="select-bg-images">
+                                <ul class="background_image clearfix">
+                                    <li class="btn_in" style="background-image: url(images/new_site/bg/a_067.jpg);"></li>
+                                    <li style="background-image: url(images/new_site/bg/a_066.jpg);"></li>
+                                    <li style="background-image: url(images/new_site/bg/a_085.jpg);"></li>
+                                    <li style="background-image: url(images/new_site/bg/a_078.jpg);"></li>
+                                    <li style="background-image: url(images/new_site/bg/a_083.jpg);"></li>
+                                    <li><p class="more"><a href="#"><i class="fas fa-plus"></i>看更多</a></p></li>
+                                </ul>
+                                <div class="btn clearfix">
+                                    <p><a href="#">上傳圖片</a>
+                                    <a class="FR" href="#">移除</a></p>
+                                </div>
+                            </div>
+                            <!-- 顯示影片 -->
+                            <div class="select-bg-videos">
+                                <ul class="background_image clearfix">
+                                    <li class="btn_in" style="background-image: url(images/new_site/bg/a_067.jpg);"><i class="fas fa-video"></i></li>
+                                    <li style="background-image: url(images/new_site/bg/a_085.jpg);"><i class="fas fa-video"></i></li>
+                                    <li style="background-image: url(images/new_site/bg/a_067.jpg);"><i class="fas fa-video"></i></li>
+                                    <li style="background-image: url(images/new_site/bg/a_078.jpg);"><i class="fas fa-video"></i></li>
+                                    <li style="background-image: url(images/new_site/bg/a_083.jpg);"><i class="fas fa-video"></i></li>
+                                    <li><p class="more"><a href="#"><i class="fas fa-plus"></i>看更多</a></p></li>
+                                </ul>
+                                <div class="btn clearfix">
+                                    <p><a class="add-the-video">嵌入影片</a>
+                                    <a class="FR">移除</a></p>
+                                    <div class="upload_video">
+                                        <p>Youtube影片網址</p>
+                                        <div class="link clearfix">
+                                            <input type="text" name="" value="https://youtu.be/NCe1Vp1b_wk" placeholder="請輸入Youtube影片網址"><button>上傳</button>
+                                        </div>
+                                        <p class="note">注意：影片背景將<span>無法在手機或平板設備上播放</span>，只會看到縮圖喔。</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg_translucent">
+                                <p class="sub_title">遮罩效果</p>
+                                <ul class="background_image text_position clearfix">
+                                    <li class="btn_in bg-k" style="background-image: url(images/new_site/bg/a_066.jpg); "><p>Tt</p></li>
+                                    <li class="bg-w" style="background-image: url(images/new_site/bg/a_066.jpg); "><p>Tt</p></li>
+                                    <li style="background-image: url(images/new_site/bg/a_066.jpg); "><p>Tt</p></li>
+                                </ul>
+                            </div>
+                            <div class="btn save_main clearfix">
+                                <p><a href="#">取消</a>
+                                <a class="FR done" href="#"><i class="fas fa-check"></i> 儲存</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section-base branchesBox background-setting">
+                        <div class="ContentsBox style-one clearfix">
+                            <div class="aBox">
+                                <div class="the_editBox show_lightBox">
+                                    <div class="edit_LightBox">
+                                        <a class="popup-link" href="#popup-textsetting">編輯</a>
+                                    </div>
+                                    <h3 class="j-elm-title main_title f-edit-text" placeholder="按一下以新增文字" style="text-align: center; font-size: 1.75rem;">分店資訊</h3>
+                                </div>
+                                <div class="the_editBox show_lightBox">
+                                    <div class="edit_LightBox">
+                                        <a class="popup-link" href="#popup-textsetting">編輯</a>
+                                    </div>
+                                    <p class="j-elm-content sub_title f-edit-text" placeholder="按一下以新增文字" style="text-align: center; font-size: 0.9375rem;">Our branches</p>
+                                </div>
+                            </div>
+                            <div class="aBox">
+                                <div class="the_editBox show_lightBox">
+                                    <div class="edit_LightBox">
+                                        <a class="j-pop-info popup-link" href="#popup-branchessetting">編輯</a>
+                                    </div>
+                                    <div class="store_list clearfix">
+                                        <div class="grid_container clearfix">
+                                            <div class="photo">
+                                                <img src="https://img.holkee.com/main/default_branches.jpg">
+                                            </div>
+                                            <div class="info">
+                                                <h4>台北市中正區 - 站前店</h4>
+                                                <ul>
+                                                    <li><p class="address">台北市信義路五段7號</p></li>
+                                                    <li><p class="phone">0800-123-456</p></li>
+                                                    <li><p class="time">10:00 AM - 22:00 PM</p></li>
+                                                    <li><p class="email">service@example.com</p></li>
+                                                    <li><p class="globe">https://www.holkee.com</p></li>
+                                                </ul>
+                                                <p class="note">交通：板橋縣民大道二段，與文化路一段188巷的交叉口。</p>
+                                            </div>
+                                        </div>
+                                        <div class="grid_container clearfix">
+                                            <div class="photo">
+                                                <img src="https://img.holkee.com/main/default_branches.jpg">
+                                            </div>
+                                            <div class="info">
+                                                <h4>台北市中山區 - 微風南京店</h4>
+                                                <ul>
+                                                    <li><p class="address">台北市松山區南京東路三段337號B2-4F</p></li>
+                                                    <li><p class="phone">0800-123-456</p></li>
+                                                    <li><p class="time">一～四 11:00~15:00 / 17:00~21:30<br>
+                                                        五　　 11:00~15:00 / 17:00~22:00<br>
+                                                        六　　 11:00~22:00<br>
+                                                        日　　 11:00~21:30</p>
+                                                    </li>
+                                                    <li><p class="email">service@example.com</p></li>
+                                                    <li><p class="globe">https://www.holkee.com</p></li>
+                                                </ul>
+                                                <p class="note">交通：請搭乘捷運紅線往小港機場方向，在美麗島站轉橘線往西子灣方向，到O1西子灣 站由2號出口出站，沿臨海二路向東行，途經高雄港消防局及港警局、至蓬萊路口左轉。</p>
+                                            </div>
+                                        </div>
+                                        <div class="grid_container clearfix">
+                                            <div class="photo">
+                                                <img src="https://img.holkee.com/main/default_branches.jpg">
+                                            </div>
+                                            <div class="info">
+                                                <h4>台北市內湖區 - 南京復興路</h4>
+                                                <ul>
+                                                    <li><p class="address">台灣省台中市北屯區大鵬路陳平里12之3巷5之1弄3之2鄰58號6樓之3</p></li>
+                                                    <li><p class="phone">0800-123-456</p></li>
+                                                    <li><p class="time">10:00 AM - 22:00 PM</p></li>
+                                                    <li><p class="email">service@example.com</p></li>
+                                                    <li><p class="globe">https://www.holkee.com</p></li>
+                                                </ul>
+                                                <p class="note">交通：行駛國道三號經中寮隧道後靠右，依指示轉入國道10號沿路行駛至大中交流道，下交流道後，行駛至大中路與博愛三路口左轉至博愛三路，過曾子路口約200公尺處右側即抵達左新分館。</p>
+                                            </div>
+                                        </div>
+                                        <div class="grid_container clearfix">
+                                            <div class="photo">
+                                                <img src="https://img.holkee.com/main/default_branches.jpg">
+                                            </div>
+                                            <div class="info">
+                                                <h4>台北市中正區 - 站前店</h4>
+                                                <ul>
+                                                    <li><p class="address">台北市信義路五段7號</p></li>
+                                                    <li><p class="phone">0800-123-456</p></li>
+                                                    <li><p class="time">10:00 AM - 22:00 PM</p></li>
+                                                    <li><p class="email">service@example.com</p></li>
+                                                    <li><p class="globe">https://www.holkee.com</p></li>
+                                                </ul>
+                                                <p class="note">交通：從高鐵站下車後，轉搭高捷至生態園區站R15，至二號出口即可抵達。 </p>
+                                            </div>
+                                        </div>
+                                        <div class="grid_container clearfix">
+                                            <div class="photo">
+                                                <img src="https://img.holkee.com/main/default_branches.jpg">
+                                            </div>
+                                            <div class="info">
+                                                <h4>台北市中正區 - 站前店</h4>
+                                                <ul>
+                                                    <li><p class="address">台北市中正區漢口街一段3號2樓 </p></li>
+                                                    <li><p class="phone">0800-123-456</p></li>
+                                                    <li><p class="time">10:00 AM - 22:00 PM</p></li>
+                                                    <li><p class="email">service@example.com</p></li>
+                                                    <li><p class="globe">https://www.holkee.com</p></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="grid_container clearfix">
+                                            <div class="photo">
+                                                <img src="https://img.holkee.com/main/default_branches.jpg">
+                                            </div>
+                                            <div class="info">
+                                                <h4>台北市信義區 - 信義旗艦店</h4>
+                                                <ul>
+                                                    <li><p class="address">台北市信義路五段7號</p></li>
+                                                    <li><p class="phone">0800-123-456</p></li>
+                                                    <li><p class="time">10:00 AM - 22:00 PM</p></li>
+                                                    <li><p class="email">service@example.com</p></li>
+                                                    <li><p class="globe">https://www.holkee.com</p></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p class="f-text-not-set"><span>尚未設定</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- socialfeedBox 社群動態貼文版塊 -->
                 <!-- section：socialfeedBox-->
                 <div class="section-wrapper" id="">
                     <div class="section-editor-tools">
@@ -708,17 +1098,6 @@
                                     <li class="twitter">
                                         <img src="images/default_socialfeed_twitter.png">
                                     </li>
-                                    <!-- <li class="facebook">
-                                        <div class="fb-post" data-width="350" data-href="https://www.facebook.com/holkeego/posts/1562242120616682" style="max-width: 350px; min-width:320px;"></div>
-                                    </li>
-                                    <li class="twitter">
-                                        <blockquote class="twitter-tweet" data-lang="zh-tw" style="max-width: 350px; min-width:320px;"><p lang="en" dir="ltr">Australia has been warned by the Chinese ambassador that it could face an economic hit if it does not back down from a push into the nation’s handling of the coronavirus. <a href="https://t.co/A6NVi0axjz">https://t.co/A6NVi0axjz</a></p>&mdash; Sky News Australia (@SkyNewsAust) <a href="https://twitter.com/SkyNewsAust/status/1254611217156468736?ref_src=twsrc%5Etfw">2020年4月27日</a></blockquote> 
-                                        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-                                    </li>
-                                    <li class="instagram">
-                                        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/B_c1sYQgdmX/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="12" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:350px; min-width:320px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/p/B_c1sYQgdmX/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;"> 在 Instagram 查看這則貼文</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/p/B_c1sYQgdmX/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">Instagram（@instagram）分享的貼文</a> 於 <time style=" font-family:Arial,sans-serif; font-size:14px; line-height:17px;" datetime="2020-04-26T16:21:59+00:00">PDT 2020 年 4月 月 26 日 上午 9:21</time> 張貼</p></div></blockquote> 
-                                        <script async src="//www.instagram.com/embed.js"></script>
-                                    </li> -->
                                 </ul>
                                 <p class="f-text-not-set"><span>尚未設定</span></p>
                             </div>
@@ -726,8 +1105,8 @@
                     </div>
                 </div>
 
-                <!-- section：mainBox -->
-                <!-- 預設1顆按鈕 -->
+                <!-- mainBox 主頁版塊-->
+                <!-- section：mainBox - 預設（1顆按鈕） -->
                 <div class="section-wrapper" id="">
                     <!-- <a class="premium-section" href="https://www.holkee.com/plans.html" target="_blank">
                         <h3><i class="fas fa-gem"></i>Premium</h3>
@@ -746,7 +1125,7 @@
                     </a>
                     <div class="section-editor-tools">
                         <div class="btn_item clearfix">
-                            <a class="j-n-set-layout hide">佈局 <i class="fas fa-undo"></i></a>
+                            <a class="j-n-set-layout">佈局 <i class="fas fa-undo"></i></a>
                             <a class="j-n-set-background">背景 <i class="more_function fas fa-angle-down"></i></a>
                         </div>
                         <div class="bg-editor-Box">
@@ -805,11 +1184,11 @@
                         </div>
                     </div>
                 </div>
-                <!-- style-one : 3顆按鈕 RWD 手機後為左右排序-->
-                <div class="section-wrapper first-section" id="">
+                <!-- section：mainBox - style-one : 3顆按鈕 RWD 手機後為"左右"排序-->
+                <div class="section-wrapper" id="">
                     <div class="section-editor-tools">
                         <div class="btn_item clearfix">
-                            <a class="j-n-set-layout hide">佈局 <i class="fas fa-undo"></i></a>
+                            <a class="j-n-set-layout">佈局 <i class="fas fa-undo"></i></a>
                             <a class="j-n-set-background">背景 <i class="more_function fas fa-angle-down"></i></a>
                         </div>
                         <div class="bg-editor-Box">
@@ -896,11 +1275,11 @@
                         </div>
                     </div>
                 </div>
-                <!-- style-tow : 最多3顆按鈕 RWD 手機後為上下排序-->
-                <div class="section-wrapper first-section" id="">
+                <!-- section：mainBox - style-tow : 最多3顆按鈕 RWD 手機後為"上下"排序-->
+                <div class="section-wrapper" id="">
                     <div class="section-editor-tools">
                         <div class="btn_item clearfix">
-                            <a class="j-n-set-layout hide">佈局 <i class="fas fa-undo"></i></a>
+                            <a class="j-n-set-layout">佈局 <i class="fas fa-undo"></i></a>
                             <a class="j-n-set-background">背景 <i class="more_function fas fa-angle-down"></i></a>
                         </div>
                         <div class="bg-editor-Box">
@@ -1004,10 +1383,12 @@
                     </div>
                 </div>
 
-                <!-- section：slidesBox-->
+                <!-- slidesBox 列表版塊-->
+                <!-- section：slidesBox - 預設（方形）-->
                 <div class="section-wrapper" id="goThe02">
                     <div class="section-editor-tools">
                         <div class="btn_item clearfix">
+                            <a class="j-n-set-layout">佈局 <i class="fas fa-undo"></i></a>
                             <a class="section-bg">背景 <i class="more_function fas fa-angle-down"></i></a><!-- 點了展開下面的 bg-editor-Box -->
                         </div>
                         <div class="bg-editor-Box">
@@ -1285,257 +1666,11 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- 微電商匯入商品 -->
-                <!-- section：slidesBox-->
-                <div class="section-wrapper" id="goThe02">
-                    <div class="section-editor-tools">
-                        <div class="btn_item clearfix">
-                            <a class="section-bg">背景 <i class="more_function fas fa-angle-down"></i></a><!-- 點了展開下面的 bg-editor-Box -->
-                        </div>
-                        <div class="bg-editor-Box">
-                            <ul class="top_title clearfix">
-                                <li class="open_images"><p><a class="btn_in"><span>圖片</span></a></p></li>
-                                <li class="open_videos"><p><a><span>影片</span></a></p></li>
-                            </ul>
-                            <!-- 顯示圖片 -->
-                            <div class="select-bg-images">
-                                <ul class="background_image clearfix">
-                                    <li class="btn_in" style="background-image: url(images/new_site/bg/a_067.jpg);"></li>
-                                    <li style="background-image: url(images/new_site/bg/a_066.jpg);"></li>
-                                    <li style="background-image: url(images/new_site/bg/a_085.jpg);"></li>
-                                    <li style="background-image: url(images/new_site/bg/a_078.jpg);"></li>
-                                    <li style="background-image: url(images/new_site/bg/a_083.jpg);"></li>
-                                    <li style="background-image: url(images/new_site/bg/a_083.jpg);"></li>
-                                    <li><p class="more"><a href="#"><i class="fas fa-plus"></i>看更多</a></p></li>
-                                </ul>
-                                <div class="btn clearfix">
-                                    <p><a href="#">上傳圖片</a>
-                                    <a class="FR" href="#">移除</a></p>
-                                </div>
-                            </div>
-                            <!-- 顯示影片 -->
-                            <div class="select-bg-videos">
-                                <div class="btn clearfix">
-                                    <p><a class="add-the-video">嵌入影片</a>
-                                    <a class="FR">移除</a></p>
-                                    <div class="upload_video">
-                                        <p>Youtube影片網址</p>
-                                        <div class="link clearfix">
-                                            <input type="text" name="" value="https://youtu.be/NCe1Vp1b_wk" placeholder="請輸入Youtube影片網址"><button>上傳</button>
-                                        </div>
-                                        <p class="note">注意：影片背景將<span>無法在手機或平板設備上播放</span>，只會看到縮圖喔。</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="bg_translucent">
-                                <p class="sub_title">遮罩效果</p>
-                                <ul class="background_image text_position clearfix">
-                                    <li class="btn_in bg-k" style="background-image: url(images/new_site/bg/a_066.jpg); "><p>Tt</p></li>
-                                    <li class="bg-w" style="background-image: url(images/new_site/bg/a_066.jpg); "><p>Tt</p></li>
-                                    <li style="background-image: url(images/new_site/bg/a_066.jpg); "><p>Tt</p></li>
-                                </ul>
-                            </div>
-                            <div class="btn save_main clearfix">
-                                <p><a href="#">取消</a>
-                                <a class="FR done" href="#"><i class="fas fa-check"></i> 儲存</a>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="section-base productsBox background-setting" style="background-image: url(images/new_site/beverage-cup-drink-948898.jpg);">
-                        <div class="ContentsBox">
-                            <div class="text-box">
-                                <div class="the_editBox">
-                                    <h3 class="main_title">Shop</h3>
-                                </div>
-                                <div class="the_editBox">
-                                    <p class="sub_title">We Are Cake prides itself on customer satisfaction.</p>
-                                </div>
-                            </div>
-                            <div class="the_editBox show_lightBox">
-                                <div class="edit_LightBox">
-                                    <a class="popup-link" href="#popup-shop-product">編輯</a>
-                                </div>
-                                <div class="slider-box">
-                                    <ul class="data-box clearfix">
-                                        <li class="content-box">
-                                            <div class="j-n-image photo">
-                                                <img src="images/new_site/countdown_party_04.jpg">
-                                            </div>
-                                            <div class="info">
-                                                <div class="j-n-description description">
-                                                    <p>
-                                                        覆盆莓起司蛋糕8"
-                                                    </p>
-                                                </div>
-                                                <div class="description">
-                                                    <p class="color_red">
-                                                        $29
-                                                    </p>
-                                                </div>
-                                                <div class="j-n-button">
-                                                    <p>
-                                                        <a class="btn" href="#">
-                                                            前往購買
-                                                        </a>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="content-box">
-                                            <div class="j-n-image photo">
-                                                <img src="images/new_site/tasty_food_007.jpg">
-                                            </div>
-                                            <div class="info">
-                                                <div class="j-n-description description">
-                                                    <p>
-                                                        【麥焙】打蛋盆 鍋子 料理盆 湯碗 湯盆 調料缸 烘焙工具
-                                                    </p>
-                                                </div>
-                                                <div class="description">
-                                                    <p class="color_red">
-                                                        $29
-                                                    </p>
-                                                </div>
-                                                <div class="j-n-button">
-                                                    <p class="color_red">
-                                                        <a class="btn" href="#">
-                                                            前往購買
-                                                        </a>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="content-box">
-                                            <div class="j-n-image photo">
-                                                <img src="images/new_site/tasty_food_008.jpg">
-                                            </div>
-                                            <div class="info">
-                                                <div class="j-n-description description">
-                                                    <p>
-                                                        覆盆莓起司蛋糕8"
-                                                    </p>
-                                                </div>
-                                                <div class="description">
-                                                    <p class="color_red">
-                                                        $29
-                                                    </p>
-                                                </div>
-                                                <div class="j-n-button">
-                                                    <p class="color_red">
-                                                        <a class="btn" href="#">
-                                                            前往購買
-                                                        </a>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="content-box">
-                                            <div class="j-n-image photo">
-                                                <img src="images/new_site/tasty_food_005.jpg">
-                                            </div>
-                                            <div class="info">
-                                                <div class="j-n-description description">
-                                                    <p>
-                                                        覆盆莓起司蛋糕8"
-                                                    </p>
-                                                </div>
-                                                <div class="description">
-                                                    <p class="color_red">
-                                                        $29
-                                                    </p>
-                                                </div>
-                                                <div class="j-n-button">
-                                                    <p>
-                                                        <a class="btn" href="#">
-                                                            前往購買
-                                                        </a>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="content-box">
-                                            <div class="j-n-image photo">
-                                                <img src="images/new_site/tasty_food_004.jpg">
-                                            </div>
-                                            <div class="info">
-                                                <div class="j-n-description description">
-                                                    <p>
-                                                        覆盆莓起司蛋糕8"
-                                                    </p>
-                                                </div>
-                                                <div class="j-n-description description">
-                                                    <p class="color_red">
-                                                        $499
-                                                    </p>
-                                                </div>
-                                                <div class="j-n-button">
-                                                    <p>
-                                                        <a class="btn" href="#">
-                                                            前往購買
-                                                        </a>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="content-box">
-                                            <div class="j-n-image photo">
-                                                <img src="images/new_site/bk_001_01.jpg">
-                                            </div>
-                                            <div class="info">
-                                                <div class="j-n-description description">
-                                                    <p>
-                                                        覆盆莓起司蛋糕8"
-                                                    </p>
-                                                </div>
-                                                <div class="j-n-description description">
-                                                    <p class="color_red">
-                                                        $599
-                                                    </p>
-                                                </div>
-                                                <div class="j-n-button">
-                                                    <p>
-                                                        <a class="btn" href="#">
-                                                            前往購買
-                                                        </a>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="content-box">
-                                            <div class="j-n-image photo">
-                                                <img src="images/new_site/arranged-art-background-1061577.jpg">
-                                            </div>
-                                            <div class="info">
-                                                <div class="j-n-description description">
-                                                    <p>
-                                                        覆盆莓起司蛋糕8"
-                                                    </p>
-                                                </div>
-                                                <div class="j-n-description description">
-                                                    <p class="color_red">
-                                                        $590
-                                                    </p>
-                                                </div>
-                                                <div class="j-n-button">
-                                                    <p>
-                                                        <a class="btn" href="#">
-                                                            前往購買
-                                                        </a>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <!-- section：slidesBox - style-one : 方框變圓形-->
                 <div class="section-wrapper" id="">
                     <div class="section-editor-tools">
                         <div class="btn_item clearfix">
+                            <a class="j-n-set-layout">佈局 <i class="fas fa-undo"></i></a>
                             <a class="section-bg">背景 <i class="more_function fas fa-angle-down"></i></a><!-- 點了展開下面的 bg-editor-Box -->
                         </div>
                         <div class="bg-editor-Box">
@@ -1814,11 +1949,580 @@
                     </div>
                 </div>
 
-                <!-- section：textBox-->
+                <!-- productsBox 商品列表版塊-->
+                <!-- section：productsBox : 微電商匯入商品-->
+                <div class="section-wrapper" id="goThe02">
+                    <div class="section-editor-tools">
+                        <div class="btn_item clearfix">
+                            <a class="j-n-set-layout">佈局 <i class="fas fa-undo"></i></a>
+                            <a class="section-bg">背景 <i class="more_function fas fa-angle-down"></i></a><!-- 點了展開下面的 bg-editor-Box -->
+                        </div>
+                        <div class="bg-editor-Box">
+                            <ul class="top_title clearfix">
+                                <li class="open_images"><p><a class="btn_in"><span>圖片</span></a></p></li>
+                                <li class="open_videos"><p><a><span>影片</span></a></p></li>
+                            </ul>
+                            <!-- 顯示圖片 -->
+                            <div class="select-bg-images">
+                                <ul class="background_image clearfix">
+                                    <li class="btn_in" style="background-image: url(images/new_site/bg/a_067.jpg);"></li>
+                                    <li style="background-image: url(images/new_site/bg/a_066.jpg);"></li>
+                                    <li style="background-image: url(images/new_site/bg/a_085.jpg);"></li>
+                                    <li style="background-image: url(images/new_site/bg/a_078.jpg);"></li>
+                                    <li style="background-image: url(images/new_site/bg/a_083.jpg);"></li>
+                                    <li style="background-image: url(images/new_site/bg/a_083.jpg);"></li>
+                                    <li><p class="more"><a href="#"><i class="fas fa-plus"></i>看更多</a></p></li>
+                                </ul>
+                                <div class="btn clearfix">
+                                    <p><a href="#">上傳圖片</a>
+                                    <a class="FR" href="#">移除</a></p>
+                                </div>
+                            </div>
+                            <!-- 顯示影片 -->
+                            <div class="select-bg-videos">
+                                <div class="btn clearfix">
+                                    <p><a class="add-the-video">嵌入影片</a>
+                                    <a class="FR">移除</a></p>
+                                    <div class="upload_video">
+                                        <p>Youtube影片網址</p>
+                                        <div class="link clearfix">
+                                            <input type="text" name="" value="https://youtu.be/NCe1Vp1b_wk" placeholder="請輸入Youtube影片網址"><button>上傳</button>
+                                        </div>
+                                        <p class="note">注意：影片背景將<span>無法在手機或平板設備上播放</span>，只會看到縮圖喔。</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg_translucent">
+                                <p class="sub_title">遮罩效果</p>
+                                <ul class="background_image text_position clearfix">
+                                    <li class="btn_in bg-k" style="background-image: url(images/new_site/bg/a_066.jpg); "><p>Tt</p></li>
+                                    <li class="bg-w" style="background-image: url(images/new_site/bg/a_066.jpg); "><p>Tt</p></li>
+                                    <li style="background-image: url(images/new_site/bg/a_066.jpg); "><p>Tt</p></li>
+                                </ul>
+                            </div>
+                            <div class="btn save_main clearfix">
+                                <p><a href="#">取消</a>
+                                <a class="FR done" href="#"><i class="fas fa-check"></i> 儲存</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section-base productsBox background-setting" style="background-image: url(images/new_site/beverage-cup-drink-948898.jpg);">
+                        <div class="ContentsBox">
+                            <div class="text-box">
+                                <div class="the_editBox">
+                                    <h3 class="main_title">Shop</h3>
+                                </div>
+                                <div class="the_editBox">
+                                    <p class="sub_title">We Are Cake prides itself on customer satisfaction.</p>
+                                </div>
+                            </div>
+                            <div class="the_editBox show_lightBox">
+                                <div class="edit_LightBox">
+                                    <a class="popup-link" href="#popup-shop-product">編輯</a>
+                                </div>
+                                <div class="slider-box">
+                                    <ul class="data-box clearfix">
+                                        <li class="content-box">
+                                            <div class="j-n-image photo">
+                                                <img src="images/new_site/countdown_party_04.jpg">
+                                            </div>
+                                            <div class="info">
+                                                <div class="j-n-description description">
+                                                    <p>
+                                                        覆盆莓起司蛋糕8"
+                                                    </p>
+                                                </div>
+                                                <div class="description">
+                                                    <p class="color_red">
+                                                        $29
+                                                    </p>
+                                                </div>
+                                                <div class="j-n-button">
+                                                    <p>
+                                                        <a class="btn" href="#">
+                                                            前往購買
+                                                        </a>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="content-box">
+                                            <div class="j-n-image photo">
+                                                <img src="images/new_site/tasty_food_007.jpg">
+                                            </div>
+                                            <div class="info">
+                                                <div class="j-n-description description">
+                                                    <p>
+                                                        【麥焙】打蛋盆 鍋子 料理盆 湯碗 湯盆 調料缸 烘焙工具
+                                                    </p>
+                                                </div>
+                                                <div class="description">
+                                                    <p class="color_red">
+                                                        $29
+                                                    </p>
+                                                </div>
+                                                <div class="j-n-button">
+                                                    <p class="color_red">
+                                                        <a class="btn" href="#">
+                                                            前往購買
+                                                        </a>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="content-box">
+                                            <div class="j-n-image photo">
+                                                <img src="images/new_site/tasty_food_008.jpg">
+                                            </div>
+                                            <div class="info">
+                                                <div class="j-n-description description">
+                                                    <p>
+                                                        覆盆莓起司蛋糕8"
+                                                    </p>
+                                                </div>
+                                                <div class="description">
+                                                    <p class="color_red">
+                                                        $29
+                                                    </p>
+                                                </div>
+                                                <div class="j-n-button">
+                                                    <p class="color_red">
+                                                        <a class="btn" href="#">
+                                                            前往購買
+                                                        </a>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="content-box">
+                                            <div class="j-n-image photo">
+                                                <img src="images/new_site/tasty_food_005.jpg">
+                                            </div>
+                                            <div class="info">
+                                                <div class="j-n-description description">
+                                                    <p>
+                                                        覆盆莓起司蛋糕8"
+                                                    </p>
+                                                </div>
+                                                <div class="description">
+                                                    <p class="color_red">
+                                                        $29
+                                                    </p>
+                                                </div>
+                                                <div class="j-n-button">
+                                                    <p>
+                                                        <a class="btn" href="#">
+                                                            前往購買
+                                                        </a>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="content-box">
+                                            <div class="j-n-image photo">
+                                                <img src="images/new_site/tasty_food_004.jpg">
+                                            </div>
+                                            <div class="info">
+                                                <div class="j-n-description description">
+                                                    <p>
+                                                        覆盆莓起司蛋糕8"
+                                                    </p>
+                                                </div>
+                                                <div class="j-n-description description">
+                                                    <p class="color_red">
+                                                        $499
+                                                    </p>
+                                                </div>
+                                                <div class="j-n-button">
+                                                    <p>
+                                                        <a class="btn" href="#">
+                                                            前往購買
+                                                        </a>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="content-box">
+                                            <div class="j-n-image photo">
+                                                <img src="images/new_site/bk_001_01.jpg">
+                                            </div>
+                                            <div class="info">
+                                                <div class="j-n-description description">
+                                                    <p>
+                                                        覆盆莓起司蛋糕8"
+                                                    </p>
+                                                </div>
+                                                <div class="j-n-description description">
+                                                    <p class="color_red">
+                                                        $599
+                                                    </p>
+                                                </div>
+                                                <div class="j-n-button">
+                                                    <p>
+                                                        <a class="btn" href="#">
+                                                            前往購買
+                                                        </a>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="content-box">
+                                            <div class="j-n-image photo">
+                                                <img src="images/new_site/arranged-art-background-1061577.jpg">
+                                            </div>
+                                            <div class="info">
+                                                <div class="j-n-description description">
+                                                    <p>
+                                                        覆盆莓起司蛋糕8"
+                                                    </p>
+                                                </div>
+                                                <div class="j-n-description description">
+                                                    <p class="color_red">
+                                                        $590
+                                                    </p>
+                                                </div>
+                                                <div class="j-n-button">
+                                                    <p>
+                                                        <a class="btn" href="#">
+                                                            前往購買
+                                                        </a>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-wrapper" id="goThe02">
+                    <div class="section-editor-tools">
+                        <div class="btn_item clearfix">
+                            <a class="j-n-set-layout">佈局 <i class="fas fa-undo"></i></a>
+                            <a class="section-bg">背景 <i class="more_function fas fa-angle-down"></i></a><!-- 點了展開下面的 bg-editor-Box -->
+                        </div>
+                        <div class="bg-editor-Box">
+                            <ul class="top_title clearfix">
+                                <li class="open_images"><p><a class="btn_in"><span>圖片</span></a></p></li>
+                                <li class="open_videos"><p><a><span>影片</span></a></p></li>
+                            </ul>
+                            <!-- 顯示圖片 -->
+                            <div class="select-bg-images">
+                                <ul class="background_image clearfix">
+                                    <li class="btn_in" style="background-image: url(images/new_site/bg/a_067.jpg);"></li>
+                                    <li style="background-image: url(images/new_site/bg/a_066.jpg);"></li>
+                                    <li style="background-image: url(images/new_site/bg/a_085.jpg);"></li>
+                                    <li style="background-image: url(images/new_site/bg/a_078.jpg);"></li>
+                                    <li style="background-image: url(images/new_site/bg/a_083.jpg);"></li>
+                                    <li style="background-image: url(images/new_site/bg/a_083.jpg);"></li>
+                                    <li><p class="more"><a href="#"><i class="fas fa-plus"></i>看更多</a></p></li>
+                                </ul>
+                                <div class="btn clearfix">
+                                    <p><a href="#">上傳圖片</a>
+                                    <a class="FR" href="#">移除</a></p>
+                                </div>
+                            </div>
+                            <!-- 顯示影片 -->
+                            <div class="select-bg-videos">
+                                <div class="btn clearfix">
+                                    <p><a class="add-the-video">嵌入影片</a>
+                                    <a class="FR">移除</a></p>
+                                    <div class="upload_video">
+                                        <p>Youtube影片網址</p>
+                                        <div class="link clearfix">
+                                            <input type="text" name="" value="https://youtu.be/NCe1Vp1b_wk" placeholder="請輸入Youtube影片網址"><button>上傳</button>
+                                        </div>
+                                        <p class="note">注意：影片背景將<span>無法在手機或平板設備上播放</span>，只會看到縮圖喔。</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg_translucent">
+                                <p class="sub_title">遮罩效果</p>
+                                <ul class="background_image text_position clearfix">
+                                    <li class="btn_in bg-k" style="background-image: url(images/new_site/bg/a_066.jpg); "><p>Tt</p></li>
+                                    <li class="bg-w" style="background-image: url(images/new_site/bg/a_066.jpg); "><p>Tt</p></li>
+                                    <li style="background-image: url(images/new_site/bg/a_066.jpg); "><p>Tt</p></li>
+                                </ul>
+                            </div>
+                            <div class="btn save_main clearfix">
+                                <p><a href="#">取消</a>
+                                <a class="FR done" href="#"><i class="fas fa-check"></i> 儲存</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section-base productsBox background-setting bg_translucent_k" style="background-image: url(images/new_site/beverage-cup-drink-948898.jpg);">
+                        <div class="ContentsBox style-one">
+                            <div class="text-box">
+                                <div class="the_editBox">
+                                    <h3 class="main_title">Shop</h3>
+                                </div>
+                                <div class="the_editBox">
+                                    <p class="sub_title">We Are Cake prides itself on customer satisfaction.</p>
+                                </div>
+                            </div>
+                            <div class="the_editBox show_lightBox">
+                                <div class="edit_LightBox">
+                                    <a class="popup-link" href="#popup-shop-product">編輯</a>
+                                </div>
+                                <div class="slider-box">
+                                    <ul class="data-box clearfix">
+                                        <li class="content-box">
+                                            <div class="j-n-image photo">
+                                                <img src="images/new_site/countdown_party_04.jpg">
+                                            </div>
+                                            <div class="info">
+                                                <div class="j-n-description description">
+                                                    <p>
+                                                        覆盆莓起司蛋糕8"
+                                                    </p>
+                                                </div>
+                                                <div class="description">
+                                                    <p class="color_red">
+                                                        $29
+                                                    </p>
+                                                </div>
+                                                <div class="j-n-button">
+                                                    <p>
+                                                        <a class="btn" href="#">
+                                                            前往購買
+                                                        </a>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="content-box">
+                                            <div class="j-n-image photo">
+                                                <img src="images/new_site/tasty_food_007.jpg">
+                                            </div>
+                                            <div class="info">
+                                                <div class="j-n-description description">
+                                                    <p>
+                                                        【麥焙】打蛋盆 鍋子 料理盆 湯碗 湯盆 調料缸 烘焙工具
+                                                    </p>
+                                                </div>
+                                                <div class="description">
+                                                    <p class="color_red">
+                                                        $29
+                                                    </p>
+                                                </div>
+                                                <div class="j-n-button">
+                                                    <p class="color_red">
+                                                        <a class="btn" href="#">
+                                                            前往購買
+                                                        </a>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="content-box">
+                                            <div class="j-n-image photo">
+                                                <img src="images/new_site/tasty_food_008.jpg">
+                                            </div>
+                                            <div class="info">
+                                                <div class="j-n-description description">
+                                                    <p>
+                                                        覆盆莓起司蛋糕8"
+                                                    </p>
+                                                </div>
+                                                <div class="description">
+                                                    <p class="color_red">
+                                                        $29
+                                                    </p>
+                                                </div>
+                                                <div class="j-n-button">
+                                                    <p class="color_red">
+                                                        <a class="btn" href="#">
+                                                            前往購買
+                                                        </a>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="content-box">
+                                            <div class="j-n-image photo">
+                                                <img src="images/new_site/tasty_food_005.jpg">
+                                            </div>
+                                            <div class="info">
+                                                <div class="j-n-description description">
+                                                    <p>
+                                                        覆盆莓起司蛋糕8"
+                                                    </p>
+                                                </div>
+                                                <div class="description">
+                                                    <p class="color_red">
+                                                        $29
+                                                    </p>
+                                                </div>
+                                                <div class="j-n-button">
+                                                    <p>
+                                                        <a class="btn" href="#">
+                                                            前往購買
+                                                        </a>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="content-box">
+                                            <div class="j-n-image photo">
+                                                <img src="images/new_site/tasty_food_004.jpg">
+                                            </div>
+                                            <div class="info">
+                                                <div class="j-n-description description">
+                                                    <p>
+                                                        覆盆莓起司蛋糕8"
+                                                    </p>
+                                                </div>
+                                                <div class="j-n-description description">
+                                                    <p class="color_red">
+                                                        $499
+                                                    </p>
+                                                </div>
+                                                <div class="j-n-button">
+                                                    <p>
+                                                        <a class="btn" href="#">
+                                                            前往購買
+                                                        </a>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="content-box">
+                                            <div class="j-n-image photo">
+                                                <img src="images/new_site/bk_001_01.jpg">
+                                            </div>
+                                            <div class="info">
+                                                <div class="j-n-description description">
+                                                    <p>
+                                                        覆盆莓起司蛋糕8"
+                                                    </p>
+                                                </div>
+                                                <div class="j-n-description description">
+                                                    <p class="color_red">
+                                                        $599
+                                                    </p>
+                                                </div>
+                                                <div class="j-n-button">
+                                                    <p>
+                                                        <a class="btn" href="#">
+                                                            前往購買
+                                                        </a>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="content-box">
+                                            <div class="j-n-image photo">
+                                                <img src="images/new_site/arranged-art-background-1061577.jpg">
+                                            </div>
+                                            <div class="info">
+                                                <div class="j-n-description description">
+                                                    <p>
+                                                        覆盆莓起司蛋糕8"
+                                                    </p>
+                                                </div>
+                                                <div class="j-n-description description">
+                                                    <p class="color_red">
+                                                        $590
+                                                    </p>
+                                                </div>
+                                                <div class="j-n-button">
+                                                    <p>
+                                                        <a class="btn" href="#">
+                                                            前往購買
+                                                        </a>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- textBox 圖文版塊-->
+                <!-- section：textBox - 預設: 左圖右文-->
+                <div class="section-wrapper" id="goThe03">
+                    <div class="section-editor-tools">
+                        <div class="btn_item clearfix">
+                            <a class="j-n-set-layout">佈局 <i class="fas fa-undo"></i></a>
+                            <a class="j-n-set-background">背景 <i class="more_function fas fa-angle-down"></i></a>
+                        </div>
+                        <div class="bg-editor-Box">
+                            <ul class="top_title clearfix">
+                                <li class="open_images"><p><a class="j-n-set-image btn_in"><span>圖片</span></a></p></li>
+                                <li class="open_videos"><p><a class="j-n-set-video"><span>影片</span></a></p></li>
+                            </ul>
+                            <div class="j-n-tab-image select-bg-images">
+                                <div class="btn clearfix">
+                                    <p><a class="j-pop-background" href="#popup-backgroundsetting" data-action="image">上傳</a>
+                                    <a class="j-n-remove-image FR">移除</a></p>
+                                </div>
+                            </div>
+                            <div class="j-n-tab-video select-bg-videos">
+                                <div class="btn clearfix">
+                                    <p><a class="j-pop-background" href="#popup-backgroundsetting" data-action="video">嵌入影片</a>
+                                    <a class="j-n-remove-video FR f-none-function">移除</a></p>
+                                </div>
+                            </div>
+                            <div class="j-n-tab-translucent bg_translucent">
+                                <p class="sub_title">遮罩效果</p>
+                                <ul class="background_image text_position clearfix">
+                                    <li class="j-n-set-translucent bg-k"><input type="hidden" value="black"><p>Tt</p></li>
+                                    <li class="j-n-set-translucent btn_in"><input type="hidden" value=""><p>Tt</p></li>
+                                    <li class="j-n-set-translucent bg-w"><input type="hidden" value="white"><p>Tt</p></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="j-elm-background section-base textBox background-setting" style="background-image: url(https://img.holkee.com/site/upload/5dca531e-8313ap0ab-bc19-e9f967c6/39d9e1435ea3d63045453d966bbdfdb0_normal.jpg);">
+                        <div class="ContentsBox clearfix">
+                            <div class="aBox fl">
+                                <div class="the_editBox f-edit-box show_lightBox">
+                                    <div class="edit_LightBox">
+                                        <a class="j-pop-image popup-link" href="#popup-imagesetting">編輯</a>
+                                        <a class="j-pop-delete right_delete" href="#popup-confirm" data-element="image" data-title="刪除確認" data-content="確定要刪除此項目嗎？"><i class="fas fa-times"></i></a>
+                                    </div>
+                                    <div class="j-elm-image imgBox">
+                                        <img src="https://img.holkee.com/site/upload/5dca531e-8313ap0ab-bc19-e9f967c6/61545b6917677dcb12979b457cb4b040_normal.jpg">
+                                    </div>
+                                    <a class="j-pop-image add_new_btn hide popup-link" href="#popup-imagesetting">新增圖片</a>
+                                </div>
+                            </div>
+                            <div class="aBox fr">
+                                <div class="the_editBox show_lightBox">
+                                    <div class="edit_LightBox">
+                                        <a class="popup-link" href="#popup-textsetting">編輯</a>
+                                    </div>
+                                    <h3 class="j-elm-title main_title f-edit-text" placeholder="按一下以新增文字" style="text-align: center; font-size: 1.75rem; color: rgb(113, 67, 67);">我們要結婚了</h3>
+                                </div>
+                                <div class="the_editBox show_lightBox">
+                                    <div class="edit_LightBox">
+                                        <a class="popup-link" href="#popup-textsetting">編輯</a>
+                                    </div>
+                                    <p class="j-elm-content sub_title f-edit-text" placeholder="按一下以新增文字" style="text-align: center; font-size: 0.9375rem;">各位親愛的親朋好友們<br>謝謝您在我們人生各個階段的關懷與陪伴<br>我們即將在 2020/6/6(六) 這一天共結連理<br>邁向人生新的階段<br><br>在此誠摯地邀請各位參與我們的喜宴，一同分享喜悅<br>如果您願意撥空來參加我們的喜宴<br>請撥空填寫出席表單<br>好讓我們可以統計相關資訊並順利將喜帖寄到您手上</p>
+                                </div>
+                                <div class="the_editBox f-edit-box show_lightBox">
+                                    <div class="edit_LightBox">
+                                        <a class="j-pop-button popup-link" href="#popup-buttonsetting">編輯</a>
+                                        <a class="j-pop-delete right_delete" href="#popup-confirm" data-element="button" data-title="刪除確認" data-content="確定要刪除此項目嗎？"><i class="fas fa-times"></i></a>
+                                    </div>
+                                    <p class="j-elm-button btn"><a>填寫表單</a></p>
+                                    <a class="j-pop-button add_new_btn hide popup-link" href="#popup-buttonsetting">新增按鈕</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- section：textBox - style-one : 左文右圖-->
                 <div class="section-wrapper bg_translucent_k" id="goThe03">
                     <div class="section-editor-tools">
                         <div class="btn_item clearfix">
-                            <a class="j-n-set-layout hide">佈局 <i class="fas fa-undo"></i></a>
+                            <a class="j-n-set-layout">佈局 <i class="fas fa-undo"></i></a>
                             <a class="j-n-set-background">背景 <i class="more_function fas fa-angle-down"></i></a>
                         </div>
                         <div class="bg-editor-Box">
@@ -1850,7 +2554,7 @@
                     </div>
                     <div class="j-elm-background section-base textBox background-setting" style="background-image: url(https://img.holkee.com/site/upload/5dca531e-8313ap0ab-bc19-e9f967c6/39d9e1435ea3d63045453d966bbdfdb0_normal.jpg);">
                         <div class="ContentsBox style-one clearfix">
-                            <div class="aBox">
+                            <div class="aBox fl">
                                 <div class="the_editBox show_lightBox">
                                     <div class="edit_LightBox">
                                         <a class="popup-link" href="#popup-textsetting">編輯</a>
@@ -1872,7 +2576,7 @@
                                     <a class="j-pop-button add_new_btn hide popup-link" href="#popup-buttonsetting">新增按鈕</a>
                                 </div>
                             </div>
-                            <div class="aBox">
+                            <div class="aBox fr">
                                 <div class="the_editBox f-edit-box show_lightBox">
                                     <div class="edit_LightBox">
                                         <a class="j-pop-image popup-link" href="#popup-imagesetting">編輯</a>
@@ -1887,10 +2591,12 @@
                         </div>
                     </div>
                 </div>
+                <!-- section：textBox - style-two : 上圖下文-->
+                <!-- 很像 main 版塊，但多了標題哦! -->
                 <div class="section-wrapper bg_translucent_w" id="goThe03">
                     <div class="section-editor-tools">
                         <div class="btn_item clearfix">
-                            <a class="j-n-set-layout hide">佈局 <i class="fas fa-undo"></i></a>
+                            <a class="j-n-set-layout">佈局 <i class="fas fa-undo"></i></a>
                             <a class="j-n-set-background">背景 <i class="more_function fas fa-angle-down"></i></a>
                         </div>
                         <div class="bg-editor-Box">
@@ -1959,79 +2665,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="section-wrapper" id="goThe03">
-                    <div class="section-editor-tools">
-                        <div class="btn_item clearfix">
-                            <a class="j-n-set-layout hide">佈局 <i class="fas fa-undo"></i></a>
-                            <a class="j-n-set-background">背景 <i class="more_function fas fa-angle-down"></i></a>
-                        </div>
-                        <div class="bg-editor-Box">
-                            <ul class="top_title clearfix">
-                                <li class="open_images"><p><a class="j-n-set-image btn_in"><span>圖片</span></a></p></li>
-                                <li class="open_videos"><p><a class="j-n-set-video"><span>影片</span></a></p></li>
-                            </ul>
-                            <div class="j-n-tab-image select-bg-images">
-                                <div class="btn clearfix">
-                                    <p><a class="j-pop-background" href="#popup-backgroundsetting" data-action="image">上傳</a>
-                                    <a class="j-n-remove-image FR">移除</a></p>
-                                </div>
-                            </div>
-                            <div class="j-n-tab-video select-bg-videos">
-                                <div class="btn clearfix">
-                                    <p><a class="j-pop-background" href="#popup-backgroundsetting" data-action="video">嵌入影片</a>
-                                    <a class="j-n-remove-video FR f-none-function">移除</a></p>
-                                </div>
-                            </div>
-                            <div class="j-n-tab-translucent bg_translucent">
-                                <p class="sub_title">遮罩效果</p>
-                                <ul class="background_image text_position clearfix">
-                                    <li class="j-n-set-translucent bg-k"><input type="hidden" value="black"><p>Tt</p></li>
-                                    <li class="j-n-set-translucent btn_in"><input type="hidden" value=""><p>Tt</p></li>
-                                    <li class="j-n-set-translucent bg-w"><input type="hidden" value="white"><p>Tt</p></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="j-elm-background section-base textBox background-setting" style="background-image: url(https://img.holkee.com/site/upload/5dca531e-8313ap0ab-bc19-e9f967c6/39d9e1435ea3d63045453d966bbdfdb0_normal.jpg);">
-                        <div class="ContentsBox clearfix">
-                            <div class="aBox">
-                                <div class="the_editBox f-edit-box show_lightBox">
-                                    <div class="edit_LightBox">
-                                        <a class="j-pop-image popup-link" href="#popup-imagesetting">編輯</a>
-                                        <a class="j-pop-delete right_delete" href="#popup-confirm" data-element="image" data-title="刪除確認" data-content="確定要刪除此項目嗎？"><i class="fas fa-times"></i></a>
-                                    </div>
-                                    <div class="j-elm-image imgBox">
-                                        <img src="https://img.holkee.com/site/upload/5dca531e-8313ap0ab-bc19-e9f967c6/61545b6917677dcb12979b457cb4b040_normal.jpg">
-                                    </div>
-                                    <a class="j-pop-image add_new_btn hide popup-link" href="#popup-imagesetting">新增圖片</a>
-                                </div>
-                            </div>
-                            <div class="aBox">
-                                <div class="the_editBox show_lightBox">
-                                    <div class="edit_LightBox">
-                                        <a class="popup-link" href="#popup-textsetting">編輯</a>
-                                    </div>
-                                    <h3 class="j-elm-title main_title f-edit-text" placeholder="按一下以新增文字" style="text-align: center; font-size: 1.75rem; color: rgb(113, 67, 67);">我們要結婚了</h3>
-                                </div>
-                                <div class="the_editBox show_lightBox">
-                                    <div class="edit_LightBox">
-                                        <a class="popup-link" href="#popup-textsetting">編輯</a>
-                                    </div>
-                                    <p class="j-elm-content sub_title f-edit-text" placeholder="按一下以新增文字" style="text-align: center; font-size: 0.9375rem;">各位親愛的親朋好友們<br>謝謝您在我們人生各個階段的關懷與陪伴<br>我們即將在 2020/6/6(六) 這一天共結連理<br>邁向人生新的階段<br><br>在此誠摯地邀請各位參與我們的喜宴，一同分享喜悅<br>如果您願意撥空來參加我們的喜宴<br>請撥空填寫出席表單<br>好讓我們可以統計相關資訊並順利將喜帖寄到您手上</p>
-                                </div>
-                                <div class="the_editBox f-edit-box show_lightBox">
-                                    <div class="edit_LightBox">
-                                        <a class="j-pop-button popup-link" href="#popup-buttonsetting">編輯</a>
-                                        <a class="j-pop-delete right_delete" href="#popup-confirm" data-element="button" data-title="刪除確認" data-content="確定要刪除此項目嗎？"><i class="fas fa-times"></i></a>
-                                    </div>
-                                    <p class="j-elm-button btn"><a>填寫表單</a></p>
-                                    <a class="j-pop-button add_new_btn hide popup-link" href="#popup-buttonsetting">新增按鈕</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
+                
+                <!-- videoBox 影音版塊-->
                 <!-- section：videoBox-->
                 <div class="section-wrapper" id="goThe04">
                     <div class="section-editor-tools">
@@ -2092,12 +2727,12 @@
                     </div>
                 </div>
                 
-
                 <!-- section：contactBox -->
+                <!-- section：contactBox - 預設（左地圖，右資訊） -->
                 <div class="section-wrapper" id="goThe06">
                     <div class="section-editor-tools">
                         <div class="btn_item clearfix">
-                            <a class="section-typesetting">版面設定 <i class="fas fa-undo"></i></a><!-- 點了變換版面排版 -->
+                            <a class="section-typesetting">佈局 <i class="fas fa-undo"></i></a><!-- 點了變換版面排版 -->
                             <a class="section-bg">背景 <i class="more_function fas fa-angle-down"></i></a><!-- 點了展開下面的 bg-editor-Box -->
                         </div>
                         <div class="bg-editor-Box">
@@ -2181,12 +2816,81 @@
                                 </div>
                                 <div class="the_editBox show_lightBox">
                                     <div class="edit_LightBox">
-                                        <a class="j-pop-info" href="#popup-contactsetting">編輯</a>
+                                        <a class="j-pop-info popup-link" href="#popup-contactsetting">編輯</a>
                                     </div>
                                     <ul class="j-elm-info info">
-                                    <li><p class="address">台北市信義路五段7號</p></li><li><p class="phone">0800-123-456</p></li><li><p class="time">10:00 AM - 22:00 PM</p></li><li><p class="email">service@example.com</p></li></ul>
+                                        <li><p class="address">台北市信義路五段7號</p></li>
+                                        <li><p class="phone">0800-123-456</p></li>
+                                        <li><p class="time">10:00 AM - 22:00 PM</p></li>
+                                        <li><p class="email">service@example.com</p></li>
+                                    </ul>
                                     <p class="f-text-not-set"><span>尚未設定</span></p>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- section：contactBox - style-one : 左資訊，右地圖 -->
+                <div class="section-wrapper bg_translucent_k" id="">
+                    <div class="section-editor-tools">
+                        <div class="btn_item clearfix">
+                            <a class="section-typesetting">佈局 <i class="fas fa-undo"></i></a><!-- 點了變換版面排版 -->
+                            <a class="section-bg">背景 <i class="more_function fas fa-angle-down"></i></a><!-- 點了展開下面的 bg-editor-Box -->
+                        </div>
+                        <div class="bg-editor-Box">
+                            <ul class="top_title clearfix">
+                                <li class="open_images"><p><a class="btn_in"><span>圖片</span></a></p></li>
+                                <li class="open_videos"><p><a><span>影片</span></a></p></li>
+                            </ul>
+                            <!-- 顯示圖片 -->
+                            <div class="select-bg-images">
+                                <ul class="background_image clearfix">
+                                    <li class="btn_in" style="background-image: url(images/new_site/bg/a_067.jpg);"></li>
+                                    <li style="background-image: url(images/new_site/bg/a_066.jpg);"></li>
+                                    <li style="background-image: url(images/new_site/bg/a_085.jpg);"></li>
+                                    <li style="background-image: url(images/new_site/bg/a_078.jpg);"></li>
+                                    <li style="background-image: url(images/new_site/bg/a_083.jpg);"></li>
+                                    <li><p class="more"><a href="#"><i class="fas fa-plus"></i>看更多</a></p></li>
+                                </ul>
+                                <div class="btn clearfix">
+                                    <p><a href="#">上傳圖片</a>
+                                    <a class="FR" href="#">移除</a></p>
+                                </div>
+                            </div>
+                            <!-- 顯示影片 -->
+                            <div class="select-bg-videos">
+                                <ul class="background_image clearfix">
+                                    <li class="btn_in" style="background-image: url(images/new_site/bg/a_067.jpg);"><i class="fas fa-video"></i></li>
+                                    <li style="background-image: url(images/new_site/bg/a_085.jpg);"><i class="fas fa-video"></i></li>
+                                    <li style="background-image: url(images/new_site/bg/a_067.jpg);"><i class="fas fa-video"></i></li>
+                                    <li style="background-image: url(images/new_site/bg/a_078.jpg);"><i class="fas fa-video"></i></li>
+                                    <li style="background-image: url(images/new_site/bg/a_083.jpg);"><i class="fas fa-video"></i></li>
+                                    <li><p class="more"><a href="#"><i class="fas fa-plus"></i>看更多</a></p></li>
+                                </ul>
+                                <div class="btn clearfix">
+                                    <p><a class="add-the-video">嵌入影片</a>
+                                    <a class="FR">移除</a></p>
+                                    <div class="upload_video">
+                                        <p>Youtube影片網址</p>
+                                        <div class="link clearfix">
+                                            <input type="text" name="" value="https://youtu.be/NCe1Vp1b_wk" placeholder="請輸入Youtube影片網址"><button>上傳</button>
+                                        </div>
+                                        <p class="note">注意：影片背景將<span>無法在手機或平板設備上播放</span>，只會看到縮圖喔。</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg_translucent">
+                                <p class="sub_title">遮罩效果</p>
+                                <ul class="background_image text_position clearfix">
+                                    <li class="btn_in bg-k" style="background-image: url(images/new_site/bg/a_066.jpg); "><p>Tt</p></li>
+                                    <li class="bg-w" style="background-image: url(images/new_site/bg/a_066.jpg); "><p>Tt</p></li>
+                                    <li style="background-image: url(images/new_site/bg/a_066.jpg); "><p>Tt</p></li>
+                                </ul>
+                            </div>
+                            <div class="btn save_main clearfix">
+                                <p><a href="#">取消</a>
+                                <a class="FR done" href="#"><i class="fas fa-check"></i> 儲存</a>
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -2207,10 +2911,14 @@
                                 </div>
                                 <div class="the_editBox show_lightBox">
                                     <div class="edit_LightBox">
-                                        <a class="j-pop-info" href="#popup-contactsetting">編輯</a>
+                                        <a class="j-pop-info popup-link" href="#popup-contactsetting">編輯</a>
                                     </div>
                                     <ul class="j-elm-info info">
-                                    <li><p class="address">台北市信義路五段7號</p></li><li><p class="phone">0800-123-456</p></li><li><p class="time">10:00 AM - 22:00 PM</p></li><li><p class="email">service@example.com</p></li></ul>
+                                        <li><p class="address">台北市信義路五段7號</p></li>
+                                        <li><p class="phone">0800-123-456</p></li>
+                                        <li><p class="time">10:00 AM - 22:00 PM</p></li>
+                                        <li><p class="email">service@example.com</p></li>
+                                    </ul>
                                     <p class="f-text-not-set"><span>尚未設定</span></p>
                                 </div>
                             </div>
@@ -2225,8 +2933,9 @@
                     </div>
                 </div>
 
-                <!-- section：FormBox 表單進化惹 -->
-                <div class="section-wrapper"><!-- bg_translucent_k -->
+                <!-- formBox -->
+                <!-- section：FormBox -->
+                <div class="section-wrapper">
                     <div class="section-editor-tools">
                         <div class="btn_item clearfix">
                             <a class="j-n-set-layout hide">佈局 <i class="fas fa-undo"></i></a>
@@ -2275,7 +2984,7 @@
                             </div>
                             <div class="the_editBox show_lightBox">
                                 <div class="edit_LightBox">
-                                    <a class="j-pop-form" href="#popup-formcustomsetting">編輯</a>
+                                    <a class="j-pop-form popup-link" href="#popup-formcustomsetting">編輯</a>
                                 </div>
                                 <div class="j-elm-form form_custom" style="display: block;"><p class="content_title">姓名<span class="required">*</span></p><input type="text" name="field10001" placeholder="請輸入內容" required="required"><p class="content_title">聯絡手機<span class="required">*</span></p><input type="text" name="field10003" placeholder="請輸入內容" required="required"><p class="content_title">Email<span class="required">*</span></p><input type="email" name="field10002" placeholder="請輸入內容" required="required"><p class="content_title">與新人關係<span class="required">*</span></p><div class="j-n-field1573542185902 the-option x-inline clearfix"><label class="required-radio clearfix"><input class="styled-radio" type="radio" name="field1573542185902" value="男方親友" required="required"><div class="styled-radio"></div><span>男方親友</span></label><label class="required-radio clearfix"><input class="styled-radio" type="radio" name="field1573542185902" value="女方親友" required="required"><div class="styled-radio"></div><span>女方親友</span></label></div><p class="content_title">是否出席<span class="required">*</span></p><div class="j-n-field1573542223845 the-option x-inline clearfix"><label class="required-radio clearfix"><input class="styled-radio" type="radio" name="field1573542223845" value="出席，絕對到場！" required="required"><div class="styled-radio"></div><span>出席，絕對到場！</span></label><label class="required-radio clearfix"><input class="styled-radio" type="radio" name="field1573542223845" value="無法出席，祝你們幸福美滿！" required="required"><div class="styled-radio"></div><span>無法出席，祝你們幸福美滿！</span></label></div><p class="content_title">喜帖方式<span class="required">*</span></p><div class="j-n-field1573542246102 the-option x-inline clearfix"><label class="required-radio clearfix"><input class="styled-radio" type="radio" name="field1573542246102" value="電子喜帖" required="required"><div class="styled-radio"></div><span>電子喜帖</span></label><label class="required-radio clearfix"><input class="styled-radio" type="radio" name="field1573542246102" value="紙本喜帖" required="required"><div class="styled-radio"></div><span>紙本喜帖</span></label><label class="required-radio clearfix"><input class="styled-radio" type="radio" name="field1573542246102" value="不需要喜帖，已記住囉！" required="required"><div class="styled-radio"></div><span>不需要喜帖，已記住囉！</span></label></div><p class="content_title">出席人數<span class="required">*</span></p><div class="styled-select"><select name="field1573542319176" required="required"><option value="">請選擇</option><option value="1位">1位</option><option value="2位">2位</option><option value="3位">3位</option><option value="4位">4位</option><option value="5位">5位</option><option value="其他，請寫在備註～">其他，請寫在備註～</option></select></div><p class="content_title">兒童座椅<span class="required">*</span></p><div class="styled-select"><select name="field1573542432329" required="required"><option value="">請選擇</option><option value="不需要">不需要</option><option value="1位">1位</option><option value="2位">2位</option><option value="3位">3位</option></select></div><p class="content_title">給新人的一段話<span class="required">*</span></p><input type="text" name="field1573542478109" placeholder="請輸入內容" required="required"><p class="content_title">備註</p><textarea name="field1573542490204" placeholder="請輸入內容"></textarea><p class="btn"><a href="#">送出</a></p></div>
                                 <p class="f-text-not-set"><span>尚未設定</span></p>
@@ -2284,26 +2993,36 @@
                     </div>
                 </div>
 
+                <!-- mapbox -->
                 <!-- section：map360_default-->
-                <div class="section-wrapper" id="goto186566"><div class="map360Box">
-                    <div class="ContentsBox">
-                        <div class="mapBox">
-                            <div class="the_editBox show_lightBox">
-                                <div class="edit_LightBox">
-                                    <a class="j-pop-code" data-popup="#popup-map360setting">編輯</a>
-                                </div>
-                                <div class="j-elm-code map360_default">
-                                    <p class="f-text-not-set"><span>尚未設定</span></p>
+                <div class="section-wrapper" id="goto211517">
+                    <a class="premium-section" href="/plans" target="_blank" style="display: none">
+                        <h3><i class="fas fa-gem"></i>Premium</h3>
+                        <p>專屬白金會員使用，升級即可解鎖喔!</p>
+                        <p class="btn"><span>升級白金</span></p>
+                    </a>
+                    <div class="map360Box">
+                        <div class="ContentsBox">
+                            <div class="mapBox">
+                                <div class="the_editBox show_lightBox">
+                                    <div class="edit_LightBox">
+                                        <a class="j-pop-code" data-popup="#popup-map360setting">編輯</a>
+                                    </div>
+                                    <div class="j-elm-code map360_default">
+                                        <p class="f-text-not-set"><span>尚未設定</span></p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- section：socialBox -->
+
+                <!-- socialBox 社群版塊-->
+                <!-- section：socialBox : 多了可選圈圈底色功能 -->
                 <div class="section-wrapper" id="goThe07">
                     <div class="section-editor-tools">
                         <div class="btn_item clearfix">
-                            <a class="section-typesetting">版面設定 <i class="fas fa-undo"></i></a><!-- 點了變換版面排版 -->
+                            <a class="section-typesetting">佈局 <i class="fas fa-undo"></i></a><!-- 點了變換版面排版 -->
                             <a class="section-bg">背景 <i class="more_function fas fa-angle-down"></i></a><!-- 點了展開下面的 bg-editor-Box -->
                         </div>
                         <div class="bg-editor-Box">
@@ -2394,17 +3113,17 @@
                                     <li><a class="youtube" href="#"><i class="fab fa-youtube"></i></a></li>
                                     <li><a class="whatsapp" href="#"><i class="fab fa-whatsapp"></i></a></li>
                                     <li><a class="telegram" href="#"><i class="fab fa-telegram-plane"></i></a></li>
-                                    <!-- youtube 和 whatsapp 需要變換位置 才不會綠綠紅 XD-->
                                 </ul>
                                 <p class="f-text-not-set"><span>尚未設定</span></p>
                             </div>
                         </div>
                     </div>
                 </div>
+                <!-- section：socialBox - style-one : 可選底色或自填底色；圓形變小圓角方形 -->
                 <div class="section-wrapper" id="">
                     <div class="section-editor-tools">
                         <div class="btn_item clearfix">
-                            <a class="section-typesetting">版面設定 <i class="fas fa-undo"></i></a><!-- 點了變換版面排版 -->
+                            <a class="section-typesetting">佈局 <i class="fas fa-undo"></i></a><!-- 點了變換版面排版 -->
                             <a class="section-bg">背景 <i class="more_function fas fa-angle-down"></i></a><!-- 點了展開下面的 bg-editor-Box -->
                         </div>
                         <div class="bg-editor-Box">
@@ -2502,10 +3221,11 @@
                         </div>
                     </div>
                 </div>
+                <!-- section：socialBox - style-two : 不要框了~不能選色，此為 icon 品牌固定色 -->
                 <div class="section-wrapper" id="">
                     <div class="section-editor-tools">
                         <div class="btn_item clearfix">
-                            <a class="section-typesetting">版面設定 <i class="fas fa-undo"></i></a><!-- 點了變換版面排版 -->
+                            <a class="section-typesetting">佈局 <i class="fas fa-undo"></i></a><!-- 點了變換版面排版 -->
                             <a class="section-bg">背景 <i class="more_function fas fa-angle-down"></i></a><!-- 點了展開下面的 bg-editor-Box -->
                         </div>
                         <div class="bg-editor-Box">
@@ -2596,6 +3316,109 @@
                                     <li><a class="youtube" href="#"><i class="fab fa-youtube"></i></a></li>
                                     <li><a class="whatsapp" href="#"><i class="fab fa-whatsapp"></i></a></li>
                                     <li><a class="telegram" href="#"><i class="fab fa-telegram-plane"></i></a></li>
+                                    <!-- youtube 和 whatsapp 需要變換位置 才不會綠綠紅 XD-->
+                                </ul>
+                                <p class="f-text-not-set"><span>尚未設定</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- section：socialBox - style-three : 不要框了~"可以自選 icon 顏色 -->
+                <div class="section-wrapper" id="">
+                    <div class="section-editor-tools">
+                        <div class="btn_item clearfix">
+                            <a class="section-typesetting">佈局 <i class="fas fa-undo"></i></a><!-- 點了變換版面排版 -->
+                            <a class="section-bg">背景 <i class="more_function fas fa-angle-down"></i></a><!-- 點了展開下面的 bg-editor-Box -->
+                        </div>
+                        <div class="bg-editor-Box">
+                            <ul class="top_title clearfix">
+                                <li class="open_images"><p><a class="btn_in"><span>圖片</span></a></p></li>
+                                <li class="open_videos"><p><a><span>影片</span></a></p></li>
+                            </ul>
+                            <!-- 顯示圖片 -->
+                            <div class="select-bg-images">
+                                <ul class="background_image clearfix">
+                                    <li class="btn_in" style="background-image: url(images/new_site/bg/a_067.jpg);"></li>
+                                    <li style="background-image: url(images/new_site/bg/a_066.jpg);"></li>
+                                    <li style="background-image: url(images/new_site/bg/a_085.jpg);"></li>
+                                    <li style="background-image: url(images/new_site/bg/a_078.jpg);"></li>
+                                    <li style="background-image: url(images/new_site/bg/a_083.jpg);"></li>
+                                    <li><p class="more"><a class="popup-link" href="#popup-gallery"><i class="fas fa-plus"></i>看更多</a></p></li>
+                                </ul>
+                                <div class="btn clearfix">
+                                    <p><a href="#">上傳圖片</a>
+                                    <a class="FR" href="#">移除</a></p>
+                                </div>
+                            </div>
+                            <!-- 顯示影片 -->
+                            <div class="select-bg-videos">
+                                <ul class="background_image clearfix">
+                                    <li class="btn_in" style="background-image: url(images/new_site/bg/a_067.jpg);"><i class="fas fa-video"></i></li>
+                                    <li style="background-image: url(images/new_site/bg/a_085.jpg);"><i class="fas fa-video"></i></li>
+                                    <li style="background-image: url(images/new_site/bg/a_067.jpg);"><i class="fas fa-video"></i></li>
+                                    <li style="background-image: url(images/new_site/bg/a_078.jpg);"><i class="fas fa-video"></i></li>
+                                    <li style="background-image: url(images/new_site/bg/a_083.jpg);"><i class="fas fa-video"></i></li>
+                                    <li><p class="more"><a href="#"><i class="fas fa-plus"></i>看更多</a></p></li>
+                                </ul>
+                                <div class="btn clearfix">
+                                    <p><a class="add-the-video">嵌入影片</a>
+                                    <a class="FR">移除</a></p>
+                                    <div class="upload_video">
+                                        <p>Youtube影片網址</p>
+                                        <div class="link clearfix">
+                                            <input type="text" name="" value="https://youtu.be/NCe1Vp1b_wk" placeholder="請輸入Youtube影片網址"><button>上傳</button>
+                                        </div>
+                                        <p class="note">注意：影片背景將<span>無法在手機或平板設備上播放</span>，只會看到縮圖喔。</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg_translucent">
+                                <p class="sub_title">遮罩效果</p>
+                                <ul class="background_image text_position clearfix">
+                                    <li class="btn_in bg-k" style="background-image: url(images/new_site/bg/a_066.jpg); "><p>Tt</p></li>
+                                    <li class="bg-w" style="background-image: url(images/new_site/bg/a_066.jpg); "><p>Tt</p></li>
+                                    <li style="background-image: url(images/new_site/bg/a_066.jpg); "><p>Tt</p></li>
+                                </ul>
+                            </div>
+                            <div class="btn save_main clearfix">
+                                <p><a href="#">取消</a>
+                                <a class="FR done" href="#"><i class="fas fa-check"></i> 儲存</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section-base socialBox background-setting" style="background-image: url(https://img.holkee.com/site/upload/5ddb9257-9771ap0ab-575e-2255373e/01bba7279763e8abd686e06c9b9775be_normal.png);">
+                        <div class="ContentsBox style-three">
+                            <div class="the_editBox show_lightBox">
+                                <div class="edit_LightBox">
+                                    <a class="popup-link" href="#popup-textsetting">編輯</a>
+                                </div>
+                                <h3 class="j-elm-title main_title f-edit-text" placeholder="按一下以新增文字" style="color:#333;">追蹤我們</h3>
+                            </div>
+                            <div class="the_editBox show_lightBox">
+                                <div class="edit_LightBox">
+                                    <a class="popup-link" href="#popup-textsetting">編輯</a>
+                                </div>
+                                <p class="j-elm-content sub_title f-edit-text" placeholder="按一下以新增文字" style="color: #888;">追蹤我們，掌握第一手消息與最新優惠折扣喔。</p>
+                            </div>
+                            <div class="the_editBox show_lightBox">
+                                <div class="edit_LightBox">
+                                    <a class="popup-link" href="#popup-sociallinksetting">編輯</a>
+                                </div>
+                                <!-- 填入color 非 background-color -->
+                                <ul class="j-elm-follow follow_us_icon">
+                                    <li><a class="facebook" href="#" style="color: #32a4d8;"><i class="fab fa-facebook-square"></i></a></li>
+                                    <li><a class="instagram" href="#" style="color: #32a4d8;"><i class="fab fa-instagram"></i></a></li>
+                                    <li><a class="line" href="#" style="color: #32a4d8;"><i class="fab fa-line"></i></a></li>
+                                    <li><a class="linkedin" href="#" style="color: #32a4d8;"><i class="fab fa-linkedin"></i></a></li>
+                                    <li><a class="pinterest" href="#" style="color: #32a4d8;"><i class="fab fa-pinterest"></i></a></li>
+                                    <li><a class="tumblr" href="#" style="color: #32a4d8;"><i class="fab fa-tumblr-square"></i></a></li>
+                                    <li><a class="twitter" href="#" style="color: #32a4d8;"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a class="weibo" href="#" style="color: #32a4d8;"><i class="fab fa-weibo"></i></a></li>
+                                    <li><a class="weixin" href="#" style="color: #32a4d8;"><i class="fab fa-weixin"></i></a></li>
+                                    <li><a class="youtube" href="#" style="color: #32a4d8;"><i class="fab fa-youtube"></i></a></li>
+                                    <li><a class="whatsapp" href="#" style="color: #32a4d8;"><i class="fab fa-whatsapp"></i></a></li>
+                                    <li><a class="telegram" href="#" style="color: #32a4d8;"><i class="fab fa-telegram-plane"></i></a></li>
                                     <!-- youtube 和 whatsapp 需要變換位置 才不會綠綠紅 XD-->
                                 </ul>
                                 <p class="f-text-not-set"><span>尚未設定</span></p>
@@ -2753,7 +3576,7 @@
                         <p>善用社群串連，從裏到外到一起整合到其他社群！</p>
                     </div>
                     <div class="fillinBox">
-                        <div class="social-edit-toolbar">
+                        <div class="color-edit-toolbar">
                             <a class="icon-bgcolor">
                                 <span class="circleline btn_in" style=" background-color: #9c27b0;"></span>
                                 <span>icon 顏色</span>  
@@ -2975,8 +3798,351 @@
                 </form>
             </div>
 
+            <!-- branches 分店資訊 設定 -->
+            <div id="popup-branchessetting" class="white-popup mfp-hide">
+                <form class="setBox">
+                    <div class="top_title">
+                        <h3>分店資訊</h3>
+                        <p>可顯示最多 12 筆分店資訊</p>
+                    </div>
+                    <div class="fillinBox branches-contents">
+                        <div class="color-edit-toolbar">
+                            <a class="icon-bgcolor">
+                                <span class="circleline btn_in" style=" background-color: #ffeb3b;"></span>
+                                <span>分店名顏色</span>  
+                            </a>
+                            <div class="choose-iconcolor">
+                                <!-- default 就是黃色喔 -->
+                                <a class="default"><i class="fas fa-ban"></i> USE DEFAULT</a>
+                                <ul class="the-colors clearfix">
+                                    <li><a style="background-color: #f44336;"></a></li>
+                                    <li><a style="background-color: #e91e63;"></a></li>
+                                    <li><a style="background-color: #9c27b0;"></a></li>
+                                    <li><a style="background-color: #014d88;"></a></li>
+                                    <li><a style="background-color: #2196f3;"></a></li>
+                                    <li><a style="background-color: #01bcd4;"></a></li>
+                                    <li><a style="background-color: #8bc34a;"></a></li>
+                                    <li><a style="background-color: #cddc39;"></a></li>
+                                    <li><a style="background-color: #ffc107;"></a></li>
+                                    <li><a style="background-color: #ffeb3b;"></a></li>
+                                    <li><a style="background-color: #ffffff; border:1px solid #aaaaaa;"></a></li>
+                                    <li><a style="background-color: #aaaaaa;"></a></li>
+                                    <li><a style="background-color: #0d0d0d;"></a></li>
+                                    <li><a style="background-color: #714343;"></a></li>
+                                </ul>
+                                <div class="user-customize">
+                                    <p>自定義顏色</p>
+                                    <input class="color-code" type="text" name="" value="#9c27b0">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 可移動 增加 move -->
+                        <div class="edit-branches-box move">
+                            <div class="store-name arr_down">
+                                <p>分店：<span>台北市中正區 - 站前店</span></p>
+                                <a class="delete"><i class="fas fa-trash-alt"></i></a>
+                            </div>
+                            <ul style="display: block;">
+                                <li>
+                                    <label for=""><p class="label_title">介紹圖</p></label>
+                                    <div class="f-upload-image img_upload clearfix">
+                                        <a class="j-n-upload">
+                                            <div class="the_btn"><p><span><i class="fas fa-undo-alt"></i>Re-upload</span></p></div>
+                                            <img src="https://img.holkee.com/main/default_branches.jpg">
+                                        </a>
+                                        <p class="the_reminder">提醒您，請確保圖片解析度，最佳建議尺寸為寬度 1000px 以上 JPG 或 PNG。</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <label for=""><p class="label_title">分店名稱</p></label>
+                                    <input id="" name="" type="text" value="台北市中正區 - 站前店">
+                                </li>
+                                <li>
+                                    <label for=""><p class="label_title"><i class="fas fa-map-marker-alt"></i>　分店地址</p></label>
+                                    <input id="" name="" type="text" value="No.5, Ziqiang 3rd Rd., Lingya Dist., Kaohsiung City 802, Taiwan (R.O.C.)">
+                                    <p class="the_reminder">地址會自動帶入 google map 地圖資訊，建議填寫完整喔！</p>
+                                </li>
+                                <li>
+                                    <label for=""><p class="label_title"><i class="fas fa-phone"></i>　分店電話</p></label>
+                                    <input id="" name="" type="text" value="07-566-8818">
+                                </li>
+                                <li>
+                                    <label for=""><p class="label_title"><i class="fas fa-clock"></i>　分店營業時間</p></label>
+                                    <!-- <input id="" name="" type="text" value="10:00 AM - 11:30 PM"> -->
+                                    <textarea id="">10:00 AM - 11:30 PM</textarea>
+                                </li>
+                                <li>
+                                    <label for=""><p class="label_title"><i class="fas fa-envelope"></i>　分店電子郵件</p></label>
+                                    <input id="" name="" type="text" value="Babyonepieces@service.com">
+                                </li>
+                                <li>
+                                    <label for=""><p class="label_title"><i class="fas fa-globe"></i>　分店網站連結</p></label>
+                                    <input id="" name="" type="text" value="www.holkee.com">
+                                    <p class="the_reminder">可輸入該分店官網網址、FB 粉絲專頁連結、Line@ 連結等等</p>
+                                </li>
+                                <li>
+                                    <label for=""><p class="label_title">分店備註</p></label>
+                                    <textarea id=""></textarea>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="edit-branches-box">
+                            <div class="store-name arr_down">
+                                <p>分店：台北市中正區 - 站前店</p>
+                                <a class="delete"><i class="fas fa-trash-alt"></i></a>
+                            </div>
+                            <ul>
+                                <li>
+                                    <label for=""><p class="label_title">介紹圖</p></label>
+                                    <div class="f-upload-image img_upload clearfix">
+                                        <a class="j-n-upload">
+                                            <div class="the_btn"><p><span><i class="fas fa-undo-alt"></i>Re-upload</span></p></div>
+                                            <img src="images/default_branches.jpg">
+                                        </a>
+                                        <p class="the_reminder">提醒您，請確保圖片解析度，最佳建議尺寸為寬度 1000px 以上 JPG 或 PNG。</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <label for=""><p class="label_title">分店名稱</p></label>
+                                    <input id="" name="" type="text" value="台北市中正區 - 站前店">
+                                </li>
+                                <li>
+                                    <label for=""><p class="label_title"><i class="fas fa-map-marker-alt"></i>　分店地址</p></label>
+                                    <input id="" name="" type="text" value="No.5, Ziqiang 3rd Rd., Lingya Dist., Kaohsiung City 802, Taiwan (R.O.C.)">
+                                    <p class="the_reminder">地址會自動帶入 google map 地圖資訊，建議填寫完整喔！</p>
+                                </li>
+                                <li>
+                                    <label for=""><p class="label_title"><i class="fas fa-phone"></i>　分店電話</p></label>
+                                    <input id="" name="" type="text" value="07-566-8818">
+                                </li>
+                                <li>
+                                    <label for=""><p class="label_title"><i class="fas fa-clock"></i>　分店營業時間</p></label>
+                                    <!-- <input id="" name="" type="text" value="10:00 AM - 11:30 PM"> -->
+                                    <textarea id="">10:00 AM - 11:30 PM</textarea>
+                                </li>
+                                <li>
+                                    <label for=""><p class="label_title"><i class="fas fa-envelope"></i>　分店電子郵件</p></label>
+                                    <input id="" name="" type="text" value="Babyonepieces@service.com">
+                                </li>
+                                <li>
+                                    <label for=""><p class="label_title"><i class="fas fa-globe"></i>　分店網站連結</p></label>
+                                    <input id="" name="" type="text" value="www.holkee.com">
+                                    <p class="the_reminder">可輸入該分店官網網址、FB 粉絲專頁連結、Line@ 連結等等</p>
+                                </li>
+                                <li>
+                                    <label for=""><p class="label_title">分店備註</p></label>
+                                    <textarea id=""></textarea>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="edit-branches-box">
+                            <div class="store-name arr_down">
+                                <p>分店：台北市中正區 - 站前店</p>
+                                <a class="delete"><i class="fas fa-trash-alt"></i></a>
+                            </div>
+                            <ul>
+                                <li>
+                                    <label for=""><p class="label_title">介紹圖</p></label>
+                                    <div class="f-upload-image img_upload clearfix">
+                                        <a class="j-n-upload">
+                                            <div class="the_btn"><p><span><i class="fas fa-undo-alt"></i>Re-upload</span></p></div>
+                                            <img src="images/default_branches.jpg">
+                                        </a>
+                                        <p class="the_reminder">提醒您，請確保圖片解析度，最佳建議尺寸為寬度 1000px 以上 JPG 或 PNG。</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <label for=""><p class="label_title">分店名稱</p></label>
+                                    <input id="" name="" type="text" value="台北市中正區 - 站前店">
+                                </li>
+                                <li>
+                                    <label for=""><p class="label_title"><i class="fas fa-map-marker-alt"></i>　分店地址</p></label>
+                                    <input id="" name="" type="text" value="No.5, Ziqiang 3rd Rd., Lingya Dist., Kaohsiung City 802, Taiwan (R.O.C.)">
+                                    <p class="the_reminder">地址會自動帶入 google map 地圖資訊，建議填寫完整喔！</p>
+                                </li>
+                                <li>
+                                    <label for=""><p class="label_title"><i class="fas fa-phone"></i>　分店電話</p></label>
+                                    <input id="" name="" type="text" value="07-566-8818">
+                                </li>
+                                <li>
+                                    <label for=""><p class="label_title"><i class="fas fa-clock"></i>　分店營業時間</p></label>
+                                    <!-- <input id="" name="" type="text" value="10:00 AM - 11:30 PM"> -->
+                                    <textarea id="">10:00 AM - 11:30 PM</textarea>
+                                </li>
+                                <li>
+                                    <label for=""><p class="label_title"><i class="fas fa-envelope"></i>　分店電子郵件</p></label>
+                                    <input id="" name="" type="text" value="Babyonepieces@service.com">
+                                </li>
+                                <li>
+                                    <label for=""><p class="label_title"><i class="fas fa-globe"></i>　分店網站連結</p></label>
+                                    <input id="" name="" type="text" value="www.holkee.com">
+                                    <p class="the_reminder">可輸入該分店官網網址、FB 粉絲專頁連結、Line@ 連結等等</p>
+                                </li>
+                                <li>
+                                    <label for=""><p class="label_title">分店備註</p></label>
+                                    <textarea id=""></textarea>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="edit-branches-box">
+                            <div class="store-name arr_down">
+                                <p>分店：台北市中正區 - 站前店</p>
+                                <a class="delete"><i class="fas fa-trash-alt"></i></a>
+                            </div>
+                            <ul>
+                                <li>
+                                    <label for=""><p class="label_title">介紹圖</p></label>
+                                    <div class="f-upload-image img_upload clearfix">
+                                        <a class="j-n-upload">
+                                            <div class="the_btn"><p><span><i class="fas fa-undo-alt"></i>Re-upload</span></p></div>
+                                            <img src="images/default_branches.jpg">
+                                        </a>
+                                        <p class="the_reminder">提醒您，請確保圖片解析度，最佳建議尺寸為寬度 1000px 以上 JPG 或 PNG。</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <label for=""><p class="label_title">分店名稱</p></label>
+                                    <input id="" name="" type="text" value="台北市中正區 - 站前店">
+                                </li>
+                                <li>
+                                    <label for=""><p class="label_title"><i class="fas fa-map-marker-alt"></i>　分店地址</p></label>
+                                    <input id="" name="" type="text" value="No.5, Ziqiang 3rd Rd., Lingya Dist., Kaohsiung City 802, Taiwan (R.O.C.)">
+                                    <p class="the_reminder">地址會自動帶入 google map 地圖資訊，建議填寫完整喔！</p>
+                                </li>
+                                <li>
+                                    <label for=""><p class="label_title"><i class="fas fa-phone"></i>　分店電話</p></label>
+                                    <input id="" name="" type="text" value="07-566-8818">
+                                </li>
+                                <li>
+                                    <label for=""><p class="label_title"><i class="fas fa-clock"></i>　分店營業時間</p></label>
+                                    <!-- <input id="" name="" type="text" value="10:00 AM - 11:30 PM"> -->
+                                    <textarea id="">10:00 AM - 11:30 PM</textarea>
+                                </li>
+                                <li>
+                                    <label for=""><p class="label_title"><i class="fas fa-envelope"></i>　分店電子郵件</p></label>
+                                    <input id="" name="" type="text" value="Babyonepieces@service.com">
+                                </li>
+                                <li>
+                                    <label for=""><p class="label_title"><i class="fas fa-globe"></i>　分店網站連結</p></label>
+                                    <input id="" name="" type="text" value="www.holkee.com">
+                                    <p class="the_reminder">可輸入該分店官網網址、FB 粉絲專頁連結、Line@ 連結等等</p>
+                                </li>
+                                <li>
+                                    <label for=""><p class="label_title">分店備註</p></label>
+                                    <textarea id=""></textarea>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="edit-branches-box">
+                            <div class="store-name arr_down">
+                                <p>分店：台北市中正區 - 站前店</p>
+                                <a class="delete"><i class="fas fa-trash-alt"></i></a>
+                            </div>
+                            <ul>
+                                <li>
+                                    <label for=""><p class="label_title">介紹圖</p></label>
+                                    <div class="f-upload-image img_upload clearfix">
+                                        <a class="j-n-upload">
+                                            <div class="the_btn"><p><span><i class="fas fa-undo-alt"></i>Re-upload</span></p></div>
+                                            <img src="images/default_branches.jpg">
+                                        </a>
+                                        <p class="the_reminder">提醒您，請確保圖片解析度，最佳建議尺寸為寬度 1000px 以上 JPG 或 PNG。</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <label for=""><p class="label_title">分店名稱</p></label>
+                                    <input id="" name="" type="text" value="台北市中正區 - 站前店">
+                                </li>
+                                <li>
+                                    <label for=""><p class="label_title"><i class="fas fa-map-marker-alt"></i>　分店地址</p></label>
+                                    <input id="" name="" type="text" value="No.5, Ziqiang 3rd Rd., Lingya Dist., Kaohsiung City 802, Taiwan (R.O.C.)">
+                                    <p class="the_reminder">地址會自動帶入 google map 地圖資訊，建議填寫完整喔！</p>
+                                </li>
+                                <li>
+                                    <label for=""><p class="label_title"><i class="fas fa-phone"></i>　分店電話</p></label>
+                                    <input id="" name="" type="text" value="07-566-8818">
+                                </li>
+                                <li>
+                                    <label for=""><p class="label_title"><i class="fas fa-clock"></i>　分店營業時間</p></label>
+                                    <!-- <input id="" name="" type="text" value="10:00 AM - 11:30 PM"> -->
+                                    <textarea id="">10:00 AM - 11:30 PM</textarea>
+                                </li>
+                                <li>
+                                    <label for=""><p class="label_title"><i class="fas fa-envelope"></i>　分店電子郵件</p></label>
+                                    <input id="" name="" type="text" value="Babyonepieces@service.com">
+                                </li>
+                                <li>
+                                    <label for=""><p class="label_title"><i class="fas fa-globe"></i>　分店網站連結</p></label>
+                                    <input id="" name="" type="text" value="www.holkee.com">
+                                    <p class="the_reminder">可輸入該分店官網網址、FB 粉絲專頁連結、Line@ 連結等等</p>
+                                </li>
+                                <li>
+                                    <label for=""><p class="label_title">分店備註</p></label>
+                                    <textarea id=""></textarea>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="edit-branches-box">
+                            <div class="store-name arr_down">
+                                <p>分店：台北市中正區 - 站前店</p>
+                                <a class="delete"><i class="fas fa-trash-alt"></i></a>
+                            </div>
+                            <ul>
+                                <li>
+                                    <label for=""><p class="label_title">介紹圖</p></label>
+                                    <div class="f-upload-image img_upload clearfix">
+                                        <a class="j-n-upload">
+                                            <div class="the_btn"><p><span><i class="fas fa-undo-alt"></i>Re-upload</span></p></div>
+                                            <img src="images/default_branches.jpg">
+                                        </a>
+                                        <p class="the_reminder">提醒您，請確保圖片解析度，最佳建議尺寸為寬度 1000px 以上 JPG 或 PNG。</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <label for=""><p class="label_title">分店名稱</p></label>
+                                    <input id="" name="" type="text" value="台北市中正區 - 站前店">
+                                </li>
+                                <li>
+                                    <label for=""><p class="label_title"><i class="fas fa-map-marker-alt"></i>　分店地址</p></label>
+                                    <input id="" name="" type="text" value="No.5, Ziqiang 3rd Rd., Lingya Dist., Kaohsiung City 802, Taiwan (R.O.C.)">
+                                    <p class="the_reminder">地址會自動帶入 google map 地圖資訊，建議填寫完整喔！</p>
+                                </li>
+                                <li>
+                                    <label for=""><p class="label_title"><i class="fas fa-phone"></i>　分店電話</p></label>
+                                    <input id="" name="" type="text" value="07-566-8818">
+                                </li>
+                                <li>
+                                    <label for=""><p class="label_title"><i class="fas fa-clock"></i>　分店營業時間</p></label>
+                                    <!-- <input id="" name="" type="text" value="10:00 AM - 11:30 PM"> -->
+                                    <textarea id="">10:00 AM - 11:30 PM</textarea>
+                                </li>
+                                <li>
+                                    <label for=""><p class="label_title"><i class="fas fa-envelope"></i>　分店電子郵件</p></label>
+                                    <input id="" name="" type="text" value="Babyonepieces@service.com">
+                                </li>
+                                <li>
+                                    <label for=""><p class="label_title"><i class="fas fa-globe"></i>　分店網站連結</p></label>
+                                    <input id="" name="" type="text" value="www.holkee.com">
+                                    <p class="the_reminder">可輸入該分店官網網址、FB 粉絲專頁連結、Line@ 連結等等</p>
+                                </li>
+                                <li>
+                                    <label for=""><p class="label_title">分店備註</p></label>
+                                    <textarea id=""></textarea>
+                                </li>
+                            </ul>
+                        </div>
+                        <a class="add-form-field"><i class="fas fa-plus"></i>新增分店</a>
+                        <div class="fillinBox">
+                            <p class="btn_default">
+                                <!-- <a class="color_gray" href="#">關閉</a> -->
+                                <a class="popup-link " href="#">套用設定</a>
+                            </p>
+                        </div>
+                    </div>
+                </form>
+            </div>
             <!-- Contact 聯絡資訊 設定 -->
-            <div id="popup-contact" class="white-popup mfp-hide">
+            <div id="popup-contactsetting" class="white-popup mfp-hide">
                 <form class="setBox">
                     <div class="top_title">
                         <h3>聯絡資訊設定</h3>
@@ -3024,7 +4190,7 @@
             </div>
 
             <!-- 簡易表單 設定 : 欄位設定 2019/06/11 最後調整日期 -->
-            <div id="popup-form_simple" class="white-popup mfp-hide">
+            <div id="popup-formcustomsetting" class="white-popup mfp-hide">
                 <form class="setBox">
                     <div class="top_title">
                         <h3>表單設定</h3>
@@ -3171,26 +4337,32 @@
                                             <li class="clearfix">
                                                 <div class="left-icon left-nb"><p>1</p></div>
                                                 <input class="" type="text" placeholder="" value="選項 1">
-                                                <a class="btn-more-move" href="#"><i class="fas fa-ellipsis-v"></i></a>
-                                                <a class="btn-delete" href="#"><i class="fas fa-times"></i></a>
-                                                <div class="tool-choose">
+                                               <!--  <div class="tool-choose">
                                                     <a class="default"><i class="fas fa-arrow-up"></i> 上移</a>
                                                     <a class="default"><i class="fas fa-arrow-down"></i> 下移</a>
+                                                </div> -->
+                                                <div class="j-n-option-action right-action" style="">
+                                                    <a class="j-n-more"><i class="fas fa-ellipsis-v"></i></a>
+                                                    <a class="j-n-del-option"><i class="fas fa-times"></i></a>
                                                 </div>
                                             </li>
                                             <!-- 多選 -->
                                             <li class="clearfix">
                                                 <div class="left-icon left-checkbox"><p></p></div>
                                                 <input class="" type="text" placeholder="" value="選項 1">
-                                                <a class="btn-more-move" href="#"><i class="fas fa-ellipsis-v"></i></a>
-                                                <a class="btn-delete" href="#"><i class="fas fa-times"></i></a>
+                                               <div class="j-n-option-action right-action" style="">
+                                                    <a class="j-n-more"><i class="fas fa-ellipsis-v"></i></a>
+                                                    <a class="j-n-del-option"><i class="fas fa-times"></i></a>
+                                                </div>
                                             </li>
                                             <!-- 單選 -->
                                             <li class="clearfix">
                                                 <div class="left-icon left-radio"><p></p></div>
                                                 <input class="" type="text" placeholder="" value="選項 1">
-                                                <a class="btn-more-move" href="#"><i class="fas fa-ellipsis-v"></i></a>
-                                                <a class="btn-delete" href="#"><i class="fas fa-times"></i></a>
+                                                <div class="j-n-option-action right-action" style="">
+                                                    <a class="j-n-more"><i class="fas fa-ellipsis-v"></i></a>
+                                                    <a class="j-n-del-option"><i class="fas fa-times"></i></a>
+                                                </div>
                                             </li>
                                         </ul>
                                         <p class="add-item"><a href="#"><i class="fas fa-plus"></i>新增選項</a></p>
@@ -4072,6 +5244,15 @@
                         <h3>新增版塊</h3>
                     </div>
                     <ul class="section_list clearfix">
+                        <li>
+                            <div class="s_section_views">
+                                <div class="choose_this"><p><i class="fas fa-check"></i>選擇此版塊</p></div>
+                                <div class="infoBox">
+                                    <img src="https://img.holkee.com/main/thumbs/section_thumbnail_branches.jpg" alt="分店資訊">
+                                </div>
+                            </div>
+                            <h4>分店資訊</h4>
+                        </li>
                         <li>
                             <div class="s_section_views">
                                 <div class="choose_this"><p><i class="fas fa-check"></i>選擇此版塊</p></div>

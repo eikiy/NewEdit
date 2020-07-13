@@ -1,0 +1,52 @@
+/* 拆開css ------ branchesBox */
+.branchesBox .info { width: 100%; max-width: 372px; margin: 0 auto; padding: 20px 20px 5px 20px; min-height: 320px; }
+.branchesBox .info h4{ font-size: 1.150rem; padding-bottom: 15px; font-weight:bold; color: #333; }
+.branchesBox .info ul{ width: 100%; }
+.branchesBox .info ul li { width: 100%; padding:2px 0; }
+.branchesBox .info ul li p { padding-left: 30px; position: relative; line-height: 26px; word-break: break-all;}
+.branchesBox .info ul li p::before { width: 25px; font-size: 0.750rem; color: #a29ea7; line-height: 28px; text-align: center; content: ""; position: absolute; top: 0; left: 0; display: block; font-family: 'Font Awesome\ 5 Free'; font-weight: 900; }
+.branchesBox .info ul li p.address::before { content: "\f3c5"; }
+.branchesBox .info ul li p.phone::before { content: "\f095"; }
+.branchesBox .info ul li p.time::before { content: "\f017"; }
+.branchesBox .info ul li p.email::before { content: "\f0e0"; }
+.branchesBox .info ul li p.globe::before { content: "\f0ac";}
+.branchesBox .info p.note{ padding-top:25px; font-size: 0.85rem; line-height: 1.375rem; text-align: justify; min-height: 130px; }
+
+.branchesBox .store_list { padding: 15px 0; }
+.branchesBox .grid_container { float: left; width: 33.33%; padding: 10px; }
+
+.branchesBox .photo { width: 100%; padding:0 20px;}
+.branchesBox .photo img{ width: 100%; height: 100%;}
+
+.branchesBox .style-one .grid_container{ width: 100%; padding-bottom: 35px; }
+.branchesBox .style-one .photo{ float: left; width: 40%; }
+.branchesBox .style-one .info{ float: left; width: 60%; padding:5px 20px 0 5%; max-width: initial; min-height: initial; }
+.branchesBox .style-one .info h4{ font-size: 1.5rem;}
+.branchesBox .style-one .info p.note{ min-height: initial; }
+
+.bg_translucent_k .grid_container .info h4,
+.bg_translucent_k .grid_container .info ul li p,
+.bg_translucent_k .grid_container .info p.note { color: #fff; }
+
+@media (max-width: 1240px) {
+	.branchesBox .grid_container { width: 50%;}	
+	.branchesBox .style-one .info h4{ font-size: 1.150rem; }
+}
+@media (max-width: 800px) {
+	.branchesBox .style-one .info{ padding-right: 0; }
+}
+@media (max-width: 650px) {
+	.branchesBox .photo{ padding: 0;}
+	.branchesBox .info{ padding: 10px 0; }
+	.branchesBox .info h4{ font-size: 1rem; }
+	.branchesBox .info ul li p{ padding-left: 22px; line-height: 23px; font-size: 0.875rem;}
+	.branchesBox .info ul li p::before{ width: 20px; line-height: 23px; font-size: 0.675rem;}
+}
+@media (max-width: 600px) {
+	.branchesBox .style-one .photo{ width: 100%; padding: 0 0 15px 0 ; }
+	.branchesBox .style-one .info{ width: 100%; }
+}
+@media (max-width: 414px) {
+}
+
+/* 拆開css ------ branchesBox END */
