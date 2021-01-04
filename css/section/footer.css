@@ -12,6 +12,7 @@
 .s-footerBox ul.share-tools li label.tumblr { background-color: #3c5a77; }
 .s-footerBox ul.share-tools li label.twitter { background-color: #1da1f2; }
 .s-footerBox ul.share-tools li label.whatsapp { background-color: #25d366; }
+.s-footerBox ul.share-tools li label.telegram{ background-color: #32a4d8; }
 .s-footerBox p.powered-website, .s-footerBox p.copyrights { text-align: center; font-size: 0.813rem; line-height: 24px; color: #666; letter-spacing: 0.5px; }
 .s-footerBox p.powered-website { position: absolute; bottom: 0; width: 100%; left: 0; }
 .s-footerBox p.powered-website a { background-color: #464646; padding: 5px 18px; border-radius: 12px 12px 0 0; display: inline-block; color: #fff; }

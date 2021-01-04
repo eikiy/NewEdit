@@ -1,0 +1,56 @@
+/* galleryBox */
+.galleryBox{ padding:80px 0 0 0; }
+.galleryBox .aBox:last-child{ padding-top: 20px; display: block; width: 100%; }
+.galleryBox .photo_list {display: flex; flex-wrap: wrap; justify-content: center; align-content: center; padding-bottom: 80px;}
+.galleryBox .grid_container { display: flex; justify-content: center; align-items: center; color: white; width: 25%; padding: 20px; }
+.galleryBox .photo { width: 100%; position: relative;}
+.galleryBox .photo img{ width: 100%; height: 100%;}
+.galleryBox .photo figcaption{ padding: 10px 0; color: #333; font-size: 0.918rem;}
+.galleryBox .photo figcaption a{ color: #333; text-decoration: underline; }
+.galleryBox .photo figcaption a:hover{ text-decoration: none; }
+
+
+.galleryBox .style-one .photo figcaption, .galleryBox .style-two .photo figcaption{ position: absolute; bottom: 0; left: 0; padding: 15px; color: #fff;}
+.galleryBox .style-one .photo figcaption span, .galleryBox .style-two .photo figcaption span{ display: block; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 4; line-height: 20px; overflow:hidden;}
+.galleryBox .style-one .photo figcaption a, .galleryBox .style-two .photo figcaption a{ color: #fff;}
+
+.galleryBox .gradient-color figcaption{ width: 100%; color: #fff; background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 100%); background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.5) 100%); background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.5) 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#80000000',GradientType=0 ); }
+.galleryBox .style-one .gradient-color .photo figcaption span, .galleryBox .gradient-color .style-two .photo figcaption span{ text-shadow: 0 2px 5px rgba(0,0,0,.5);}
+
+.galleryBox .style-two{ max-width: initial; }
+.galleryBox .style-two .photo_list {display: initial; padding-bottom: 0;}
+.galleryBox .style-two .grid_container{position: relative; float: left; display: block; padding: 0; width: 16.66%; height: 16.46vw; overflow: hidden;}
+.galleryBox .style-two .photo{ position: initial; display: initial;}
+
+.bg_translucent_k .photo figcaption{ color: #fff; }
+.bg_translucent_k .photo figcaption a{ color: #fff;}
+
+
+/*==== RWD ====*/
+@media (max-width: 1600px) {
+    .galleryBox .style-two .grid_container{ width: 25%; height: 24.5vw;}
+}
+
+@media (max-width: 800px) {
+    .galleryBox .photo figcaption{ font-size: 0.813rem; }
+}
+@media (max-width: 760px) {
+    .galleryBox .grid_container{ width: 33.33%;}
+    .galleryBox .style-one .grid_container, .galleryBox .style-two .grid_container{ width: 33.33%; height: 32.5vw; }
+}
+@media (max-width: 650px) {
+    .galleryBox .grid_container{ width: 50%;}
+    .galleryBox .photo figcaption{ font-size: 0.75rem; }
+    .galleryBox .style-one .grid_container, .galleryBox .style-two .grid_container{ width: 50%; height: 48.5vw; }
+}
+@media (max-width: 600px) {
+    .galleryBox .style-two .grid_container{ height: 48.5vw; }
+}
+@media (max-width: 550px) {
+    .galleryBox .grid_container{padding: 15px;}
+    .galleryBox .style-one .photo figcaption{ padding: 10px;}
+    .galleryBox .style-two .grid_container{ height: 48vw; }
+}
+@media (max-width: 414px) {
+    .galleryBox .style-two .grid_container{ height: 50vw; }
+}

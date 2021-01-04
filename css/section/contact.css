@@ -1,7 +1,7 @@
 /* 拆開css ------ contactBox */
 .contactBox {}
 .contactBox .aBox { float: left; width: 50%; }
-.contactBox .aBox:last-child { padding: 0 0 0 20px; }
+.contactBox .aBox:last-child { padding: 0 0 0 35px; }
 .contactBox .mapBox { width: 100%; height: 400px; position: relative; border-radius: 5px; overflow: hidden; }
 .contactBox ul.info { width: 100%; max-width: 450px; margin: 0 auto; padding: 40px 0; }
 .contactBox ul.info li { width: 100%; padding-bottom: 25px; }
@@ -14,7 +14,7 @@
 .contactBox ul.info li p a { color: inherit; text-decoration: none; }
 .contactBox ul.info li p a:hover { text-decoration: underline; }
 
-.contactBox .style-one .aBox:first-child{ padding: 0 20px 0 0; }
+.contactBox .style-one .aBox:first-child{ padding: 0 35px 0 0; }
 .contactBox .style-one .aBox:last-child{ padding: 0; }
 
 @media (max-width: 900px) {

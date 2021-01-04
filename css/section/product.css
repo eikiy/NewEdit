@@ -1,5 +1,4 @@
 /* 拆開css ------ productsBox */
-.productsBox {}
 .productsBox .ContentsBox { max-width: initial; }
 .productsBox .text-box { width: 100%; max-width: 1200px; margin: 0 auto; }
 .productsBox .slider-box { width: 100%; padding: 40px 0; overflow: hidden; }
@@ -18,8 +17,7 @@
 .productsBox .style-one .photo{ border-radius: 50%; overflow: hidden;}
 .productsBox .style-one .data-box .content-box{ background-color: transparent; margin-right: 25px;}
 
-.bg_translucent_k .style-one .slider-box .info .description p { color: #fff; }
-.bg_translucent_k .style-one .slider-box .info p a.btn{ color: #fff; border-color: #fff; }
+.bg_translucent_k .style-one .slider-box .info .description p.color_red{ color: #FFEB3B; }
 @media (max-width: 1220px) {
     .productsBox .text-box { max-width: 90%; }
 }

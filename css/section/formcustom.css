@@ -3,6 +3,7 @@
 .formBox .form_custom { max-width: 580px; margin: 0 auto; padding: 20px 0 0 0; }
 .formBox .form_custom input { width: 100%; height: 38px; padding: 10px; line-height: 38px; margin-bottom: 15px; font-size: 0.918rem; border: 1px solid #e0e0e0; }
 .formBox .form_custom textarea { max-width: 600px; width: 100%; height: 120px; padding:10px; margin-bottom: 15px; font-size: 0.918rem; border: 1px solid #e0e0e0; }
+.formBox .form_custom input.date, .formBox .form_custom input.time{ max-width: 218px; }
 
 /*select*/
 .formBox .styled-select { border: 1px solid #e0e0e0; width:calc(100% - 2px) ; min-height: 22px; margin-bottom: 15px; -webkit-transition: all 0.30s ease-in-out;  -moz-transition: all 0.30s ease-in-out;  -ms-transition: all 0.30s ease-in-out;  -o-transition: all 0.30s ease-in-out; overflow: hidden; background: url(//img.holkee.com/main/icons/icon_arr.png) right center no-repeat #fff;}
